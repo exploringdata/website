@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% set title = title|replace('-', ' ')|replace('Tags', 'Tags:') %}
+
+{% if base_url %}
+  {% block rsslink %}
+    <link rel="alternate" type="application/rss+xml" title="Geeksta main RSS feed" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Geeksta {{directory}} RSS feed" href="{{base_url}}/{{directory}}/rss.xml" />
+  {% endblock %}
+{% endif %}
+
+{% block content %}
+<h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
+<ul class="index_list flatlist">
+{% for doc in index %}
+<li class="index_item"><h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>{% if doc.description %}<p>{{ doc.description }}</p>{% endif %}</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,3 @@
+[submodule "static/vendor/z3ljs"]
+	path = static/vendor/z3ljs
+	url = git://github.com/yaph/z3ljs.git

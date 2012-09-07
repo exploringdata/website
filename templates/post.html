@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row"><div class="span12">
+<header><h1>{{ title }}</h1></header>
+</div></div>
+
+<div class="row"><div class="span12">
+{% if image %}
+<figure class="well post_image">
+  <img src="{{image}}" alt="{{title}}">
+  {% if imagesource %}
+    <figcaption>Source: {{ imagesource }}</figcaption>
+  {% endif %}
+</figure>
+{% endif %}
+
+{{ body }}
+</div></div>
+
+<div class="row"><div class="span12">
+{% include 'postinfo.html' %}
+</div></div>
+
+<div class="row"><div class="span12">
+{% include 'commentshare.html' %}
+</div></div>
+
+{% endblock %}

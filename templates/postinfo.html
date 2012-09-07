@@ -1,0 +1,13 @@
+{% if created %}
+<hr>
+<div class="postinfo">
+<div id="hcard-Ramiro-Gomez" class="vcard">
+<a href="https://plus.google.com/111266755406371391519?rel=author"><img class="well well-small"style="float:left; margin-right:10px" src="http://en.gravatar.com/userimage/454322/f69be05626911b16fa30f423112ac4bf.png" alt="Ramiro Gómez" class="photo"></a>
+<h3>About this post</h3>
+<p>This post was written by Ramiro Gómez and published on {{ created.strftime('%B %d, %Y') }}.</p>
+<p>Ramiro is a developer who likes open source, data mining, visualization, and writing. To learn more about him and this site, see the <a href="/about">about page</a>.</p>
+{% include 'tags.html' %}
+</div>
+<div style="clear:both;"></div>
+</div>
+{% endif %}
