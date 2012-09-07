@@ -1,48 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div class="hero-unit">
-    <div class="preview">
-        <img src="/img/programming-language-influence/graphs/functional_programming_thumb.jpg" alt="{{ title }}" width="150">
-    </div>
-    <h1><a href="/visualizations/programming-language-influence-by-paradigm-gallery/">Programming Language Influence by Paradigm Gallery</a></h1>
-    <p>Visualizing the influence of programming languages within various programming paradigms using directed network graphs.</p>
-    <p><a class="btn primary large" href="/gallery/visualization-of-programming-language-influence-by-paradigm/">Read more &raquo;</a></p>
-</div>
-
 <div class="row">
-  <div class="span6">
-    <h2 class="lidx"><a href="/geeklog/">Geeklog &raquo;</a></h2>
-    {% for doc in indexes.geeklog[:2] %}
-      <h4><a href="{{ doc.url }}">{{ doc.title }}</a></h4>
-      <p>{{ doc.description }}</p>
-    {% endfor %}
-  </div>
-  <div class="span6">
-    <h2 class="lidx"><a href="/visualizations/">Visualizations &raquo;</a></h2>
-    {% for doc in indexes.visualizations[:2] %}
-      <h4><a href="{{ doc.url }}">{{ doc.title }}</a></h4>
-      <p>{{ doc.description }}</p>
-    {% endfor %}
-  </div>
-</div>
 
-<div class="row">
-  <div class="span6">
-    <h2 class="lidx"><a href="/reviews/">Reviews &raquo;</a></h2>
-    {% for doc in indexes.reviews[:2] %}
-      <h4><a href="{{ doc.url }}">{{ doc.title }}</a></h4>
-      <p>{{ doc.description }}</p>
-    {% endfor %}
-  </div>
-  <div class="span6">
-    <h2 class="lidx"><a href="/tools/">Tools &raquo;</a></h2>
-    {% for doc in indexes.tools[:2] %}
-      <h4><a href="{{ doc.url }}">{{ doc.title }}</a></h4>
-      <p>{{ doc.description }}</p>
-    {% endfor %}
-  </div>
-</div>
+{% for doc in indexes['tags/visualization'][:3] %}
+<div class="span4"><div class="well">
+  <h5><a href="{{doc.url}}">{{doc.title}}</a></h5>
+  <a href="{{doc.url}}"><img src="{{doc.imgpreview}}" alt="{{doc.title}}"></a>
+</div></div>
+{% endfor %}
 
+</div>
 {% endblock %}
