@@ -39,6 +39,9 @@
           <div class="nav-collapse">
             {% block nav %}{% endblock %}
             <ul class="nav pull-right">
+              {% if repo %}
+               <li><a href="{{repo}}">Code</a></li>
+              {% endif %}
               {% include 'sharemenu.html' %}
             </ul>
           </div>
