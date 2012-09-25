@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
 
-{% for doc in indexes['tags/visualization'][:3] %}
+{% for doc in indexes.vis[:3] %}
 <div class="span4"><div class="well">
   <h5><a href="{{doc.url}}">{{doc.title}}</a></h5>
   <a href="{{doc.url}}"><img src="{{doc.imgpreview}}" alt="{{doc.title}}"></a>
