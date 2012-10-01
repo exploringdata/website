@@ -14,7 +14,8 @@ $(function(){
   }).mouseProperties({
     maxRatio: 32
   });
-  sigInst.parseGexf('/js/human-disease-network/diseasome.gexf');
+//  sigInst.parseGexf('/js/human-disease-network/diseasome.gexf');
+  sigInst.parseGexf('/js/gexf/plin_forceatlas2.gexf');
   sigInst.draw();
 
   sigInst.bind('overnodes', function(event){
