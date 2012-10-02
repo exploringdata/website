@@ -1,0 +1,4192 @@
+<?xml version="1.0" encoding="utf-8"?><gexf version="1.1" xmlns="http://www.gexf.net/1.1draft" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="0" title="Logic programming" type="string" />
+      <attribute id="1" title="Functional programming" type="string" />
+      <attribute id="2" title="Object-oriented programming" type="string" />
+      <attribute id="3" title="Structured programming" type="string" />
+      <attribute id="4" title="Imperative programming" type="string" />
+      <attribute id="5" title="Procedural programming" type="string" />
+      <attribute id="6" title="Multi-paradigm programming language" type="string" />
+      <attribute id="7" title="Prototype-based programming" type="string" />
+      <attribute id="8" title="Generic programming" type="string" />
+      <attribute id="9" title="Knowledge Representation Language" type="string" />
+      <attribute id="10" title="Reflective programming" type="string" />
+      <attribute id="11" title="Concurrent computing" type="string" />
+      <attribute id="12" title="Compiled language" type="string" />
+      <attribute id="13" title="Parallel computing" type="string" />
+      <attribute id="14" title="Modular Programming" type="string" />
+      <attribute id="15" title="Database programming" type="string" />
+      <attribute id="16" title="Array programming" type="string" />
+      <attribute id="17" title="Type inference" type="string" />
+      <attribute id="18" title="Dynamic programming language" type="string" />
+      <attribute id="19" title="Educational programming language" type="string" />
+      <attribute id="20" title="Function-level programming" type="string" />
+      <attribute id="21" title="Declarative programming" type="string" />
+      <attribute id="22" title="Stack-oriented programming language" type="string" />
+      <attribute id="23" title="Ajax" type="string" />
+      <attribute id="24" title="Distributed programming" type="string" />
+      <attribute id="25" title="Mathematics" type="string" />
+      <attribute id="26" title="Strongly-typed programming language" type="string" />
+      <attribute id="27" title="Dependent type" type="string" />
+      <attribute id="28" title="Actor model" type="string" />
+      <attribute id="29" title="Interpreted language" type="string" />
+      <attribute id="30" title="Lazy evaluation" type="string" />
+      <attribute id="31" title="Event driven programming language" type="string" />
+      <attribute id="32" title="Combinatory logic" type="string" />
+      <attribute id="33" title="Concatenative programming language" type="string" />
+      <attribute id="34" title="Multi-agent system" type="string" />
+      <attribute id="35" title="Self-modifying code" type="string" />
+      <attribute id="36" title="Two-dimensional" type="string" />
+      <attribute id="37" title="cell based" type="string" />
+      <attribute id="38" title="Markup language" type="string" />
+      <attribute id="39" title="Operator" type="string" />
+      <attribute id="40" title="Dataflow language" type="string" />
+      <attribute id="41" title="Frame language" type="string" />
+      <attribute id="42" title="Design by contract" type="string" />
+      <attribute id="43" title="Example Centric Programming" type="string" />
+      <attribute id="44" title="Component-oriented programming" type="string" />
+      <attribute id="45" title="Visual programming language" type="string" />
+      <attribute id="46" title="expression-based" type="string" />
+      <attribute id="47" title="Encapsulation" type="string" />
+      <attribute id="48" title="Virtual machine" type="string" />
+      <attribute id="49" title="Write once, run anywhere" type="string" />
+      <attribute id="50" title="Knowledge-based systems" type="string" />
+    </attributes>
+    <nodes>
+      <node id="Mercury" label="Mercury">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Simulink" label="Simulink" />
+      <node id="WCL programming language" label="WCL programming language" />
+      <node id="Combined Programming Language" label="Combined Programming Language">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Bywater BASIC" label="Bywater BASIC" />
+      <node id="Limnor" label="Limnor" />
+      <node id="Self" label="Self">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="P Sharp" label="P Sharp" />
+      <node id="Dexterity programming language" label="Dexterity programming language" />
+      <node id="POPS" label="POPS" />
+      <node id="Fortran" label="Fortran">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Averest" label="Averest" />
+      <node id="BCompile" label="BCompile" />
+      <node id="Mondrian programming language" label="Mondrian programming language" />
+      <node id="ObjVlisp" label="ObjVlisp" />
+      <node id="Lisp Machine Lisp" label="Lisp Machine Lisp" />
+      <node id="Dartmouth ALGOL 30" label="Dartmouth ALGOL 30" />
+      <node id="PureBasic" label="PureBasic">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ARC Macro Language" label="ARC Macro Language" />
+      <node id="LOOM" label="LOOM">
+        <attvalues>
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Ratfor" label="Ratfor" />
+      <node id="JScript" label="JScript" />
+      <node id="OCAL" label="OCAL" />
+      <node id="ABCL/c+" label="ABCL/c+" />
+      <node id="S-1 Lisp" label="S-1 Lisp" />
+      <node id="PLANC" label="PLANC" />
+      <node id="HyperTalk" label="HyperTalk">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Deesel" label="Deesel" />
+      <node id="PFXplus" label="PFXplus" />
+      <node id="Korn shell" label="Korn shell" />
+      <node id="Objeck" label="Objeck">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CFScript" label="CFScript" />
+      <node id="OpenMusic" label="OpenMusic" />
+      <node id="SKED" label="SKED" />
+      <node id="ELENA" label="ELENA">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Universal Systems Language" label="Universal Systems Language" />
+      <node id="Oberon" label="Oberon">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="10" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Delphi" label="Delphi" />
+      <node id="ColdFusion Markup Language" label="ColdFusion Markup Language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Gofer" label="Gofer" />
+      <node id="C--" label="C--">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SIMSCRIPT II.5" label="SIMSCRIPT II.5" />
+      <node id="Mudlle" label="Mudlle">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XPL" label="XPL" />
+      <node id="COMSOL Script" label="COMSOL Script" />
+      <node id="MOO programming language" label="MOO programming language">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Programming Language for Business" label="Programming Language for Business" />
+      <node id="OmniMark" label="OmniMark" />
+      <node id="Cayenne programming language" label="Cayenne programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="AIS Balise" label="AIS Balise" />
+      <node id="Span programming language" label="Span programming language" />
+      <node id="Dataflex" label="Dataflex" />
+      <node id="Cleverpath AION Business Rules Expert" label="Cleverpath AION Business Rules Expert" />
+      <node id="PowerBASIC" label="PowerBASIC">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="POP-11" label="POP-11" />
+      <node id="Clean programming language" label="Clean programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Piet" label="Piet" />
+      <node id="CorVision" label="CorVision" />
+      <node id="PL/PSM" label="PL/PSM" />
+      <node id="Revolution programming language" label="Revolution programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Programming language for Computable Functions" label="Programming language for Computable Functions">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XBL" label="XBL" />
+      <node id="RPG II" label="RPG II" />
+      <node id="FORTRAN 90" label="FORTRAN 90" />
+      <node id="MPD programming language" label="MPD programming language" />
+      <node id="Keykit" label="Keykit">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Kvikkalkul" label="Kvikkalkul" />
+      <node id="Smalltalk-71" label="Smalltalk-71" />
+      <node id="Smalltalk-72" label="Smalltalk-72" />
+      <node id="Zonnon" label="Zonnon">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="QUIKSCRIPT" label="QUIKSCRIPT" />
+      <node id="EusLisp Robot Programming Language" label="EusLisp Robot Programming Language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Smalltalk-76" label="Smalltalk-76" />
+      <node id="Go" label="Go">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="12" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Template Haskell" label="Template Haskell" />
+      <node id="MST Workshop" label="MST Workshop" />
+      <node id="XPath" label="XPath" />
+      <node id="LaTeX" label="LaTeX" />
+      <node id="Rex" label="Rex">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ALGOL 68" label="ALGOL 68">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Job Control Language" label="Job Control Language" />
+      <node id="RTML" label="RTML" />
+      <node id="PLT Scheme" label="PLT Scheme">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Grammar-oriented programming" label="Grammar-oriented programming" />
+      <node id="FORTRAN II" label="FORTRAN II" />
+      <node id="Alphard programming language" label="Alphard programming language" />
+      <node id="Oaklisp" label="Oaklisp">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="FORTRAN IV" label="FORTRAN IV" />
+      <node id="NESL" label="NESL">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Embedded C++" label="Embedded C++" />
+      <node id="FAUST" label="FAUST" />
+      <node id="ECMAScript" label="ECMAScript">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Atlas Autocode" label="Atlas Autocode" />
+      <node id="ChinesePython" label="ChinesePython" />
+      <node id="Structured Audio Orchestra Language" label="Structured Audio Orchestra Language" />
+      <node id="Windows PowerShell" label="Windows PowerShell">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Communicating sequential processes" label="Communicating sequential processes" />
+      <node id="TSP" label="TSP" />
+      <node id="PCASTL" label="PCASTL">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Progress 4GL" label="Progress 4GL" />
+      <node id="LSE" label="LSE" />
+      <node id="ISWIM" label="ISWIM">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="WxWidgets" label="WxWidgets" />
+      <node id="Visual DialogScript" label="Visual DialogScript" />
+      <node id="FRACTRAN" label="FRACTRAN">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Magma computer algebra system" label="Magma computer algebra system" />
+      <node id="CHIP-8" label="CHIP-8" />
+      <node id="Web Language" label="Web Language" />
+      <node id="Sigmac" label="Sigmac" />
+      <node id="Elliott ALGOL" label="Elliott ALGOL" />
+      <node id="M2M" label="M2M" />
+      <node id="HTML" label="HTML" />
+      <node id="Programming Syntax" label="Programming Syntax" />
+      <node id="DRAKON" label="DRAKON" />
+      <node id="Scieneer Common Lisp" label="Scieneer Common Lisp" />
+      <node id="APL*PLUS" label="APL*PLUS" />
+      <node id="SNOBOL" label="SNOBOL">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Orc" label="Orc">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Forth-79" label="Forth-79" />
+      <node id="Modula-3" label="Modula-3">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Modula-2" label="Modula-2">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="14" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Brown University Interactive Language" label="Brown University Interactive Language" />
+      <node id="Script.NET" label="Script.NET">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="K" label="K">
+        <attvalues>
+          <attvalue for="15" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Basic assembly language" label="Basic assembly language" />
+      <node id="Epigram programming language" label="Epigram programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="HPGL" label="HPGL" />
+      <node id="A++" label="A++">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Superx++" label="Superx++" />
+      <node id="IEC61131 Common Elements" label="IEC61131 Common Elements" />
+      <node id="AutoIt" label="AutoIt" />
+      <node id="Web Ontology Language" label="Web Ontology Language">
+        <attvalues>
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="RDF query language" label="RDF query language" />
+      <node id="Petriscript" label="Petriscript" />
+      <node id="SystemC" label="SystemC" />
+      <node id="Atari ST BASIC" label="Atari ST BASIC" />
+      <node id="AmbientTalk" label="AmbientTalk">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ALGOL 60" label="ALGOL 60" />
+      <node id="IEC 61131-3" label="IEC 61131-3" />
+      <node id="CGOL" label="CGOL">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ML" label="ML">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="17" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ZZT-oop" label="ZZT-oop">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Concurrent Euclid" label="Concurrent Euclid">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SAIL programming language" label="SAIL programming language" />
+      <node id="JADE programming language" label="JADE programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Mantra" label="Mantra">
+        <attvalues>
+          <attvalue for="18" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Euler programming language" label="Euler programming language">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Sleep programming language" label="Sleep programming language">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="NWScript" label="NWScript" />
+      <node id="Rpal" label="Rpal" />
+      <node id="TYRO" label="TYRO" />
+      <node id="TUTOR programming language" label="TUTOR programming language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Design By Numbers" label="Design By Numbers" />
+      <node id="EToys" label="EToys">
+        <attvalues>
+          <attvalue for="19" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="FP" label="FP">
+        <attvalues>
+          <attvalue for="20" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="HyperCard" label="HyperCard" />
+      <node id="Fortran 2003" label="Fortran 2003" />
+      <node id="Cyclone programming language" label="Cyclone programming language" />
+      <node id="SMX" label="SMX" />
+      <node id="Fortran 2008" label="Fortran 2008" />
+      <node id="ZPL programming language" label="ZPL programming language">
+        <attvalues>
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="BBC BASIC" label="BBC BASIC">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Quark Framework" label="Quark Framework">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="TeXCAD" label="TeXCAD" />
+      <node id="WinDev" label="WinDev" />
+      <node id="MivaScript" label="MivaScript">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Tom" label="Tom" />
+      <node id="NELIAC" label="NELIAC" />
+      <node id="Scheme48" label="Scheme48" />
+      <node id="Uniface" label="Uniface" />
+      <node id="FL" label="FL">
+        <attvalues>
+          <attvalue for="20" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Property Specification Language" label="Property Specification Language" />
+      <node id="Stateflow" label="Stateflow" />
+      <node id="Blueprint" label="Blueprint">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Transaction Application Language" label="Transaction Application Language" />
+      <node id="Oxygene" label="Oxygene">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Refal programming language" label="Refal programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Ox programming language" label="Ox programming language" />
+      <node id="LEAP programming language" label="LEAP programming language" />
+      <node id="Pico programming language" label="Pico programming language">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Obliq programming language" label="Obliq programming language">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="BUGSYS" label="BUGSYS" />
+      <node id="CorbaScript" label="CorbaScript">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="DBASE" label="DBASE">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Hindawi Programming System" label="Hindawi Programming System" />
+      <node id="KiXtart" label="KiXtart" />
+      <node id="Abundance" label="Abundance">
+        <attvalues>
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JavaScript" label="JavaScript">
+        <attvalues>
+          <attvalue for="23" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="10" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Object Definition Language" label="Object Definition Language" />
+      <node id="LOLCODE" label="LOLCODE" />
+      <node id="Occam" label="Occam">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Hume" label="Hume">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Gibiane" label="Gibiane" />
+      <node id="InterPress" label="InterPress" />
+      <node id="Join-calculus programming language" label="Join-calculus programming language" />
+      <node id="AgentSheets" label="AgentSheets">
+        <attvalues>
+          <attvalue for="19" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lisp renaissance" label="Lisp renaissance" />
+      <node id="Inform" label="Inform">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Real-time Cmix" label="Real-time Cmix" />
+      <node id="IpTables Rope" label="IpTables Rope" />
+      <node id="Accent programming language" label="Accent programming language" />
+      <node id="V" label="V">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SubL" label="SubL" />
+      <node id="CODE programming language" label="CODE programming language" />
+      <node id="Modular Syntax Definition Formalism" label="Modular Syntax Definition Formalism" />
+      <node id="Embarcadero Delphi" label="Embarcadero Delphi">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SKI combinator calculus" label="SKI combinator calculus" />
+      <node id="Gambas" label="Gambas" />
+      <node id="MetaPost" label="MetaPost">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="AMPLE" label="AMPLE" />
+      <node id="O'Haskell" label="O'Haskell">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ALF" label="ALF">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Macaulay computer algebra system" label="Macaulay computer algebra system" />
+      <node id="Alice ML" label="Alice ML">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="24" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ChucK" label="ChucK">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Little b" label="Little b">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JoCaml" label="JoCaml" />
+      <node id="ZOPL" label="ZOPL" />
+      <node id="F#" label="F#">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="17" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="The Green Object Oriented Language" label="The Green Object Oriented Language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Godiva programming language" label="Godiva programming language" />
+      <node id="Neko" label="Neko">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="G-code" label="G-code" />
+      <node id="Syp Script" label="Syp Script" />
+      <node id="Smalltalk" label="Smalltalk">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Redcode" label="Redcode" />
+      <node id="Lightweight Java" label="Lightweight Java" />
+      <node id="Micro programming language" label="Micro programming language" />
+      <node id="SAC programming language" label="SAC programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PL/JS" label="PL/JS" />
+      <node id="Emacs Lisp" label="Emacs Lisp">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Water programming language" label="Water programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="TOM" label="TOM">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Model Transformation Language" label="Model Transformation Language" />
+      <node id="ABAP" label="ABAP">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="GPSS" label="GPSS" />
+      <node id="Agda theorem prover" label="Agda theorem prover">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="25" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="26" value="paradigm" />
+          <attvalue for="27" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="FourGen CASE Tools" label="FourGen CASE Tools" />
+      <node id="CLOS" label="CLOS">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PL-11" label="PL-11" />
+      <node id="Erlang" label="Erlang">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="28" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Python 3" label="Python 3" />
+      <node id="Caché ObjectScript" label="Caché ObjectScript">
+        <attvalues>
+          <attvalue for="15" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SMALL" label="SMALL">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="GReAT" label="GReAT" />
+      <node id="Scheme" label="Scheme">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="29" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Phoenix" label="Phoenix" />
+      <node id="Sather" label="Sather">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MAD programming language" label="MAD programming language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="EuLisp" label="EuLisp">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Ch interpreter" label="Ch interpreter" />
+      <node id="Emios" label="Emios" />
+      <node id="Spice programming language" label="Spice programming language" />
+      <node id="Miranda" label="Miranda">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="30" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Falcon" label="Falcon">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Polymorphic Programming Language" label="Polymorphic Programming Language" />
+      <node id="Spin" label="Spin" />
+      <node id="Esterel" label="Esterel" />
+      <node id="C++/Tcl" label="C++/Tcl" />
+      <node id="PILOT" label="PILOT" />
+      <node id="Model Driven Integration" label="Model Driven Integration" />
+      <node id="ABC" label="ABC">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lisp" label="Lisp">
+        <attvalues>
+          <attvalue for="25" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="29" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SR programming language" label="SR programming language" />
+      <node id="SuperTalk" label="SuperTalk">
+        <attvalues>
+          <attvalue for="31" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Aldor" label="Aldor">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="I-APL" label="I-APL" />
+      <node id="Q" label="Q">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Microsoft BASICA" label="Microsoft BASICA" />
+      <node id="PL/Java" label="PL/Java" />
+      <node id="ΛProlog" label="ΛProlog" />
+      <node id="ConTeXt" label="ConTeXt" />
+      <node id="Object Oberon" label="Object Oberon">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="X10" label="X10">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="C++/CLI" label="C++/CLI" />
+      <node id="Orwell" label="Orwell">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="30" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Runtime Revolution" label="Runtime Revolution" />
+      <node id="Interactive ALGOL 68" label="Interactive ALGOL 68" />
+      <node id="NGL programming language" label="NGL programming language" />
+      <node id="IPTSCRAE" label="IPTSCRAE" />
+      <node id="SiMPLE" label="SiMPLE" />
+      <node id="BYOND" label="BYOND" />
+      <node id="FLOW-MATIC" label="FLOW-MATIC" />
+      <node id="Dartmouth BASIC" label="Dartmouth BASIC">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Compact Application Solution Language" label="Compact Application Solution Language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="mjt" label="mjt" />
+      <node id="Protel" label="Protel" />
+      <node id="Haskell" label="Haskell">
+        <attvalues>
+          <attvalue for="17" value="paradigm" />
+          <attvalue for="12" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="32" value="paradigm" />
+          <attvalue for="29" value="paradigm" />
+          <attvalue for="26" value="paradigm" />
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="25" value="paradigm" />
+          <attvalue for="30" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Pizza" label="Pizza">
+        <attvalues>
+          <attvalue for="8" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="VLISP" label="VLISP" />
+      <node id="CITRAN" label="CITRAN" />
+      <node id="XPL0" label="XPL0" />
+      <node id="Apply" label="Apply" />
+      <node id="Algebraic Interpretive Dialogue" label="Algebraic Interpretive Dialogue" />
+      <node id="Analytica" label="Analytica">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="F-Script programming language" label="F-Script programming language">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CHIP programming language" label="CHIP programming language" />
+      <node id="Simkin" label="Simkin" />
+      <node id="SCAR programming language" label="SCAR programming language" />
+      <node id="GNU Octave" label="GNU Octave" />
+      <node id="Liberty BASIC" label="Liberty BASIC">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Onyx" label="Onyx">
+        <attvalues>
+          <attvalue for="33" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Kawa" label="Kawa" />
+      <node id="TACL" label="TACL" />
+      <node id="Use" label="Use" />
+      <node id="Turtle Talk" label="Turtle Talk" />
+      <node id="Eltron Programming Language" label="Eltron Programming Language" />
+      <node id="Little Smalltalk" label="Little Smalltalk" />
+      <node id="Not eXactly C" label="Not eXactly C" />
+      <node id="S-Lang" label="S-Lang">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Nyquist" label="Nyquist" />
+      <node id="QUIKTRAN" label="QUIKTRAN" />
+      <node id="Versus programming language" label="Versus programming language" />
+      <node id="Ubercode" label="Ubercode" />
+      <node id="Kermeta" label="Kermeta" />
+      <node id="Abbreviated Test Language for Avionics Systems" label="Abbreviated Test Language for Avionics Systems" />
+      <node id="SPARK programming language" label="SPARK programming language">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="TTCN" label="TTCN" />
+      <node id="StarLogo" label="StarLogo">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="34" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="19" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Laning and Zierler system" label="Laning and Zierler system" />
+      <node id="Speedcoding" label="Speedcoding">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="QASL" label="QASL" />
+      <node id="Modelling of General Systems" label="Modelling of General Systems" />
+      <node id="ARITH-MATIC" label="ARITH-MATIC" />
+      <node id="NQC" label="NQC" />
+      <node id="ARM assembly language" label="ARM assembly language" />
+      <node id="ROOP programming language" label="ROOP programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="DIGITAL Command Language" label="DIGITAL Command Language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PC-LISP" label="PC-LISP" />
+      <node id="Visual Objects" label="Visual Objects" />
+      <node id="URBI" label="URBI" />
+      <node id="AMOS BASIC" label="AMOS BASIC">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Car" label="Car" />
+      <node id="WAML" label="WAML" />
+      <node id="Dependent ML" label="Dependent ML">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MetaCard" label="MetaCard" />
+      <node id="Cat" label="Cat">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="33" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="UCSD Pascal" label="UCSD Pascal" />
+      <node id="Argh!" label="Argh!">
+        <attvalues>
+          <attvalue for="35" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+          <attvalue for="36" value="paradigm" />
+          <attvalue for="37" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JAL" label="JAL" />
+      <node id="Felix programming language" label="Felix programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MLisp" label="MLisp" />
+      <node id="Micronetics Standard MUMPS" label="Micronetics Standard MUMPS" />
+      <node id="Arrow" label="Arrow" />
+      <node id="Advanced Continuous Simulation Language" label="Advanced Continuous Simulation Language" />
+      <node id="IronPython" label="IronPython" />
+      <node id="LPC" label="LPC">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Strongtalk" label="Strongtalk" />
+      <node id="Lynx programming language" label="Lynx programming language" />
+      <node id="Curl programming language" label="Curl programming language">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="38" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Tensilica Instruction Extension" label="Tensilica Instruction Extension" />
+      <node id="DASL Programming Language" label="DASL Programming Language" />
+      <node id="SAS language" label="SAS language" />
+      <node id="Glagol" label="Glagol" />
+      <node id="FastPak for Java" label="FastPak for Java" />
+      <node id="SenseTalk" label="SenseTalk" />
+      <node id="Dript" label="Dript" />
+      <node id="Kaleidoscope programming language" label="Kaleidoscope programming language" />
+      <node id="X86 assembly language" label="X86 assembly language" />
+      <node id="Bidule" label="Bidule" />
+      <node id="PLEXIL" label="PLEXIL">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Euclid programming language" label="Euclid programming language">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Focal" label="Focal" />
+      <node id="APL" label="APL">
+        <attvalues>
+          <attvalue for="39" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="25" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="32" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Moscow ML" label="Moscow ML" />
+      <node id="SAWZALL" label="SAWZALL" />
+      <node id="Mouse" label="Mouse" />
+      <node id="Timber" label="Timber" />
+      <node id="VistaSmalltalk" label="VistaSmalltalk">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="M" label="M" />
+      <node id="Model transformation" label="Model transformation" />
+      <node id="Information Processing Language" label="Information Processing Language" />
+      <node id="Enchilada" label="Enchilada">
+        <attvalues>
+          <attvalue for="33" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Enterprise Generation Language" label="Enterprise Generation Language" />
+      <node id="O:XML" label="O:XML" />
+      <node id="Fabrik" label="Fabrik" />
+      <node id="ABSET" label="ABSET" />
+      <node id="Perl" label="Perl">
+        <attvalues>
+          <attvalue for="18" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lua" label="Lua">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Dylan" label="Dylan">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="18" value="paradigm" />
+          <attvalue for="10" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="COBOL-68" label="COBOL-68" />
+      <node id="Smalltalk YX" label="Smalltalk YX">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Factor" label="Factor">
+        <attvalues>
+          <attvalue for="22" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="33" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="L Sharp" label="L Sharp" />
+      <node id=".QL" label=".QL">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="15" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Visual Basic .NET" label="Visual Basic .NET">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lilith programming language" label="Lilith programming language" />
+      <node id="Mortran" label="Mortran" />
+      <node id="BCPL" label="BCPL">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Bon programming language" label="Bon programming language" />
+      <node id="Joy" label="Joy">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="33" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ATOLL programming language" label="ATOLL programming language" />
+      <node id="SGML" label="SGML" />
+      <node id="Blue programming language" label="Blue programming language" />
+      <node id="FLACC" label="FLACC" />
+      <node id="DIBOL" label="DIBOL">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Beginners Programming Language" label="Beginners Programming Language" />
+      <node id="History of Inform releases" label="History of Inform releases" />
+      <node id="C preprocessor" label="C preprocessor" />
+      <node id="COBOL" label="COBOL">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Joule" label="Joule">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Alma-0" label="Alma-0">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XBase++" label="XBase++" />
+      <node id="Cool" label="Cool">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="BASICODE" label="BASICODE" />
+      <node id="Shorthand Language" label="Shorthand Language" />
+      <node id="A-0 programming language" label="A-0 programming language" />
+      <node id="Data Definition Language" label="Data Definition Language" />
+      <node id="Simgua" label="Simgua" />
+      <node id="VBScript" label="VBScript">
+        <attvalues>
+          <attvalue for="29" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Quantum programming" label="Quantum programming" />
+      <node id="PS-Algol" label="PS-Algol" />
+      <node id=".NET Framework" label=".NET Framework" />
+      <node id="FORTRAN III" label="FORTRAN III" />
+      <node id="Microassembler" label="Microassembler" />
+      <node id="MillScript" label="MillScript" />
+      <node id="Flow-based programming" label="Flow-based programming" />
+      <node id="JAWS Scripting Language" label="JAWS Scripting Language" />
+      <node id="Hope programming language" label="Hope programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="IMTEK Mathematica Supplement" label="IMTEK Mathematica Supplement" />
+      <node id="Clipper programming language" label="Clipper programming language" />
+      <node id="Charity programming language" label="Charity programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ColorForth" label="ColorForth">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="IronLisp" label="IronLisp" />
+      <node id="Turbo Pascal" label="Turbo Pascal">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ProSet" label="ProSet" />
+      <node id="SISAL" label="SISAL">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="40" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ASP.NET" label="ASP.NET" />
+      <node id="MetaL" label="MetaL">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Parsing" label="Parsing" />
+      <node id="FCode" label="FCode" />
+      <node id="ALGO" label="ALGO" />
+      <node id="Paris" label="Paris" />
+      <node id="ALGOL 58" label="ALGOL 58">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="LANSA" label="LANSA" />
+      <node id="SAM76" label="SAM76" />
+      <node id="NPL programming language" label="NPL programming language" />
+      <node id="Var'aq" label="Var'aq" />
+      <node id="Suneido programming language" label="Suneido programming language" />
+      <node id="Abstract-Type and Scheme-Definition Language" label="Abstract-Type and Scheme-Definition Language" />
+      <node id="GNU Pascal" label="GNU Pascal" />
+      <node id="Occam-π" label="Occam-π" />
+      <node id="Parakeet programming language" label="Parakeet programming language" />
+      <node id="CMS EXEC" label="CMS EXEC" />
+      <node id="Parlog" label="Parlog" />
+      <node id="MoonScript" label="MoonScript">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Turbo BASIC" label="Turbo BASIC" />
+      <node id="TADS" label="TADS">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="AgentSpeak" label="AgentSpeak" />
+      <node id="FISh programming language" label="FISh programming language" />
+      <node id="MUF" label="MUF">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ISO" label="ISO" />
+      <node id="ATS" label="ATS">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Pure" label="Pure">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Query by Example" label="Query by Example" />
+      <node id="ANSI C" label="ANSI C" />
+      <node id="Open programming language" label="Open programming language">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Yorick programming language" label="Yorick programming language" />
+      <node id="Assertion definition language" label="Assertion definition language" />
+      <node id="Action Code Script" label="Action Code Script" />
+      <node id="Dialog Manager programming language" label="Dialog Manager programming language" />
+      <node id="TI-BASIC" label="TI-BASIC" />
+      <node id="Join Java" label="Join Java">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Vala" label="Vala">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Cel" label="Cel">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SLIP programming language" label="SLIP programming language" />
+      <node id="Symbolic Sound Corporation" label="Symbolic Sound Corporation" />
+      <node id="FILECOMP" label="FILECOMP" />
+      <node id="tiscript" label="tiscript">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SMETANA" label="SMETANA" />
+      <node id="ISLISP" label="ISLISP" />
+      <node id="Perl 6" label="Perl 6">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PWB shell" label="PWB shell" />
+      <node id="STOIC" label="STOIC" />
+      <node id="Cayenne" label="Cayenne" />
+      <node id="F programming language" label="F programming language" />
+      <node id="Squeak" label="Squeak">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lingo programming language" label="Lingo programming language" />
+      <node id="Mesa" label="Mesa">
+        <attvalues>
+          <attvalue for="14" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Befunge93" label="Befunge93" />
+      <node id="Starlogo TNG" label="Starlogo TNG" />
+      <node id="Variable Data Intelligent Postscript Printware" label="Variable Data Intelligent Postscript Printware" />
+      <node id="Transact-SQL" label="Transact-SQL" />
+      <node id="Pike" label="Pike">
+        <attvalues>
+          <attvalue for="18" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="29" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CA-Telon" label="CA-Telon" />
+      <node id="Apple Media Tool" label="Apple Media Tool" />
+      <node id="Standard ML of New Jersey" label="Standard ML of New Jersey">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Incr Tcl" label="Incr Tcl" />
+      <node id="FORTRAN 66" label="FORTRAN 66" />
+      <node id="Interlisp" label="Interlisp" />
+      <node id="Hierarchical Music Specification Language" label="Hierarchical Music Specification Language" />
+      <node id="ThinBasic" label="ThinBasic" />
+      <node id="BETA" label="BETA">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="R" label="R">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Tiny programming language" label="Tiny programming language" />
+      <node id="ACC programming language" label="ACC programming language" />
+      <node id="ECL programming language" label="ECL programming language" />
+      <node id="Bigwig" label="Bigwig" />
+      <node id="CLU" label="CLU">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ISPF" label="ISPF" />
+      <node id="PL360" label="PL360" />
+      <node id="STRINGCOMP" label="STRINGCOMP" />
+      <node id="Slate programming language" label="Slate programming language">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Unified Parallel C" label="Unified Parallel C">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Educational programming language" label="Educational programming language" />
+      <node id="FALSE" label="FALSE" />
+      <node id="M4" label="M4" />
+      <node id="FFP programming language" label="FFP programming language" />
+      <node id="KM" label="KM">
+        <attvalues>
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Sed" label="Sed" />
+      <node id="UnrealScript" label="UnrealScript">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Bc programming language" label="Bc programming language" />
+      <node id="Paintfuck" label="Paintfuck" />
+      <node id="FoxPro 2" label="FoxPro 2" />
+      <node id="Unified Modeling Language" label="Unified Modeling Language" />
+      <node id="Zeno programming language" label="Zeno programming language" />
+      <node id="Shakespeare" label="Shakespeare" />
+      <node id="XMTC" label="XMTC" />
+      <node id="Maude system" label="Maude system" />
+      <node id="SyncCharts" label="SyncCharts" />
+      <node id="Unicon programming language" label="Unicon programming language">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Cilk" label="Cilk">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Fortress programming language" label="Fortress programming language">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Tiscript" label="Tiscript" />
+      <node id="Twelf" label="Twelf" />
+      <node id="BLISS" label="BLISS">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JavaFX Script" label="JavaFX Script">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="BASIC" label="BASIC">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lispkit Lisp" label="Lispkit Lisp" />
+      <node id="Y programming language" label="Y programming language" />
+      <node id="Linoleum programming language" label="Linoleum programming language">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="IDL programming language" label="IDL programming language">
+        <attvalues>
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="IITRAN" label="IITRAN" />
+      <node id="Blitz BASIC" label="Blitz BASIC">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CLP" label="CLP" />
+      <node id="NORD Programming Language" label="NORD Programming Language" />
+      <node id="Lucid" label="Lucid" />
+      <node id="Rlab" label="Rlab" />
+      <node id="Informix-4GL" label="Informix-4GL" />
+      <node id="Pantalk" label="Pantalk" />
+      <node id="Ferite" label="Ferite">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="EC" label="EC" />
+      <node id="DECLAN Pro" label="DECLAN Pro" />
+      <node id="Variable Assembly Language" label="Variable Assembly Language" />
+      <node id="Alpha" label="Alpha" />
+      <node id="Lazy ML" label="Lazy ML">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="30" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PROGOL" label="PROGOL" />
+      <node id="ColdC" label="ColdC">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Kid" label="Kid" />
+      <node id="Groovy" label="Groovy">
+        <attvalues>
+          <attvalue for="18" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="GOO" label="GOO">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MINC" label="MINC" />
+      <node id="Qu" label="Qu" />
+      <node id="ABC ALGOL" label="ABC ALGOL" />
+      <node id="Model-driven architecture" label="Model-driven architecture" />
+      <node id="StepTalk" label="StepTalk" />
+      <node id="SabreTalk" label="SabreTalk" />
+      <node id="C++" label="C++">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Escapade" label="Escapade" />
+      <node id="B programming language" label="B programming language" />
+      <node id="PL/Proxy" label="PL/Proxy" />
+      <node id="RPython" label="RPython" />
+      <node id="Qi" label="Qi">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Perl Data Language" label="Perl Data Language">
+        <attvalues>
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="LISP 2" label="LISP 2" />
+      <node id="Hardware description language" label="Hardware description language" />
+      <node id="Cobra" label="Cobra">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ATLAS Transformation Language" label="ATLAS Transformation Language" />
+      <node id="Forth-83" label="Forth-83" />
+      <node id="Pawn" label="Pawn" />
+      <node id="Operational Control Language" label="Operational Control Language" />
+      <node id="BasicX" label="BasicX" />
+      <node id="Scratch" label="Scratch">
+        <attvalues>
+          <attvalue for="19" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Modula" label="Modula">
+        <attvalues>
+          <attvalue for="14" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JFugue" label="JFugue" />
+      <node id="Loco" label="Loco" />
+      <node id="Pop" label="Pop" />
+      <node id="Id" label="Id" />
+      <node id="Chef" label="Chef" />
+      <node id="Snit" label="Snit" />
+      <node id="Limbo programming language" label="Limbo programming language">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Snostorm" label="Snostorm" />
+      <node id="A Sharp" label="A Sharp" />
+      <node id="Nice programming language" label="Nice programming language" />
+      <node id="20-GATE" label="20-GATE" />
+      <node id="LIS programming language" label="LIS programming language" />
+      <node id="Digital Standard MUMPS" label="Digital Standard MUMPS" />
+      <node id="eZ Template language" label="eZ Template language" />
+      <node id="TRAC programming language" label="TRAC programming language" />
+      <node id="Whitespace" label="Whitespace" />
+      <node id="MultiLisp" label="MultiLisp">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Visual Prolog" label="Visual Prolog">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Kyma" label="Kyma" />
+      <node id="Cola programming language" label="Cola programming language" />
+      <node id="SYMPL" label="SYMPL" />
+      <node id="Caml Light" label="Caml Light" />
+      <node id="ZetaLisp" label="ZetaLisp" />
+      <node id="Visual DataFlex" label="Visual DataFlex" />
+      <node id="Dworkin's Generic Driver" label="Dworkin's Generic Driver" />
+      <node id="Little Implementation Language" label="Little Implementation Language" />
+      <node id="PeRColate" label="PeRColate" />
+      <node id="Corba IDL" label="Corba IDL">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lagoona programming language" label="Lagoona programming language" />
+      <node id="Pike programming language" label="Pike programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="INTERCAL" label="INTERCAL" />
+      <node id="Extensible ML" label="Extensible ML">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="HAScript" label="HAScript" />
+      <node id="Object Constraint Language" label="Object Constraint Language" />
+      <node id="KRYPTON" label="KRYPTON">
+        <attvalues>
+          <attvalue for="41" value="paradigm" />
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Object Query Language" label="Object Query Language">
+        <attvalues>
+          <attvalue for="15" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MIIS Programming Language" label="MIIS Programming Language" />
+      <node id="PL/0" label="PL/0" />
+      <node id="DAML+OIL" label="DAML+OIL">
+        <attvalues>
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Generic Java programming language" label="Generic Java programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Eiffel" label="Eiffel">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="42" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PL/8" label="PL/8" />
+      <node id="Befunge" label="Befunge">
+        <attvalues>
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="KL-ONE" label="KL-ONE">
+        <attvalues>
+          <attvalue for="41" value="paradigm" />
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="AWL" label="AWL" />
+      <node id="AWK" label="AWK">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="QBasic" label="QBasic" />
+      <node id="MapBasic" label="MapBasic" />
+      <node id="COBOL-85" label="COBOL-85" />
+      <node id="Synthesis Toolkit" label="Synthesis Toolkit" />
+      <node id="JECL" label="JECL" />
+      <node id="Baby modula-3" label="Baby modula-3" />
+      <node id="Heron" label="Heron" />
+      <node id="NATURAL" label="NATURAL" />
+      <node id="PL/P" label="PL/P" />
+      <node id="PL/S" label="PL/S" />
+      <node id="PL/R" label="PL/R" />
+      <node id="Smith" label="Smith" />
+      <node id="OracleCard" label="OracleCard" />
+      <node id="Object REXX" label="Object REXX">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lego Logo" label="Lego Logo" />
+      <node id="Boomerang" label="Boomerang" />
+      <node id="Lustre programming language" label="Lustre programming language" />
+      <node id="Objective-C" label="Objective-C">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Split-C" label="Split-C">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Collaborative human interpreter" label="Collaborative human interpreter" />
+      <node id="PL/C" label="PL/C">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SIMSCRIPT" label="SIMSCRIPT" />
+      <node id="PL/M" label="PL/M" />
+      <node id="XHTML" label="XHTML" />
+      <node id="Objective-J" label="Objective-J">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PL/I" label="PL/I">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="FACT computer language" label="FACT computer language" />
+      <node id="Lambda calculus" label="Lambda calculus" />
+      <node id="B.A.L." label="B.A.L." />
+      <node id="NIL" label="NIL">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="en/fr" label="en/fr" />
+      <node id="Judoscript" label="Judoscript">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Game Oriented Assembly Lisp" label="Game Oriented Assembly Lisp">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Component Pascal" label="Component Pascal">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Pro-IV" label="Pro-IV" />
+      <node id="TACPOL programming language" label="TACPOL programming language" />
+      <node id="Smallfuck" label="Smallfuck" />
+      <node id="MDL programming language" label="MDL programming language" />
+      <node id="Visual Basic" label="Visual Basic">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PHP" label="PHP">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="29" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Draco" label="Draco">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Specification and Description Language" label="Specification and Description Language" />
+      <node id="VHSIC Hardware Description Language" label="VHSIC Hardware Description Language" />
+      <node id="J#" label="J#">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="3APL" label="3APL" />
+      <node id="Bsisith" label="Bsisith" />
+      <node id="CL" label="CL" />
+      <node id="GRASS programming language" label="GRASS programming language" />
+      <node id="Subtext" label="Subtext">
+        <attvalues>
+          <attvalue for="43" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Stackless Python" label="Stackless Python">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Python for S60" label="Python for S60">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Apache Rivet" label="Apache Rivet" />
+      <node id="O-Matrix" label="O-Matrix" />
+      <node id="LOLPython" label="LOLPython" />
+      <node id="Nial" label="Nial">
+        <attvalues>
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Turing programming language" label="Turing programming language">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ARexx" label="ARexx" />
+      <node id="Verilog" label="Verilog">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Curry programming language" label="Curry programming language">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XAML" label="XAML" />
+      <node id="AutoLISP" label="AutoLISP" />
+      <node id="Geometric Description Language" label="Geometric Description Language" />
+      <node id="Arbol" label="Arbol" />
+      <node id="*Lisp" label="*Lisp">
+        <attvalues>
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Indus programming language" label="Indus programming language" />
+      <node id="Dialect" label="Dialect">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="AmigaE" label="AmigaE" />
+      <node id="SimPy" label="SimPy" />
+      <node id="XProc" label="XProc" />
+      <node id="PL/V8" label="PL/V8" />
+      <node id="Numerical Python" label="Numerical Python" />
+      <node id="Adenine" label="Adenine" />
+      <node id="BitC" label="BitC">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="COMIT" label="COMIT" />
+      <node id="MiniD" label="MiniD">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="RDF Inference Language" label="RDF Inference Language" />
+      <node id="Java bytecode" label="Java bytecode">
+        <attvalues>
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CoffeeScript" label="CoffeeScript">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="WxBasic" label="WxBasic" />
+      <node id="JavaScript syntax" label="JavaScript syntax" />
+      <node id="Hartmann pipeline" label="Hartmann pipeline" />
+      <node id="Aura" label="Aura">
+        <attvalues>
+          <attvalue for="35" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Edinburgh IMP" label="Edinburgh IMP" />
+      <node id="Microsoft Intermediate Language" label="Microsoft Intermediate Language">
+        <attvalues>
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="HTML 5" label="HTML 5" />
+      <node id="FORMAC programming language" label="FORMAC programming language" />
+      <node id="XL Programming Language" label="XL Programming Language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="C" label="C">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Aikido Programming Language" label="Aikido Programming Language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Magik programming language" label="Magik programming language" />
+      <node id="Agora programming language" label="Agora programming language" />
+      <node id="TELCOMP" label="TELCOMP" />
+      <node id="Karel programming language" label="Karel programming language">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Einstein" label="Einstein" />
+      <node id="Argus" label="Argus" />
+      <node id="Janus" label="Janus" />
+      <node id="REBOL" label="REBOL">
+        <attvalues>
+          <attvalue for="18" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lava programming language" label="Lava programming language" />
+      <node id="Chomski" label="Chomski" />
+      <node id="Lazarus" label="Lazarus" />
+      <node id="COBOL-74" label="COBOL-74" />
+      <node id="ToonTalk computer programming language" label="ToonTalk computer programming language" />
+      <node id="Powerhouse programming language" label="Powerhouse programming language" />
+      <node id="PL/pgSQL" label="PL/pgSQL">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Cadence SKILL" label="Cadence SKILL">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Stagecast Creator" label="Stagecast Creator" />
+      <node id="Visual Assembler" label="Visual Assembler" />
+      <node id="Z programming language" label="Z programming language">
+        <attvalues>
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="51-FORTH" label="51-FORTH" />
+      <node id="MacroML" label="MacroML" />
+      <node id="Tcl" label="Tcl">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Miller Puckette" label="Miller Puckette" />
+      <node id="SketchUp Ruby" label="SketchUp Ruby" />
+      <node id="GOAL Agent Programming Language" label="GOAL Agent Programming Language" />
+      <node id="Logo" label="Logo">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="19" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MultiPlan" label="MultiPlan" />
+      <node id="FOURGEN" label="FOURGEN" />
+      <node id="Z++" label="Z++">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="FOIL programming language" label="FOIL programming language" />
+      <node id="Dao Language" label="Dao Language">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="REALbasic" label="REALbasic">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Kaya" label="Kaya" />
+      <node id="Visual J++" label="Visual J++" />
+      <node id="Spec sharp" label="Spec sharp">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="42" value="paradigm" />
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Oberon-2" label="Oberon-2">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Squirrel programming language" label="Squirrel programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Cecil programming language" label="Cecil programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lily" label="Lily" />
+      <node id="CICS" label="CICS" />
+      <node id="REXX" label="REXX">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="C*" label="C*">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Mocklisp" label="Mocklisp" />
+      <node id="PBASIC" label="PBASIC" />
+      <node id="Kent Recursive Calculator" label="Kent Recursive Calculator">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="C#" label="C#">
+        <attvalues>
+          <attvalue for="44" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Object Pascal" label="Object Pascal">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Processing" label="Processing">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Mozart Programming System" label="Mozart Programming System" />
+      <node id="IMP programming language" label="IMP programming language" />
+      <node id="OTcl" label="OTcl">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JSON" label="JSON" />
+      <node id="Fril" label="Fril">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Cedar" label="Cedar" />
+      <node id="MATLAB" label="MATLAB">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="DAML" label="DAML">
+        <attvalues>
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="COWSEL" label="COWSEL" />
+      <node id="PL/Scheme" label="PL/Scheme" />
+      <node id="Prograph" label="Prograph">
+        <attvalues>
+          <attvalue for="45" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="40" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="DG scripts" label="DG scripts" />
+      <node id="GScript" label="GScript" />
+      <node id="XML" label="XML" />
+      <node id="Abel programming language" label="Abel programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Moto programming language" label="Moto programming language" />
+      <node id="OBJ" label="OBJ" />
+      <node id="SA-C programming language" label="SA-C programming language" />
+      <node id="Kernel" label="Kernel" />
+      <node id="L programming language" label="L programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SQL-92" label="SQL-92" />
+      <node id="Babbage" label="Babbage">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ARS++" label="ARS++" />
+      <node id="S programming language" label="S programming language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="LabVIEW" label="LabVIEW" />
+      <node id="Q programming language" label="Q programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Nemerle" label="Nemerle">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Le Lisp" label="Le Lisp" />
+      <node id="MUMPS" label="MUMPS">
+        <attvalues>
+          <attvalue for="15" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+          <attvalue for="10" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="KRL" label="KRL">
+        <attvalues>
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="FOCAL-69" label="FOCAL-69" />
+      <node id="Microsoft BASIC" label="Microsoft BASIC" />
+      <node id="Scilab" label="Scilab" />
+      <node id="SQL:2003" label="SQL:2003" />
+      <node id="ARLOGO" label="ARLOGO" />
+      <node id="Cg programming language" label="Cg programming language" />
+      <node id="Euphoria programming language" label="Euphoria programming language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Clascal" label="Clascal">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="FORTRAN 95" label="FORTRAN 95" />
+      <node id="Office Open XML" label="Office Open XML" />
+      <node id="Ana" label="Ana" />
+      <node id="ALGOL W" label="ALGOL W">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ALGOL X" label="ALGOL X" />
+      <node id="ALGOL Y" label="ALGOL Y" />
+      <node id="MIRC script" label="MIRC script">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Agilent VEE" label="Agilent VEE" />
+      <node id="ICON" label="ICON" />
+      <node id="Converge" label="Converge" />
+      <node id="Ease programming language" label="Ease programming language">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Alex Rakov" label="Alex Rakov" />
+      <node id="Micro-Planner" label="Micro-Planner" />
+      <node id="CobolScript" label="CobolScript" />
+      <node id="Nickle programming language" label="Nickle programming language">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Staapl" label="Staapl">
+        <attvalues>
+          <attvalue for="33" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="TI BASIC" label="TI BASIC" />
+      <node id="ALGOL N" label="ALGOL N" />
+      <node id="S2 programming language" label="S2 programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="DarkBASIC" label="DarkBASIC" />
+      <node id="Sing sharp" label="Sing sharp">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="42" value="paradigm" />
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Tersus" label="Tersus" />
+      <node id="FORTRAN 77" label="FORTRAN 77" />
+      <node id="CLforJava" label="CLforJava" />
+      <node id="SQL/PSM" label="SQL/PSM" />
+      <node id="SP/k" label="SP/k">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ALCOR" label="ALCOR" />
+      <node id="Scriptol" label="Scriptol">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SCAR" label="SCAR" />
+      <node id="Autocoder" label="Autocoder" />
+      <node id="PL/sh" label="PL/sh" />
+      <node id="SASL programming language" label="SASL programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Jython" label="Jython" />
+      <node id="M2001" label="M2001" />
+      <node id="Pict programming language" label="Pict programming language" />
+      <node id="Oblog" label="Oblog" />
+      <node id="Python" label="Python">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="29" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Camlp4" label="Camlp4" />
+      <node id="Polyphonic C sharp" label="Polyphonic C sharp">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="HAL/S" label="HAL/S" />
+      <node id="Eager Haskell" label="Eager Haskell" />
+      <node id="GW-BASIC" label="GW-BASIC" />
+      <node id="Unlambda" label="Unlambda">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SALSA programming language" label="SALSA programming language">
+        <attvalues>
+          <attvalue for="28" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Identity transform" label="Identity transform" />
+      <node id="Leda programming language" label="Leda programming language" />
+      <node id="Coq" label="Coq">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="APL2" label="APL2" />
+      <node id="Action programming language" label="Action programming language" />
+      <node id="V8" label="V8" />
+      <node id="BBN LISP" label="BBN LISP" />
+      <node id="Lisaac" label="Lisaac">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Larch family" label="Larch family" />
+      <node id="MVEL" label="MVEL" />
+      <node id="Lithe programming language" label="Lithe programming language" />
+      <node id="Cesil" label="Cesil" />
+      <node id="PerlScript" label="PerlScript" />
+      <node id="COBOL 2002" label="COBOL 2002" />
+      <node id="PointDragon" label="PointDragon" />
+      <node id="OBJ2" label="OBJ2" />
+      <node id="Formula language" label="Formula language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Microsoft Visual C Sharp" label="Microsoft Visual C Sharp" />
+      <node id="PL/Lua" label="PL/Lua" />
+      <node id="Befunge97" label="Befunge97" />
+      <node id="Mobile development" label="Mobile development" />
+      <node id="Object Lisp" label="Object Lisp">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Microsoft Pascal" label="Microsoft Pascal" />
+      <node id="ApeScript" label="ApeScript" />
+      <node id="FOCUS" label="FOCUS" />
+      <node id="Lite-C" label="Lite-C" />
+      <node id="Opal programming language" label="Opal programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="UNICON" label="UNICON">
+        <attvalues>
+          <attvalue for="46" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Applesoft BASIC" label="Applesoft BASIC" />
+      <node id="Io" label="Io">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Abstract State Machine Language" label="Abstract State Machine Language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="BANCStar programming language" label="BANCStar programming language" />
+      <node id="Visual FoxPro" label="Visual FoxPro">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Afnix programming language" label="Afnix programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CLIPS programming language" label="CLIPS programming language" />
+      <node id="QUILL" label="QUILL">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Oz" label="Oz">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Maya Embedded Language" label="Maya Embedded Language" />
+      <node id="Prova" label="Prova" />
+      <node id="Text Processing Utility" label="Text Processing Utility" />
+      <node id="Rapira" label="Rapira" />
+      <node id="WebQL" label="WebQL" />
+      <node id="Lapis language" label="Lapis language" />
+      <node id="XSL Transformations" label="XSL Transformations">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SCOOP" label="SCOOP" />
+      <node id="EPL" label="EPL" />
+      <node id="MUSIC-N" label="MUSIC-N" />
+      <node id="PL/TCL" label="PL/TCL" />
+      <node id="Flapjax" label="Flapjax" />
+      <node id="XHarbour" label="XHarbour" />
+      <node id="Prospero Pascal" label="Prospero Pascal" />
+      <node id="AspectJ" label="AspectJ" />
+      <node id="Raven" label="Raven">
+        <attvalues>
+          <attvalue for="33" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Bistro" label="Bistro">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Portable Standard Lisp" label="Portable Standard Lisp" />
+      <node id="Scsh" label="Scsh" />
+      <node id="Plankalkül" label="Plankalkül">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MicroScript programming language" label="MicroScript programming language" />
+      <node id="AppleScript" label="AppleScript" />
+      <node id="S3" label="S3">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="TextUML-Syntax" label="TextUML-Syntax" />
+      <node id="Yoix" label="Yoix">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Fan" label="Fan">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MIDletPascal" label="MIDletPascal" />
+      <node id="Quartz Composer" label="Quartz Composer" />
+      <node id="DMDScript" label="DMDScript" />
+      <node id="OpenT" label="OpenT" />
+      <node id="FOCAL programming language" label="FOCAL programming language" />
+      <node id="MLton" label="MLton" />
+      <node id="Claire programming language" label="Claire programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Icon" label="Icon">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="BEFLIX" label="BEFLIX" />
+      <node id="D" label="D">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Winbatch" label="Winbatch" />
+      <node id="WATFIV programming language" label="WATFIV programming language" />
+      <node id="Extensible Stylesheet Language" label="Extensible Stylesheet Language" />
+      <node id="SIMCOS" label="SIMCOS" />
+      <node id="Subset-equational language" label="Subset-equational language" />
+      <node id="Standard ML" label="Standard ML">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Page description language" label="Page description language" />
+      <node id="T" label="T">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="KISS" label="KISS" />
+      <node id="Caml" label="Caml">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Significantly Prettier and Easier C++ Syntax" label="Significantly Prettier and Easier C++ Syntax" />
+      <node id="Kids Programming Language" label="Kids Programming Language" />
+      <node id="Smalltalk-80" label="Smalltalk-80" />
+      <node id="Baltie" label="Baltie" />
+      <node id="Fuzzy Control Language" label="Fuzzy Control Language" />
+      <node id="Kite" label="Kite">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Alpoca" label="Alpoca">
+        <attvalues>
+          <attvalue for="47" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Pnuts" label="Pnuts">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Omega" label="Omega" />
+      <node id="Planner programming language" label="Planner programming language" />
+      <node id="NewtonScript" label="NewtonScript">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Pure Data" label="Pure Data">
+        <attvalues>
+          <attvalue for="45" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="LYaPAS" label="LYaPAS" />
+      <node id="Arc" label="Arc">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Brainfuck" label="Brainfuck">
+        <attvalues>
+          <attvalue for="37" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Genshi" label="Genshi" />
+      <node id="SQL" label="SQL">
+        <attvalues>
+          <attvalue for="15" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ThingLab" label="ThingLab" />
+      <node id="CMS-2 programming language" label="CMS-2 programming language" />
+      <node id="PL/Python" label="PL/Python" />
+      <node id="Net.Data" label="Net.Data" />
+      <node id="XLISP" label="XLISP">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Texvc" label="Texvc" />
+      <node id="Java" label="Java">
+        <attvalues>
+          <attvalue for="48" value="paradigm" />
+          <attvalue for="26" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="49" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Cascading Style Sheets" label="Cascading Style Sheets" />
+      <node id="Scala" label="Scala">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="RPG programming language" label="RPG programming language">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="IBM 1620" label="IBM 1620" />
+      <node id="Tefkat" label="Tefkat" />
+      <node id="XSB" label="XSB" />
+      <node id="PostScript" label="PostScript">
+        <attvalues>
+          <attvalue for="33" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Turing Plus" label="Turing Plus">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Business Process Execution Language" label="Business Process Execution Language" />
+      <node id="S-algol" label="S-algol" />
+      <node id="MXML" label="MXML" />
+      <node id="E" label="E">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SuperCollider programming language" label="SuperCollider programming language">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Whizbase" label="Whizbase" />
+      <node id="Forth" label="Forth">
+        <attvalues>
+          <attvalue for="33" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="AlphaBasic" label="AlphaBasic" />
+      <node id="Microsoft Small Basic" label="Microsoft Small Basic">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Asymptote" label="Asymptote">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Elan programming language" label="Elan programming language" />
+      <node id="NetRexx" label="NetRexx">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CyberQuery" label="CyberQuery" />
+      <node id="NewLISP" label="NewLISP" />
+      <node id="GameMonkey Script" label="GameMonkey Script" />
+      <node id="JSyn" label="JSyn" />
+      <node id="Frink" label="Frink">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="PGF/TikZ" label="PGF/TikZ" />
+      <node id="SETL2" label="SETL2" />
+      <node id="BuildProfessional" label="BuildProfessional" />
+      <node id="ABCL/R" label="ABCL/R" />
+      <node id="QVT" label="QVT" />
+      <node id="Modula-2+" label="Modula-2+">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="APL\360" label="APL\360" />
+      <node id="Ruby" label="Ruby">
+        <attvalues>
+          <attvalue for="18" value="paradigm" />
+          <attvalue for="29" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="10" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="SPITBOL compiler" label="SPITBOL compiler" />
+      <node id="Strand" label="Strand" />
+      <node id="2.PAK" label="2.PAK" />
+      <node id="Snowball programming language" label="Snowball programming language" />
+      <node id="Cω" label="Cω">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="APLX" label="APLX" />
+      <node id="Abstract Machine Notation" label="Abstract Machine Notation" />
+      <node id="QtScript" label="QtScript" />
+      <node id="CMusic" label="CMusic" />
+      <node id="COMTRAN" label="COMTRAN" />
+      <node id="MARK-IV" label="MARK-IV" />
+      <node id="AIMMS" label="AIMMS" />
+      <node id="Bigloo" label="Bigloo">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Z notation" label="Z notation" />
+      <node id="SAS System" label="SAS System" />
+      <node id="Logtalk" label="Logtalk">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ABCL/1" label="ABCL/1" />
+      <node id="Boo" label="Boo" />
+      <node id="PL/Parrot" label="PL/Parrot" />
+      <node id="DAML-S" label="DAML-S">
+        <attvalues>
+          <attvalue for="9" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Maclisp" label="Maclisp" />
+      <node id="Clojure" label="Clojure">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Prolog" label="Prolog">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="21" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Malbolge" label="Malbolge" />
+      <node id="C/AL" label="C/AL" />
+      <node id="Revolution" label="Revolution" />
+      <node id="AMPL" label="AMPL">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Concurrent Pascal" label="Concurrent Pascal" />
+      <node id="JOSS" label="JOSS" />
+      <node id="Parser" label="Parser" />
+      <node id="ABCL/R2" label="ABCL/R2" />
+      <node id="S/SL programming language" label="S/SL programming language" />
+      <node id="Cocoa" label="Cocoa" />
+      <node id="SETL" label="SETL">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Hugo programming language" label="Hugo programming language">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XTalk" label="XTalk" />
+      <node id="CAL programming language" label="CAL programming language" />
+      <node id="BPEL" label="BPEL" />
+      <node id="Obol" label="Obol" />
+      <node id="Hot Soup Processor" label="Hot Soup Processor" />
+      <node id="Haskore" label="Haskore" />
+      <node id="Paradiseo" label="Paradiseo" />
+      <node id="Csound" label="Csound" />
+      <node id="Lasso programming language" label="Lasso programming language">
+        <attvalues>
+          <attvalue for="15" value="paradigm" />
+          <attvalue for="38" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="METAFONT" label="METAFONT" />
+      <node id="ObjectPAL" label="ObjectPAL" />
+      <node id="Kiev programming language" label="Kiev programming language" />
+      <node id="EXEC 2" label="EXEC 2" />
+      <node id="Harbour compiler" label="Harbour compiler">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CycL" label="CycL">
+        <attvalues>
+          <attvalue for="50" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CLIST" label="CLIST" />
+      <node id="Linden Scripting Language" label="Linden Scripting Language" />
+      <node id="Ambi" label="Ambi">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Ada" label="Ada">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="BlooP and FlooP programming languages" label="BlooP and FlooP programming languages" />
+      <node id="Nu" label="Nu">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="473L Query" label="473L Query" />
+      <node id="RPL programming language" label="RPL programming language">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="DASL programming language" label="DASL programming language" />
+      <node id="Axum" label="Axum">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Flow Java" label="Flow Java" />
+      <node id="PL/PHP" label="PL/PHP" />
+      <node id="Roadsend PHP" label="Roadsend PHP" />
+      <node id="Moby programming language" label="Moby programming language" />
+      <node id="Fjölnir programming language" label="Fjölnir programming language" />
+      <node id="Ajax" label="Ajax" />
+      <node id="Web Service Definition Language" label="Web Service Definition Language" />
+      <node id="Bertrand" label="Bertrand" />
+      <node id="NetLogo" label="NetLogo">
+        <attvalues>
+          <attvalue for="19" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XSL Formatting Objects" label="XSL Formatting Objects" />
+      <node id="Tea programming language" label="Tea programming language">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="EASY" label="EASY" />
+      <node id="HaXe" label="HaXe">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Web Services Description Language" label="Web Services Description Language" />
+      <node id="FP84" label="FP84" />
+      <node id="Chinese BASIC" label="Chinese BASIC" />
+      <node id="PL/Perl" label="PL/Perl" />
+      <node id="Short Code" label="Short Code" />
+      <node id="XACML" label="XACML" />
+      <node id="CORC" label="CORC" />
+      <node id="Datalog" label="Datalog">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="J" label="J">
+        <attvalues>
+          <attvalue for="20" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="16" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Message Parsing Interpreter" label="Message Parsing Interpreter" />
+      <node id="Extended ML" label="Extended ML" />
+      <node id="Ratfiv" label="Ratfiv" />
+      <node id="PL/SQL" label="PL/SQL">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="TeX" label="TeX" />
+      <node id="Napier88" label="Napier88" />
+      <node id="SISC" label="SISC" />
+      <node id="JScript .NET" label="JScript .NET">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Algae programming language" label="Algae programming language" />
+      <node id="ALGOL" label="ALGOL">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="COMAL" label="COMAL">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="QuickBASIC" label="QuickBASIC" />
+      <node id="ObjectLOGO" label="ObjectLOGO">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Assembly language" label="Assembly language" />
+      <node id="Clarion programming language" label="Clarion programming language" />
+      <node id="PL/Ruby" label="PL/Ruby" />
+      <node id="AS/400 Control Language" label="AS/400 Control Language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ABLE" label="ABLE" />
+      <node id="Armed Bear Common Lisp" label="Armed Bear Common Lisp" />
+      <node id="MAPPER" label="MAPPER" />
+      <node id="Objective Modula-2" label="Objective Modula-2" />
+      <node id="High Performance Fortran" label="High Performance Fortran" />
+      <node id="Pascal" label="Pascal">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JRT" label="JRT" />
+      <node id="Pliant" label="Pliant" />
+      <node id="ActionScript" label="ActionScript">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="MATH-MATIC" label="MATH-MATIC" />
+      <node id="Nosica" label="Nosica" />
+      <node id="CORAL66 programming language" label="CORAL66 programming language">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Model 204" label="Model 204" />
+      <node id="COFFEE" label="COFFEE" />
+      <node id="Ioke" label="Ioke">
+        <attvalues>
+          <attvalue for="7" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Hoc" label="Hoc" />
+      <node id="Iota and Jot" label="Iota and Jot" />
+      <node id="POP-2" label="POP-2" />
+      <node id="Lush programming language" label="Lush programming language" />
+      <node id="Autocode" label="Autocode" />
+      <node id="Qt Script for Applications" label="Qt Script for Applications" />
+      <node id="Pascal/mt" label="Pascal/mt" />
+      <node id="Active Oberon" label="Active Oberon" />
+      <node id="True BASIC" label="True BASIC" />
+      <node id="MIMIC" label="MIMIC" />
+      <node id="Common Language Infrastructure" label="Common Language Infrastructure" />
+      <node id="VisSim" label="VisSim">
+        <attvalues>
+          <attvalue for="45" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="NEWP" label="NEWP" />
+      <node id="Object-Oriented Turing" label="Object-Oriented Turing">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Tcl/Java" label="Tcl/Java" />
+      <node id="OPS5" label="OPS5" />
+      <node id="OBJ3" label="OBJ3" />
+      <node id="TXL" label="TXL">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Lexico" label="Lexico">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Jako" label="Jako" />
+      <node id="A+" label="A+">
+        <attvalues>
+          <attvalue for="16" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Poplog" label="Poplog">
+        <attvalues>
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="22" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Promela" label="Promela" />
+      <node id="Common Lisp" label="Common Lisp">
+        <attvalues>
+          <attvalue for="1" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+          <attvalue for="6" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+          <attvalue for="8" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Karel++" label="Karel++">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XQuery" label="XQuery">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XyMTeX" label="XyMTeX" />
+      <node id="Gödel programming language" label="Gödel programming language">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="21" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Simula" label="Simula">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JEAN" label="JEAN" />
+      <node id="PEARL programming language" label="PEARL programming language" />
+      <node id="Language Integrated Query" label="Language Integrated Query" />
+      <node id="Croma" label="Croma" />
+      <node id="PIM4" label="PIM4" />
+      <node id="PIM2" label="PIM2" />
+      <node id="PIM3" label="PIM3" />
+      <node id="XOTcl" label="XOTcl" />
+      <node id="Chapel programming language" label="Chapel programming language">
+        <attvalues>
+          <attvalue for="11" value="paradigm" />
+          <attvalue for="13" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="ICI programming language" label="ICI programming language" />
+      <node id="APT programming language" label="APT programming language" />
+      <node id="Escher" label="Escher">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="1" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="NS Basic" label="NS Basic" />
+      <node id="BeanShell" label="BeanShell">
+        <attvalues>
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Generalized Automation Language" label="Generalized Automation Language" />
+      <node id="Alef" label="Alef" />
+      <node id="Macaulay2" label="Macaulay2" />
+      <node id="QuakeC" label="QuakeC">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="XML schema" label="XML schema" />
+      <node id="Common Intermediate Language" label="Common Intermediate Language" />
+      <node id="A Graphics Language" label="A Graphics Language" />
+      <node id="PROC procedure language" label="PROC procedure language" />
+      <node id="CHAIN" label="CHAIN" />
+      <node id="PL/LOLCODE" label="PL/LOLCODE" />
+      <node id="Parrot assembly language" label="Parrot assembly language" />
+      <node id="ABSYS" label="ABSYS" />
+      <node id="Fuxi Programming Language" label="Fuxi Programming Language">
+        <attvalues>
+          <attvalue for="21" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="CLACL" label="CLACL">
+        <attvalues>
+          <attvalue for="0" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="JOVIAL" label="JOVIAL">
+        <attvalues>
+          <attvalue for="3" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Cryptol" label="Cryptol" />
+      <node id="Game Maker Language" label="Game Maker Language">
+        <attvalues>
+          <attvalue for="31" value="paradigm" />
+          <attvalue for="4" value="paradigm" />
+          <attvalue for="2" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="REFAL programming language" label="REFAL programming language" />
+      <node id="Thue" label="Thue" />
+      <node id="CHILL" label="CHILL">
+        <attvalues>
+          <attvalue for="5" value="paradigm" />
+        </attvalues>
+      </node>
+      <node id="Mary programming language" label="Mary programming language">
+        <attvalues>
+          <attvalue for="4" value="paradigm" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="Combined Programming Language" target="POP-2" />
+      <edge id="1" source="Combined Programming Language" target="C" />
+      <edge id="2" source="Combined Programming Language" target="BCPL" />
+      <edge id="3" source="Self" target="Obliq programming language" />
+      <edge id="4" source="Self" target="Cel" />
+      <edge id="5" source="Self" target="Agora programming language" />
+      <edge id="6" source="Self" target="Lisaac" />
+      <edge id="7" source="Self" target="AmbientTalk" />
+      <edge id="8" source="Self" target="MOO programming language" />
+      <edge id="9" source="Self" target="JavaScript" />
+      <edge id="10" source="Self" target="NewtonScript" />
+      <edge id="11" source="Self" target="Slate programming language" />
+      <edge id="12" source="Self" target="Lua" />
+      <edge id="13" source="Self" target="REBOL" />
+      <edge id="14" source="Self" target="ECMAScript" />
+      <edge id="15" source="Self" target="Io" />
+      <edge id="16" source="Self" target="Factor" />
+      <edge id="17" source="Self" target="Squeak" />
+      <edge id="18" source="Fortran" target="C" />
+      <edge id="19" source="Fortran" target="Ratfor" />
+      <edge id="20" source="Fortran" target="SISAL" />
+      <edge id="21" source="Fortran" target="CGOL" />
+      <edge id="22" source="Fortran" target="Fortress programming language" />
+      <edge id="23" source="Fortran" target="Dartmouth BASIC" />
+      <edge id="24" source="Fortran" target="DIBOL" />
+      <edge id="25" source="Fortran" target="MUMPS" />
+      <edge id="26" source="Fortran" target="ALGOL 58" />
+      <edge id="27" source="Fortran" target="BASIC" />
+      <edge id="28" source="Fortran" target="PL/I" />
+      <edge id="29" source="ObjVlisp" target="EuLisp" />
+      <edge id="30" source="Lisp Machine Lisp" target="Common Lisp" />
+      <edge id="31" source="JScript" target="JScript .NET" />
+      <edge id="32" source="HyperTalk" target="SuperTalk" />
+      <edge id="33" source="HyperTalk" target="Revolution programming language" />
+      <edge id="34" source="HyperTalk" target="ECMAScript" />
+      <edge id="35" source="Oberon" target="Modula-3" />
+      <edge id="36" source="Oberon" target="Java" />
+      <edge id="37" source="Oberon" target="Obliq programming language" />
+      <edge id="38" source="Oberon" target="Zonnon" />
+      <edge id="39" source="Oberon" target="Go" />
+      <edge id="40" source="Oberon" target="Oberon-2" />
+      <edge id="41" source="XPL" target="PL/M" />
+      <edge id="42" source="MOO programming language" target="ColdC" />
+      <edge id="43" source="PowerBASIC" target="ThinBasic" />
+      <edge id="44" source="Clean programming language" target="Quark Framework" />
+      <edge id="45" source="ALGOL 68" target="C" />
+      <edge id="46" source="ALGOL 68" target="ABC" />
+      <edge id="47" source="ALGOL 68" target="Python" />
+      <edge id="48" source="ALGOL 68" target="Elan programming language" />
+      <edge id="49" source="ALGOL 68" target="C++" />
+      <edge id="50" source="ALGOL 68" target="S3" />
+      <edge id="51" source="ALGOL 68" target="Mary programming language" />
+      <edge id="52" source="ALGOL 68" target="Ada" />
+      <edge id="53" source="ALGOL 68" target="Draco" />
+      <edge id="54" source="Job Control Language" target="AS/400 Control Language" />
+      <edge id="55" source="PLT Scheme" target="Scheme" />
+      <edge id="56" source="Oaklisp" target="EuLisp" />
+      <edge id="57" source="Oaklisp" target="Dylan" />
+      <edge id="58" source="Oaklisp" target="Java" />
+      <edge id="59" source="ECMAScript" target="MiniD" />
+      <edge id="60" source="ECMAScript" target="JScript .NET" />
+      <edge id="61" source="Communicating sequential processes" target="Ease programming language" />
+      <edge id="62" source="Communicating sequential processes" target="Concurrent Euclid" />
+      <edge id="63" source="Communicating sequential processes" target="Limbo programming language" />
+      <edge id="64" source="Communicating sequential processes" target="Occam" />
+      <edge id="65" source="ISWIM" target="SASL programming language" />
+      <edge id="66" source="ISWIM" target="ML" />
+      <edge id="67" source="ISWIM" target="Lucid" />
+      <edge id="68" source="ISWIM" target="Haskell" />
+      <edge id="69" source="ISWIM" target="Miranda" />
+      <edge id="70" source="ISWIM" target="Clean programming language" />
+      <edge id="71" source="HTML" target="Curl programming language" />
+      <edge id="72" source="SNOBOL" target="Lua" />
+      <edge id="73" source="SNOBOL" target="AWK" />
+      <edge id="74" source="SNOBOL" target="Icon" />
+      <edge id="75" source="Modula-3" target="Java" />
+      <edge id="76" source="Modula-3" target="Python" />
+      <edge id="77" source="Modula-3" target="Obliq programming language" />
+      <edge id="78" source="Modula-3" target="C#" />
+      <edge id="79" source="Modula-3" target="Nickle programming language" />
+      <edge id="80" source="Modula-3" target="Caml" />
+      <edge id="81" source="Modula-2" target="Modula-3" />
+      <edge id="82" source="Modula-2" target="Lua" />
+      <edge id="83" source="Modula-2" target="Objective Modula-2" />
+      <edge id="84" source="Modula-2" target="Fortran" />
+      <edge id="85" source="Modula-2" target="Zonnon" />
+      <edge id="86" source="Modula-2" target="Ada" />
+      <edge id="87" source="Modula-2" target="Modula-2+" />
+      <edge id="88" source="Modula-2" target="Oberon" />
+      <edge id="89" source="K" target="Q" />
+      <edge id="90" source="Epigram programming language" target="Agda theorem prover" />
+      <edge id="91" source="AutoIt" target="Beginners Programming Language" />
+      <edge id="92" source="AmbientTalk" target="ECMAScript" />
+      <edge id="93" source="ML" target="Coq" />
+      <edge id="94" source="ML" target="Erlang" />
+      <edge id="95" source="ML" target="Alice ML" />
+      <edge id="96" source="ML" target="Miranda" />
+      <edge id="97" source="ML" target="Cyclone programming language" />
+      <edge id="98" source="ML" target="Standard ML of New Jersey" />
+      <edge id="99" source="ML" target="Nemerle" />
+      <edge id="100" source="ML" target="F#" />
+      <edge id="101" source="ML" target="BitC" />
+      <edge id="102" source="ML" target="C++" />
+      <edge id="103" source="ML" target="Standard ML" />
+      <edge id="104" source="ML" target="Felix programming language" />
+      <edge id="105" source="ML" target="Haskell" />
+      <edge id="106" source="ML" target="Nickle programming language" />
+      <edge id="107" source="ML" target="ATS" />
+      <edge id="108" source="ML" target="Caml" />
+      <edge id="109" source="ML" target="Clojure" />
+      <edge id="110" source="ML" target="Claire programming language" />
+      <edge id="111" source="ML" target="Orc" />
+      <edge id="112" source="ML" target="Cool" />
+      <edge id="113" source="Concurrent Euclid" target="Turing Plus" />
+      <edge id="114" source="Design By Numbers" target="Processing" />
+      <edge id="115" source="EToys" target="Scratch" />
+      <edge id="116" source="FP" target="J" />
+      <edge id="117" source="FP" target="FL" />
+      <edge id="118" source="FP" target="Haskell" />
+      <edge id="119" source="HyperCard" target="Scratch" />
+      <edge id="120" source="HyperCard" target="AppleScript" />
+      <edge id="121" source="HyperCard" target="EToys" />
+      <edge id="122" source="ZPL programming language" target="Chapel programming language" />
+      <edge id="123" source="Scheme48" target="Scsh" />
+      <edge id="124" source="FL" target="J" />
+      <edge id="125" source="DBASE" target="Harbour compiler" />
+      <edge id="126" source="DBASE" target="Visual FoxPro" />
+      <edge id="127" source="DBASE" target="FoxPro 2" />
+      <edge id="128" source="DBASE" target="Clipper programming language" />
+      <edge id="129" source="JavaScript" target="Curl programming language" />
+      <edge id="130" source="JavaScript" target="Aikido Programming Language" />
+      <edge id="131" source="JavaScript" target="Script.NET" />
+      <edge id="132" source="JavaScript" target="JScript .NET" />
+      <edge id="133" source="JavaScript" target="JScript" />
+      <edge id="134" source="JavaScript" target="mjt" />
+      <edge id="135" source="JavaScript" target="CoffeeScript" />
+      <edge id="136" source="JavaScript" target="Perl 6" />
+      <edge id="137" source="JavaScript" target="Squirrel programming language" />
+      <edge id="138" source="JavaScript" target="DECLAN Pro" />
+      <edge id="139" source="JavaScript" target="ActionScript" />
+      <edge id="140" source="JavaScript" target="Objective-J" />
+      <edge id="141" source="LOLCODE" target="LOLPython" />
+      <edge id="142" source="Occam" target="Ease programming language" />
+      <edge id="143" source="AgentSheets" target="Scratch" />
+      <edge id="144" source="AgentSheets" target="EToys" />
+      <edge id="145" source="SKI combinator calculus" target="Unlambda" />
+      <edge id="146" source="MetaPost" target="Asymptote" />
+      <edge id="147" source="ALF" target="Epigram programming language" />
+      <edge id="148" source="F#" target="Visual Basic .NET" />
+      <edge id="149" source="The Green Object Oriented Language" target="Ada" />
+      <edge id="150" source="Smalltalk" target="VistaSmalltalk" />
+      <edge id="151" source="Smalltalk" target="Ioke" />
+      <edge id="152" source="Smalltalk" target="Liberty BASIC" />
+      <edge id="153" source="Smalltalk" target="Scala" />
+      <edge id="154" source="Smalltalk" target="Self" />
+      <edge id="155" source="Smalltalk" target="CLOS" />
+      <edge id="156" source="Smalltalk" target="Perl" />
+      <edge id="157" source="Smalltalk" target="Oaklisp" />
+      <edge id="158" source="Smalltalk" target="Ada" />
+      <edge id="159" source="Smalltalk" target="Corba IDL" />
+      <edge id="160" source="Smalltalk" target="Java" />
+      <edge id="161" source="Smalltalk" target="Blueprint" />
+      <edge id="162" source="Smalltalk" target="Bistro" />
+      <edge id="163" source="Smalltalk" target="AppleScript" />
+      <edge id="164" source="Smalltalk" target="Cel" />
+      <edge id="165" source="Smalltalk" target="Frink" />
+      <edge id="166" source="Smalltalk" target="Perl 6" />
+      <edge id="167" source="Smalltalk" target="Squeak" />
+      <edge id="168" source="Smalltalk" target="Falcon" />
+      <edge id="169" source="Smalltalk" target="ELENA" />
+      <edge id="170" source="Smalltalk" target="Ruby" />
+      <edge id="171" source="Smalltalk" target="MOO programming language" />
+      <edge id="172" source="Smalltalk" target="Claire programming language" />
+      <edge id="173" source="Smalltalk" target="Groovy" />
+      <edge id="174" source="Smalltalk" target="Dylan" />
+      <edge id="175" source="Smalltalk" target="Lisaac" />
+      <edge id="176" source="Smalltalk" target="SuperTalk" />
+      <edge id="177" source="Smalltalk" target="AgentSheets" />
+      <edge id="178" source="Smalltalk" target="Objective-C" />
+      <edge id="179" source="Smalltalk" target="Logtalk" />
+      <edge id="180" source="Smalltalk" target="BeanShell" />
+      <edge id="181" source="Smalltalk" target="Slate programming language" />
+      <edge id="182" source="Smalltalk" target="AmbientTalk" />
+      <edge id="183" source="Smalltalk" target="Scratch" />
+      <edge id="184" source="Smalltalk" target="Judoscript" />
+      <edge id="185" source="Smalltalk" target="NewtonScript" />
+      <edge id="186" source="Smalltalk" target="Orc" />
+      <edge id="187" source="Smalltalk" target="Io" />
+      <edge id="188" source="Smalltalk" target="PHP" />
+      <edge id="189" source="Smalltalk" target="F-Script programming language" />
+      <edge id="190" source="Smalltalk" target="Object Pascal" />
+      <edge id="191" source="Smalltalk" target="EToys" />
+      <edge id="192" source="CLOS" target="Dylan" />
+      <edge id="193" source="CLOS" target="EuLisp" />
+      <edge id="194" source="CLOS" target="Cadence SKILL" />
+      <edge id="195" source="Erlang" target="Clojure" />
+      <edge id="196" source="Erlang" target="Fan" />
+      <edge id="197" source="Erlang" target="Scala" />
+      <edge id="198" source="Scheme" target="Scala" />
+      <edge id="199" source="Scheme" target="JavaScript" />
+      <edge id="200" source="Scheme" target="Oaklisp" />
+      <edge id="201" source="Scheme" target="Lua" />
+      <edge id="202" source="Scheme" target="ECMAScript" />
+      <edge id="203" source="Scheme" target="PLT Scheme" />
+      <edge id="204" source="Scheme" target="Sather" />
+      <edge id="205" source="Scheme" target="Joy" />
+      <edge id="206" source="Scheme" target="EuLisp" />
+      <edge id="207" source="Scheme" target="Common Lisp" />
+      <edge id="208" source="Scheme" target="Ferite" />
+      <edge id="209" source="Scheme" target="Objeck" />
+      <edge id="210" source="Scheme" target="Ruby" />
+      <edge id="211" source="Scheme" target="K" />
+      <edge id="212" source="Scheme" target="GOO" />
+      <edge id="213" source="Scheme" target="Dylan" />
+      <edge id="214" source="Scheme" target="Mudlle" />
+      <edge id="215" source="Scheme" target="Kernel" />
+      <edge id="216" source="Scheme" target="MOO programming language" />
+      <edge id="217" source="Scheme" target="Q" />
+      <edge id="218" source="Scheme" target="R" />
+      <edge id="219" source="Scheme" target="T" />
+      <edge id="220" source="Scheme" target="Clojure" />
+      <edge id="221" source="Scheme" target="AmbientTalk" />
+      <edge id="222" source="Scheme" target="Cadence SKILL" />
+      <edge id="223" source="Scheme" target="Haskell" />
+      <edge id="224" source="Sather" target="Cool" />
+      <edge id="225" source="EuLisp" target="ISLISP" />
+      <edge id="226" source="EuLisp" target="Dylan" />
+      <edge id="227" source="Miranda" target="Haskell" />
+      <edge id="228" source="Miranda" target="Orwell" />
+      <edge id="229" source="ABC" target="Python" />
+      <edge id="230" source="Lisp" target="Ioke" />
+      <edge id="231" source="Lisp" target="Croma" />
+      <edge id="232" source="Lisp" target="Emacs Lisp" />
+      <edge id="233" source="Lisp" target="CLOS" />
+      <edge id="234" source="Lisp" target="Perl" />
+      <edge id="235" source="Lisp" target="Nial" />
+      <edge id="236" source="Lisp" target="PostScript" />
+      <edge id="237" source="Lisp" target="Nickle programming language" />
+      <edge id="238" source="Lisp" target="Factor" />
+      <edge id="239" source="Lisp" target="PLT Scheme" />
+      <edge id="240" source="Lisp" target="Scheme" />
+      <edge id="241" source="Lisp" target="Forth" />
+      <edge id="242" source="Lisp" target="OPS5" />
+      <edge id="243" source="Lisp" target="*Lisp" />
+      <edge id="244" source="Lisp" target="Blueprint" />
+      <edge id="245" source="Lisp" target="ISWIM" />
+      <edge id="246" source="Lisp" target="Nyquist" />
+      <edge id="247" source="Lisp" target="Python" />
+      <edge id="248" source="Lisp" target="Windows PowerShell" />
+      <edge id="249" source="Lisp" target="Scala" />
+      <edge id="250" source="Lisp" target="Common Lisp" />
+      <edge id="251" source="Lisp" target="Nu" />
+      <edge id="252" source="Lisp" target="Arc" />
+      <edge id="253" source="Lisp" target="Squeak" />
+      <edge id="254" source="Lisp" target="Falcon" />
+      <edge id="255" source="Lisp" target="Ruby" />
+      <edge id="256" source="Lisp" target="Claire programming language" />
+      <edge id="257" source="Lisp" target="Pike" />
+      <edge id="258" source="Lisp" target="Dylan" />
+      <edge id="259" source="Lisp" target="MOO programming language" />
+      <edge id="260" source="Lisp" target="AgentSheets" />
+      <edge id="261" source="Lisp" target="REBOL" />
+      <edge id="262" source="Lisp" target="Caml" />
+      <edge id="263" source="Lisp" target="Qi" />
+      <edge id="264" source="Lisp" target="CLU" />
+      <edge id="265" source="Lisp" target="Clojure" />
+      <edge id="266" source="Lisp" target="LPC" />
+      <edge id="267" source="Lisp" target="Curl programming language" />
+      <edge id="268" source="Lisp" target="CycL" />
+      <edge id="269" source="Lisp" target="ML" />
+      <edge id="270" source="Lisp" target="Nemerle" />
+      <edge id="271" source="Lisp" target="Lua" />
+      <edge id="272" source="Lisp" target="Little b" />
+      <edge id="273" source="Lisp" target="Tcl" />
+      <edge id="274" source="Lisp" target="Haskell" />
+      <edge id="275" source="Lisp" target="JavaScript" />
+      <edge id="276" source="Lisp" target="Io" />
+      <edge id="277" source="Lisp" target="MDL programming language" />
+      <edge id="278" source="Lisp" target="Logo" />
+      <edge id="279" source="Lisp" target="Smalltalk" />
+      <edge id="280" source="SuperTalk" target="OracleCard" />
+      <edge id="281" source="SuperTalk" target="MetaCard" />
+      <edge id="282" source="SuperTalk" target="Runtime Revolution" />
+      <edge id="283" source="Microsoft BASICA" target="GW-BASIC" />
+      <edge id="284" source="Object Oberon" target="Oberon-2" />
+      <edge id="285" source="Orwell" target="Haskell" />
+      <edge id="286" source="FLOW-MATIC" target="COBOL" />
+      <edge id="287" source="Haskell" target="Mercury" />
+      <edge id="288" source="Haskell" target="Scala" />
+      <edge id="289" source="Haskell" target="Fortress programming language" />
+      <edge id="290" source="Haskell" target="Quark Framework" />
+      <edge id="291" source="Haskell" target="Kaya" />
+      <edge id="292" source="Haskell" target="Agda theorem prover" />
+      <edge id="293" source="Haskell" target="Curry programming language" />
+      <edge id="294" source="Haskell" target="Factor" />
+      <edge id="295" source="Haskell" target="Python" />
+      <edge id="296" source="Haskell" target="Generic Java programming language" />
+      <edge id="297" source="Haskell" target="BitC" />
+      <edge id="298" source="Haskell" target="CoffeeScript" />
+      <edge id="299" source="Haskell" target="Perl 6" />
+      <edge id="300" source="Haskell" target="Orc" />
+      <edge id="301" source="Haskell" target="Language Integrated Query" />
+      <edge id="302" source="Haskell" target="Epigram programming language" />
+      <edge id="303" source="Haskell" target="Cat" />
+      <edge id="304" source="Haskell" target="Escher" />
+      <edge id="305" source="Haskell" target="Qi" />
+      <edge id="306" source="Haskell" target="Clojure" />
+      <edge id="307" source="Haskell" target="Clean programming language" />
+      <edge id="308" source="Haskell" target="Cayenne programming language" />
+      <edge id="309" source="Haskell" target="Visual Basic .NET" />
+      <edge id="310" source="Haskell" target="C#" />
+      <edge id="311" source="Haskell" target="F#" />
+      <edge id="312" source="Haskell" target="Timber" />
+      <edge id="313" source="Pizza" target="Generic Java programming language" />
+      <edge id="314" source="Pizza" target="Scala" />
+      <edge id="315" source="Liberty BASIC" target="Beginners Programming Language" />
+      <edge id="316" source="StarLogo" target="Scratch" />
+      <edge id="317" source="StarLogo" target="NetLogo" />
+      <edge id="318" source="StarLogo" target="EToys" />
+      <edge id="319" source="Speedcoding" target="C" />
+      <edge id="320" source="Speedcoding" target="Ratfor" />
+      <edge id="321" source="Speedcoding" target="Fortran" />
+      <edge id="322" source="Speedcoding" target="MUMPS" />
+      <edge id="323" source="Speedcoding" target="ALGOL 58" />
+      <edge id="324" source="Speedcoding" target="BASIC" />
+      <edge id="325" source="Speedcoding" target="PL/I" />
+      <edge id="326" source="DIGITAL Command Language" target="Windows PowerShell" />
+      <edge id="327" source="Cat" target="Ambi" />
+      <edge id="328" source="UCSD Pascal" target="Java" />
+      <edge id="329" source="MLisp" target="CGOL" />
+      <edge id="330" source="LPC" target="Pike" />
+      <edge id="331" source="LPC" target="Mudlle" />
+      <edge id="332" source="LPC" target="Pike programming language" />
+      <edge id="333" source="Strongtalk" target="Slate programming language" />
+      <edge id="334" source="Euclid programming language" target="Turing programming language" />
+      <edge id="335" source="Euclid programming language" target="Mesa" />
+      <edge id="336" source="Euclid programming language" target="Concurrent Euclid" />
+      <edge id="337" source="APL" target="FP" />
+      <edge id="338" source="APL" target="Q" />
+      <edge id="339" source="APL" target="SAC programming language" />
+      <edge id="340" source="APL" target="F-Script programming language" />
+      <edge id="341" source="APL" target="K" />
+      <edge id="342" source="APL" target="J" />
+      <edge id="343" source="APL" target="Common Lisp" />
+      <edge id="344" source="APL" target="Nial" />
+      <edge id="345" source="APL" target="Q programming language" />
+      <edge id="346" source="APL" target="Haskell" />
+      <edge id="347" source="APL" target="Hartmann pipeline" />
+      <edge id="348" source="APL" target="Ada" />
+      <edge id="349" source="APL" target="Polymorphic Programming Language" />
+      <edge id="350" source="APL" target="Forth" />
+      <edge id="351" source="APL" target="A+" />
+      <edge id="352" source="Information Processing Language" target="Lisp" />
+      <edge id="353" source="Perl" target="Groovy" />
+      <edge id="354" source="Perl" target="Judoscript" />
+      <edge id="355" source="Perl" target="Aikido Programming Language" />
+      <edge id="356" source="Perl" target="CoffeeScript" />
+      <edge id="357" source="Perl" target="Python" />
+      <edge id="358" source="Perl" target="Ruby" />
+      <edge id="359" source="Perl" target="Dao Language" />
+      <edge id="360" source="Perl" target="JavaScript" />
+      <edge id="361" source="Perl" target="Haskell" />
+      <edge id="362" source="Perl" target="Frink" />
+      <edge id="363" source="Perl" target="MivaScript" />
+      <edge id="364" source="Perl" target="Perl 6" />
+      <edge id="365" source="Perl" target="ECMAScript" />
+      <edge id="366" source="Perl" target="LPC" />
+      <edge id="367" source="Perl" target="Falcon" />
+      <edge id="368" source="Perl" target="PHP" />
+      <edge id="369" source="Perl" target="Windows PowerShell" />
+      <edge id="370" source="Perl" target="Sleep programming language" />
+      <edge id="371" source="Perl" target="BeanShell" />
+      <edge id="372" source="Lua" target="Dao Language" />
+      <edge id="373" source="Lua" target="MiniD" />
+      <edge id="374" source="Lua" target="GameMonkey Script" />
+      <edge id="375" source="Lua" target="Squirrel programming language" />
+      <edge id="376" source="Lua" target="Io" />
+      <edge id="377" source="Lua" target="Falcon" />
+      <edge id="378" source="Dylan" target="GOO" />
+      <edge id="379" source="Dylan" target="Python" />
+      <edge id="380" source="Dylan" target="EuLisp" />
+      <edge id="381" source="Dylan" target="NewtonScript" />
+      <edge id="382" source="Dylan" target="Slate programming language" />
+      <edge id="383" source="Dylan" target="Ruby" />
+      <edge id="384" source="Factor" target="Alpoca" />
+      <edge id="385" source="Factor" target="Cat" />
+      <edge id="386" source="BCPL" target="C" />
+      <edge id="387" source="BCPL" target="B programming language" />
+      <edge id="388" source="BCPL" target="BBC BASIC" />
+      <edge id="389" source="BCPL" target="Babbage" />
+      <edge id="390" source="Joy" target="V" />
+      <edge id="391" source="Joy" target="Cat" />
+      <edge id="392" source="Joy" target="Factor" />
+      <edge id="393" source="COBOL" target="CobolScript" />
+      <edge id="394" source="COBOL" target="DIBOL" />
+      <edge id="395" source="COBOL" target="ABAP" />
+      <edge id="396" source="COBOL" target="Corba IDL" />
+      <edge id="397" source="COBOL" target="PL/I" />
+      <edge id="398" source="COBOL" target="CHILL" />
+      <edge id="399" source="Joule" target="E" />
+      <edge id="400" source="VBScript" target="Windows PowerShell" />
+      <edge id="401" source=".NET Framework" target="Visual Basic .NET" />
+      <edge id="402" source="Hope programming language" target="Mercury" />
+      <edge id="403" source="Hope programming language" target="Haskell" />
+      <edge id="404" source="Hope programming language" target="Miranda" />
+      <edge id="405" source="SISAL" target="Haskell" />
+      <edge id="406" source="SISAL" target="SAC programming language" />
+      <edge id="407" source="ALGOL 58" target="MAD programming language" />
+      <edge id="408" source="ALGOL 58" target="ALGOL" />
+      <edge id="409" source="Turbo BASIC" target="PowerBASIC" />
+      <edge id="410" source="MUF" target="MOO programming language" />
+      <edge id="411" source="MUF" target="ColdC" />
+      <edge id="412" source="ANSI C" target="C*" />
+      <edge id="413" source="Cayenne" target="Agda theorem prover" />
+      <edge id="414" source="Squeak" target="Scratch" />
+      <edge id="415" source="Squeak" target="EToys" />
+      <edge id="416" source="Mesa" target="Modula-2" />
+      <edge id="417" source="Mesa" target="Java" />
+      <edge id="418" source="Mesa" target="Cedar" />
+      <edge id="419" source="Interlisp" target="EuLisp" />
+      <edge id="420" source="Interlisp" target="Common Lisp" />
+      <edge id="421" source="R" target="PCASTL" />
+      <edge id="422" source="CLU" target="Sather" />
+      <edge id="423" source="CLU" target="Argus" />
+      <edge id="424" source="CLU" target="C++" />
+      <edge id="425" source="CLU" target="Lua" />
+      <edge id="426" source="CLU" target="Ada" />
+      <edge id="427" source="CLU" target="Ruby" />
+      <edge id="428" source="Unified Parallel C" target="C*" />
+      <edge id="429" source="FALSE" target="Brainfuck" />
+      <edge id="430" source="Sed" target="Chomski" />
+      <edge id="431" source="Sed" target="AWK" />
+      <edge id="432" source="Sed" target="Perl" />
+      <edge id="433" source="BASIC" target="GRASS programming language" />
+      <edge id="434" source="BASIC" target="PureBasic" />
+      <edge id="435" source="BASIC" target="Frink" />
+      <edge id="436" source="BASIC" target="NetRexx" />
+      <edge id="437" source="BASIC" target="BBC BASIC" />
+      <edge id="438" source="BASIC" target="Perl" />
+      <edge id="439" source="BASIC" target="Visual Basic .NET" />
+      <edge id="440" source="BASIC" target="DIBOL" />
+      <edge id="441" source="BASIC" target="Aikido Programming Language" />
+      <edge id="442" source="BASIC" target="REALbasic" />
+      <edge id="443" source="BASIC" target="AutoIt" />
+      <edge id="444" source="BASIC" target="Visual Basic" />
+      <edge id="445" source="BASIC" target="Syp Script" />
+      <edge id="446" source="BASIC" target="COMAL" />
+      <edge id="447" source="BASIC" target="REXX" />
+      <edge id="448" source="Lucid" target="SISAL" />
+      <edge id="449" source="Lucid" target="Lustre programming language" />
+      <edge id="450" source="Lucid" target="Pure Data" />
+      <edge id="451" source="Lazy ML" target="Haskell" />
+      <edge id="452" source="Kid" target="mjt" />
+      <edge id="453" source="C++" target="Java" />
+      <edge id="454" source="C++" target="Dao Language" />
+      <edge id="455" source="C++" target="Ada" />
+      <edge id="456" source="C++" target="Perl" />
+      <edge id="457" source="C++" target="Lua" />
+      <edge id="458" source="C++" target="MivaScript" />
+      <edge id="459" source="C++" target="Aikido Programming Language" />
+      <edge id="460" source="C++" target="Squirrel programming language" />
+      <edge id="461" source="C++" target="Corba IDL" />
+      <edge id="462" source="C++" target="Pike programming language" />
+      <edge id="463" source="C++" target="Blueprint" />
+      <edge id="464" source="C++" target="C#" />
+      <edge id="465" source="C++" target="Vala" />
+      <edge id="466" source="C++" target="Falcon" />
+      <edge id="467" source="C++" target="Ruby" />
+      <edge id="468" source="C++" target="XL Programming Language" />
+      <edge id="469" source="C++" target="URBI" />
+      <edge id="470" source="C++" target="Dylan" />
+      <edge id="471" source="C++" target="D" />
+      <edge id="472" source="C++" target="Felix programming language" />
+      <edge id="473" source="C++" target="LPC" />
+      <edge id="474" source="C++" target="Alpoca" />
+      <edge id="475" source="C++" target="Python" />
+      <edge id="476" source="C++" target="Ferite" />
+      <edge id="477" source="C++" target="UnrealScript" />
+      <edge id="478" source="C++" target="PHP" />
+      <edge id="479" source="C++" target="QUILL" />
+      <edge id="480" source="B programming language" target="C" />
+      <edge id="481" source="Modula" target="Go" />
+      <edge id="482" source="Modula" target="Modula-2" />
+      <edge id="483" source="Id" target="Haskell" />
+      <edge id="484" source="Limbo programming language" target="Go" />
+      <edge id="485" source="Limbo programming language" target="Stackless Python" />
+      <edge id="486" source="Generic Java programming language" target="Java" />
+      <edge id="487" source="Eiffel" target="Cobra" />
+      <edge id="488" source="Eiffel" target="Java" />
+      <edge id="489" source="Eiffel" target="D" />
+      <edge id="490" source="Eiffel" target="Lisaac" />
+      <edge id="491" source="Eiffel" target="C#" />
+      <edge id="492" source="Eiffel" target="Sather" />
+      <edge id="493" source="Eiffel" target="Spec sharp" />
+      <edge id="494" source="Eiffel" target="PLT Scheme" />
+      <edge id="495" source="Eiffel" target="Ruby" />
+      <edge id="496" source="Befunge" target="Argh!" />
+      <edge id="497" source="AWK" target="AMPL" />
+      <edge id="498" source="AWK" target="Tcl" />
+      <edge id="499" source="AWK" target="Perl" />
+      <edge id="500" source="AWK" target="Lua" />
+      <edge id="501" source="AWK" target="Korn shell" />
+      <edge id="502" source="AWK" target="JavaScript syntax" />
+      <edge id="503" source="AWK" target="ECMAScript" />
+      <edge id="504" source="AWK" target="Chomski" />
+      <edge id="505" source="QBasic" target="PowerBASIC" />
+      <edge id="506" source="Boomerang" target="XSL Transformations" />
+      <edge id="507" source="Objective-C" target="Tom" />
+      <edge id="508" source="Objective-C" target="Groovy" />
+      <edge id="509" source="Objective-C" target="Cobra" />
+      <edge id="510" source="Objective-C" target="Java" />
+      <edge id="511" source="Objective-C" target="Cel" />
+      <edge id="512" source="Objective-C" target="ABAP" />
+      <edge id="513" source="Objective-C" target="TOM" />
+      <edge id="514" source="Objective-C" target="Objective-J" />
+      <edge id="515" source="Objective-C" target="Nu" />
+      <edge id="516" source="Objective-C" target="Sleep programming language" />
+      <edge id="517" source="Split-C" target="Unified Parallel C" />
+      <edge id="518" source="PL/I" target="C" />
+      <edge id="519" source="PL/I" target="NetRexx" />
+      <edge id="520" source="PL/I" target="AS/400 Control Language" />
+      <edge id="521" source="PL/I" target="SP/k" />
+      <edge id="522" source="PL/I" target="REXX" />
+      <edge id="523" source="PL/I" target="B programming language" />
+      <edge id="524" source="PL/I" target="CHILL" />
+      <edge id="525" source="FACT computer language" target="COBOL" />
+      <edge id="526" source="Lambda calculus" target="A++" />
+      <edge id="527" source="Lambda calculus" target="Unlambda" />
+      <edge id="528" source="Visual Basic" target="Visual Basic .NET" />
+      <edge id="529" source="Visual Basic" target="VBScript" />
+      <edge id="530" source="Visual Basic" target="Gambas" />
+      <edge id="531" source="Visual Basic" target="REALbasic" />
+      <edge id="532" source="PHP" target="Falcon" />
+      <edge id="533" source="PHP" target="Ferite" />
+      <edge id="534" source="Turing programming language" target="Turing Plus" />
+      <edge id="535" source="Turing programming language" target="Object-Oriented Turing" />
+      <edge id="536" source="Verilog" target="Aikido Programming Language" />
+      <edge id="537" source="XAML" target="C#" />
+      <edge id="538" source="COMIT" target="SNOBOL" />
+      <edge id="539" source="Java bytecode" target="Cat" />
+      <edge id="540" source="CoffeeScript" target="MoonScript" />
+      <edge id="541" source="C" target="Java" />
+      <edge id="542" source="C" target="SAC programming language" />
+      <edge id="543" source="C" target="JavaScript" />
+      <edge id="544" source="C" target="QuakeC" />
+      <edge id="545" source="C" target="Kaya" />
+      <edge id="546" source="C" target="Perl" />
+      <edge id="547" source="C" target="MivaScript" />
+      <edge id="548" source="C" target="Nickle programming language" />
+      <edge id="549" source="C" target="ECMAScript" />
+      <edge id="550" source="C" target="S-Lang" />
+      <edge id="551" source="C" target="Corba IDL" />
+      <edge id="552" source="C" target="Pike programming language" />
+      <edge id="553" source="C" target="D" />
+      <edge id="554" source="C" target="C#" />
+      <edge id="555" source="C" target="Joy" />
+      <edge id="556" source="C" target="Vala" />
+      <edge id="557" source="C" target="Processing" />
+      <edge id="558" source="C" target="BitC" />
+      <edge id="559" source="C" target="VisSim" />
+      <edge id="560" source="C" target="Yoix" />
+      <edge id="561" source="C" target="AWK" />
+      <edge id="562" source="C" target="ColdC" />
+      <edge id="563" source="C" target="C--" />
+      <edge id="564" source="C" target="Aikido Programming Language" />
+      <edge id="565" source="C" target="PCASTL" />
+      <edge id="566" source="C" target="MOO programming language" />
+      <edge id="567" source="C" target="C++" />
+      <edge id="568" source="C" target="S programming language" />
+      <edge id="569" source="C" target="SISAL" />
+      <edge id="570" source="C" target="Objective-C" />
+      <edge id="571" source="C" target="Split-C" />
+      <edge id="572" source="C" target="LPC" />
+      <edge id="573" source="C" target="Unified Parallel C" />
+      <edge id="574" source="C" target="Alpoca" />
+      <edge id="575" source="C" target="AMPL" />
+      <edge id="576" source="C" target="Claire programming language" />
+      <edge id="577" source="C" target="Cilk" />
+      <edge id="578" source="C" target="Ferite" />
+      <edge id="579" source="C" target="Limbo programming language" />
+      <edge id="580" source="C" target="Go" />
+      <edge id="581" source="C" target="NWScript" />
+      <edge id="582" source="C" target="PHP" />
+      <edge id="583" source="C" target="Draco" />
+      <edge id="584" source="TELCOMP" target="MUMPS" />
+      <edge id="585" source="Karel programming language" target="Karel++" />
+      <edge id="586" source="Janus" target="ToonTalk computer programming language" />
+      <edge id="587" source="REBOL" target="JSON" />
+      <edge id="588" source="REBOL" target="Syp Script" />
+      <edge id="589" source="Tcl" target="PHP" />
+      <edge id="590" source="Tcl" target="Windows PowerShell" />
+      <edge id="591" source="Tcl" target="Tea programming language" />
+      <edge id="592" source="Logo" target="Scratch" />
+      <edge id="593" source="Logo" target="Processing" />
+      <edge id="594" source="Logo" target="AgentSheets" />
+      <edge id="595" source="Logo" target="REBOL" />
+      <edge id="596" source="Logo" target="StarLogo" />
+      <edge id="597" source="Logo" target="Squeak" />
+      <edge id="598" source="Logo" target="NetLogo" />
+      <edge id="599" source="Logo" target="Smalltalk" />
+      <edge id="600" source="Logo" target="EToys" />
+      <edge id="601" source="Visual J++" target="J#" />
+      <edge id="602" source="Spec sharp" target="Sing sharp" />
+      <edge id="603" source="Oberon-2" target="Component Pascal" />
+      <edge id="604" source="Squirrel programming language" target="Dao Language" />
+      <edge id="605" source="Squirrel programming language" target="MiniD" />
+      <edge id="606" source="REXX" target="NetRexx" />
+      <edge id="607" source="REXX" target="Object REXX" />
+      <edge id="608" source="Kent Recursive Calculator" target="Haskell" />
+      <edge id="609" source="Kent Recursive Calculator" target="Miranda" />
+      <edge id="610" source="C#" target="Cobra" />
+      <edge id="611" source="C#" target="Java" />
+      <edge id="612" source="C#" target="D" />
+      <edge id="613" source="C#" target="Spec sharp" />
+      <edge id="614" source="C#" target="Vala" />
+      <edge id="615" source="C#" target="F#" />
+      <edge id="616" source="C#" target="Polyphonic C sharp" />
+      <edge id="617" source="C#" target="Cω" />
+      <edge id="618" source="C#" target="Nemerle" />
+      <edge id="619" source="C#" target="Fan" />
+      <edge id="620" source="C#" target="Objeck" />
+      <edge id="621" source="C#" target="PHP" />
+      <edge id="622" source="C#" target="Windows PowerShell" />
+      <edge id="623" source="C#" target="Oxygene" />
+      <edge id="624" source="Object Pascal" target="C#" />
+      <edge id="625" source="Object Pascal" target="Oxygene" />
+      <edge id="626" source="Object Pascal" target="Java" />
+      <edge id="627" source="Object Pascal" target="DECLAN Pro" />
+      <edge id="628" source="Object Pascal" target="Game Maker Language" />
+      <edge id="629" source="COWSEL" target="POP-2" />
+      <edge id="630" source="XML" target="HTML" />
+      <edge id="631" source="XML" target="MetaL" />
+      <edge id="632" source="S programming language" target="R" />
+      <edge id="633" source="Q programming language" target="Pure" />
+      <edge id="634" source="Le Lisp" target="EuLisp" />
+      <edge id="635" source="MUMPS" target="Caché ObjectScript" />
+      <edge id="636" source="KRL" target="KM" />
+      <edge id="637" source="ALGOL W" target="Modula-2" />
+      <edge id="638" source="ALGOL W" target="Pascal" />
+      <edge id="639" source="ALGOL Y" target="ALGOL 68" />
+      <edge id="640" source="SP/k" target="Turing programming language" />
+      <edge id="641" source="SASL programming language" target="Kent Recursive Calculator" />
+      <edge id="642" source="SASL programming language" target="Haskell" />
+      <edge id="643" source="SASL programming language" target="Miranda" />
+      <edge id="644" source="Python" target="Stackless Python" />
+      <edge id="645" source="Python" target="Dao Language" />
+      <edge id="646" source="Python" target="JavaScript" />
+      <edge id="647" source="Python" target="Perl" />
+      <edge id="648" source="Python" target="Squirrel programming language" />
+      <edge id="649" source="Python" target="Cel" />
+      <edge id="650" source="Python" target="MiniD" />
+      <edge id="651" source="Python" target="CoffeeScript" />
+      <edge id="652" source="Python" target="Falcon" />
+      <edge id="653" source="Python" target="Ruby" />
+      <edge id="654" source="Python" target="Groovy" />
+      <edge id="655" source="Python" target="D" />
+      <edge id="656" source="Python" target="BeanShell" />
+      <edge id="657" source="Python" target="Boo" />
+      <edge id="658" source="Python" target="Cobra" />
+      <edge id="659" source="Python" target="Alpoca" />
+      <edge id="660" source="Python" target="Judoscript" />
+      <edge id="661" source="Python" target="Mantra" />
+      <edge id="662" source="Python" target="Ferite" />
+      <edge id="663" source="Python" target="Io" />
+      <edge id="664" source="Python" target="Go" />
+      <edge id="665" source="Python" target="PHP" />
+      <edge id="666" source="Python" target="ECMAScript" />
+      <edge id="667" source="Polyphonic C sharp" target="Cω" />
+      <edge id="668" source="HAL/S" target="SPARK programming language" />
+      <edge id="669" source="GW-BASIC" target="QuickBASIC" />
+      <edge id="670" source="GW-BASIC" target="QBasic" />
+      <edge id="671" source="Coq" target="Agda theorem prover" />
+      <edge id="672" source="Io" target="URBI" />
+      <edge id="673" source="Io" target="Ioke" />
+      <edge id="674" source="Io" target="MiniD" />
+      <edge id="675" source="Oz" target="Alice ML" />
+      <edge id="676" source="Oz" target="Orc" />
+      <edge id="677" source="XSL Transformations" target="XQuery" />
+      <edge id="678" source="Icon" target="Lua" />
+      <edge id="679" source="D" target="Vala" />
+      <edge id="680" source="D" target="MiniD" />
+      <edge id="681" source="Standard ML" target="Standard ML of New Jersey" />
+      <edge id="682" source="Standard ML" target="Scala" />
+      <edge id="683" source="T" target="Oaklisp" />
+      <edge id="684" source="T" target="Scheme48" />
+      <edge id="685" source="T" target="Joule" />
+      <edge id="686" source="T" target="EuLisp" />
+      <edge id="687" source="Caml" target="F#" />
+      <edge id="688" source="Smalltalk-80" target="Squeak" />
+      <edge id="689" source="Smalltalk-80" target="Common Lisp" />
+      <edge id="690" source="NewtonScript" target="Cel" />
+      <edge id="691" source="NewtonScript" target="Io" />
+      <edge id="692" source="Genshi" target="mjt" />
+      <edge id="693" source="SQL" target="Language Integrated Query" />
+      <edge id="694" source="SQL" target="XQuery" />
+      <edge id="695" source="SQL" target="Windows PowerShell" />
+      <edge id="696" source="SQL" target="ABAP" />
+      <edge id="697" source="Java" target="Scala" />
+      <edge id="698" source="Java" target="JavaScript" />
+      <edge id="699" source="Java" target="Quark Framework" />
+      <edge id="700" source="Java" target="MivaScript" />
+      <edge id="701" source="Java" target="Nickle programming language" />
+      <edge id="702" source="Java" target="ECMAScript" />
+      <edge id="703" source="Java" target="Ada" />
+      <edge id="704" source="Java" target="Pizza" />
+      <edge id="705" source="Java" target="Bistro" />
+      <edge id="706" source="Java" target="Python" />
+      <edge id="707" source="Java" target="NetRexx" />
+      <edge id="708" source="Java" target="Vala" />
+      <edge id="709" source="Java" target="Processing" />
+      <edge id="710" source="Java" target="Frink" />
+      <edge id="711" source="Java" target="Yoix" />
+      <edge id="712" source="Java" target="Fan" />
+      <edge id="713" source="Java" target="Generic Java programming language" />
+      <edge id="714" source="Java" target="Cool" />
+      <edge id="715" source="Java" target="Groovy" />
+      <edge id="716" source="Java" target="C" />
+      <edge id="717" source="Java" target="Aikido Programming Language" />
+      <edge id="718" source="Java" target="E" />
+      <edge id="719" source="Java" target="D" />
+      <edge id="720" source="Java" target="BeanShell" />
+      <edge id="721" source="Java" target="X10" />
+      <edge id="722" source="Java" target="Clojure" />
+      <edge id="723" source="Java" target="Gambas" />
+      <edge id="724" source="Java" target="Alpoca" />
+      <edge id="725" source="Java" target="Judoscript" />
+      <edge id="726" source="Java" target="ABAP" />
+      <edge id="727" source="Java" target="C#" />
+      <edge id="728" source="Java" target="Ferite" />
+      <edge id="729" source="Java" target="UnrealScript" />
+      <edge id="730" source="Java" target="ActionScript" />
+      <edge id="731" source="Java" target="NWScript" />
+      <edge id="732" source="Java" target="PHP" />
+      <edge id="733" source="Java" target="QUILL" />
+      <edge id="734" source="Java" target="J#" />
+      <edge id="735" source="Scala" target="Fan" />
+      <edge id="736" source="Scala" target="Fortress programming language" />
+      <edge id="737" source="RPG programming language" target="RPG II" />
+      <edge id="738" source="PostScript" target="Processing" />
+      <edge id="739" source="PostScript" target="Yoix" />
+      <edge id="740" source="PostScript" target="V" />
+      <edge id="741" source="Turing Plus" target="Object-Oriented Turing" />
+      <edge id="742" source="E" target="AmbientTalk" />
+      <edge id="743" source="Forth" target="ColorForth" />
+      <edge id="744" source="Forth" target="RPL programming language" />
+      <edge id="745" source="Forth" target="Joy" />
+      <edge id="746" source="Forth" target="Cel" />
+      <edge id="747" source="Forth" target="Cat" />
+      <edge id="748" source="Forth" target="Abundance" />
+      <edge id="749" source="Forth" target="PostScript" />
+      <edge id="750" source="Forth" target="REBOL" />
+      <edge id="751" source="Forth" target="Ambi" />
+      <edge id="752" source="Forth" target="Factor" />
+      <edge id="753" source="Modula-2+" target="Modula-3" />
+      <edge id="754" source="Ruby" target="Groovy" />
+      <edge id="755" source="Ruby" target="URBI" />
+      <edge id="756" source="Ruby" target="Ioke" />
+      <edge id="757" source="Ruby" target="D" />
+      <edge id="758" source="Ruby" target="Frink" />
+      <edge id="759" source="Ruby" target="CoffeeScript" />
+      <edge id="760" source="Ruby" target="Judoscript" />
+      <edge id="761" source="Ruby" target="Ferite" />
+      <edge id="762" source="Ruby" target="Mantra" />
+      <edge id="763" source="Ruby" target="Perl 6" />
+      <edge id="764" source="Ruby" target="Fan" />
+      <edge id="765" source="Ruby" target="BeanShell" />
+      <edge id="766" source="Ruby" target="Falcon" />
+      <edge id="767" source="Ruby" target="Windows PowerShell" />
+      <edge id="768" source="Ruby" target="Nu" />
+      <edge id="769" source="Cω" target="Language Integrated Query" />
+      <edge id="770" source="COMTRAN" target="COBOL" />
+      <edge id="771" source="Z notation" target="Eiffel" />
+      <edge id="772" source="Maclisp" target="Common Lisp" />
+      <edge id="773" source="Prolog" target="Mercury" />
+      <edge id="774" source="Prolog" target="Clojure" />
+      <edge id="775" source="Prolog" target="Parlog" />
+      <edge id="776" source="Prolog" target="Visual Prolog" />
+      <edge id="777" source="Prolog" target="Datalog" />
+      <edge id="778" source="Prolog" target="Logtalk" />
+      <edge id="779" source="Prolog" target="Oz" />
+      <edge id="780" source="Prolog" target="Erlang" />
+      <edge id="781" source="Prolog" target="Strand" />
+      <edge id="782" source="JOSS" target="TELCOMP" />
+      <edge id="783" source="JOSS" target="CAL programming language" />
+      <edge id="784" source="JOSS" target="FOCAL programming language" />
+      <edge id="785" source="JOSS" target="MUMPS" />
+      <edge id="786" source="JOSS" target="BASIC" />
+      <edge id="787" source="SETL" target="ABC" />
+      <edge id="788" source="SETL" target="Claire programming language" />
+      <edge id="789" source="SETL" target="ProSet" />
+      <edge id="790" source="METAFONT" target="MetaPost" />
+      <edge id="791" source="EXEC 2" target="NetRexx" />
+      <edge id="792" source="EXEC 2" target="REXX" />
+      <edge id="793" source="Harbour compiler" target="XHarbour" />
+      <edge id="794" source="Ada" target="SPARK programming language" />
+      <edge id="795" source="Ada" target="XL Programming Language" />
+      <edge id="796" source="Ada" target="Aikido Programming Language" />
+      <edge id="797" source="Ada" target="Java" />
+      <edge id="798" source="Ada" target="MOO programming language" />
+      <edge id="799" source="Ada" target="Eiffel" />
+      <edge id="800" source="Ada" target="C++" />
+      <edge id="801" source="Ada" target="PL/SQL" />
+      <edge id="802" source="Ada" target="Ruby" />
+      <edge id="803" source="Ada" target="VHSIC Hardware Description Language" />
+      <edge id="804" source="Datalog" target=".QL" />
+      <edge id="805" source="Datalog" target="SQL" />
+      <edge id="806" source="J" target="K" />
+      <edge id="807" source="PL/SQL" target="PL/pgSQL" />
+      <edge id="808" source="ALGOL" target="Combined Programming Language" />
+      <edge id="809" source="ALGOL" target="BASIC" />
+      <edge id="810" source="ALGOL" target="BLISS" />
+      <edge id="811" source="ALGOL" target="Ada" />
+      <edge id="812" source="ALGOL" target="Scheme" />
+      <edge id="813" source="ALGOL" target="Modula-2+" />
+      <edge id="814" source="ALGOL" target="Mesa" />
+      <edge id="815" source="ALGOL" target="Icon" />
+      <edge id="816" source="ALGOL" target="Modula-3" />
+      <edge id="817" source="ALGOL" target="Modula-2" />
+      <edge id="818" source="ALGOL" target="C" />
+      <edge id="819" source="ALGOL" target="Dylan" />
+      <edge id="820" source="ALGOL" target="MOO programming language" />
+      <edge id="821" source="ALGOL" target="JOVIAL" />
+      <edge id="822" source="ALGOL" target="Simula" />
+      <edge id="823" source="ALGOL" target="CLU" />
+      <edge id="824" source="ALGOL" target="PL/I" />
+      <edge id="825" source="ALGOL" target="CGOL" />
+      <edge id="826" source="ALGOL" target="Dartmouth BASIC" />
+      <edge id="827" source="ALGOL" target="Pascal" />
+      <edge id="828" source="ALGOL" target="ALGOL 68" />
+      <edge id="829" source="ALGOL" target="Euler programming language" />
+      <edge id="830" source="ALGOL" target="CORAL66 programming language" />
+      <edge id="831" source="QuickBASIC" target="PowerBASIC" />
+      <edge id="832" source="QuickBASIC" target="Visual Basic" />
+      <edge id="833" source="QuickBASIC" target="Liberty BASIC" />
+      <edge id="834" source="QuickBASIC" target="QBasic" />
+      <edge id="835" source="Assembly language" target="C" />
+      <edge id="836" source="Assembly language" target="Speedcoding" />
+      <edge id="837" source="Assembly language" target="Shakespeare" />
+      <edge id="838" source="AS/400 Control Language" target="Windows PowerShell" />
+      <edge id="839" source="High Performance Fortran" target="Chapel programming language" />
+      <edge id="840" source="Pascal" target="SCAR programming language" />
+      <edge id="841" source="Pascal" target="Java" />
+      <edge id="842" source="Pascal" target="Perl" />
+      <edge id="843" source="Pascal" target="Turing programming language" />
+      <edge id="844" source="Pascal" target="Oberon-2" />
+      <edge id="845" source="Pascal" target="Ada" />
+      <edge id="846" source="Pascal" target="Oberon" />
+      <edge id="847" source="Pascal" target="Oxygene" />
+      <edge id="848" source="Pascal" target="Object Pascal" />
+      <edge id="849" source="Pascal" target="Objeck" />
+      <edge id="850" source="Pascal" target="Modula-2+" />
+      <edge id="851" source="Pascal" target="Cool" />
+      <edge id="852" source="Pascal" target="Modula-3" />
+      <edge id="853" source="Pascal" target="Modula-2" />
+      <edge id="854" source="Pascal" target="Aikido Programming Language" />
+      <edge id="855" source="Pascal" target="Karel programming language" />
+      <edge id="856" source="Pascal" target="PL/SQL" />
+      <edge id="857" source="Pascal" target="UCSD Pascal" />
+      <edge id="858" source="Pascal" target="SISAL" />
+      <edge id="859" source="Pascal" target="CLU" />
+      <edge id="860" source="Pascal" target="COMAL" />
+      <edge id="861" source="Pascal" target="Zonnon" />
+      <edge id="862" source="Pascal" target="Cobra" />
+      <edge id="863" source="Pascal" target="Modula" />
+      <edge id="864" source="Pascal" target="Component Pascal" />
+      <edge id="865" source="Pascal" target="Euclid programming language" />
+      <edge id="866" source="Pascal" target="Limbo programming language" />
+      <edge id="867" source="Pascal" target="QUILL" />
+      <edge id="868" source="Pascal" target="Go" />
+      <edge id="869" source="Pascal" target="Draco" />
+      <edge id="870" source="Pascal" target="VHSIC Hardware Description Language" />
+      <edge id="871" source="ActionScript" target="HaXe" />
+      <edge id="872" source="OPS5" target="Claire programming language" />
+      <edge id="873" source="A+" target="Q" />
+      <edge id="874" source="A+" target="K" />
+      <edge id="875" source="Common Lisp" target="Dylan" />
+      <edge id="876" source="Common Lisp" target="Java" />
+      <edge id="877" source="Common Lisp" target="Sather" />
+      <edge id="878" source="Common Lisp" target="Emacs Lisp" />
+      <edge id="879" source="Common Lisp" target="EuLisp" />
+      <edge id="880" source="Common Lisp" target="Slate programming language" />
+      <edge id="881" source="Common Lisp" target="ISLISP" />
+      <edge id="882" source="Common Lisp" target="Cadence SKILL" />
+      <edge id="883" source="Common Lisp" target="Le Lisp" />
+      <edge id="884" source="Common Lisp" target="CLOS" />
+      <edge id="885" source="Common Lisp" target="SubL" />
+      <edge id="886" source="Common Lisp" target="Clojure" />
+      <edge id="887" source="Simula" target="Modula-2" />
+      <edge id="888" source="Simula" target="Eiffel" />
+      <edge id="889" source="Simula" target="C++" />
+      <edge id="890" source="Simula" target="BETA" />
+      <edge id="891" source="Simula" target="Squeak" />
+      <edge id="892" source="Simula" target="CLU" />
+      <edge id="893" source="Simula" target="Smalltalk" />
+      <edge id="894" source="Alef" target="Go" />
+      <edge id="895" source="Alef" target="Limbo programming language" />
+      <edge id="896" source="Common Intermediate Language" target="Cat" />
+      <edge id="897" source="CLACL" target="C" />
+      <edge id="898" source="CLACL" target="Prolog" />
+      <edge id="899" source="JOVIAL" target="CORAL66 programming language" />
+    </edges>
+  </graph>
+</gexf>
