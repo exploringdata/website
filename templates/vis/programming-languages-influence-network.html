@@ -8,11 +8,25 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language Paradigm <b class="caret"></b></a>
     <ul class="dropdown-menu" id="paradigms"></ul>
   </li>
-  <li><a class="graphlayout" href="">Start Layout</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Choose Layout <b class="caret"></b></a>
+    <ul class="dropdown-menu" id="layout">
+      <li class="active"><a href="#forceatlas2">Force Atlas 2</a></li>
+      <li><a href="#random">Random</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.zazzle.com/programming_languages_influence_network_poster-228947989414708643?rf=238355915198956003">Poster</a></li>
+<!--  <li><a class="graphlayout" href="">Start Layout</a></li> -->
 </ul>
 {% endblock %}
 
 {% block content %}
+<pre>
+TODO
+Add layout choice with forceatlas2, random and others, so there is only one version
+Show poster in modal window
+</pre>
+
 <div class="row"><div class="span12">
 <div class="sigma-parent">
   <div class="sigma-expand" id="sig"></div>
