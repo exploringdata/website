@@ -2,11 +2,13 @@ var visgexf = {
   sig: null,
   filters: {},
   graph: null,
+  filename: null,
   activeFilterId: null,
   activeFilterVal: null,
   sourceColor: '#67A9CF',
   targetColor: '#EF8A62',
   init: function(visid, filename) {
+    visgexf.filename = filename;
     visgexf.sig = sigma.init(document.getElementById(visid)).drawingProperties({
       defaultLabelColor: '#fff',
       defaultLabelSize: 12,
@@ -24,55 +26,15 @@ var visgexf = {
     });
     visgexf.sig.parseGexf(filename);
     visgexf.sig.draw();
-
-    // events
-    visgexf.sig.bind('overnodes', function(event){
-      var hnode = visgexf.sig.getNodes(event.content)[0];
-      if (0 == hnode.degree) return;
-      var zoomratio = visgexf.sig.graphProperties().position().ratio;
-      var sources = {},
-          targets = {};
-      visgexf.sig.iterEdges(function(e){
-        if (e.source != hnode.id && e.target != hnode.id) {
-          e.hidden = 1;
-        } else if (e.source == hnode.id) {
-          targets[e.target] = true;
-          e.color = visgexf.sourceColor;
-        } else if (e.target == hnode.id) {
-          sources[e.source] = true;
-          e.color = visgexf.targetColor;
-        }
-      }).iterNodes(function(n){
-        if (n.id == hnode.id) {
-          n.hidden = 0;
-        } else if (sources[n.id]) {
-          n.color = visgexf.targetColor;
-        } else if (targets[n.id]) {
-          n.color = visgexf.sourceColor;
-        }
-        else {
-          n.hidden = 1;
-        }
-      }).draw(2,2,2);
-    }).bind('outnodes',function(event){
-      visgexf.sig.iterNodes(function(n){
-        n.hidden = 0;
-        if (null !== visgexf.activeFilterId && null !== visgexf.activeFilterVal && !visgexf.nodeHasFilter(n, visgexf.activeFilterId, visgexf.activeFilterVal)) {
-          n.hidden = 1;
-        }
-      }).iterEdges(function(e){
-        e.hidden = 0;
-      }).draw(2,2,2);
-    });
-
-    $('body').bind('mousewheel', function(){
-      var zoomratio = visgexf.sig.graphProperties().position().ratio;
-      if (zoomratio > 3)
-        visgexf.sig.iterNodes(function(n){ n.forceLabel = 1; });
-      else
-        visgexf.sig.iterNodes(function(n){ n.forceLabel = 0; });
-    });
+    visgexf.events();
     return visgexf;
+  },
+
+  // set the color of node or edge
+  setColor: function(o, c) {
+    o.attr.hl = true;
+    o.attr.color = o.color;
+    o.color = c;
   },
 
   // called with array of ids of attributes to use as filters
@@ -124,5 +86,60 @@ var visgexf = {
         n.hidden = 0;
       }
     }).draw(2,2,2);
+  },
+
+  events: function() {
+    visgexf.sig.bind('overnodes', function(event){
+      var hnode = visgexf.sig.getNodes(event.content)[0];
+      if (0 == hnode.degree) return;
+      var zoomratio = visgexf.sig.graphProperties().position().ratio;
+      var sources = {},
+          targets = {};
+      visgexf.sig.iterEdges(function(e){
+        if (e.source != hnode.id && e.target != hnode.id) {
+          e.hidden = 1;
+        } else if (e.source == hnode.id) {
+          targets[e.target] = true;
+          visgexf.setColor(e, visgexf.sourceColor);
+        } else if (e.target == hnode.id) {
+          visgexf.setColor(e, visgexf.targetColor);
+          sources[e.source] = true;
+        }
+      }).iterNodes(function(n){
+        if (n.id == hnode.id) {
+          n.hidden = 0;
+        } else if (sources[n.id]) {
+          visgexf.setColor(n, visgexf.targetColor);
+        } else if (targets[n.id]) {
+          visgexf.setColor(n, visgexf.sourceColor);
+        } else {
+          n.hidden = 1;
+        }
+      }).draw(2,2,2);
+    }).bind('outnodes',function(event){
+      visgexf.sig.iterNodes(function(n){
+        if (n.attr.hl) {
+          n.color = n.attr.color;
+          n.attr.hl = false;
+        }
+        n.hidden = 0;
+        if (null !== visgexf.activeFilterId && null !== visgexf.activeFilterVal && !visgexf.nodeHasFilter(n, visgexf.activeFilterId, visgexf.activeFilterVal)) {
+          n.hidden = 1;
+        }
+      }).iterEdges(function(e){
+        if (e.attr.hl) {
+          e.color = e.attr.color;
+          e.attr.hl = false;
+        }
+        e.hidden = 0;
+      }).draw(2,2,2);
+    });
+    $('body').bind('mousewheel', function(){
+      var zoomratio = visgexf.sig.graphProperties().position().ratio;
+      if (zoomratio > 3)
+        visgexf.sig.iterNodes(function(n){ n.forceLabel = 1; });
+      else
+        visgexf.sig.iterNodes(function(n){ n.forceLabel = 0; });
+    });
   }
 };
