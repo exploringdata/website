@@ -4,13 +4,12 @@ var langinfo = function(data) {
   sl.find('h3').text(hlang.label);
   var influenced = '';
   var influencedby = '';
-  var m = /\|/g;
   $.each(hlang.attr.attributes, function(idx, item){
     if (1 == item.attr) {
-      influencedby = item.val.replace(m, ', ');
+      influencedby = item.val.split('|').sort().join(', ');
     }
     if (2 == item.attr) {
-      influenced = item.val.replace(m, ', ');
+      influenced = item.val.split('|').sort().join(', ');
     }
   });
   var desc = data.result + '... <a href="http://www.freebase.com/view/' + hlang.id + '">view on Freebase</a>';
@@ -22,35 +21,43 @@ var langinfo = function(data) {
 
   if (influenced)
     desc += '<h4>Languages Influenced</h4><p>' + influenced + '</p>';
-  if (influenced)
+  if (influencedby)
     desc += '<h4>Influenced by</h4><p>' + influencedby + '</p>';
 
-  sl.find('.modal-body').html('<div>' + desc + '<hr><p>Search for ' + hlang.label + ' books on <a href="http://www.amazon.com/gp/search?ie=UTF8&camp=1789&creative=9325&index=books&keywords=' + encodeURIComponent(hlang.label) + '&linkCode=ur2&tag=xpdt-20">Amazon.com</a></p></div>');
+  desc += '<hr><h4>Search for ' + hlang.label + ' books on</h4>';
+
+  var s = encodeURIComponent(hlang.label);
+  desc += '<a href="http://www.amazon.com/gp/search?ie=UTF8&camp=1789&creative=9325&index=books&keywords=' + s + '&linkCode=ur2&tag=xpdt-20">Amazon.com</a> | ';
+  desc += '<a href="http://www.amazon.co.uk/gp/search?ie=UTF8&camp=1634&creative=6738&index=books&keywords=' + s + '&linkCode=ur2&tag=xpdt-21">Amazon.co.uk</a> | ';
+  desc += '<a href="http://www.amazon.de/gp/search?ie=UTF8&camp=1638&creative=6742&index=english-books&keywords=' + s + '&linkCode=ur2&tag=xpdt0b-21">Amazon.de</a> | ';
+  desc += '<a href="http://www.amazon.ca/gp/search?ie=UTF8&camp=15121&creative=330641&index=books-ca&keywords=' + s + '&linkCode=ur2&tag=xpdt0b-20">Amazon.ca</a>';
+
+  sl.find('.modal-body').html(desc);
   sl.modal();
 };
 
-$(function(){
-  var G = visgexf.init('sig', '/gexf/plin_forceatlas2.gexf');
-  var filterid = 0;
-  var filters = G.getFilters([filterid]);
+var menuclick = function(menu, event) {
+  event.preventDefault();
+  if ('a' == event.target.nodeName.toLowerCase()) {
+    var t = $(event.target);
+    menu.find('li').removeClass('active');
+    t.parent('li').addClass('active');
+    return t;
+  }
+  return false;
+};
 
-  var pmenu = $('#paradigms');
-  pmenu.append('<li class="active"><a href="#">All languages (' + G.sig.getNodesCount() + ')</a></li>');
-  $.each(filters, function(idx, item) {
-    pmenu.append('<li><a href="#' + item[0] + '">' + item[0] + ' (' + item[1] + ')</a></li>');
-  });
-  pmenu.click(function(e){
-    e.preventDefault();
-    if ('a' == e.target.nodeName.toLowerCase()) {
-      var t = $(e.target);
-      var pid = t.attr('href').replace('#', '');
-      pmenu.find('li').removeClass('active');
-      t.parent('li').addClass('active');
-      visgexf.setFilter(filterid, pid);
-    }
-  });
+var randomNodeColor = function(num) {
+  var color = '#bfbab7';
+  if (num > 40) color = '#006D2C';
+  else if (num > 30) color = '#31A354';
+  else if (num > 20) color = '#74C476';
+  else if (num > 0) color = '#BAE4B3';
+  return color;
+};
 
-  G.sig.bind('upnodes', function(event){
+var nodeClick = function(Graph) {
+  Graph.sig.bind('upnodes', function(event){
     hlang = G.sig.getNodes(event.content)[0];
     // add script with callback to avoid cross-origin request issues
     var script = document.createElement('script');
@@ -58,12 +65,48 @@ $(function(){
     script.type = 'text/javascript';
     document.getElementsByTagName('head')[0].appendChild(script);
   });
-//.bind('outnodes',function(event){
-//    if (G.pid && G.pid != G.defaultPid) {
-//      G.hlParadigm(G.pid);
-//    } else {
-//      G.reset();
-//    }
-//  });
+};
+
+$(function(){
+  var G = visgexf.init('sig', '/gexf/plin_forceatlas2.gexf');
+  var filterid = 0;
+  var filters = G.getFilters([filterid]);
+  nodeClick(G);
+
+  var pmenu = $('#paradigms');
+  pmenu.append('<li class="active"><a href="#">All languages (' + G.sig.getNodesCount() + ')</a></li>');
+  $.each(filters, function(idx, item) {
+    pmenu.append('<li><a href="#' + item[0] + '">' + item[0] + ' (' + item[1] + ')</a></li>');
+  });
+  pmenu.click(function(event){
+    if (t = menuclick(pmenu, event))
+      visgexf.setFilter(filterid, t.attr('href').replace('#', ''));
+  });
+
+  var lmenu = $('#layout');
+  lmenu.click(function(event){
+    if (t = menuclick(lmenu, event)) {
+      // reset paradigm menu
+      var lis = pmenu.find('li');
+      lis.removeClass('active');
+      lis.first().addClass('active');
+
+      var action = t.attr('href').replace('#', '');
+      if ('random' == action) {
+        visgexf.reset();
+        visgexf.sig.iterNodes(function(n){
+          n.x = Math.random();
+          n.y = Math.random();
+          n.color = randomNodeColor(n.outDegree);
+        }).draw(2,2,2);
+      } else {
+        visgexf.clear();
+        nodeClick(visgexf.init('sig', '/gexf/plin_forceatlas2.gexf'));
+      }
+    }
+  });
+
+  $('.showposter').click(function(e){e.preventDefault();$('#showposter').modal();});
+
 
 });
