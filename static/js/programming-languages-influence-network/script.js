@@ -58,7 +58,7 @@ var randomNodeColor = function(num) {
 
 var nodeClick = function(Graph) {
   Graph.sig.bind('upnodes', function(event){
-    hlang = G.sig.getNodes(event.content)[0];
+    hlang = Graph.sig.getNodes(event.content)[0];
     // add script with callback to avoid cross-origin request issues
     var script = document.createElement('script');
     script.src = 'https://usercontent.googleapis.com/freebase/v1/text' + hlang.id + '?callback=langinfo';
