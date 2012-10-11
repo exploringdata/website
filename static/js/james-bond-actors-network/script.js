@@ -46,7 +46,8 @@ $(function(){
       minEdgeSize: 1,
       maxEdgeSize: 1
     },
-    forceLabel: 0
+    forceLabel: 0,
+    type: 'undirected'
   }
 
   var G = visgexf.init('sig', '/gexf/jamesbond.gexf', props);

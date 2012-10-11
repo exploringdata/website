@@ -83,7 +83,8 @@ $(function(){
       minEdgeSize: 1,
       maxEdgeSize: 1
     },
-    forceLabel: 1
+    forceLabel: 1,
+    type: 'directed'
   }
 
   var G = visgexf.init('sig', '/gexf/plin_forceatlas2.gexf', props);

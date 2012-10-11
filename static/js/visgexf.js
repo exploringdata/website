@@ -25,6 +25,9 @@ var visgexf = {
 
   // set the color of node or edge
   setColor: function(o, c) {
+    // don't change node an edge colors of undirected graphs
+    if ('undirected' == visgexf.props.type) return;
+    type: 'directed'
     o.attr.hl = true;
     o.attr.color = o.color;
     o.color = c;
@@ -93,14 +96,10 @@ var visgexf = {
 
   // show node with optional color, check if it satisfies possibly set filter
   nodeShow: function(node, color) {
-    if (visgexf.filteredOut(node)) {
-      return;
-    }
+    if (visgexf.filteredOut(node)) return;
     if (color) visgexf.setColor(node, color);
+    if (visgexf.props.forceLabel) node.forceLabel = 1;
     node.hidden = 0;
-    if (visgexf.props.forceLabel) {
-      node.forceLabel = 1;
-    }
   },
 
   events: function() {
@@ -139,9 +138,7 @@ var visgexf = {
         }
         n.hidden = 0;
         n.forceLabel = 0;
-        if (visgexf.filteredOut(n)) {
-          n.hidden = 1;
-        }
+        if (visgexf.filteredOut(n)) n.hidden = 1;
       }).iterEdges(function(e){
         if (e.attr.hl) {
           e.color = e.attr.color;
