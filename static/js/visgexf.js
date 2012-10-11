@@ -4,28 +4,19 @@ var visgexf = {
   sig: null,
   filters: {},
   graph: null,
+  props: null,
   activeFilterId: null,
   activeFilterVal: null,
   sourceColor: '#67A9CF',
   targetColor: '#EF8A62',
-  init: function(visid, filename) {
+  init: function(visid, filename, props) {
     visgexf.visid = visid;
     visgexf.filename = filename;
-    visgexf.sig = sigma.init(document.getElementById(visid)).drawingProperties({
-      defaultLabelColor: '#fff',
-      defaultLabelSize: 12,
-      defaultLabelBGColor: '#fff',
-      defaultLabelHoverColor: '#000',
-      labelThreshold: 3,
-      defaultEdgeType: 'curve'
-    }).graphProperties({
-      minNodeSize: .5,
-      maxNodeSize: 25,
-      minEdgeSize: 1,
-      maxEdgeSize: 1
-    }).mouseProperties({
-      maxRatio: 128
-    });
+    visgexf.props = props;
+    visgexf.sig = sigma.init(document.getElementById(visid))
+      .drawingProperties(props['drawing'])
+      .graphProperties(props['graph'])
+      .mouseProperties({maxRatio: 128});
     visgexf.sig.parseGexf(filename);
     visgexf.sig.draw();
     visgexf.events();
@@ -107,7 +98,9 @@ var visgexf = {
     }
     if (color) visgexf.setColor(node, color);
     node.hidden = 0;
-    node.forceLabel = 1;
+    if (visgexf.props.forceLabel) {
+      node.forceLabel = 1;
+    }
   },
 
   events: function() {

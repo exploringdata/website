@@ -3,10 +3,12 @@
 {% block content %}
 <div class="row">
 
-{% for doc in indexes.vis[:3] %}
+{% for doc in indexes.vis %}
 <div class="span4"><div class="well">
-  <h5><a href="{{doc.url}}">{{doc.title}}</a></h5>
-  <a href="{{doc.url}}"><img src="{{doc.imgpreview}}" alt="{{doc.title}}"></a>
+<a href="{{doc.url}}" title="{{doc.description}}">
+  <h5>{{doc.title}}</h5>
+  <img src="{{doc.imgpreview}}" alt="{{doc.title}}">
+</a>
 </div></div>
 {% endfor %}
 
