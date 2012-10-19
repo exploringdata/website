@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ title }}{% endblock %} | Exploring Data</title>
@@ -7,14 +7,17 @@
     {% if description %}
       <meta name="description" content="{{description}}">
     {% endif %}
+    {% if imgpreview %}
+      <meta property="og:image" content="{{base_url}}{{imgpreview}}">
+    {% endif %}
     <meta name="author" content="Ramiro Gómez">
-    <link rel="canonical" href="{{canonical}}"/>
-    <link href="/vendor/zocial/zocial.css" rel="stylesheet"/>
+    <link rel="canonical" href="{{canonical}}">
+    <link href="/vendor/zocial/zocial.css" rel="stylesheet">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/vendor/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     {% for style in styles %}
-        <link href="{{ style }}" rel="stylesheet">
+        <link href="{{style}}" rel="stylesheet">
     {% endfor %}
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,7 +25,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     {% if base_url %}
       {% block rsslink %}
-        <link rel="alternate" type="application/rss+xml" title="Exploring Data main RSS feed" href="{{base_url}}/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="Exploring Data main RSS feed" href="{{base_url}}/rss.xml">
       {% endblock %}
     {% endif %}
   </head>
