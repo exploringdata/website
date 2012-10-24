@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="span8">
+    <div id="vis"></div>
+  </div>
+
+  <div class="span4">
+    <h3>Exploit Database Summary</h3>
+    <p>asdaddddddddddd</p>
+    <div id="visdetails"></div>
+  </div>
+</div>
+
+<div id="visinfo" class="row"><div class="span12">
+  <div class="alert alert-info">
+    <a class="close" data-dismiss="alert" href="#">×</a>
+    Click on a platform circle to show more information about it. Zoom in and out of the spiral with the mousewheel or drag it around by clicking and moving the mouse.
+  </div>
+<h1>{{title}}</h1>{{body}}
+</div></div>
+
+{% endblock %}
