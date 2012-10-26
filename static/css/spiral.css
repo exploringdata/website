@@ -6,3 +6,8 @@ cursor:pointer;
 circle {
 cursor:pointer;
 }
+
+rect {
+fill: steelblue;
+opacity:.8;
+}
