@@ -1,13 +1,25 @@
 text {
-font: 12px sans-serif;
-color:#000;
+font: 13px sans-serif;
+fill:#333;
+}
+.node text {
 cursor:pointer;
+}
+.rule {
+font-size:11px;
 }
 circle {
 cursor:pointer;
 }
-
 rect {
 fill: steelblue;
 opacity:.8;
+}
+.nodeinfo {
+display:none;
+}
+.well h4 {
+margin-top:0;
+text-align:center;
+font-size:1.1em;
 }

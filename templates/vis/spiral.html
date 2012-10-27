@@ -2,18 +2,26 @@
 
 {% block content %}
 <div class="row" class="vis">
-  <div class="span8">
+  <div class="span7">
     <div id="vis"></div>
   </div>
-  <div class="span4" class="sidebar">
+  <div class="span5" class="sidebar">
     <h3>Exploit Database Summary</h3>
-    <div id="expsummary" class="well"></div>
+    <div id="expsummary" class="well">
+      <p>This visualization displays information on <strong id="platformcount"></strong> computer platforms with security vulnerabilities, that could or still can be eploited with techniques and tools listed in the <a href="http://www.exploit-db.com/">Exploit Database</a>. The dataset with <strong id="exploitcount"></strong> exploits was last updated Sun Oct 21 2012.</p>
+    </div>
     <div class="nodeinfo">
       <h3>Platform: <span id="platform"></span></h3>
-      <h4>Exploit Types</h4>
-      <div id="exptypes" class="well bar"></div>
-      <h4>Exploit Files</h4>
-      <div id="expfiles" class="well bar"></div>
+      <div class="well">
+        <h4>Exploit type counts</h4>
+        <div id="exptypes" class="bar"></div>
+        <p class="small">The Exploit Database categorizes exploits based on the targeted software/hardware into different types like dos, local, remote and webapps.</p>
+      </div>
+      <div class="well">
+        <h4>Exploit file counts</h4>
+        <div id="expcode" class="bar"></div>
+        <p class="small">Exploits are either programs or textual descriptions on how to perform the exploit and are broken down into languages or file types of exploit files.</p>
+      </div>
     </div>
     <div id="legend" class="alert alert-info">
       <a class="close" data-dismiss="alert" href="#">×</a>
@@ -24,7 +32,6 @@
           <li>Zoom in and out the spiral with the mousewheel.</li>
           <li>Drag the spiral around by clicking and moving the mouse.</li>
       </ul>
-      <p>Data source: <a href="http://www.exploit-db.com/">Exploit Database</a>. Last updated: Sun Oct 21 2012.</p>
     </div>
   </div>
 </div>
