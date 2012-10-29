@@ -15,6 +15,7 @@ rect {
 fill: steelblue;
 opacity:.8;
 }
+#overview,
 .nodeinfo {
 display:none;
 }

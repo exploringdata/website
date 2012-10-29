@@ -1,16 +1,32 @@
 {% extends "base.html" %}
 
+{% block nav %}
+<ul class="nav">
+  <li><a href="#visinfo">Info</a></li>
+</ul>
+{% endblock %}
+
 {% block content %}
 <div class="row" class="vis">
   <div class="span7">
     <div id="vis"></div>
   </div>
   <div class="span5" class="sidebar">
-    <h3>About this Visualization</h3>
-    <div id="expsummary" class="well">
-      <p>This visualization displays information on <strong id="platformcount"></strong> computer platforms with security vulnerabilities, that could or still can be exploited with techniques and tools listed in the <a href="http://www.exploit-db.com/">Exploit Database</a>. The dataset with <strong id="exploitcount"></strong> exploits was last updated Sun Oct 21 2012.</p>
+    <div id="expsummary">
+      <h3>About this Visualization</h3>
+      <div class="well">
+        <p>This visualization displays information on <strong id="platformcount"></strong> computer platforms with security vulnerabilities, that could or still can be exploited with techniques and tools listed in the <a href="http://www.exploit-db.com/">Exploit Database</a>. The dataset with <strong id="exploitcount"></strong> exploits was last updated Sun Oct 21 2012.</p>
+      </div>
+    </div>
+    <div id="expplatforms">
+      <h3>Top exploited platforms</h3>
+      <div class="well">
+        <h4>Platform counts</h4>
+        <div id="platforms" class="bar"></div>
+      </div>
     </div>
     <div class="nodeinfo">
+      <button id="overview" class="btn pull-right" title="Show top exploited platforms"><i class="icon-remove"></i></button>
       <h3>Platform: <span id="platform"></span></h3>
       <div class="well">
         <h4>Exploit type counts</h4>
