@@ -159,6 +159,7 @@ var drawlegend = function(links) {
 }
 
 // main program flow
+//TODO by default choose 5 top giving and 5 top receiving countries?
 //var current_sources = ['ESP', 'USA', 'DEU'];
 var current_sources = ['AUS', 'DEU', 'ESP', 'FRA', 'GBR', 'USA', 'ITA'];
 var current_targets = ['AFG', 'VUT', 'VEN', 'VNM'];
