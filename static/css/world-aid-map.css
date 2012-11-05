@@ -1,0 +1,37 @@
+.background {
+fill: none;
+pointer-events: all;
+}
+#countries {
+fill: #ddd;
+stroke: #fff;
+stroke-width: 1px;
+}
+circle {
+fill: #666;
+opacity: .1;
+stroke: none;
+}
+circle title {
+font: 13px sans-serif;
+fill:#333;
+}
+#legend {
+font: 12px sans-serif;
+fill: #fff;
+}
+#legend .heading {
+font: bold 14px sans-serif;
+}
+#legend text {
+fill:#333;
+}
+#countries {
+width:900px;
+-moz-column-count: 6;
+-moz-column-gap: 1em;
+-webkit-column-count: 6;
+-webkit-column-gap: 1em;
+column-count: 6;
+column-gap: 1em;
+}
