@@ -5,7 +5,13 @@
   <li>
     <div class="btn-group">
       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">Select Countries</a>
-      <ul class="dropdown-menu" id="countries">
+      <div class="dropdown-menu">
+      <ul class="nav nav-pills pull-left">
+        <li class="active"><a href="#">All Countries</a></li>
+        <li><a href="#">Donors</a></li>
+        <li><a href="#">Recipients</a></li>
+      </ul>
+      <ul id="countries">
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> USA</label></li>
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> Germany</label></li>
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> France</label></li>
@@ -79,6 +85,7 @@
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> Germany</label></li>
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> France</label></li>
       </ul>
+      </div>
     </div>
 
   </li>
@@ -103,13 +110,8 @@
     <ul class="thumbnails">
       <li>
         <div class="thumbnail">
-          <h3>Money Donated</h3>
-          <img src="http://placehold.it/460x150" alt="">
-          <p>Scatterplot: x = donations, y = google user requests, size population or GDP or total donations?</p>
-        </div>
-        <div class="thumbnail">
-          <h3>Money Received</h3>
-          <img src="http://placehold.it/460x150" alt="">
+          <h3>Bilateral Aid Flows</h3>
+          <img src="http://nvd3.com/img/horizontalbar.png" alt="">
           <p>Scatterplot: x = donations, y = google user requests, size population or GDP or total donations?</p>
         </div>
       </li>

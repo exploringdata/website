@@ -135,8 +135,6 @@ var drawlegend = function(links) {
       .on('mouseover', function(d,i) {tooltip(d.source.name)})
       .on('mouseout', function(d,i) {$('#tooltip').remove()});
 
-
-
   glegend.selectAll('line.country')
     .data(links).enter()
     .append('svg:line')
@@ -162,15 +160,15 @@ var drawlegend = function(links) {
 
 // main program flow
 //var current_sources = ['ESP', 'USA', 'DEU'];
-var current_sources = ['AUS', 'DEU', 'ESP', 'FRA', 'GBR', 'USA'];
+var current_sources = ['AUS', 'DEU', 'ESP', 'FRA', 'GBR', 'USA', 'ITA'];
 var current_targets = ['AFG', 'VUT', 'VEN', 'VNM'];
 //var current_targets = ['VUT'];
 
 selected = donations.filter(function(d){
   return ('undefined' !== typeof capitals[d.source]
     && 'undefined' !== typeof capitals[d.target]
-    && -1 !== current_sources.indexOf(d.source)
-    && -1 !== current_targets.indexOf(d.target)
+//    && -1 !== current_sources.indexOf(d.source)
+//    && -1 !== current_targets.indexOf(d.target)
   ) ? true : false
 });
 
