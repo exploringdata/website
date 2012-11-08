@@ -16,6 +16,9 @@ circle title {
 font: 13px sans-serif;
 fill:#333;
 }
+.bglegend {
+fill: white;
+}
 #legend {
 font: 12px sans-serif;
 fill: #fff;

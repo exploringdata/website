@@ -3,7 +3,8 @@
 var width = 660,
   height = 495,
   legendh = 60,
-  pathopacity = .5,
+  pathopacity = .4,
+  year = 2010, // year with currently most comprehensive dataset
   selected,
   centered,
   geocountries,
@@ -38,27 +39,18 @@ var gcountries = svg.append('g')
   .append('g')
     .attr('id', 'countries');
 
-var glegend = svg.append('g')
-  .attr('transform', 'translate(0,' + (height - legendh) +')')
-  .attr('width', width)
-  .attr('height', legendh)
-  .attr('id', 'legend');
-glegend.append('svg:text')
-  .text('World Aid Flow')
-  .attr('class', 'heading');
-
 var garcs = svg.append('g')
   .attr('transform', tf)
   .attr('id', 'arcs');
 
 var linkcoords = function(d) {
-  d.source = capitals[d.source];
-  d.target = capitals[d.target];
+  d.source = countryinfo[d.source];
+  d.target = countryinfo[d.target];
   return d;
 };
 
 var dollarval = function(d) {
-  var usd = d.usdollars;
+  var usd = d.usd;
   if (relation) usd = usd / d[relation];
   return Math.sqrt(usd) / 10000;
 };
@@ -67,6 +59,13 @@ var rescale = function() {
   svg.attr('transform', 'translate(' + d3.event.translate + ')'
     + ' scale(' + d3.event.scale + ')')
 }
+
+//FIXME
+var colorscale = function(basecolor, val) {
+  var c = d3.rgb(basecolor);
+  //c.darker(2).toString(); // "#743f74" - even darker
+  //c.brighter(0.1).toString(); // "#f686f6" - only slightly brighter
+};
 
 //FIXME use min and max of total
 var scalelinks = d3.scale.sqrt().domain([-10000000,10000000]);
@@ -80,7 +79,7 @@ var drawlinks = function(links) {
   garcs.selectAll('path')
     .data(links)
     .enter().append('path')
-      .style('opacity', .5)
+      .style('opacity', pathopacity)
       .style('stroke', function(d) {return color(d.source)})
       .style('stroke-width', function(d) {return dollarval(d)})
       .style('fill', 'none')
@@ -93,10 +92,10 @@ var drawlinks = function(links) {
 //      .attr('d', function (d) {
 //        var inflow = false;
 //        d = linkcoords(d);
-//        return curvedarrow(projection(d.source.coords), projection(d.target.coords), inflow, Math.sqrt(d.usdollars) / 1000);
+//        return curvedarrow(projection(d.source.coords), projection(d.target.coords), inflow, Math.sqrt(d.usd) / 1000);
 //      })
       .on('mouseover', function(d) {
-        garcs.selectAll('path').style('opacity', .1);
+        garcs.selectAll('path').style('opacity', pathopacity / 10);
         d3.select(this).style('stroke', 'red').style('opacity', pathopacity);
       })
       .on('mouseout', function(d) {
@@ -104,7 +103,7 @@ var drawlinks = function(links) {
         d3.select(this).style('stroke', color(d.source));
       })
       .append('title')
-        .text(function(d) {return format(d.usdollars) + ' USD from ' + d.source.name + ' to ' + d.target.name});
+        .text(function(d) {return format(d.usd) + ' USD from ' + d.source.name + ' to ' + d.target.name});
 }
 
 var tooltip = function(text) {
@@ -122,28 +121,43 @@ var tooltip = function(text) {
   $('body').append(tt);
 };
 
-var drawlegend = function(links) {
+var drawlegend = function(isos) {
+  // add a rect to cover lines at the bottom of the map to not disturb legend
+  var grect = svg.append('rect')
+    .attr('class', 'bglegend')
+    .attr('y', height - legendh - 15)
+    .attr('width', width)
+    .attr('height', legendh + 15)
+
+  var glegend = svg.append('g')
+    .attr('transform', 'translate(0,' + (height - legendh) +')')
+    .attr('id', 'legend');
+
+  glegend.append('svg:text')
+    .text('Aid Flow from Donors')
+    .attr('class', 'heading');
+
   var countrywidth = 60;
   glegend.selectAll('text.country')
-    .data(links).enter()
+    .data(isos).enter()
     .append('svg:text')
       .attr('class', 'country')
       .attr('x', function(d, i) {return countrywidth * i})
       .attr('dx', 20)
       .attr('dy', 20)
-      .text(function(d) {return d.source.iso})
-      .on('mouseover', function(d,i) {tooltip(d.source.name)})
+      .text(function(d) {return d})
+      .on('mouseover', function(d,i) {tooltip(countryinfo[d].name)})
       .on('mouseout', function(d,i) {$('#tooltip').remove()});
 
   glegend.selectAll('line.country')
-    .data(links).enter()
+    .data(isos).enter()
     .append('svg:line')
       .attr('class', 'country')
       .attr('x1', function(d, i) {return countrywidth * i})
       .attr('y1', 16)
       .attr('x2', function(d, i) {return 14 + countrywidth * i})
       .attr('y2', 16)
-      .attr('stroke', function(d) {return color(d.source.iso)})
+      .attr('stroke', function(d) {return color(d)})
       .attr('stroke-width', 4);
 
   var ltext = glegend.append('svg:text')
@@ -159,22 +173,24 @@ var drawlegend = function(links) {
 }
 
 // main program flow
-//TODO by default choose 5 top giving and 5 top receiving countries?
-//var current_sources = ['ESP', 'USA', 'DEU'];
-var current_sources = ['AUS', 'DEU', 'ESP', 'FRA', 'GBR', 'USA', 'ITA'];
-var current_targets = ['AFG', 'VUT', 'VEN', 'VNM'];
-//var current_targets = ['VUT'];
+//TODO by default choose 5 top giving (or 5 top receiving) countries?
+var current_sources = ranks[year]['donated'].slice(-5).reverse();
+var current_targets = ranks[year]['received'].slice(-5).reverse();
 
-selected = donations.filter(function(d){
-  return ('undefined' !== typeof capitals[d.source]
-    && 'undefined' !== typeof capitals[d.target]
-//    && -1 !== current_sources.indexOf(d.source)
-//    && -1 !== current_targets.indexOf(d.target)
+var current_sources_iso = current_sources.map(function(d) {return d.iso});
+var current_targets_iso = current_targets.map(function(d) {return d.iso});
+var current_isos = current_sources_iso.concat(current_targets_iso);
+
+selected = donations[year].filter(function(d){
+  return ('undefined' !== typeof countryinfo[d.source]
+    && 'undefined' !== typeof countryinfo[d.target]
+    && (-1 !== current_sources_iso.indexOf(d.source) || -1 !== current_targets_iso.indexOf(d.target))
   ) ? true : false
 });
 
 drawlinks(selected);
-drawlegend(selected);
+// FIXME call with list based on selection either donors or recipients
+drawlegend(current_sources_iso);
 
 d3.json('/json/world-countries.json', function(error, json) { // d3 v3
 //d3.json('world-countries.json', function(json) { // d3 v2
@@ -189,17 +205,18 @@ d3.json('/json/world-countries.json', function(error, json) { // d3 v3
   gcountries.selectAll('circle')
     .data(geocountries.filter(function(d){
       // ignore countries with missing data for now
-      return ('undefined' === typeof capitals[d.id]) ? false : true;
+      return ('undefined' === typeof countryinfo[d.id]) ? false : true;
     }))
     .enter().append('circle')
-      .attr('cx', function(d) {return projection(capitals[d.id].coords)[0]})
-      .attr('cy', function(d) {return projection(capitals[d.id].coords)[1]})
+      .attr('cx', function(d) {return projection(countryinfo[d.id].coords)[0]})
+      .attr('cy', function(d) {return projection(countryinfo[d.id].coords)[1]})
       .attr('r', 1.8)
       .append('title')
-        .text(function(d) {return capitals[d.id].name + ', ' + d.properties.name});
+        .text(function(d) {return countryinfo[d.id].name + ', ' + d.properties.name});
 });
 
-// unused
+/*************************** unused *******************************/
+
 // adapted from http://www.uis.unesco.org/Education/Pages/international-student-flow-viz.aspx
 // inflow / outflow doesn't work
 function curvedarrow(src, trg, inflow, width) {
