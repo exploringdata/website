@@ -2,6 +2,9 @@
 fill: none;
 pointer-events: all;
 }
+h4 {
+margin-top:0;
+}
 #countries {
 fill: #ddd;
 stroke: #fff;

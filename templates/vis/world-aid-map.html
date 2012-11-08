@@ -120,30 +120,29 @@
 {% endblock %}
 
 {% block content %}
-<div class="row" class="vis">
-  <div class="span7">
+<div class="row" id="visnav">
+  <div class="span12">
     <ul class="nav nav-pills pull-left">
+      <li class="active"><a href="#">World Aid Flow</a></li>
+      <li><a href="#">Communication/Transparency</a></li>
+    </ul>
+    <ul class="nav nav-pills pull-right">
       <li class="active"><a href="#">Total Amounts</a></li>
       <li><a href="#">By Population</a></li>
       <li><a href="#">By GDP</a></li>
     </ul>
+  </div>
+</div>
+
+<div class="row" class="vis">
+  <div class="span8">
     <div id="map"></div>
   </div>
-  <div class="span5">
-    <ul class="thumbnails">
-      <li>
-        <div class="thumbnail">
-          <h3>Bilateral Aid Flows</h3>
-          <img src="http://nvd3.com/img/horizontalbar.png" alt="">
-          <p>Scatterplot: x = donations, y = google user requests, size population or GDP or total donations?</p>
-        </div>
-        <div class="thumbnail">
-          <h3>Bilateral Aid Flows</h3>
-          <img src="http://nvd3.com/img/scatter.png" alt="">
-          <p>Scatterplot: x = internet users by 100, y = google user requests, donations total or by population or GDP</p>
-        </div>
-      </li>
-    </ul>
+  <div class="span4">
+    <h4>Donors Ranking</h4>
+    <div id="aiddonors"></div>
+    <h4>Recipients Ranking</h4>
+    <div id="aidrecipients"></div>
   </div>
 </div>
 
