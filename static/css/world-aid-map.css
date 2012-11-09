@@ -5,6 +5,19 @@ pointer-events: all;
 h4 {
 margin-top:0;
 }
+/* bar charts */
+.bar text {
+font: 13px sans-serif;
+fill:#333;
+}
+.bar rect {
+fill: steelblue;
+opacity:.8;
+}
+.bar .rule {
+font-size:11px;
+}
+/* map */
 #countries {
 fill: #ddd;
 stroke: #fff;
