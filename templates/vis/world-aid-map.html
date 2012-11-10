@@ -21,11 +21,6 @@
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> USA</label></li>
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> Germany</label></li>
         <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> France</label></li>
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> USA</label></li>
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> Germany</label></li>
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> France</label></li>
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> USA</label></li>
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> Germany</label></li>
       </ul>
     </div>
   </div>
@@ -33,9 +28,10 @@
 
 <div class="row" id="visnav">
   <div class="span12">
-    <ul class="nav nav-pills pull-left">
-      <li class="active"><a href="#">World Aid Flow</a></li>
-      <li><a href="#">Communication/Transparency</a></li>
+    <ul class="nav nav-pills pull-left" id="tabmenu">
+      <li class="active"><a href="#tab-aid">World Aid Flow</a></li>
+      <li><a href="#tab-communication">Communication</a></li>
+      <li><a href="#tab-conflict">Conflict</a></li>
     </ul>
     <ul class="nav nav-pills pull-right">
       <li class="active"><a href="#">Total Amounts</a></li>
@@ -45,32 +41,33 @@
   </div>
 </div>
 
-<div class="row" class="vis">
-  <div class="span8">
-    <div id="map"></div>
-  </div>
-  <div class="span4">
-    <h4>Donors Ranking</h4>
-    <div class="bar" id="aiddonors"></div>
-    <h4>Recipients Ranking</h4>
-    <div class="bar" id="aidrecipients"></div>
-  </div>
-</div>
+<div class="tab-content">
 
-<div id="countrycharts" class="row">
-<div class="span2"><h3>USA</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Germany</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Italy</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Spain</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>France</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Greece</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>USA</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Germany</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Italy</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Spain</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>France</h3><img src="http://placehold.it/170x250" alt=""></div>
-<div class="span2"><h3>Greece</h3><img src="http://placehold.it/170x250" alt=""></div>
-</div>
+  <div id="tab-aid" class="tab-pane active">
+    <div class="row">
+      <div class="span8">
+        <div id="map"></div>
+      </div>
+      <div class="span4">
+        <h4>Donors Ranking</h4>
+        <div class="bar" id="aiddonors"></div>
+        <h4>Recipients Ranking</h4>
+        <div class="bar" id="aidrecipients"></div>
+      </div>
+    </div>
+    <div id="aidcharts" class="row"></div>
+  </div>
+
+  <div id="tab-communication" class="tab-pane">
+    <div class="row">
+      <div class="span4">
+        <h4>Internet users</h4>
+        <div class="bar" id="IT.NET.USER"></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- .tab-content -->
 
 <div id="visinfo" class="row"><div class="span12">
 <h1>{{title}}</h1>{{body}}

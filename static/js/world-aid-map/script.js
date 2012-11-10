@@ -2,6 +2,23 @@
 
 var year = 2010; // year with currently most comprehensive dataset
 
+d3.json('/json/world-countries.json', function(error, json) { // d3 v3
+//d3.json('/json/world-countries.json', function(json) { // d3 v2
+  drawmap(json);
+});
+
+// tab menu events
+$('#tabmenu a').click(function(e) {
+  e.preventDefault();
+  $(this).tab('show');
+});
+
+$('#tabmenu a').on('shown', function(e) {
+  e.preventDefault();
+  console.log(e.target, e.relatedTarget)
+});
+
+
 //TODO by default choose 5 top giving (or 5 top receiving) countries?
 var current_sources = ranks[year]['donated'].slice(-5).reverse();
 var current_targets = ranks[year]['received'].slice(-5).reverse();
@@ -24,10 +41,5 @@ drawlegend(current_sources_iso);
 
 bar('#aiddonors', ranks[year]['donated'].slice(-10).reverse());
 bar('#aidrecipients', ranks[year]['received'].slice(-10).reverse());
-
-d3.json('/json/world-countries.json', function(error, json) { // d3 v3
-//d3.json('/json/world-countries.json', function(json) { // d3 v2
-  drawmap(json);
-});
 
 })();
