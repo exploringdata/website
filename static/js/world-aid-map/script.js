@@ -1,6 +1,13 @@
-(function() {
-
 var year = 2010; // year with currently most comprehensive dataset
+var current_sources,
+  current_targets,
+  max_received,
+  max_donated,
+  current_sources_iso,
+  current_targets_iso,
+  current_isos;
+
+(function() {
 
 d3.json('/json/world-countries.json', function(error, json) { // d3 v3
 //d3.json('/json/world-countries.json', function(json) { // d3 v2
@@ -18,16 +25,44 @@ $('#tabmenu a').on('shown', function(e) {
   console.log(e.target, e.relatedTarget)
 });
 
-
 //TODO by default choose 5 top giving (or 5 top receiving) countries?
-var current_sources = ranks[year]['donated'].slice(-5).reverse();
-var current_targets = ranks[year]['received'].slice(-5).reverse();
+current_sources = ranks[year]['donated'].slice(-5).reverse();
+current_targets = ranks[year]['received'].slice(-5).reverse();
 
-var current_sources_iso = current_sources.map(function(d) {return d.iso});
-var current_targets_iso = current_targets.map(function(d) {return d.iso});
-var current_isos = current_sources_iso.concat(current_targets_iso);
+max_received = current_targets[0].val;
+max_donated = current_sources[0].val;
+
+current_sources_iso = current_sources.map(function(d) {return d.iso});
+current_targets_iso = current_targets.map(function(d) {return d.iso});
+current_isos = current_sources_iso.concat(current_targets_iso);
 
 // determine selected countries
+$('.countryselect').click(function(e){
+  e.preventDefault();
+  if ('donors' == e.target.href.split('#')[1]) {
+    showCountrySelect('donated');
+  } else {
+    showCountrySelect('received');
+  }
+});
+
+var showCountrySelect = function(key){
+  var li = d3.select('#countryselect').selectAll('li')
+    .data(ranks[year][key].reverse());
+  li.enter().append('li')
+    .append('label')
+      .attr('class', 'checkbox')
+      .text(function(d){return d.iso})
+      .append('input')
+        .attr('type', 'checkbox')
+        .attr('value', function(d){return d.iso});
+      li.exit().remove();
+}
+
+var showrecipients = function(){
+  console.log(this)
+}
+
 selected = donations[year].filter(function(d){
   return ('undefined' !== typeof countryinfo[d.source]
     && 'undefined' !== typeof countryinfo[d.target]

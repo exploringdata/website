@@ -3,25 +3,22 @@
 {% block nav %}
 <ul class="nav">
   <li>
-    <div class="btn-group"><a class="btn btn-primary" href="#">Show Donors</a></div>
+    <div class="btn-group"><a class="btn btn-primary countryselect" href="#donors">Show Donors</a></div>
   </li>
   <li class="divider-vertical"></li>
   <li>
-    <div class="btn-group"><a class="btn btn-primary" href="#">Show Recipients</a></div>
+    <div class="btn-group"><a class="btn btn-primary countryselect" href="#recipients">Show Recipients</a></div>
   </li>
 </ul>
+
 {% endblock %}
 
 {% block content %}
-<div class="row" id="countryselect">
+<div class="row">
   <div class="span12">
     <div class="alert alert-info">
     <button type="button" class="close" data-dismiss="alert">×</button>
-      <ul id="recipients">
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> USA</label></li>
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> Germany</label></li>
-        <li><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> France</label></li>
-      </ul>
+      <ul id="countryselect"></ul>
     </div>
   </div>
 </div>
@@ -46,7 +43,7 @@
   <div id="tab-aid" class="tab-pane active">
     <div class="row">
       <div class="span8">
-        <div id="map"></div>
+        <div id="map" class="RdYlBu"></div>
       </div>
       <div class="span4">
         <h4>Donors Ranking</h4>
@@ -70,6 +67,5 @@
 </div><!-- .tab-content -->
 
 <div id="visinfo" class="row"><div class="span12">
-<h1>{{title}}</h1>{{body}}
-</div></div>
+<h1>{{title}}</h1>{{body}}</div></div>
 {% endblock %}

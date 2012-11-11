@@ -4,6 +4,7 @@ pointer-events: all;
 }
 h4 {
 margin-top:0;
+font-size:1.1em;
 }
 /* bar charts */
 .bar text {

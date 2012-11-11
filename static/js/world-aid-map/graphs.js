@@ -76,12 +76,26 @@ var garcs = svg.append('g')
   .attr('transform', tf)
   .attr('id', 'arcs');
 
+var quantize = function(d) {
+  var val;
+  var maxval = 10; //RdBu 0 = red, 10 = blue 
+  if ('undefined' !== typeof countries[year][d.id]) {
+    if ('undefined' !== typeof countries[year][d.id]['received'])
+      val = Math.max(4, maxval - countries[year][d.id]['received'] * maxval / max_received);
+    else if ('undefined' !== typeof countries[year][d.id]['donated'])
+      val = Math.min(6, countries[year][d.id]['donated'] * maxval / max_donated);
+  }
+  if (!val) return null;
+  return 'q' + parseInt(~~val) + '-11';
+}
+
 var drawmap = function(data) {
   geocountries = data.features;
   gcountries.selectAll('path')
     .data(geocountries)
     .enter().append('path')
       .attr('d', path)
+      .attr('class', geocountries ? quantize : null)
       .on('click', click);
 
   // draw circles for capitals
