@@ -29,6 +29,7 @@ $('#tabmenu a').on('shown', function(e) {
 current_sources = ranks[year]['donated'].slice(-5).reverse();
 current_targets = ranks[year]['received'].slice(-5).reverse();
 
+//TODO reset these values with calculated max after calculating relations
 max_received = current_targets[0].val;
 max_donated = current_sources[0].val;
 
