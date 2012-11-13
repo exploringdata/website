@@ -13,7 +13,8 @@ var mapselect = '#map',
   proj = d3.geo.equirectangular().scale(1).translate([0, 0]),
   arc = d3.geo.greatArc().precision(1),
   centroid = function(d) {return path.centroid(d.geometry)},
-  format = d3.format(',d'),
+  format = d3.format(',r'),
+  formatpercentage = d3.format(".1%"),
   color = d3.scale.category20(),
   projection = d3.geo.mercator().scale(width).translate([0, 0]),
   path = d3.geo.path().projection(projection);
@@ -232,41 +233,76 @@ var bar = function(selector, data) {
       .text(function(d) {return formatdollar(d.val)});
 
   // add actual bars
-  svg.selectAll('rect')
+  svg.selectAll('rect.fillblue')
     .data(data)
     .enter().append('rect')
+      .attr('class', 'fillblue')
       .attr('x', 3 * xoff)
       .attr('y', function(d, i) {return i * y})
       .attr('width', function(d) {return wscale(d.val)})
       .attr('height', y - 1);
 };
 
-// render scatterplot
-var scatterplot = function(selector, x, y) {
-  var xmax = d3.max(x, function(d) { return d.val }),
-    ymax = d3.max(y, function(d) { return d.val }),
-    xscale = d3.scale.linear().domain([0, xmax]).range([0, 20]),
-    yscale = d3.scale.linear().domain([0, ymax]).range([0, 20]);
+/*
+ * render scatterplot
+ * data struct [{x:1,y:3,label:'label',title:'title'}]
+ */
+var scatterplot = function(selector, data) {
+  var plotw = containerwidth(selector) - 10,
+    ploth = plotw / 2,
+    r = 12,
+    padding = 20,
+    xmax = d3.max(data, function(d) { return d.x }),
+    ymax = d3.max(data, function(d) { return d.y }),
+    xscale = d3.scale.linear().nice()
+      .domain([0, xmax]).range([padding, plotw - 2 * padding]),
+    // map ymax to 0 so small values are below large ones
+    yscale = d3.scale.linear().nice()
+      .domain([0, ymax]).range([ploth - padding, padding]),
+    rscale = d3.scale.linear().nice()
+      .domain([0, xmax]).range([r, r]),
+    xaxis = d3.svg.axis().scale(xscale).ticks(5).tickFormat(formatdollar),
+    yaxis = d3.svg.axis().scale(yscale).orient('left').ticks(5);
 
-  var plotw = containerwidth(selector);
+  var title = function(d) {
+    return d.title + ': ' + formatdollar(d.x) + ', ' + format(d.y)
+  }
 
   var plot = d3.select(selector);
   plot.selectAll('svg').remove();
   var svg = plot.append('svg')
     .attr('class', 'scatterplot')
     .attr('width', plotw)
-    .attr('height', 300);
+    .attr('height', ploth);
 
-  svg.selectAll('circle')
-     .data(x)
-     .enter()
-     .append('circle')
-     .attr("cx", function(d) {
-          return 5;
-     })
-     .attr("cy", function(d) {
-          return 5;
-     })
-     .style("stroke", 'red')
-     .attr("r", function(d) {return xscale(d.val)});
+  svg.selectAll('circle.fillblue')
+    .data(data).enter()
+    .append('circle')
+      .attr('class', 'fillblue')
+      .attr('cx', function(d) {return xscale(d.x)})
+      .attr('cy', function(d) {return yscale(d.y)})
+      .attr('r',  function(d) {return rscale(d.x)})
+      .append('title')
+        .text(title);
+
+  svg.selectAll('text')
+    .data(data).enter()
+    .append('text')
+      .attr('class', 'scatterplot')
+      .attr('text-anchor', 'middle')
+      .attr('x', function(d) {return xscale(d.x)})
+      .attr('y', function(d) {return yscale(d.y) + 3})
+      .text(function(d) {return d.label})
+      .append('title')
+        .text(title);
+
+  svg.append('g')
+    .attr('transform', 'translate(0, ' + (ploth - padding) + ')')
+    .attr('class', 'axis')
+    .call(xaxis);
+
+  svg.append('g')
+    .attr('transform', 'translate(' + padding + ', 0)')
+    .attr('class', 'axis')
+    .call(yaxis);
 };

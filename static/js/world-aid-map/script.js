@@ -8,6 +8,27 @@ var current_sources,
   current_targets_iso,
   current_isos;
 
+var spdata = function(key1, key2) {
+  var data = [];
+  var ranking = ranks[year][key1].reverse();
+  for (i in ranking) {
+    var country = ranking[i];
+    var x = country.val;
+    var iso = country.id;
+    if (countrystats[year].hasOwnProperty(iso) && countrystats[year][iso].hasOwnProperty(key2)) {
+      data.push({
+        'title': countryinfo[iso].name,
+        'label': iso,
+        'x': x,
+        'y': countrystats[year][iso][key2]
+      });
+      if (data.length == limit) break;
+    }
+  }
+console.log(data)
+  return data;
+};
+
 (function() {
 
 // tab menu events
@@ -74,7 +95,7 @@ drawlegend(current_sources_iso);
 bar('#aiddonors', ranks[year]['donated'].slice(-limit).reverse());
 bar('#aidrecipients', ranks[year]['received'].slice(-limit).reverse());
 
-scatterplot('#aidrelations', ranks[year]['received'].slice(-limit).reverse(), ranks[year]['userrequests'].slice(-limit).reverse());
+scatterplot('#aidrelations', spdata('received', 'IT.NET.USER.P2'));
 
 d3.json('/json/world-countries.json', function(error, json) { // d3 v3
 //d3.json('/json/world-countries.json', function(json) { // d3 v2

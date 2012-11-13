@@ -10,14 +10,25 @@ font-size:.8em;
 line-height:1.4em;
 width:90%;
 }
+/* chart general */
+.fillblue {
+fill: #08C;
+opacity:.5;
+}
+.axis path,
+.axis line {
+fill: none;
+stroke: #666;
+shape-rendering: crispEdges;
+}
+.axis text {
+font-family: sans-serif;
+font-size: 11px;
+}
 /* bar charts */
 .bar text {
 font: .82em sans-serif;
 fill:#333;
-}
-.bar rect {
-fill: #08C;
-opacity:.7;
 }
 .bar .rule {
 font-size:.7em;
@@ -50,17 +61,10 @@ opacity:.6;
 stroke: #51A351;
 fill: none;
 }
-/* menus */
-#countryselect {
-width:900px;
--moz-column-count: 6;
--moz-column-gap: 1em;
--webkit-column-count: 6;
--webkit-column-gap: 1em;
-column-count: 6;
-column-gap: 1em;
+/* scatterplot */
+text.scatterplot {
+font-size: 8px;
 }
-
 /* colorbrewer */
 .RdBu .q0-11{fill:rgb(103,0,31)}
 .RdBu .q1-11{fill:rgb(178,24,43)}
