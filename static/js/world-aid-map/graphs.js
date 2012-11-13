@@ -116,7 +116,7 @@ var drawmap = function(data) {
       .on('mouseover', function(d) {
         var t = d3.select(this);
         t.style('origfill', document.defaultView.getComputedStyle(this,null)['fill']);
-        t.style('fill', '#215021');
+        t.style('fill', '#d0ffd0');
         showlinks(d.id)
       })
       .on('mouseout', function(d) {

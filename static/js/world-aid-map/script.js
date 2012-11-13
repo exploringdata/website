@@ -36,10 +36,14 @@ $('#tabmenu a').click(function(e) {
   e.preventDefault();
   $(this).tab('show');
 });
-
 $('#tabmenu a').on('shown', function(e) {
   e.preventDefault();
   console.log(e.target, e.relatedTarget)
+});
+// indicator selection
+$('#indicators').change(function(e) {
+  e.preventDefault();
+  scatterplot('#aidrelations', spdata('received', $(this).val()));
 });
 
 //TODO by default choose 5 top giving (or 5 top receiving) countries?

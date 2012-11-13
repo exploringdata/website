@@ -10,6 +10,15 @@ font-size:.8em;
 line-height:1.4em;
 width:90%;
 }
+.headingselect,
+.headingselect:focus {
+width:auto;
+margin-top:8px;
+font-weight:bold;
+padding:1px;
+border-color:#ddd;
+outline:none;
+}
 /* chart general */
 .fillblue {
 fill: #08C;
