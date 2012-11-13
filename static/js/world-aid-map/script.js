@@ -40,8 +40,14 @@ $('#tabmenu a').on('shown', function(e) {
   e.preventDefault();
   console.log(e.target, e.relatedTarget)
 });
+// fill indicators select lists
+var iselcet = $('#indicators');
+$.each(indicators, function(k, v) {
+  iselcet.append('<option value="' + k + '">' + v + '</option')
+});
+
 // indicator selection
-$('#indicators').change(function(e) {
+iselcet.change(function(e) {
   e.preventDefault();
   scatterplot('#aidrelations', spdata('received', $(this).val()));
 });
