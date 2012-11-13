@@ -2,57 +2,72 @@
 
 {% block nav %}
 <ul class="nav">
-  <li>
-    <div class="btn-group"><a class="btn btn-primary countryselect" href="#donors">Show Donors</a></div>
-  </li>
+<!--  <li>-->
+<!--    <div class="btn-group"><a class="active btn btn-primary countryselect" href="#donors">Show Donors</a></div>-->
+<!--  </li>-->
+<!--  <li class="divider-vertical"></li>-->
+<!--  <li>-->
+<!--    <div class="btn-group"><a class="btn btn-primary countryselect" href="#recipients">Show Recipients</a></div>-->
+<!--  </li>-->
+  <li class="active"><a href="">Overview</a></li>
   <li class="divider-vertical"></li>
-  <li>
-    <div class="btn-group"><a class="btn btn-primary countryselect" href="#recipients">Show Recipients</a></div>
-  </li>
+  <li class="active"><a href="#">Total Amounts</a></li>
+  <li><a href="#">By Population</a></li>
+  <li><a href="#">By GDP</a></li>
 </ul>
 
 {% endblock %}
 
 {% block content %}
-<div class="row">
-  <div class="span12">
-    <div class="alert alert-info">
-    <button type="button" class="close" data-dismiss="alert">×</button>
-      <ul id="countryselect"></ul>
-    </div>
-  </div>
-</div>
-
-<div class="row" id="visnav">
-  <div class="span12">
-    <ul class="nav nav-pills pull-left" id="tabmenu">
-      <li class="active"><a href="#tab-aid">World Aid Flow</a></li>
-      <li><a href="#tab-communication">Communication</a></li>
-      <li><a href="#tab-conflict">Conflict</a></li>
-    </ul>
-    <ul class="nav nav-pills pull-right">
-      <li class="active"><a href="#">Total Amounts</a></li>
-      <li><a href="#">By Population</a></li>
-      <li><a href="#">By GDP</a></li>
-    </ul>
-  </div>
-</div>
-
 <div class="tab-content">
 
   <div id="tab-aid" class="tab-pane active">
     <div class="row">
-      <div class="span8">
-        <div id="map" class="RdYlBu"></div>
+      <div class="span7">
+        <h4>World Aid Flow</h4>
+        <div id="map" class="RdBu"></div>
       </div>
-      <div class="span4">
-        <h4>Donors Ranking</h4>
-        <div class="bar" id="aiddonors"></div>
-        <h4>Recipients Ranking</h4>
-        <div class="bar" id="aidrecipients"></div>
+      <div class="span5 sidebar">
+        <div class="bar">
+          <h4>Donors by Aid Sums</h4>
+          <div id="aiddonors"></div>
+          <div class="legend">Ranking of countries by total aid money given in USD.</div>
+        </div>
+        <div class="bar">
+          <h4>Donors by Transparency</h4>
+          <div id=""></div>
+          <div class="legend">Ranking of countries by transparency ratings.</div>
+        </div>
       </div>
     </div>
-    <div id="aidcharts" class="row"></div>
+    <div id="aidcharts" class="row">
+      <div class="span7">
+        <div class="bar">
+          <h4>How Aid Received Relates to 
+            <select style="margin-top:8px;font-weight:bold;padding:1px;border-color:#ddd;">
+              <option>Money spent on education</option>
+              <option>Money spent on arms</option>
+              <option>Internet Users</option>
+              <option>Murder Rate</option>
+            </select>
+          </h4>
+          <div class="scatterplot" id="aidrelations"><img src="http://onlinestatbook.com/case_studies_rvls/physical_strength/graphics/image%20207.gif" alt="" class="thumbnail" /></div>
+          <div class="legend">Ranking by total aid money received from countries and organizations in USD.</div>
+        </div>
+      </div>
+      <div class="span5 sidebar">
+        <div class="bar">
+          <h4>Recipients by Aid Sums</h4>
+          <div id="aidrecipients"></div>
+          <div class="legend">Ranking by total aid money received from countries and organizations in USD.</div>
+        </div>
+        <div class="bar">
+          <h4>Recipients by Transparency</h4>
+
+          <div class="legend">Ranking by  total aid money received from countries and organizations in USD.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="tab-communication" class="tab-pane">
@@ -67,5 +82,6 @@
 </div><!-- .tab-content -->
 
 <div id="visinfo" class="row"><div class="span12">
-<h1>{{title}}</h1>{{body}}</div></div>
+<h1>{{title}}</h1>{{body}}
+</div></div>
 {% endblock %}

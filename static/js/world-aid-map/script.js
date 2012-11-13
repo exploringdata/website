@@ -1,4 +1,5 @@
 var year = 2010; // year with currently most comprehensive dataset
+var limit = 20;
 var current_sources,
   current_targets,
   max_received,
@@ -8,11 +9,6 @@ var current_sources,
   current_isos;
 
 (function() {
-
-d3.json('/json/world-countries.json', function(error, json) { // d3 v3
-//d3.json('/json/world-countries.json', function(json) { // d3 v2
-  drawmap(json);
-});
 
 // tab menu events
 $('#tabmenu a').click(function(e) {
@@ -26,8 +22,8 @@ $('#tabmenu a').on('shown', function(e) {
 });
 
 //TODO by default choose 5 top giving (or 5 top receiving) countries?
-current_sources = ranks[year]['donated'].slice(-5).reverse();
-current_targets = ranks[year]['received'].slice(-5).reverse();
+current_sources = ranks[year]['donated'].slice(-limit).reverse();
+current_targets = ranks[year]['received'].slice(-limit).reverse();
 
 //TODO reset these values with calculated max after calculating relations
 max_received = current_targets[0].val;
@@ -71,11 +67,18 @@ selected = donations[year].filter(function(d){
   ) ? true : false
 });
 
-drawlinks(selected);
+//drawlinks(selected);
 // FIXME call with list based on selection either donors or recipients
 drawlegend(current_sources_iso);
 
-bar('#aiddonors', ranks[year]['donated'].slice(-10).reverse());
-bar('#aidrecipients', ranks[year]['received'].slice(-10).reverse());
+bar('#aiddonors', ranks[year]['donated'].slice(-limit).reverse());
+bar('#aidrecipients', ranks[year]['received'].slice(-limit).reverse());
+
+scatterplot('#aidrelations', ranks[year]['received'].slice(-limit).reverse(), ranks[year]['userrequests'].slice(-limit).reverse());
+
+d3.json('/json/world-countries.json', function(error, json) { // d3 v3
+//d3.json('/json/world-countries.json', function(json) { // d3 v2
+  drawmap(json);
+});
 
 })();

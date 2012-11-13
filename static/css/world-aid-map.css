@@ -1,52 +1,57 @@
-.background {
-fill: none;
-pointer-events: all;
-}
 h4 {
 margin-top:0;
 font-size:1.1em;
 }
+.info {
+cursor:help;
+}
+.legend {
+font-size:.8em;
+line-height:1.4em;
+width:90%;
+}
 /* bar charts */
 .bar text {
-font: 13px sans-serif;
+font: .82em sans-serif;
 fill:#333;
 }
 .bar rect {
-fill: steelblue;
-opacity:.8;
+fill: #08C;
+opacity:.7;
 }
 .bar .rule {
-font-size:11px;
+font-size:.7em;
+}
+.sidebar div.bar {
+width:50%;
+float:left;
 }
 /* map */
+.background {
+fill: none;
+pointer-events: all;
+}
 #countries {
 fill: #ddd;
 stroke: #fff;
 stroke-width: 1px;
 }
-circle {
-fill: #666;
-opacity: .1;
-stroke: none;
-}
-circle title {
-font: 13px sans-serif;
-fill:#333;
-}
 .bglegend {
 fill: white;
 }
+/* map legend */
 #legend {
-font: 12px sans-serif;
-fill: #fff;
+font: .8em sans-serif;
+fill: #333;
 }
-#legend .heading {
-font: bold 14px sans-serif;
+/* map links */
+path.link {
+opacity:.6;
+stroke: #51A351;
+fill: none;
 }
-#legend text {
-fill:#333;
-}
-#countries {
+/* menus */
+#countryselect {
 width:900px;
 -moz-column-count: 6;
 -moz-column-gap: 1em;
@@ -55,3 +60,27 @@ width:900px;
 column-count: 6;
 column-gap: 1em;
 }
+
+/* colorbrewer */
+.RdBu .q0-11{fill:rgb(103,0,31)}
+.RdBu .q1-11{fill:rgb(178,24,43)}
+.RdBu .q2-11{fill:rgb(214,96,77)}
+.RdBu .q3-11{fill:rgb(244,165,130)}
+.RdBu .q4-11{fill:rgb(253,219,199)}
+.RdBu .q5-11{fill:rgb(247,247,247)}
+.RdBu .q6-11{fill:rgb(209,229,240)}
+.RdBu .q7-11{fill:rgb(146,197,222)}
+.RdBu .q8-11{fill:rgb(67,147,195)}
+.RdBu .q9-11{fill:rgb(33,102,172)}
+.RdBu .q10-11{fill:rgb(5,48,97)}
+.RdBu line.q0-11{stroke:rgb(103,0,31)}
+.RdBu line.q1-11{stroke:rgb(178,24,43)}
+.RdBu line.q2-11{stroke:rgb(214,96,77)}
+.RdBu line.q3-11{stroke:rgb(244,165,130)}
+.RdBu line.q4-11{stroke:rgb(253,219,199)}
+.RdBu line.q5-11{stroke:rgb(247,247,247)}
+.RdBu line.q6-11{stroke:rgb(209,229,240)}
+.RdBu line.q7-11{stroke:rgb(146,197,222)}
+.RdBu line.q8-11{stroke:rgb(67,147,195)}
+.RdBu line.q9-11{stroke:rgb(33,102,172)}
+.RdBu line.q10-11{stroke:rgb(5,48,97)}
