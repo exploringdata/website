@@ -19,64 +19,51 @@
 {% endblock %}
 
 {% block content %}
-<div class="tab-content">
-
-  <div id="tab-aid" class="tab-pane active">
-    <div class="row">
-      <div class="span7">
-        <h4>World aid flow</h4>
-        <div id="map" class="RdBu"></div>
-      </div>
-      <div class="span5 sidebar">
-        <div class="bar">
-          <h4>Donors by aid sums</h4>
-          <div id="aiddonors"></div>
-          <div class="legend">Ranking of countries by total aid money given in USD.</div>
-        </div>
-        <div class="bar">
-          <h4>Donors aid transparency</h4>
-          <div id="donorstransparency"></div>
-          <div class="legend">Aid Transparency Index ratings for countries giving aid money.</div>
-        </div>
-      </div>
+<div class="row">
+  <div class="span7">
+    <h4>World aid flow</h4>
+    <div id="map" class="RdBu"></div>
+  </div>
+  <div class="span5 sidebar">
+    <div class="bar">
+      <h4>Donors by aid sums</h4>
+      <div id="aiddonors"></div>
+      <div class="legend">Ranking of countries by total aid money given in USD.</div>
     </div>
-    <div id="aidcharts" class="row">
-      <div class="span7">
-        <div class="bar">
-          <h4>How aid received relates to 
-            <select id="indicators" class="headingselect"></select>
-          </h4>
-          <div class="scatterplot" id="aidrelations"></div>
-          <div class="legend">Aid donations in relation to selected indicator.</div>
-        </div>
-      </div>
-      <div class="span5 sidebar">
-        <div class="bar">
-          <h4>Recipients by aid sums</h4>
-          <div id="aidrecipients"></div>
-          <div class="legend">Ranking by total aid money received from countries in USD.</div>
-        </div>
-        <div class="bar">
-          <h4>Recipients CPIA transparency</h4>
-          <div id="recipientstransparency"></div>
-          <div class="legend">CPIA transparency, accountability, and corruption ratings for receiving countries.</div>
-        </div>
-      </div>
+    <div class="bar">
+      <h4>Aid Transparency Index</h4>
+      <div id="donorstransparency"></div>
+      <div class="legend">Aid Transparency Index ratings for countries giving aid money.</div>
     </div>
   </div>
+</div>
 
-  <div id="tab-communication" class="tab-pane">
-    <div class="row">
-      <div class="span4">
-        <h4>Internet users</h4>
-        <div class="bar" id="IT.NET.USER"></div>
-      </div>
+<div id="aidcharts" class="row">
+  <div class="span7">
+    <div class="bar">
+      <h4>How aid received relates to 
+        <select id="indicators" class="headingselect"></select>
+      </h4>
+      <div class="scatterplot" id="aidrelations"></div>
+      <div class="legend">Aid donations in relation to selected indicator.</div>
     </div>
   </div>
-
-</div><!-- .tab-content -->
+  <div class="span5 sidebar">
+    <div class="bar">
+      <h4>Recipients by aid sums</h4>
+      <div id="aidrecipients"></div>
+      <div class="legend">Ranking by total aid money received from countries in USD.</div>
+    </div>
+    <div class="bar">
+      <h4>CPIA transparency Rating</h4>
+      <div id="recipientstransparency"></div>
+      <div class="legend">CPIA transparency, accountability, and corruption ratings for receiving countries.</div>
+    </div>
+  </div>
+</div>
 
 <div id="visinfo" class="row"><div class="span12">
+<hr>
 <h1>{{title}}</h1>{{body}}
 </div></div>
 {% endblock %}
