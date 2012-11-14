@@ -179,7 +179,7 @@ var bar = function(selector, data) {
       .attr('class', 'fillblue')
       .attr('x', 3 * xoff)
       .attr('y', function(d, i) {return i * y})
-      .attr('width', function(d) {return wscale(d.val)})
+      .attr('width', function(d) {return isNaN(d.val) ? 0 : wscale(d.val)})
       .attr('height', y - 1);
 };
 
@@ -191,7 +191,7 @@ var scatterplot = function(selector, data) {
   var plotw = containerwidth(selector) - 10,
     ploth = plotw / 2,
     r = 12,
-    padding = 20,
+    padding = 25,
     xmax = d3.max(data, function(d) { return d.x }),
     ymax = d3.max(data, function(d) { return d.y }),
     xscale = d3.scale.linear().nice()

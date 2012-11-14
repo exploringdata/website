@@ -4,6 +4,7 @@ var year = 2010,
   format = d3.format(',r'),
   recipients,
   donors,
+  relation,
   max_received,
   max_donated;
 
@@ -19,7 +20,8 @@ var showlinks = function(cid) {
 // format us dollar values
 var formatdollar = function(val) {
   var scale = 1000000;
-  if (val > scale) val = d3.round(val / scale, 2) + 'M';
+  val = d3.round(val, 2);
+  if (val > scale) val = val / scale + 'M';
   return val;
 };
 
@@ -96,6 +98,20 @@ var indicatorranking = function(items, indicator) {
   return ranking;
 };
 
+// get values divided by relation
+var getrelation = function(unrelated, relation) {
+  var related = [];
+  $.each(unrelated, function(idx, item){
+    if (countrystats[year][item.label].hasOwnProperty(relation)) {
+      related.push({
+        val: item.val / countrystats[year][item.label][relation],
+        label: item.label
+      })
+    }
+  });
+  return related;
+};
+
 // sort descending by val property
 var sdesc = function(a, b) {return b.val - a.val};
 
@@ -103,30 +119,46 @@ var sdesc = function(a, b) {return b.val - a.val};
 
 (function() {
 
+// lists of donors and recipients sorted by aid sums descending
 donors = ranks[year]['donated'].reverse();
 recipients = ranks[year]['received'].reverse();
 
-//TODO reset these values with calculated max after calculating relations
-max_received = donors[0].val;
-max_donated = recipients[0].val;
+// TODO reset these values with calculated max after calculating relations
+max_donated = donors[0].val;
+max_received = recipients[0].val;
 
-// tab menu events
-$('#tabmenu a').click(function(e) {
-  e.preventDefault();
-  $(this).tab('show');
+// load geo data and draw map
+d3.json('/json/world-countries.json', function(error, json) {
+  drawmap(json, quantize, showlinks);
+  drawlegend();
 });
-$('#tabmenu a').on('shown', function(e) {
+
+// calculate relations and redraw graphs
+$('.relate').click(function(e){
   e.preventDefault();
-  console.log(e.target, e.relatedTarget)
+  var reldonors = [], relrecipients = [];
+  var text = this.innerHTML;
+  if ('norelate' == this.id) {
+    // copy values not reference to array
+    reldonors = donors.slice();
+    relrecipients = recipients.slice();
+  } else {
+    reldonors = getrelation(donors, this.id);
+    relrecipients = getrelation(recipients, this.id);
+  }
+  bar('#aiddonors', aidranking(reldonors.slice(0, limit), ' - aid donated in USD ' + text + ': '));
+  bar('#aidrecipients', aidranking(relrecipients.slice(0, limit), ' - aid received in USD ' + text + ': '));
 });
+
 
 // fill indicators select lists
-var iselcet = $('#indicators');
-$.each(indicators, function(k, v) {
-  iselcet.append('<option value="' + k + '">' + v + '</option')
+var iselect = $('#indicators');
+$.each(indicators, function(i) {
+  if ('global' == indicators[i].type)
+    iselect.append('<option value="' + indicators[i].id + '">' + indicators[i].label + '</option')
 });
 // indicator selection
-iselcet.change(function(e) {
+iselect.change(function(e) {
   e.preventDefault();
   scatterplot('#aidrelations', spdata(recipients.slice(0, limit), $(this).val()));
 });
@@ -140,12 +172,6 @@ bar('#aidrecipients', aidranking(recipients.slice(0, limit), ' - total aid recei
 bar('#recipientstransparency', indicatorranking(recipients.slice(0, limit), 'IQ.CPA.TRAN.XQ'));
 
 // scatterplot with aid relations to indicators
-scatterplot('#aidrelations', spdata(recipients, 'IT.NET.USER.P2'));
-
-// load geo data and draw map
-d3.json('/json/world-countries.json', function(error, json) {
-  drawmap(json, quantize, showlinks);
-  drawlegend();
-});
+scatterplot('#aidrelations', spdata(recipients.slice(0, limit), iselect.find('option:first')[0].value));
 
 })();
