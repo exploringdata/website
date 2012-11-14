@@ -34,12 +34,6 @@ var scalelink = function(d) {
   return Math.sqrt(usd) / 10000; // FIXME use max to scale
 };
 
-var formatdollar = function(val) {
-  var scale = 1000000;
-  val = d3.round(val / scale, 2) + 'M';
-  return val;
-};
-
 var rescale = function() {
   svg.attr('transform', 'translate(' + d3.event.translate + ')'
     + ' scale(' + d3.event.scale + ')')
@@ -66,52 +60,13 @@ var garcs = svg.append('g')
   .attr('transform', tf)
   .attr('id', 'arcs');
 
-var quantize = function(d) {
-  var val;
-  var maxval = 10; //RdBu 0 = red, 10 = blue 
-  if ('undefined' !== typeof countrystats[year][d.id]) {
-    if ('undefined' !== typeof countrystats[year][d.id]['received']) {
-      // scale min between 0 (max received) and 4 (min received)
-      val = 4 - 4 * countrystats[year][d.id]['received'] / max_received
-    }
-    else if ('undefined' !== typeof countrystats[year][d.id]['donated']) {
-      // scale max between 6 (min donated) and 10 (max donated)
-      val = 6 + 4 * countrystats[year][d.id]['donated'] / max_donated
-    }
-  }
-  if (null == val) return null;
-
-  return 'q' + parseInt(~~val) + '-11';
-}
-
-var showlinks = function(cid) {
-  var l = donations[year].filter(function(d){
-    return ('undefined' !== typeof countryinfo[d.source]
-      && 'undefined' !== typeof countryinfo[d.target]
-      && (cid == d.source || cid == d.target)) ? true : false
-  });
-  drawlinks(l)
-};
-
-var aidabstract = function(d) {
-  if ('undefined' !== typeof d.iso) d.id = d.iso;
-  var suffix = ' (' + d.id + ')';
-  if ('undefined' !== typeof countrystats[year][d.id]) {
-    if ('undefined' !== typeof countrystats[year][d.id]['received'])
-      suffix += ' - total aid received in USD: ' + format(countrystats[year][d.id]['received'])
-    else if ('undefined' !== typeof countrystats[year][d.id]['donated'])
-      suffix += ' - total aid donations in USD: ' + format(countrystats[year][d.id]['donated'])
-  }
-  return countryinfo[d.id].name + suffix
-};
-
-var drawmap = function(data) {
+var drawmap = function(data, colorize, showlinks) {
   geocountries = data.features;
   gcountries.selectAll('path')
     .data(geocountries)
     .enter().append('path')
       .attr('d', path)
-      .attr('class', geocountries ? quantize : null)
+      .attr('class', colorize ? colorize : null)
       .on('click', click)
       .on('mouseover', function(d) {
         var t = d3.select(this);
@@ -138,22 +93,7 @@ var drawlinks = function(links) {
       });
 }
 
-var tooltip = function(text) {
-  var x, y;
-  if (d3.event.pageX != undefined && d3.event.pageY != undefined) {
-    x = d3.event.pageX;
-    y = d3.event.pageY;
-  } else {
-    x = d3.event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-    y = d3.event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-  }
-  y -= 32;
-  var tt = '<div id="tooltip" style="position:absolute; top:' + y + 'px; left:'
-    + x + 'px; z-index: 1000;">' + text + '</div>';
-  $('body').append(tt);
-};
-
-var drawlegend = function(isos) {
+var drawlegend = function() {
   var linew = 25,
     lineoff = 85,
     yoff = -4;
@@ -176,6 +116,7 @@ var drawlegend = function(isos) {
     .text('Most donated')
     .attr('x', linew * 10 + lineoff + 10)
 
+  // FIXME make this more flexible
   glegend.selectAll('line.country')
     .data([0,1,2,3,4,6,7,8,9,10]).enter()
     .append('svg:line')
@@ -203,7 +144,6 @@ var bar = function(selector, data) {
     barh = y * data.length,
     xoff = 10,
     yoff = 16,
-    format = d3.format(',d'),
     wscale = d3.scale.linear().domain([0, maxval]).range(['0px', barw + 'px']),
     hscale = d3.scale.ordinal().domain(data).rangeBands([0, barh]);
 
@@ -217,20 +157,20 @@ var bar = function(selector, data) {
   // add lablels
   var labels = svg.selectAll('text')
     .data(data).enter()
-  // add iso
+  // add left label
   labels.append('text')
-      .attr('x', 0)
-      .attr('y', function(d, i) {return i * y - 4 + yoff})
-      .attr('class', 'info')
-      .text(function(d) {return d.iso})
-        .append('title')
-        .text(aidabstract);
-
+    .attr('x', 0)
+    .attr('y', function(d, i) {return i * y - 4 + yoff})
+    .attr('class', 'info')
+    .text(function(d) {return d.label})
+    .append('title')
+      .text(function(d) {return d.title});
+  // add right label
   labels.append('text')
-      .attr('x', barw + 9 * xoff)
-      .attr('y', function(d, i) {return i * y - 4 + yoff})
-      .attr('text-anchor', 'end')
-      .text(function(d) {return formatdollar(d.val)});
+    .attr('x', barw + 9 * xoff)
+    .attr('y', function(d, i) {return i * y - 4 + yoff})
+    .attr('text-anchor', 'end')
+    .text(function(d) {return d.formatval});
 
   // add actual bars
   svg.selectAll('rect.fillblue')

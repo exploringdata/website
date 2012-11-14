@@ -1,35 +1,114 @@
-var year = 2010; // year with currently most comprehensive dataset
-var limit = 20;
-var current_sources,
-  current_targets,
+// year with currently most comprehensive dataset, no newer donations data yet
+var year = 2010,
+  limit = 20,
+  format = d3.format(',r'),
+  recipients,
+  donors,
   max_received,
-  max_donated,
-  current_sources_iso,
-  current_targets_iso,
-  current_isos;
+  max_donated;
 
-var spdata = function(key1, key2) {
+var showlinks = function(cid) {
+  var l = donations[year].filter(function(d){
+    return ('undefined' !== typeof countryinfo[d.source]
+      && 'undefined' !== typeof countryinfo[d.target]
+      && (cid == d.source || cid == d.target)) ? true : false
+  });
+  drawlinks(l)
+};
+
+// format us dollar values
+var formatdollar = function(val) {
+  var scale = 1000000;
+  if (val > scale) val = d3.round(val / scale, 2) + 'M';
+  return val;
+};
+
+// data structure for scatterplot
+var spdata = function(xdata, key) {
   var data = [];
-  var ranking = ranks[year][key1].reverse();
-  for (i in ranking) {
-    var country = ranking[i];
+  for (i in xdata) {
+    var country = xdata[i];
     var x = country.val;
-    var iso = country.id;
-    if (countrystats[year].hasOwnProperty(iso) && countrystats[year][iso].hasOwnProperty(key2)) {
+    var iso = country.label;
+    if (countrystats[year].hasOwnProperty(iso) && countrystats[year][iso].hasOwnProperty(key)) {
       data.push({
         'title': countryinfo[iso].name,
         'label': iso,
         'x': x,
-        'y': countrystats[year][iso][key2]
+        'y': countrystats[year][iso][key]
       });
       if (data.length == limit) break;
     }
   }
-console.log(data)
-  return data;
+  return data
 };
 
+// country colors
+var quantize = function(d) {
+  var val;
+  var maxval = 10; //RdBu 0 = red, 10 = blue 
+  if ('undefined' !== typeof countrystats[year][d.id]) {
+    if ('undefined' !== typeof countrystats[year][d.id]['received']) {
+      // scale min between 0 (max received) and 4 (min received)
+      val = 4 - 4 * countrystats[year][d.id]['received'] / max_received
+    }
+    else if ('undefined' !== typeof countrystats[year][d.id]['donated']) {
+      // scale max between 6 (min donated) and 10 (max donated)
+      val = 6 + 4 * countrystats[year][d.id]['donated'] / max_donated
+    }
+  }
+  if (null == val) return null;
+  return 'q' + parseInt(~~val) + '-11';
+};
+
+// for aid rankings
+var aidranking = function(items, infix) {
+  var ranking = [];
+  $.each(items, function(idx, item){
+    ranking.push({
+      label: item.label,
+      val: item.val,
+      title: countryinfo[item.label].name + ' (' + item.label + '): ' + infix + format(item.val),
+      formatval: formatdollar(item.val)
+    })
+  });
+  return ranking;
+};
+
+// for indicator rankings
+var indicatorranking = function(items, indicator) {
+  var ranking = [], val, formatval;
+  $.each(items, function(idx, item) {
+    if ('undefined' !== typeof countrystats[year][item.label][indicator]) {
+      val = countrystats[year][item.label][indicator];
+      formatval = format(val);
+    } else {
+      val = 'NA';
+      formatval = '';
+    }
+    ranking.push({
+      label: item.label,
+      val: val,
+      title: countryinfo[item.label].name + '(' + item.label + '): ' + format(val),
+      formatval: formatval
+    })
+  });
+  return ranking;
+};
+
+// sort descending by val property
+var sdesc = function(a, b) {return b.val - a.val};
+
+/********** main program flow **********/
+
 (function() {
+
+donors = ranks[year]['donated'].reverse();
+recipients = ranks[year]['received'].reverse();
+
+//TODO reset these values with calculated max after calculating relations
+max_received = donors[0].val;
+max_donated = recipients[0].val;
 
 // tab menu events
 $('#tabmenu a').click(function(e) {
@@ -40,76 +119,33 @@ $('#tabmenu a').on('shown', function(e) {
   e.preventDefault();
   console.log(e.target, e.relatedTarget)
 });
+
 // fill indicators select lists
 var iselcet = $('#indicators');
 $.each(indicators, function(k, v) {
   iselcet.append('<option value="' + k + '">' + v + '</option')
 });
-
 // indicator selection
 iselcet.change(function(e) {
   e.preventDefault();
-  scatterplot('#aidrelations', spdata('received', $(this).val()));
+  scatterplot('#aidrelations', spdata(recipients.slice(0, limit), $(this).val()));
 });
 
-//TODO by default choose 5 top giving (or 5 top receiving) countries?
-current_sources = ranks[year]['donated'].slice(-limit).reverse();
-current_targets = ranks[year]['received'].slice(-limit).reverse();
+// donor rankings
+bar('#aiddonors', aidranking(donors.slice(0, limit), ' - total aid donated in USD: '));
+bar('#donorstransparency', indicatorranking(donors.slice(0, limit), 'aidtransparency'));
 
-//TODO reset these values with calculated max after calculating relations
-max_received = current_targets[0].val;
-max_donated = current_sources[0].val;
+// recipients rankings
+bar('#aidrecipients', aidranking(recipients.slice(0, limit), ' - total aid received in USD: '));
+bar('#recipientstransparency', indicatorranking(recipients.slice(0, limit), 'IQ.CPA.TRAN.XQ'));
 
-current_sources_iso = current_sources.map(function(d) {return d.iso});
-current_targets_iso = current_targets.map(function(d) {return d.iso});
-current_isos = current_sources_iso.concat(current_targets_iso);
+// scatterplot with aid relations to indicators
+scatterplot('#aidrelations', spdata(recipients, 'IT.NET.USER.P2'));
 
-// determine selected countries
-$('.countryselect').click(function(e){
-  e.preventDefault();
-  if ('donors' == e.target.href.split('#')[1]) {
-    showCountrySelect('donated');
-  } else {
-    showCountrySelect('received');
-  }
-});
-
-var showCountrySelect = function(key){
-  var li = d3.select('#countryselect').selectAll('li')
-    .data(ranks[year][key].reverse());
-  li.enter().append('li')
-    .append('label')
-      .attr('class', 'checkbox')
-      .text(function(d){return d.iso})
-      .append('input')
-        .attr('type', 'checkbox')
-        .attr('value', function(d){return d.iso});
-      li.exit().remove();
-}
-
-var showrecipients = function(){
-  console.log(this)
-}
-
-selected = donations[year].filter(function(d){
-  return ('undefined' !== typeof countryinfo[d.source]
-    && 'undefined' !== typeof countryinfo[d.target]
-    && (-1 !== current_sources_iso.indexOf(d.source) || -1 !== current_targets_iso.indexOf(d.target))
-  ) ? true : false
-});
-
-//drawlinks(selected);
-// FIXME call with list based on selection either donors or recipients
-drawlegend(current_sources_iso);
-
-bar('#aiddonors', ranks[year]['donated'].slice(-limit).reverse());
-bar('#aidrecipients', ranks[year]['received'].slice(-limit).reverse());
-
-scatterplot('#aidrelations', spdata('received', 'IT.NET.USER.P2'));
-
-d3.json('/json/world-countries.json', function(error, json) { // d3 v3
-//d3.json('/json/world-countries.json', function(json) { // d3 v2
-  drawmap(json);
+// load geo data and draw map
+d3.json('/json/world-countries.json', function(error, json) {
+  drawmap(json, quantize, showlinks);
+  drawlegend();
 });
 
 })();
