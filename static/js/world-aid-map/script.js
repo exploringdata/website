@@ -67,11 +67,12 @@ var quantize = function(d) {
 var aidranking = function(items, infix) {
   var ranking = [];
   $.each(items, function(idx, item){
+    var formatval = formatdollar(item.val);
     ranking.push({
       label: item.label,
       val: item.val,
-      title: countryinfo[item.label].name + ' (' + item.label + '): ' + infix + format(item.val),
-      formatval: formatdollar(item.val)
+      title: countryinfo[item.label].name + ' (' + item.label + ') - ' + infix + format(item.val),
+      formatval: formatval
     })
   });
   return ranking;
@@ -85,21 +86,24 @@ var indicatorranking = function(items, indicator) {
       val = countrystats[year][item.label][indicator];
       formatval = format(val);
     } else {
-      val = 'NA';
-      formatval = '';
+      val = 0;
+      formatval = 'NA';
     }
     ranking.push({
       label: item.label,
       val: val,
-      title: countryinfo[item.label].name + '(' + item.label + '): ' + format(val),
+      title: countryinfo[item.label].name + ' (' + item.label + '): ' + formatval,
       formatval: formatval
     })
   });
   return ranking;
 };
 
+// sort descending by val property
+var sdesc = function(a, b) {return b.val - a.val};
+
 // get values divided by relation
-var getrelation = function(unrelated, relation) {
+var getrelation = function(unrelated, relation, sortorder) {
   var related = [];
   $.each(unrelated, function(idx, item){
     if (countrystats[year][item.label].hasOwnProperty(relation)) {
@@ -109,11 +113,10 @@ var getrelation = function(unrelated, relation) {
       })
     }
   });
+  if (sortorder == 'desc')
+    related = related.sort(sdesc);
   return related;
 };
-
-// sort descending by val property
-var sdesc = function(a, b) {return b.val - a.val};
 
 /********** main program flow **********/
 
@@ -123,7 +126,8 @@ var sdesc = function(a, b) {return b.val - a.val};
 donors = ranks[year]['donated'].reverse();
 recipients = ranks[year]['received'].reverse();
 
-// TODO reset these values with calculated max after calculating relations
+// these values are overwritten when calculating relations and are reset when
+// showing totals
 max_donated = donors[0].val;
 max_received = recipients[0].val;
 
@@ -135,19 +139,27 @@ d3.json('/json/world-countries.json', function(error, json) {
 
 // calculate relations and redraw graphs
 $('.relate').click(function(e){
-  e.preventDefault();
+  $('.relate').parent('li').removeClass('active');
+  $(this).parent('li').attr('class', 'active');
+
   var reldonors = [], relrecipients = [];
   var text = this.innerHTML;
   if ('norelate' == this.id) {
     // copy values not reference to array
     reldonors = donors.slice();
     relrecipients = recipients.slice();
+    max_donated = donors[0].val;
+    max_received = recipients[0].val;
   } else {
-    reldonors = getrelation(donors, this.id);
-    relrecipients = getrelation(recipients, this.id);
+    reldonors = getrelation(donors, this.id, 'desc');
+    relrecipients = getrelation(recipients, this.id, 'desc');
+    max_donated = reldonors[0].val;
+    max_received = relrecipients[0].val;
   }
-  bar('#aiddonors', aidranking(reldonors.slice(0, limit), ' - aid donated in USD ' + text + ': '));
-  bar('#aidrecipients', aidranking(relrecipients.slice(0, limit), ' - aid received in USD ' + text + ': '));
+  bar('#aiddonors', aidranking(reldonors.slice(0, limit), 'aid donated in USD ' + text + ': '));
+  bar('#donorstransparency', indicatorranking(reldonors.slice(0, limit), 'aidtransparency'));
+  bar('#aidrecipients', aidranking(relrecipients.slice(0, limit), 'aid received in USD ' + text + ': '));
+  bar('#recipientstransparency', indicatorranking(relrecipients.slice(0, limit), 'IQ.CPA.TRAN.XQ'));
 });
 
 
@@ -164,11 +176,11 @@ iselect.change(function(e) {
 });
 
 // donor rankings
-bar('#aiddonors', aidranking(donors.slice(0, limit), ' - total aid donated in USD: '));
+bar('#aiddonors', aidranking(donors.slice(0, limit), 'total aid donated in USD: '));
 bar('#donorstransparency', indicatorranking(donors.slice(0, limit), 'aidtransparency'));
 
 // recipients rankings
-bar('#aidrecipients', aidranking(recipients.slice(0, limit), ' - total aid received in USD: '));
+bar('#aidrecipients', aidranking(recipients.slice(0, limit), 'total aid received in USD: '));
 bar('#recipientstransparency', indicatorranking(recipients.slice(0, limit), 'IQ.CPA.TRAN.XQ'));
 
 // scatterplot with aid relations to indicators
