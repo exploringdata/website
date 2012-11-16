@@ -50,6 +50,7 @@ var garcs = svg.append('g')
   .attr('id', 'arcs');
 
 var drawmap = function(geocountries, colorize, showLinks) {
+  gcountries.selectAll('path').remove();
   gcountries.selectAll('path')
     .data(geocountries)
     .enter().append('path')

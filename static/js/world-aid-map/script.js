@@ -55,22 +55,30 @@ var spdata = function(xdata, key) {
   return data
 };
 
-// country colors
-var quantize = function(d) {
-  var val;
-  var maxval = 10; //RdBu 0 = red, 10 = blue 
-  if ('undefined' !== typeof countrystats[year][d.id]) {
-    if ('undefined' !== typeof countrystats[year][d.id]['received']) {
-      // scale min between 0 (max received) and 4 (min received)
-      val = 4 - 4 * countrystats[year][d.id]['received'] / maxreceived
+// returns a function that is takes relation into account
+var getQuantize = function() {
+  return function(d) {
+    var val;
+    var rel = 1;
+    var maxval = 10; //RdBu 0 = red, 10 = blue 
+    if ('undefined' !== typeof countrystats[year][d.id]) {
+      if (relation && 'norelate' != relation) {
+        // if relation can't be calculated return null to not colorite country
+        if (!countrystats[year][d.id].hasOwnProperty(relation)) return null;
+        rel = countrystats[year][d.id][relation]
+      }
+      if ('undefined' !== typeof countrystats[year][d.id]['received']) {
+        // scale min between 0 (max received) and 4 (min received)
+        val = 4 - 4 * countrystats[year][d.id]['received'] / rel / maxreceived
+      }
+      else if ('undefined' !== typeof countrystats[year][d.id]['donated']) {
+        // scale max between 6 (min donated) and 10 (max donated)
+        val = 6 + 4 * countrystats[year][d.id]['donated'] / rel / maxdonated
+      }
     }
-    else if ('undefined' !== typeof countrystats[year][d.id]['donated']) {
-      // scale max between 6 (min donated) and 10 (max donated)
-      val = 6 + 4 * countrystats[year][d.id]['donated'] / maxdonated
-    }
+    if (null == val) return null;
+    return 'q' + parseInt(~~val) + '-11';
   }
-  if (null == val) return null;
-  return 'q' + parseInt(~~val) + '-11';
 };
 
 // for aid rankings
@@ -136,8 +144,8 @@ var setAidRelations = function(source, target) {
 };
 
 var showGraphs = function(text) {
-  var rd = reldonors.slice(0, limit),
-    rr = relrecipients.slice(0, limit);
+  var rd = reldonors,
+    rr = relrecipients;
   bar('#aiddonors', aidRanking(rd, 'aid donated in USD ' + text + ': '));
   bar('#donorstransparency', indicatorRanking(rd, 'aidtransparency'));
   bar('#aidrecipients', aidRanking(rr, 'aid received in USD ' + text + ': '));
@@ -165,7 +173,7 @@ maxreceived = relrecipients[0].val;
 // load geo data and draw map
 d3.json('/json/world-countries.json', function(error, json) {
   geocountries = json.features;
-  drawmap(geocountries, quantize, showLinks);
+  drawmap(geocountries, getQuantize(), showLinks);
   drawlegend();
 });
 
@@ -196,7 +204,7 @@ $('.relate').click(function(e){
     scatterrelation = iselect.find('option:first')[0].value;
   }
   showGraphs(this.innerHTML);
-  drawmap(geocountries, quantize, showLinks);
+  drawmap(geocountries, getQuantize(), showLinks);
 });
 
 scatterrelation = iselect.find('option:first')[0].value;
