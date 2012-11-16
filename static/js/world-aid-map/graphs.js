@@ -7,15 +7,10 @@ var mapselect = '#map',
   width = containerwidth(mapselect),
   height = width * .6,
   legendh = 30,
-  selected,
-  centered,
-  relation, // Population or GDP
   proj = d3.geo.equirectangular().scale(1).translate([0, 0]),
   arc = d3.geo.greatArc().precision(1),
-  centroid = function(d) {return path.centroid(d.geometry)},
   format = d3.format(',r'),
   formatpercentage = d3.format(".1%"),
-  color = d3.scale.category20(),
   projection = d3.geo.mercator().scale(width).translate([0, 0]),
   path = d3.geo.path().projection(projection);
 
@@ -26,12 +21,6 @@ var click = function(d) {
 
 var tf = function() {
   return 'translate(' + width / 2 + ',' + height / 1.8 + ')'
-};
-
-var scalelink = function(d) {
-  var usd = d.usd;
-  if (relation) usd = usd / d[relation];
-  return Math.sqrt(usd) / 10000; // FIXME use max to scale
 };
 
 var rescale = function() {
@@ -60,8 +49,7 @@ var garcs = svg.append('g')
   .attr('transform', tf)
   .attr('id', 'arcs');
 
-var drawmap = function(data, colorize, showLinks) {
-  geocountries = data.features;
+var drawmap = function(geocountries, colorize, showLinks) {
   gcountries.selectAll('path')
     .data(geocountries)
     .enter().append('path')
@@ -82,7 +70,8 @@ var drawmap = function(data, colorize, showLinks) {
 };
 
 var drawlinks = function(links) {
-  garcs.selectAll('path')
+  garcs.selectAll('path.link').remove();
+  garcs.selectAll('path.link')
     .data(links)
     .enter().append('path') 
       .attr('class', 'link')

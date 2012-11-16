@@ -9,7 +9,8 @@ var year = 2010,
   relation,
   scatterrelation,
   maxreceived,
-  maxdonated;
+  maxdonated,
+  geocountries;
 
 var showLinks = function(cid) {
   var l = donations[year].filter(function(d){
@@ -18,6 +19,12 @@ var showLinks = function(cid) {
       && (cid == d.source || cid == d.target)) ? true : false
   });
   drawlinks(l)
+};
+
+var scalelink = function(d) {
+  var usd = d.usd;
+//  if (relation) usd = usd / d[relation];
+  return Math.sqrt(usd) / 10000; // FIXME use max to scale
 };
 
 // format us dollar values
@@ -157,7 +164,8 @@ maxreceived = relrecipients[0].val;
 
 // load geo data and draw map
 d3.json('/json/world-countries.json', function(error, json) {
-  drawmap(json, quantize, showLinks);
+  geocountries = json.features;
+  drawmap(geocountries, quantize, showLinks);
   drawlegend();
 });
 
@@ -188,6 +196,7 @@ $('.relate').click(function(e){
     scatterrelation = iselect.find('option:first')[0].value;
   }
   showGraphs(this.innerHTML);
+  drawmap(geocountries, quantize, showLinks);
 });
 
 scatterrelation = iselect.find('option:first')[0].value;
