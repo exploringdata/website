@@ -60,7 +60,7 @@ var garcs = svg.append('g')
   .attr('transform', tf)
   .attr('id', 'arcs');
 
-var drawmap = function(data, colorize, showlinks) {
+var drawmap = function(data, colorize, showLinks) {
   geocountries = data.features;
   gcountries.selectAll('path')
     .data(geocountries)
@@ -72,7 +72,7 @@ var drawmap = function(data, colorize, showlinks) {
         var t = d3.select(this);
         t.style('origfill', document.defaultView.getComputedStyle(this,null)['fill']);
         t.style('fill', '#d0ffd0');
-        showlinks(d.id)
+        showLinks(d.id)
       })
       .on('mouseout', function(d) {
         var t = d3.select(this);
@@ -201,11 +201,11 @@ var scatterplot = function(selector, data) {
       .domain([0, ymax]).range([ploth - padding, padding]),
     rscale = d3.scale.linear().nice()
       .domain([0, xmax]).range([r, r]),
-    xaxis = d3.svg.axis().scale(xscale).ticks(5).tickFormat(formatdollar),
+    xaxis = d3.svg.axis().scale(xscale).ticks(5).tickFormat(formatDollar),
     yaxis = d3.svg.axis().scale(yscale).orient('left').ticks(5);
 
   var title = function(d) {
-    return d.title + ': ' + formatdollar(d.x) + ', ' + format(d.y)
+    return d.title + ': ' + formatDollar(d.x) + ', ' + format(d.y)
   }
 
   var plot = d3.select(selector);

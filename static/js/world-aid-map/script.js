@@ -7,10 +7,11 @@ var year = 2010,
   recipients,
   relrecipients,
   relation,
+  scatterrelation,
   maxreceived,
   maxdonated;
 
-var showlinks = function(cid) {
+var showLinks = function(cid) {
   var l = donations[year].filter(function(d){
     return ('undefined' !== typeof countryinfo[d.source]
       && 'undefined' !== typeof countryinfo[d.target]
@@ -20,7 +21,7 @@ var showlinks = function(cid) {
 };
 
 // format us dollar values
-var formatdollar = function(val) {
+var formatDollar = function(val) {
   var scale = 1000000;
   val = d3.round(val, 2);
   if (val > scale) val = val / scale + 'M';
@@ -66,10 +67,10 @@ var quantize = function(d) {
 };
 
 // for aid rankings
-var aidranking = function(items, infix) {
+var aidRanking = function(items, infix) {
   var ranking = [];
   $.each(items, function(idx, item){
-    var formatval = formatdollar(item.val);
+    var formatval = formatDollar(item.val);
     ranking.push({
       label: item.label,
       val: item.val,
@@ -81,7 +82,7 @@ var aidranking = function(items, infix) {
 };
 
 // for indicator rankings
-var indicatorranking = function(items, indicator) {
+var indicatorRanking = function(items, indicator) {
   var ranking = [], val, formatval;
   $.each(items, function(idx, item) {
     if ('undefined' !== typeof countrystats[year][item.label][indicator]) {
@@ -105,7 +106,7 @@ var indicatorranking = function(items, indicator) {
 var sdesc = function(a, b) {return b.val - a.val};
 
 // get values divided by relation
-var getrelation = function(unrelated, relation, sortorder) {
+var getRelation = function(unrelated, relation, sortorder) {
   var related = [];
   $.each(unrelated, function(idx, item){
     if (countrystats[year][item.label].hasOwnProperty(relation)) {
@@ -120,11 +121,21 @@ var getrelation = function(unrelated, relation, sortorder) {
   return related;
 };
 
-var setaidrelations = function(source, target) {
+var setAidRelations = function(source, target) {
   reldonors = source;
   relrecipients = target;
   maxdonated = reldonors[0].val;
   maxreceived = relrecipients[0].val;
+};
+
+var showGraphs = function(text) {
+  var rd = reldonors.slice(0, limit),
+    rr = relrecipients.slice(0, limit);
+  bar('#aiddonors', aidRanking(rd, 'aid donated in USD ' + text + ': '));
+  bar('#donorstransparency', indicatorRanking(rd, 'aidtransparency'));
+  bar('#aidrecipients', aidRanking(rr, 'aid received in USD ' + text + ': '));
+  bar('#recipientstransparency', indicatorRanking(rr, 'IQ.CPA.TRAN.XQ'));
+  scatterplot('#aidrelations', spdata(relrecipients, scatterrelation));
 };
 
 /********** main program flow **********/
@@ -146,7 +157,7 @@ maxreceived = relrecipients[0].val;
 
 // load geo data and draw map
 d3.json('/json/world-countries.json', function(error, json) {
-  drawmap(json, quantize, showlinks);
+  drawmap(json, quantize, showLinks);
   drawlegend();
 });
 
@@ -159,40 +170,27 @@ $.each(indicators, function(i) {
 // indicator selection
 iselect.change(function(e) {
   e.preventDefault();
-  scatterplot('#aidrelations', spdata(relrecipients, $(this).val()));
+  scatterrelation = $(this).val();
+  scatterplot('#aidrelations', spdata(relrecipients, scatterrelation));
 });
 
 // calculate relations and redraw graphs
 $('.relate').click(function(e){
   $('.relate').parent('li').removeClass('active');
   $(this).parent('li').attr('class', 'active');
-  var text = this.innerHTML;
   relation = this.id;
   if ('norelate' == relation) {
-    setaidrelations(donors.slice(), recipients.slice());
-    relation = iselect.find('option:first')[0].value;
+    setAidRelations(donors.slice(), recipients.slice());
   } else {
-    setaidrelations(getrelation(donors, relation, 'desc'), getrelation(recipients, relation, 'desc'));
+    setAidRelations(getRelation(donors, relation, 'desc'), getRelation(recipients, relation, 'desc'));
   }
-
-console.log(relation)
-
-  bar('#aiddonors', aidranking(reldonors, 'aid donated in USD ' + text + ': '));
-  bar('#donorstransparency', indicatorranking(reldonors, 'aidtransparency'));
-  bar('#aidrecipients', aidranking(relrecipients, 'aid received in USD ' + text + ': '));
-  bar('#recipientstransparency', indicatorranking(relrecipients, 'IQ.CPA.TRAN.XQ'));
-  scatterplot('#aidrelations', spdata(relrecipients, relation));
+  if (!scatterrelation) {
+    scatterrelation = iselect.find('option:first')[0].value;
+  }
+  showGraphs(this.innerHTML);
 });
 
-// donor rankings
-bar('#aiddonors', aidranking(reldonors, 'total aid donated in USD: '));
-bar('#donorstransparency', indicatorranking(reldonors, 'aidtransparency'));
-
-// recipients rankings
-bar('#aidrecipients', aidranking(relrecipients, 'total aid received in USD: '));
-bar('   #recipientstransparency', indicatorranking(relrecipients, 'IQ.CPA.TRAN.XQ'));
-
-// scatterplot with aid relations to indicators
-scatterplot('#aidrelations', spdata(relrecipients, iselect.find('option:first')[0].value));
+scatterrelation = iselect.find('option:first')[0].value;
+showGraphs('total amounts');
 
 })();
