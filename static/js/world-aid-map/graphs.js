@@ -138,7 +138,6 @@ var drawlegend = function() {
 // render bar chart
 var bar = function(selector, data) {
   var maxval = d3.max(data, function(d) { return d.val });
-console.log(maxval, selector)
   var loff = 110,
     barw = containerwidth(selector) - loff,
     y = 17,

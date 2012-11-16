@@ -2,11 +2,13 @@
 var year = 2010,
   limit = 20,
   format = d3.format(',r'),
-  recipients,
   donors,
+  reldonors,
+  recipients,
+  relrecipients,
   relation,
-  max_received,
-  max_donated;
+  maxreceived,
+  maxdonated;
 
 var showlinks = function(cid) {
   var l = donations[year].filter(function(d){
@@ -52,11 +54,11 @@ var quantize = function(d) {
   if ('undefined' !== typeof countrystats[year][d.id]) {
     if ('undefined' !== typeof countrystats[year][d.id]['received']) {
       // scale min between 0 (max received) and 4 (min received)
-      val = 4 - 4 * countrystats[year][d.id]['received'] / max_received
+      val = 4 - 4 * countrystats[year][d.id]['received'] / maxreceived
     }
     else if ('undefined' !== typeof countrystats[year][d.id]['donated']) {
       // scale max between 6 (min donated) and 10 (max donated)
-      val = 6 + 4 * countrystats[year][d.id]['donated'] / max_donated
+      val = 6 + 4 * countrystats[year][d.id]['donated'] / maxdonated
     }
   }
   if (null == val) return null;
@@ -118,6 +120,13 @@ var getrelation = function(unrelated, relation, sortorder) {
   return related;
 };
 
+var setaidrelations = function(source, target) {
+  reldonors = source;
+  relrecipients = target;
+  maxdonated = reldonors[0].val;
+  maxreceived = relrecipients[0].val;
+};
+
 /********** main program flow **********/
 
 (function() {
@@ -126,10 +135,14 @@ var getrelation = function(unrelated, relation, sortorder) {
 donors = ranks[year]['donated'].reverse();
 recipients = ranks[year]['received'].reverse();
 
+// copy values not reference to array
+reldonors = donors.slice();
+relrecipients = recipients.slice();
+
 // these values are overwritten when calculating relations and are reset when
 // showing totals
-max_donated = donors[0].val;
-max_received = recipients[0].val;
+maxdonated = reldonors[0].val;
+maxreceived = relrecipients[0].val;
 
 // load geo data and draw map
 d3.json('/json/world-countries.json', function(error, json) {
@@ -137,34 +150,8 @@ d3.json('/json/world-countries.json', function(error, json) {
   drawlegend();
 });
 
-// calculate relations and redraw graphs
-$('.relate').click(function(e){
-  $('.relate').parent('li').removeClass('active');
-  $(this).parent('li').attr('class', 'active');
-
-  var reldonors = [], relrecipients = [];
-  var text = this.innerHTML;
-  if ('norelate' == this.id) {
-    // copy values not reference to array
-    reldonors = donors.slice();
-    relrecipients = recipients.slice();
-    max_donated = donors[0].val;
-    max_received = recipients[0].val;
-  } else {
-    reldonors = getrelation(donors, this.id, 'desc');
-    relrecipients = getrelation(recipients, this.id, 'desc');
-    max_donated = reldonors[0].val;
-    max_received = relrecipients[0].val;
-  }
-  bar('#aiddonors', aidranking(reldonors.slice(0, limit), 'aid donated in USD ' + text + ': '));
-  bar('#donorstransparency', indicatorranking(reldonors.slice(0, limit), 'aidtransparency'));
-  bar('#aidrecipients', aidranking(relrecipients.slice(0, limit), 'aid received in USD ' + text + ': '));
-  bar('#recipientstransparency', indicatorranking(relrecipients.slice(0, limit), 'IQ.CPA.TRAN.XQ'));
-});
-
-
-// fill indicators select lists
 var iselect = $('#indicators');
+// fill indicators select lists
 $.each(indicators, function(i) {
   if ('global' == indicators[i].type)
     iselect.append('<option value="' + indicators[i].id + '">' + indicators[i].label + '</option')
@@ -172,18 +159,40 @@ $.each(indicators, function(i) {
 // indicator selection
 iselect.change(function(e) {
   e.preventDefault();
-  scatterplot('#aidrelations', spdata(recipients.slice(0, limit), $(this).val()));
+  scatterplot('#aidrelations', spdata(relrecipients, $(this).val()));
+});
+
+// calculate relations and redraw graphs
+$('.relate').click(function(e){
+  $('.relate').parent('li').removeClass('active');
+  $(this).parent('li').attr('class', 'active');
+  var text = this.innerHTML;
+  relation = this.id;
+  if ('norelate' == relation) {
+    setaidrelations(donors.slice(), recipients.slice());
+    relation = iselect.find('option:first')[0].value;
+  } else {
+    setaidrelations(getrelation(donors, relation, 'desc'), getrelation(recipients, relation, 'desc'));
+  }
+
+console.log(relation)
+
+  bar('#aiddonors', aidranking(reldonors, 'aid donated in USD ' + text + ': '));
+  bar('#donorstransparency', indicatorranking(reldonors, 'aidtransparency'));
+  bar('#aidrecipients', aidranking(relrecipients, 'aid received in USD ' + text + ': '));
+  bar('#recipientstransparency', indicatorranking(relrecipients, 'IQ.CPA.TRAN.XQ'));
+  scatterplot('#aidrelations', spdata(relrecipients, relation));
 });
 
 // donor rankings
-bar('#aiddonors', aidranking(donors.slice(0, limit), 'total aid donated in USD: '));
-bar('#donorstransparency', indicatorranking(donors.slice(0, limit), 'aidtransparency'));
+bar('#aiddonors', aidranking(reldonors, 'total aid donated in USD: '));
+bar('#donorstransparency', indicatorranking(reldonors, 'aidtransparency'));
 
 // recipients rankings
-bar('#aidrecipients', aidranking(recipients.slice(0, limit), 'total aid received in USD: '));
-bar('#recipientstransparency', indicatorranking(recipients.slice(0, limit), 'IQ.CPA.TRAN.XQ'));
+bar('#aidrecipients', aidranking(relrecipients, 'total aid received in USD: '));
+bar('   #recipientstransparency', indicatorranking(relrecipients, 'IQ.CPA.TRAN.XQ'));
 
 // scatterplot with aid relations to indicators
-scatterplot('#aidrelations', spdata(recipients.slice(0, limit), iselect.find('option:first')[0].value));
+scatterplot('#aidrelations', spdata(relrecipients, iselect.find('option:first')[0].value));
 
 })();
