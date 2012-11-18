@@ -18,13 +18,14 @@ var showLinks = function(cid) {
       && 'undefined' !== typeof countryinfo[d.target]
       && (cid == d.source || cid == d.target)) ? true : false
   });
-  drawlinks(l)
+  maxamount = d3.max(l, function(d) {return d.usd});
+  drawlinks(l, maxamount)
 };
 
-var scalelink = function(d) {
-  var usd = d.usd;
-//  if (relation) usd = usd / d[relation];
-  return Math.sqrt(usd) / 10000; // FIXME use max to scale
+// scale link using max aid amount given or received
+var scaleLink = function(link, maxamount) {
+  var lscale = d3.scale.linear().domain([0, maxamount]).range([.1, 5]);
+  return lscale(link.usd);
 };
 
 // format us dollar values

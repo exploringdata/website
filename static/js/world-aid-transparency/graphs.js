@@ -67,16 +67,18 @@ var drawmap = function(geocountries, colorize, showLinks) {
         var t = d3.select(this);
         t.style('fill', t.style('origfill'));
         garcs.selectAll('path.link').remove()
-      });
+      })
+      .append('title')
+        .text(function(d) {return d.properties.name});
 };
 
-var drawlinks = function(links) {
+var drawlinks = function(links, maxamount) {
   garcs.selectAll('path.link').remove();
   garcs.selectAll('path.link')
     .data(links)
     .enter().append('path') 
       .attr('class', 'link')
-      .style('stroke-width', function(d) {return scalelink(d)})
+      .style('stroke-width', function(d) {return scaleLink(d, maxamount)})
       .attr('d', function(d) {
         var p = {source:countryinfo[d.source].coords, target:countryinfo[d.target].coords};
         return path(arc(p))
