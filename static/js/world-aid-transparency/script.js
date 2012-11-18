@@ -145,8 +145,8 @@ var setAidRelations = function(source, target) {
 };
 
 var showGraphs = function(text) {
-  var rd = reldonors,
-    rr = relrecipients;
+  var rd = reldonors.slice(0, limit),
+    rr = relrecipients.slice(0, limit);
   bar('#aiddonors', aidRanking(rd, 'aid donated in USD ' + text + ': '));
   bar('#donorstransparency', indicatorRanking(rd, 'aidtransparency'));
   bar('#aidrecipients', aidRanking(rr, 'aid received in USD ' + text + ': '));
