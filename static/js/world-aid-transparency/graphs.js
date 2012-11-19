@@ -14,11 +14,6 @@ var mapselect = '#map',
   projection = d3.geo.mercator().scale(width).translate([0, 0]),
   path = d3.geo.path().projection(projection);
 
-//FIXME implement country select
-var click = function(d) {
-  console.log(d);
-}
-
 var tf = function() {
   return 'translate(' + width / 2 + ',' + height / 1.8 + ')'
 };
@@ -56,7 +51,7 @@ var drawmap = function(geocountries, colorize, showLinks) {
     .enter().append('path')
       .attr('d', path)
       .attr('class', colorize ? colorize : null)
-      .on('click', click)
+      .on('click', showCountry)
       .on('mouseover', function(d) {
         var t = d3.select(this);
         t.style('origfill', document.defaultView.getComputedStyle(this,null)['fill']);

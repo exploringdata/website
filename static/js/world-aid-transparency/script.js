@@ -12,13 +12,17 @@ var year = 2010,
   maxdonated,
   geocountries;
 
-var showLinks = function(cid) {
-  var l = donations[year].filter(function(d){
+var getSortedCountryLinks = function(cid) {
+  return donations[year].filter(function(d){
     return ('undefined' !== typeof countryinfo[d.source]
       && 'undefined' !== typeof countryinfo[d.target]
       && (cid == d.source || cid == d.target)) ? true : false
-  });
-  maxamount = d3.max(l, function(d) {return d.usd});
+  }).sort(function(a, b) {return b.usd - a.usd})
+};
+
+var showLinks = function(cid) {
+  var l = getSortedCountryLinks(cid);
+  maxamount = l[0].usd;
   drawlinks(l, maxamount)
 };
 
@@ -28,11 +32,42 @@ var scaleLink = function(link, maxamount) {
   return lscale(link.usd);
 };
 
+// show aid data for country
+var showCountry = function(d) {
+  var modal = $('#country-aid')
+  modal.find('h3').append(d.properties.name)
+  var clinks = getSortedCountryLinks(d.id);
+  // determine if country is donor or recipient by larges amount source
+  var type = (clinks[0].source == d.id) ? 'donor' : 'recipient';
+  var ranking = [];
+  $.each(clinks, function(idx, item) {
+    var label = item.target;
+    if ('recipient' == type) {
+      var label = item.source
+    }
+    ranking.push({
+      label: label,
+      val: item.usd,
+      formatval: formatDollar(item.usd),
+      title: countryinfo[label].name + ' (' + label + '): ' + format(item.usd),
+    })
+  });
+  bar('#country-aid-chart', ranking);
+  modal.modal('show');
+}
+
 // format us dollar values
 var formatDollar = function(val) {
   var scale = 1000000;
-  val = d3.round(val, 2);
-  if (val > scale) val = val / scale + 'M';
+  if(val < 1 /100) {
+    val = d3.round(val, 3);
+  } else {
+    val = d3.round(val, 2);
+  }
+  if (val > scale) {
+    val = d3.round(val / scale, 0)
+    val += 'M';
+  }
   return val;
 };
 
