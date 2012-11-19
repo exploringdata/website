@@ -22,8 +22,10 @@ var getSortedCountryLinks = function(cid) {
 
 var showLinks = function(cid) {
   var l = getSortedCountryLinks(cid);
-  maxamount = l[0].usd;
-  drawlinks(l, maxamount)
+  if (l.length) {
+    maxamount = l[0].usd;
+    drawlinks(l, maxamount)
+  }
 };
 
 // scale link using max aid amount given or received
@@ -186,9 +188,9 @@ var setAidRelations = function(source, target) {
 var showGraphs = function(text) {
   var rd = reldonors.slice(0, limit),
     rr = relrecipients.slice(0, limit);
-  bar('#aiddonors', aidRanking(rd, 'aid donated in USD ' + text + ': '));
+  bar('#aiddonors', aidRanking(rd, 'Aid donated in USD: ' + text + ': '));
   bar('#donorstransparency', indicatorRanking(rd, 'aidtransparency'));
-  bar('#aidrecipients', aidRanking(rr, 'aid received in USD ' + text + ': '));
+  bar('#aidrecipients', aidRanking(rr, 'Aid received in USD: ' + text + ': '));
   bar('#recipientstransparency', indicatorRanking(rr, 'IQ.CPA.TRAN.XQ'));
   scatterplot('#aidrelations', spdata(relrecipients, scatterrelation));
 };
@@ -248,6 +250,6 @@ $('.relate').click(function(e){
 });
 
 scatterrelation = iselect.find('option:first')[0].value;
-showGraphs('total amounts');
+showGraphs('Total amount');
 
 })();

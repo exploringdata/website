@@ -61,17 +61,25 @@ var drawmap = function(geocountries, colorize, showLinks) {
       .on('mouseout', function(d) {
         var t = d3.select(this);
         t.style('fill', t.style('origfill'));
-        garcs.selectAll('path.link').remove()
       })
       .append('title')
         .text(function(d) {return d.properties.name});
+
+  // only remove links when map area is left to avoid link removal when mouse is
+  // over a link, which had an annoying flickering effect
+  d3.select(mapselect).on('mouseout', function() {
+    var tid = window.event.relatedTarget.id;
+    var tname = window.event.toElement.nodeName.toLowerCase();
+    if ((tid && 'map' == tid) || (tname && 'div' == tname))
+      garcs.selectAll('path.link').remove()
+    })
 };
 
 var drawlinks = function(links, maxamount) {
   garcs.selectAll('path.link').remove();
   garcs.selectAll('path.link')
     .data(links)
-    .enter().append('path') 
+    .enter().append('path')
       .attr('class', 'link')
       .style('stroke-width', function(d) {return scaleLink(d, maxamount)})
       .attr('d', function(d) {
