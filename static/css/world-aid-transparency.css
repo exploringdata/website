@@ -72,7 +72,10 @@ fill: none;
 }
 /* scatterplot */
 text.scatterplot {
-font-size: 8px;
+font-size:7.5px;
+}
+.axis text {
+font-size:9px;
 }
 /* colorbrewer */
 .RdBu .q0-11{fill:rgb(103,0,31)}

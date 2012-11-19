@@ -118,7 +118,7 @@ var drawlegend = function() {
     .attr('class', 'footer')
     .attr('dy', 16);
   ltext.append('svg:tspan')
-    .text('Move the mouse over a country to show aid flow, zoom with the mousewheel, drag with the mouse button pressed.')
+    .text('Mouse over a country to show aid flow, click for details, zoom with the mousewheel, drag with the mouse button pressed.')
     .attr('x', 0)
 }
 
@@ -177,19 +177,21 @@ var bar = function(selector, data) {
 var scatterplot = function(selector, data) {
   var plotw = containerwidth(selector) - 10,
     ploth = plotw / 2,
-    r = 12,
-    padding = 25,
+    r = 11,
+    padding = 20,
+    paddingl = 30,
     xmax = d3.max(data, function(d) { return d.x }),
     ymax = d3.max(data, function(d) { return d.y }),
+    ymin = d3.min(data, function(d) { return d.y }),
     xscale = d3.scale.linear().nice()
-      .domain([0, xmax]).range([padding, plotw - 2 * padding]),
+      .domain([0, xmax]).range([paddingl, plotw - padding]),
     // map ymax to 0 so small values are below large ones
     yscale = d3.scale.linear().nice()
-      .domain([0, ymax]).range([ploth - padding, padding]),
+      .domain([ymin, ymax]).range([ploth - padding, padding]),
     rscale = d3.scale.linear().nice()
       .domain([0, xmax]).range([r, r]),
     xaxis = d3.svg.axis().scale(xscale).ticks(5).tickFormat(formatDollar),
-    yaxis = d3.svg.axis().scale(yscale).orient('left').ticks(5);
+    yaxis = d3.svg.axis().scale(yscale).orient('left').ticks(5).tickFormat(format);
 
   var title = function(d) {
     return d.title + ': ' + formatDollar(d.x) + ', ' + format(d.y)
@@ -229,7 +231,7 @@ var scatterplot = function(selector, data) {
     .call(xaxis);
 
   svg.append('g')
-    .attr('transform', 'translate(' + padding + ', 0)')
+    .attr('transform', 'translate(' + paddingl + ', 0)')
     .attr('class', 'axis')
     .call(yaxis);
 };
