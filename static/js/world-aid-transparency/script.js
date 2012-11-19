@@ -35,10 +35,14 @@ var scaleLink = function(link, maxamount) {
 // show aid data for country
 var showCountry = function(d) {
   var modal = $('#country-aid')
-  modal.find('h3').append(d.properties.name)
   var clinks = getSortedCountryLinks(d.id);
   // determine if country is donor or recipient by larges amount source
   var type = (clinks[0].source == d.id) ? 'donor' : 'recipient';
+  var heading = 'Aid given: ' + d.properties.name;
+  if ('recipient' == type) {
+    var heading = 'Aid received: ' + d.properties.name;
+  }
+  modal.find('h3').text(heading)
   var ranking = [];
   $.each(clinks, function(idx, item) {
     var label = item.target;
