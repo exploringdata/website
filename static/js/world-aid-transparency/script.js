@@ -1,6 +1,6 @@
 // year with currently most comprehensive dataset, no newer donations data yet
 var year = 2010,
-  limit = 20,
+  defaultlimit = 20,
   format = d3.format(',r'),
   donors,
   reldonors,
@@ -91,7 +91,7 @@ var spdata = function(xdata, key) {
         'x': x,
         'y': countrystats[year][iso][key]
       });
-      if (data.length == limit) break;
+      if (data.length == defaultlimit) break;
     }
   }
   return data
@@ -185,13 +185,21 @@ var setAidRelations = function(source, target) {
   maxreceived = relrecipients[0].val;
 };
 
-var showGraphs = function(text) {
-  var rd = reldonors.slice(0, limit),
-    rr = relrecipients.slice(0, limit);
-  bar('#aiddonors', aidRanking(rd, 'Aid donated in USD: ' + text + ': '));
-  bar('#donorstransparency', indicatorRanking(rd, 'aidtransparency'));
-  bar('#aidrecipients', aidRanking(rr, 'Aid received in USD: ' + text + ': '));
-  bar('#recipientstransparency', indicatorRanking(rr, 'IQ.CPA.TRAN.XQ'));
+var donorBars = function(text, limit) {
+  var r = (limit > 0) ? reldonors.slice(0, limit) : reldonors.slice();
+  bar('#aiddonors', aidRanking(r, 'Aid donated in USD: ' + text + ': '));
+  bar('#donorstransparency', indicatorRanking(r, 'aidtransparency'));
+}
+
+var recipientBars = function(text, limit) {
+  var r = (limit > 0) ? relrecipients.slice(0, limit) : relrecipients.slice();
+  bar('#aidrecipients', aidRanking(r, 'Aid received in USD: ' + text + ': '));
+  bar('#recipientstransparency', indicatorRanking(r, 'IQ.CPA.TRAN.XQ'));
+}
+
+var showGraphs = function(text, limit) {
+  donorBars(text, limit);
+  recipientBars(text, limit);
   scatterplot('#aidrelations', spdata(relrecipients, scatterrelation));
 };
 
@@ -225,6 +233,9 @@ $.each(indicators, function(i) {
   if ('global' == indicators[i].type)
     iselect.append('<option value="' + indicators[i].id + '">' + indicators[i].label + '</option')
 });
+// additional indicators
+iselect.append('<option value="userrequests">Google User Data Requests</option');
+
 // indicator selection
 iselect.change(function(e) {
   e.preventDefault();
@@ -249,7 +260,31 @@ $('.relate').click(function(e){
   drawmap(geocountries, getQuantize(), showLinks);
 });
 
+// expand / reduce bar charts
+$('.bar h4').click(function(e) {
+  e.preventDefault();
+  if ('i' == e.target.nodeName.toLowerCase()) {
+    var icon = $(e.target);
+    var bid = icon.parent().next('div').attr('id');
+    var text = $('li.active a.relate').text();
+    var limit = 0;
+    if (icon.hasClass('icon-plus-sign')) {
+      icon.removeClass('icon-plus-sign');
+      icon.addClass('icon-minus-sign');
+    } else {
+      limit = defaultlimit;
+      icon.addClass('icon-plus-sign');
+      icon.removeClass('icon-minus-sign');
+    }
+    if (-1 !== bid.indexOf('donors')) {
+      donorBars(text, limit);
+    } else {
+      recipientBars(text, limit);
+    }
+  }
+});
+
 scatterrelation = iselect.find('option:first')[0].value;
-showGraphs('Total amount');
+showGraphs('Total amount', defaultlimit);
 
 })();

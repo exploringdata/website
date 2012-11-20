@@ -11,7 +11,7 @@
 <!--  </li>-->
 <!--  <li class="active"><a href="">Overview</a></li>-->
   <li class="divider-vertical"></li>
-  <li class="active"><a href="#" id="norelate" class="relate">Total Amounts</a></li>
+  <li class="active"><a href="#" id="norelate" class="relate">Total Amount</a></li>
   <li><a href="#" id="SP.POP.TOTL" class="relate" title="Population, total">By Population</a></li>
   <li><a href="#" id="NY.GDP.MKTP.CD" class="relate" title="GDP (current US$)">By GDP</a></li>
 </ul>
@@ -25,13 +25,13 @@
     <div id="map" class="RdBu"></div>
   </div>
   <div class="span5 sidebar">
-    <div class="bar">
+    <div class="bar donors">
       <h4>Donors by aid sums</h4>
       <div id="aiddonors"></div>
       <div class="legend">Ranking of countries by aid donations given in USD.</div>
     </div>
-    <div class="bar">
-      <h4>Aid Transparency Index</h4>
+    <div class="bar donors">
+      <h4>Aid Transparency Index<i class="icon-plus-sign pull-right"></i></h4>
       <div id="donorstransparency"></div>
       <div class="legend">Aid Transparency Index ratings for countries giving aid money.</div>
     </div>
@@ -49,13 +49,13 @@
     </div>
   </div>
   <div class="span5 sidebar">
-    <div class="bar">
+    <div class="bar recipients">
       <h4>Recipients by aid sums</h4>
       <div id="aidrecipients"></div>
       <div class="legend">Ranking by aid donations received from countries in USD.</div>
     </div>
-    <div class="bar">
-      <h4>CPIA transparency Rating</h4>
+    <div class="bar recipients">
+      <h4>CPIA transparency Rating<i class="icon-plus-sign pull-right"></i></h4>
       <div id="recipientstransparency"></div>
       <div class="legend">CPIA transparency, accountability, and corruption ratings for receiving countries.</div>
     </div>
@@ -69,7 +69,7 @@
   </div>
   <div class="modal-body" id="country-aid-chart" style="width:480px;"></div>
   <div class="modal-footer">
-    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
   </div>
 </div>
 

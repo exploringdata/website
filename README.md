@@ -3,6 +3,8 @@
 # World Aid Transparency
 
 * Use Google User Data Requests http://www.google.com/transparencyreport/userdatarequests/
+* label font sizes in firefox
+* improve fonts
 
 TODOs
 

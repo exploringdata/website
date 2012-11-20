@@ -34,10 +34,17 @@ shape-rendering: crispEdges;
 font-family: sans-serif;
 font-size: 11px;
 }
+text {
+font-family: 'Open Sans', sans-serif;
+}
 /* bar charts */
 .bar text {
-font: .82em sans-serif;
+font-size:.82em;
 fill:#333;
+}
+.bar h4 i {
+margin:.2em 1em 0 0;
+cursor:pointer;
 }
 .bar .rule {
 font-size:.7em;
@@ -74,8 +81,11 @@ stroke: #51A351;
 fill: none;
 }
 /* scatterplot */
+circle.fillblue {
+stroke:#ccc;
+}
 text.scatterplot {
-font-size:7.5px;
+font-size:8.2px;
 }
 .axis text {
 font-size:9px;
