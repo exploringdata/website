@@ -67,6 +67,7 @@ var drawmap = function(geocountries, colorize, showLinks) {
 
   // only remove links when map area is left to avoid link removal when mouse is
   // over a link, which had an annoying flickering effect
+  // FIXME doesn't work perfect yet, maybe use mousemove and position instead
   d3.select(mapselect).on('mouseout', function() {
     var tid = window.event.relatedTarget.id;
     var tname = window.event.toElement.nodeName.toLowerCase();

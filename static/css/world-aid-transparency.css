@@ -3,7 +3,7 @@ margin-top:0;
 font-size:1.1em;
 }
 .info {
-cursor:help;
+cursor: help;
 }
 .legend {
 font-size:.8em;
@@ -55,6 +55,9 @@ pointer-events: all;
 fill: #ddd;
 stroke: #fff;
 stroke-width: 1px;
+}
+#countries path {
+cursor:pointer;
 }
 .bglegend {
 fill: white;
