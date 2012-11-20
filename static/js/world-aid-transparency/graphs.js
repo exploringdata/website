@@ -185,7 +185,7 @@ var bar = function(selector, data) {
  */
 var scatterplot = function(selector, data) {
   var plotw = containerwidth(selector) - 10,
-    ploth = plotw / 2,
+    ploth = plotw / 2.12,
     r = 11,
     padding = 20,
     paddingl = 30,

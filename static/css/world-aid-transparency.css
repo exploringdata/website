@@ -37,6 +37,7 @@ shape-rendering: crispEdges;
 font-family: sans-serif;
 font-size: 11px;
 }
+.legend,
 text {
 font-family: 'Open Sans', sans-serif;
 }
