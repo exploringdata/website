@@ -1,6 +1,7 @@
 // year with currently most comprehensive dataset, no newer donations data yet
 var year = 2010,
   defaultlimit = 20,
+  limitBars = true,
   format = d3.format(',r'),
   donors,
   reldonors,
@@ -185,22 +186,27 @@ var setAidRelations = function(source, target) {
   maxreceived = relrecipients[0].val;
 };
 
-var donorBars = function(text, limit) {
-  var r = (limit > 0) ? reldonors.slice(0, limit) : reldonors.slice();
+var donorBars = function(text) {
+  var r = limitBars ? reldonors.slice(0, getLimit()) : reldonors.slice();
   bar('#aiddonors', aidRanking(r, 'Aid donated in USD: ' + text + ': '));
   bar('#donorstransparency', indicatorRanking(r, 'aidtransparency'));
 }
 
-var recipientBars = function(text, limit) {
-  var r = (limit > 0) ? relrecipients.slice(0, limit) : relrecipients.slice();
+var recipientBars = function(text) {
+  var r = limitBars ? relrecipients.slice(0, getLimit()) : relrecipients.slice();
   bar('#aidrecipients', aidRanking(r, 'Aid received in USD: ' + text + ': '));
   bar('#recipientstransparency', indicatorRanking(r, 'IQ.CPA.TRAN.XQ'));
 }
 
-var showGraphs = function(text, limit) {
-  donorBars(text, limit);
-  recipientBars(text, limit);
+var showGraphs = function(text) {
+  donorBars(text);
+  recipientBars(text);
   scatterplot('#aidrelations', spdata(relrecipients, scatterrelation));
+};
+
+var getLimit = function(){
+  if (limitBars) return defaultlimit;
+  return 0;
 };
 
 /********** main program flow **********/
@@ -245,6 +251,7 @@ iselect.change(function(e) {
 
 // calculate relations and redraw graphs
 $('.relate').click(function(e){
+  e.preventDefault();
   $('.relate').parent('li').removeClass('active');
   $(this).parent('li').attr('class', 'active');
   relation = this.id;
@@ -261,30 +268,25 @@ $('.relate').click(function(e){
 });
 
 // expand / reduce bar charts
-$('.bar h4').click(function(e) {
+$('.menulimit').click(function(e) {
   e.preventDefault();
-  if ('i' == e.target.nodeName.toLowerCase()) {
-    var icon = $(e.target);
-    var bid = icon.parent().next('div').attr('id');
-    var text = $('li.active a.relate').text();
-    var limit = 0;
-    if (icon.hasClass('icon-plus-sign')) {
-      icon.removeClass('icon-plus-sign');
-      icon.addClass('icon-minus-sign');
-    } else {
-      limit = defaultlimit;
-      icon.addClass('icon-plus-sign');
-      icon.removeClass('icon-minus-sign');
-    }
-    if (-1 !== bid.indexOf('donors')) {
-      donorBars(text, limit);
-    } else {
-      recipientBars(text, limit);
-    }
+  var button = $(this);
+  var bid = button.attr('id');
+  var text = $('li.active a.relate').text();
+  if ('expand' == bid) {
+    $('.expand').hide();
+    $('.reduce').show();
+    limitBars = false;
+  } else {
+    $('.reduce').hide();
+    $('.expand').show();
+    limitBars = true;
   }
+  donorBars(text);
+  recipientBars(text);
 });
 
 scatterrelation = iselect.find('option:first')[0].value;
-showGraphs('Total amount', defaultlimit);
+showGraphs('Total amount');
 
 })();
