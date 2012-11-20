@@ -10,13 +10,12 @@
 <!--    <div class="btn-group"><a class="btn btn-primary countryselect" href="#recipients">Show Recipients</a></div>-->
 <!--  </li>-->
 <!--  <li class="active"><a href="">Overview</a></li>-->
-  <li class="divider-vertical"></li>
   <li class="active"><a href="" id="norelate" class="relate">Total Amount</a></li>
   <li><a href="" id="SP.POP.TOTL" class="relate" title="Population, total">By Population</a></li>
   <li><a href="" id="NY.GDP.MKTP.CD" class="relate" title="GDP (current US$)">By GDP</a></li>
   <li class="divider-vertical"></li>
-  <li class="expand"><div class="btn-group"><a href="" id="expand" class="menulimit btn btn-info" title="Expand Bar Charts"><i class="icon-plus"></i></a></div></li>
-  <li class="reduce"><div class="btn-group"><a href="" id="reduce" class="menulimit btn btn-info" title="Reduce Bar Charts"><i class="icon-minus"></i></a></div></li>
+  <li class="expand"><a href="" id="expand" class="menubutton menulimit" title="Expand Bar Charts"><button class="btn btn-info btn-small"><i class="icon-plus"></i></button></a></li>
+  <li class="reduce"><a href="" id="reduce" class="menubutton menulimit" title="Reduce Bar Charts"><button class="btn btn-info btn-small"><i class="icon-minus"></i></button></a></li>
 </ul>
 
 {% endblock %}
@@ -59,7 +58,7 @@
       <div class="legend">Ranking by aid donations received from countries in USD.</div>
     </div>
     <div class="bar recipients">
-      <h4>CPIA transparency Rating<i class="icon-plus-sign pull-right"></i></h4>
+      <h4>CPIA transparency Rating</h4>
       <div id="recipientstransparency"></div>
       <div class="legend">CPIA transparency, accountability, and corruption ratings for receiving countries.</div>
     </div>
