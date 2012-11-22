@@ -6,20 +6,31 @@ template: vis/world-aid-transparency.html
 created: 2012-11-19 21:08:06
 scripts: [/js/world-aid-transparency/d3.v3.min.js, /js/world-aid-transparency/countryinfo.js, /js/world-aid-transparency/countrystats.js, /js/world-aid-transparency/graphs.js, /js/world-aid-transparency/script.js]
 styles: ['http://fonts.googleapis.com/css?family=Open+Sans', /css/world-aid-transparency.css]
-imgpreview: /img/preview/exploit-database-platforms-spiral.jpg
+imgpreview: /img/preview/world-aid-transparency.jpg
 tags: [map, d3, contest]
 ---
+<p>Which countries give or receive bilateral aid donations, how transparent are aid organizations, does aid received relate to spending on health or education, does it affect the flow of information? These questions came to my mind when asked to visualize world aid flow and aid transparency.</p>
+<p>To tackle these questions I looked at data from the World Bank, Publish What You Fund, and Google's Transparency Report and created this interactive visualization. The numbers shown are from the year 2010, which is the most recent year with data available on both bilateral aid and aid transparency at the time of creation.</p>
+<h2>How Data is Displayed?</h2>
+<p>Bilateral aid flow is shown in the choropleth map on top. Countries colored in red received aid and those in blue donated. The darker the colors the higher are the total aid amounts or aid amounts in relation to population or GDP.</p>
+<p>Connections between countries are displayed as arcs when the mouse is moved over a country, their thickness corresponds to the aid money given or received. When you click on a country in the map a bar chart with details on aid flow between this and connected countries is displayed.</p>
+<p>Next to the map there are two bar charts, one ranking donating countries by aid given and one showing the corresponding <em>Aid Transparency Assessments</em> from Publish What You Fund.</p>
+<p>The lower part of the visualization shows more information about countries receiving aid. The scatterplot relates aid money to selected world development indicators from areas like health, education, and communication.</p>
+<p>Then again one bar chart ranks countries by aid received and the other one shows corresponding <em>CPIA transparency, accountability, and corruption</em> ratings if available.</p>
+<p>From the menu on top you can choose to display total aid amounts (default) or aid in relation to population or GDP. The plus/minus button expands or reduces the bar charts, which by default show the top 20 countries by donations.</p>
+<h2>What does it Tell?</h2>
+<p></p>
+
+ by the <a href="http://www.guardian.co.uk/news/datablog/2012/oct/01/aid-transparency-google-data-viz-competition">Guardian Data Blog</a>
+
+<p>Answering them is hard especially regarding</p>
+
+
+<p>Typical objections against donating money you often hear are "I don't know how the money is spent" or "I don't know how much of it goes into actual aid".</p>
+
 <p>Data is displayed for the year 2010, currently the only year with comprehensive data for aid flow and donor transparency ratings.</p>
 
 No visible relation between aid money given and aid transparency
-
-here is my take on the week 3 project about aid transparency.
-
-http://www.flickr.com/photos/yaph/8196544207/in/photostream
-
-In addition to the data from the Guardian I took aid data from the World bank to show which countries give and receive aid.
-
-The choropleth map is meant to provide and overview over aid given (blue countries) and aid received (red countries), where darker colors indicate more money. One can see the connections of countries when the mouse is moved over a country on the map. Right next to the map there are 2 bar charts listing the countries by aid given and their transparency assessments.
 
 Below the map there is more data for receiving countries, a scatterplot where aid received is related to various development indicators also from the World Bank as well as two charts ranking them by the amount received and the corresponding CPIA transparency rating.
 
@@ -34,7 +45,4 @@ I also uploaded two badly hand drawn sketches I created during planning the grap
 <li><a href="http://data.worldbank.org/data-catalog/world-development-indicators">World Bank: World Development Indicators</a></li>
 <li><a href="http://www.publishwhatyoufund.org/index/assessment/">Publish What You Fund: Aid Transparency Assessment 2010</a></li>
 <li><a href="http://www.google.com/transparencyreport/userdatarequests/data/">Google Transparency Report: User Data Requests</a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
 </ul>
