@@ -6,8 +6,8 @@
   <li><a href="" id="SP.POP.TOTL" class="relate" title="Population, total">By Population</a></li>
   <li><a href="" id="NY.GDP.MKTP.CD" class="relate" title="GDP (current US$)">By GDP</a></li>
   <li class="divider-vertical"></li>
-  <li class="expand"><a href="" id="expand" class="menubutton menulimit" title="Expand Bar Charts"><button class="btn btn-small"><i class="icon-plus"></i></button></a></li>
-  <li class="reduce"><a href="" id="reduce" class="menubutton menulimit" title="Reduce Bar Charts"><button class="btn btn-small"><i class="icon-minus"></i></button></a></li>
+  <li class="expand"><a href="" id="expand" class="menubutton menulimit" title="Expand bar charts and show more countries in scatterplot"><button class="btn btn-small"><i class="icon-plus"></i></button></a></li>
+  <li class="reduce"><a href="" id="reduce" class="menubutton menulimit" title="Reduce bar charts and show fewer countries in scatterplot"><button class="btn btn-small"><i class="icon-minus"></i></button></a></li>
 </ul>
 
 {% endblock %}
@@ -36,11 +36,11 @@
 <div id="aidcharts" class="row">
   <div class="span7">
     <div class="bar">
-      <h4>How aid received relates to 
+      <h4>How aid received compares to 
         <select id="indicators" class="headingselect"></select>
       </h4>
       <div class="scatterplot" id="aidrelations"></div>
-      <div class="legend">Aid donations in relation to selected world development indicators.</div>
+      <div class="legend">Aid donations compared to selected world development indicators.</div>
     </div>
   </div>
   <div class="span5 sidebar">
@@ -52,7 +52,7 @@
     <div class="bar recipients">
       <h4>CPIA transparency Rating</h4>
       <div id="recipientstransparency"></div>
-      <div class="legend">CPIA transparency, accountability, and corruption ratings for aid recipients.</div>
+      <div class="legend">CPIA transparency, accountability, and corruption ratings (1=low to 6=high).</div>
     </div>
   </div>
 </div>
