@@ -3,7 +3,7 @@ url: /vis/world-aid-transparency/
 title: World Aid Flow, Transparency, Development
 description: 
 template: vis/world-aid-transparency.html
-created: 2012-11-19 21:08:06
+created: 2012-11-23 13:46:48
 scripts: [/vendor/d3/d3.v3.min.js, /js/world-aid-transparency/countryinfo.js, /js/world-aid-transparency/countrystats.js, /js/world-aid-transparency/graphs.js, /js/world-aid-transparency/script.js]
 styles: ['http://fonts.googleapis.com/css?family=Open+Sans', /css/world-aid-transparency.css]
 imgpreview: /img/preview/world-aid-transparency.jpg
@@ -15,25 +15,23 @@ tags: [map, d3, contest]
 <p>Bilateral aid flow is shown on the choropleth map on top. Countries colored in red received aid and those in blue donated. The darker the colors the higher are the total aid amounts or aid amounts in relation to population or GDP.</p>
 <p>Connections between countries are displayed as arcs when the mouse is moved over a country, their thickness corresponds to the aid money given or received. When you click on a country on the map a bar chart with details on aid flow between this and connected countries is displayed.</p>
 <p>Next to the map there are two bar charts, one ranking donating countries by aid given and one showing the corresponding <em>Aid Transparency Assessments</em> from Publish What You Fund.</p>
-<p>The lower part of the visualization shows more information about countries receiving aid. The scatterplot relates aid money to selected world development indicators from areas like health, education, and communication.</p>
+<p>The lower part of the visualization shows more information about countries receiving aid. The scatter plot compares aid money to selected world development indicators from areas like health, education, and communication.</p>
 <p>Then again one bar chart ranks countries by aid received and the other one shows corresponding <em>CPIA transparency, accountability, and corruption</em> ratings if available.</p>
-<p>From the menu on top you can choose to display total aid amounts (default) or aid in relation to population or GDP. The plus/minus button increases or decreases the number of countries shown in bar charts and scatterplots. By default the top 20 sorted by donations are displayed. For readability reasons the number of countries in scatterplots has an upper limit of 50.</p>
+<p>From the menu on top you can choose to display total aid amounts (default) or aid in relation to population or GDP. The plus/minus button increases or decreases the number of countries shown in bar charts and scatter plots. By default the top 20 sorted by donations are displayed. For readability reasons the number of countries in scatter plots has an upper limit of 50.</p>
 <h2>What does it Tell?</h2>
 <p>One goal of this visualization is to show which countries give and receive aid money and how givers and takers are connected. Moreover, it provides information on how much money flows between countries in terms of total amounts taken by themselves or in relation to country populations or GDP.</p>
 <p>Regarding transparency the numbers from the 2010 Aid Transparency Assessment and the CPIA ratings are abstractions that hide the details of how they are composed. While they don't tell what concrete steps need to be taken to improve the effectiveness of aid, the figures do imply that there was a grave lack of transparency. <a href="http://www.publishwhatyoufund.org/index/2012-index/">More recent numbers</a> suggest that organization level transparency slightly improves, but there is still a way to go.</p>
 <p>Finally you can compare aid received to different development indicators like mortality rate, life expectancy, money spent on health, education, and military as well as prevalence of communication technologies indicated by telephone lines, Internet users, and mobile subscriptions.</p>
-<p>Same as with aid rankings relating total amounts to population or GDP drastically changes the picture. With aid related to population </p>
+<p>Same as with aid rankings relating total amounts to population or GDP drastically changes the picture. While some indicators seem loosely correlated to aid in relation to population, e. g. spending on education, life expectancy, or number of Internet users, I cannot make out general patterns or get a better idea of how aid money is spent and what effects aid has.</p>
 <h2>Limitations</h2>
-<p>One important part of world aid, i. e. multilateral aid from international organizations like the World Bank or UNICEF, is completely omitted. The country focused approach taken certainly limits the informative value of the presented data.</p>
-<p>A technical sidenote. I have not tested this in Internet Explorer, but I bet there are problems, please use another browser like Chrome or Firefox.</p>
+<p>One important part of world aid, i. e. multilateral aid from international organizations like the World Bank or UNICEF, is completely omitted, which limits the informative value of the presented data.</p>
+<p>Moreover, data availability varies across countries, see missing CPIA ratings for example. Also I'd prefer to look at more recent figures, the information from Publish What You Fund is more comprehensive for 2011 and 2012, but there is no data yet on bilateral aid in the World Bank dataset for these years.</p>
 <h2>Motivation</h2>
- by the <a href="http://www.guardian.co.uk/news/datablog/2012/oct/01/aid-transparency-google-data-viz-competition">Guardian Data Blog</a>
-<p>Answering them is hard especially regarding</p>
-<p>Typical objections against donating money you often hear are "I don't know how the money is spent" or "I don't know how much of it goes into actual aid".</p>
-<p>Data is displayed for the year 2010, currently the only year with comprehensive data for aid flow and donor transparency ratings.</p>
-<p>A welcome excerise learning the awsome JavaScript library D3.</p>
+<p>In a recent post the Guardian Data Blog asked <a href="http://www.guardian.co.uk/news/datablog/2012/oct/01/aid-transparency-google-data-viz-competition">how transparent is world aid data</a> and together with Google started a competition open for submissions until 29 Nov 2012. The task is to visualize the world of aid.</p>
+<p>Aid transparency was also the topic of last week's assignment in the highly recommended online course <a href="http://open.journalismcourses.org/">Introduction to Infographics and Data Visualization</a> taught by Alberto Cairo.</p>
+<p>As if this wasn't enough motivation the implementation part was a welcome opportunity to again work with the awesome <a href="http://d3js.org/">JavaScript library D3</a>.</p>
 <h2>Conclusion</h2>
-<p>Creating this visualization was a valueable experience for me. Regarding my initial questions I certainly have more insights into the world of aid than before, but I also have more questions about it.</p>
+<p>Creating this visualization was a valuable experience for me. Regarding my initial questions I have more insights into the world of aid than before, but I also have more questions about it.</p>
 <p>Without doubt aid is necessary and aid needs to be more transparent. People who care are interested in how aid is put into practice, how money is spent and how much of it reaches the target. The goals of more aid transparency should by to make aid more accessible, reduce objections and improve aid effectiveness.</p>
 <h2>Data Sources</h2>
 <ul>

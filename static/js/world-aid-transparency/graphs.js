@@ -127,7 +127,7 @@ var drawlegend = function() {
     .attr('class', 'footer')
     .attr('dy', 16);
   ltext.append('svg:tspan')
-    .text('Mouse over a country to show aid flow, click for details, zoom with the mousewheel, drag with the mouse button pressed.')
+    .text('Mouse over a country to show aid flow, click for details, zoom with the mouse wheel, drag with the mouse button pressed.')
     .attr('x', 0)
 }
 
