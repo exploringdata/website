@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="span9">
+    <h4>US Unemployment Rates from September 2012</h4>
+    <div id="map" class="Reds"></div>
+    <h4>Unemployment Rates of Selected States during Term</h4>
+    <div id="timeline"></div>
+  </div>
+  <div class="span3 sidebar">
+    <h4>Select States</h4>
+    <div id="selectstates" class="Reds col col2"></div>
+  </div>
+</div>
+
+<div id="visinfo" class="row"><div class="span12">
+<hr>
+<h1>{{title}}</h1>{{body}}
+</div></div>
+{% endblock %}
