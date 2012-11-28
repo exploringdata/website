@@ -4,14 +4,14 @@ var containerwidth = function(selector) {
 };
 
 var mapselect = '#map',
-  width = 860,
-  height = 460,
+  width = containerwidth(mapselect),
+  height = width/2,
   map = d3.geo.albersUsa().scale(width),
   path = d3.geo.path().projection(map),
   countryname = function(d) {return d.properties.name};
 
 var tf = function() {
-  return 'translate(' + -width / 15 + ',' + -height / 30 + ')'
+  return 'translate(' + -width / 3 + ',' + -height / 3 + ')'
 };
 
 var quantize = d3.scale.quantize()
