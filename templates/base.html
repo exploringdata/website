@@ -30,7 +30,7 @@
     {% endif %}
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -42,12 +42,11 @@
           <div class="nav-collapse">
             {% block nav %}{% endblock %}
             <ul class="nav pull-right">
-              {% if tags %}
-               <li><a href="#comments">Comments</a></li>
-              {% endif %}
-              <li><a href="https://github.com/exploringdata">Code</a></li>
-              <li class="divider-vertical"></li>
-              {% include 'sharemenu.html' %}
+            {% if tags %}
+              <li><a href="#info" class="menubutton"><button class="btn btn-small"><i class="icon-info-sign"></i> </button></a></li>
+              <li><a href="#comments" class="menubutton"><button class="btn btn-small"><i class="icon-comment"></i> </button></a></li>
+            {% endif %}
+            {% include 'sharemenu.html' %}
             </ul>
           </div>
         </div>
@@ -55,15 +54,12 @@
     </div>
 
     <div id="wrapper" class="container">
+      {% block vis %}{% endblock %}
       {% block content %}{% endblock %}
-
-      {% if tags %}
-        {% include 'comment.html' %}
-      {% endif %}
-
       <div id="footer" class="row"><div class="span12">
+        <hr>
         <footer>
-          <p class="centered">Exploring Data is a site about data mining and visualization created by Ramiro Gómez, <a href="/about/">learn more</a>.<br>Except where otherwise noted, the works on this site are licensed under a<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br><a href="http://flattr.com/thing/952509/Exploring-Data"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" /></a></p>
+          <p class="centered">Exploring Data is a site about data mining and visualization <a href="/about/">learn more</a>.<br>Except where otherwise noted, the works on this site are licensed under a<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br><a href="http://flattr.com/thing/952509/Exploring-Data"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" /></a></p>
         </footer>
       </div></div>
     </div>

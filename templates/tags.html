@@ -1,0 +1,8 @@
+{% if tag_links %}
+<h3>Tags</h3>
+<div class="tags">
+{% for url, anchor in tag_links %}
+<span class="label label-info"><a href="{{url|e}}">{{anchor|e}}</a></span>
+{% endfor %}
+</div>
+{% endif %}

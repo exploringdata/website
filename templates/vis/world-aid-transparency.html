@@ -1,17 +1,16 @@
-{% extends "base.html" %}
+{% extends "vis/blank.html" %}
 
 {% block nav %}
 <ul class="nav">
   <li class="active"><a href="" id="norelate" class="relate">Total Amounts</a></li>
   <li><a href="" id="SP.POP.TOTL" class="relate" title="Population, total">By Population</a></li>
   <li><a href="" id="NY.GDP.MKTP.CD" class="relate" title="GDP (current US$)">By GDP</a></li>
-  <li class="divider-vertical"></li>
   <li class="expand"><a href="" id="expand" class="menubutton menulimit" title="Expand bar charts and show more countries in scatterplot"><button class="btn btn-small"><i class="icon-plus"></i></button></a></li>
   <li class="reduce"><a href="" id="reduce" class="menubutton menulimit" title="Reduce bar charts and show fewer countries in scatterplot"><button class="btn btn-small"><i class="icon-minus"></i></button></a></li>
 </ul>
 {% endblock %}
 
-{% block content %}
+{% block vis %}
 <div class="row">
   <div class="span7">
     <h4>World aid flow</h4>
@@ -65,9 +64,4 @@
     <a href="#" class="btn" data-dismiss="modal">Close</a>
   </div>
 </div>
-
-<div id="visinfo" class="row"><div class="span12">
-<hr>
-<h1>{{title}}</h1>{{body}}
-</div></div>
 {% endblock %}

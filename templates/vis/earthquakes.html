@@ -1,14 +1,7 @@
-{% extends "base.html" %}
+{% extends "vis/blank.html" %}
 
-{% block content %}
-<div class="row">
-  <div class="span12">
-    <div id="map"></div>
-  </div>
-</div>
-
-<div id="visinfo" class="row"><div class="span12">
-<hr>
-<h1>{{title}}</h1>{{body}}
+{% block vis %}
+<div class="row"><div class="span12">
+<div id="map"></div>
 </div></div>
 {% endblock %}

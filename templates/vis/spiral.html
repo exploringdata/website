@@ -1,12 +1,6 @@
-{% extends "base.html" %}
+{% extends "vis/blank.html" %}
 
-{% block nav %}
-<ul class="nav">
-  <li><a href="#visinfo">Info</a></li>
-</ul>
-{% endblock %}
-
-{% block content %}
+{% block vis %}
 <div class="row" class="vis">
   <div class="span7">
     <div id="vis"></div>
@@ -51,8 +45,4 @@
     </div>
   </div>
 </div>
-
-<div id="visinfo" class="row"><div class="span12">
-<h1>{{title}}</h1>{{body}}
-</div></div>
 {% endblock %}
