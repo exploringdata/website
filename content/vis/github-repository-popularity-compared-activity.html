@@ -1,5 +1,7 @@
 ---
+noindex: 1
 title: Github Repository Popularity Compared to Activity
+url: /vis/github-repository-popularity-compared-activity/
 description: 
 template: page.html
 created: 
@@ -9,7 +11,7 @@ imgpreview:
 tags: [github]
 ---
 
-url: /vis/github-repository-popularity-compared-activity/
+
 
 SELECT repository_url, repository_forks, repository_watchers , COUNT(payload_commit_id) as cnt
 FROM [publicdata:samples.github_timeline] 
