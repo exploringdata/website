@@ -1,0 +1,40 @@
+{% extends "vis/story.html" %}
+
+{% block vis %}
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#goals" data-toggle="tab">Goals</a></li>
+    <li><a href="#shooting" data-toggle="tab">Shooting</a></li>
+    <li><a href="#passing" data-toggle="tab">Passing</a></li>
+    <li><a href="#touches" data-toggle="tab">Touches &amp; Dribbles</a></li>
+    <li><a href="#fouls" data-toggle="tab">Fouls &amp; Tackles</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="goals">
+      <p>To win a football game and eventually a tournament you have to score more goals than you concede. Spain did this almost perfectly by scoring 12 and conceding only 1 goal in 6 games.</p>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/TSjYa/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no" scrolling="no"></iframe>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/21tQx/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+    </div>
+    <div class="tab-pane" id="shooting">
+      <p>Spain not only scored the most and conceded the least goals, but also produced the most shots on target and had the best shooting accuracy of all teams.</p>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/u9HM0/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/lGsmb/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+    </div>
+    <div class="tab-pane" id="passing">
+      <p>Tiki-taka is a style of play characterized by short passing and movement. Spain excels at Tiki-taka and their lead in the number of passes per game is particularly striking. Spain's passing accuracy was only slightly surpassed by the Netherlands.</p>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/OBOSQ/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/wWoPK/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+    </div>
+    <div class="tab-pane" id="touches">
+      <p>Spain has by far the most touches per game &mdash; Tiki-taka style. Only France dribbles more, did it help them? No.</p>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/ko3o2/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/kRouk/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+    </div>
+    <div class="tab-pane" id="fouls">
+      <p>Spain won the most fouls by game. Their style of play leaves opponents hardly any other choice when trying to get the ball. Spain was also quite good at tackling.</p>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/EZxhX/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+      <iframe src="http://charts-datawrapper.s3.amazonaws.com/BLq0C/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="49%" height="480" scrolling="no"></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% if created %}
 <div class="postinfo">
 <h3>Meta &amp; Tags</h3>
-<p>This visualization was created by Ramiro Gómez and published on {{ created.strftime('%B %d, %Y') }}.</p>
+<p>Published on {{ created.strftime('%B %d, %Y') }} by Ramiro Gómez.</p>
 {% include 'tags.html' %}
 </div>
 {% endif %}

@@ -2,8 +2,7 @@
 
 {% block content %}
 <div class="row">
-
-{% for doc in indexes.vis %}
+{% for doc in indexes.vis[:6] %}
 <div class="span4"><div class="well">
 <a href="{{doc.url}}" title="{{doc.description}}">
   <h5>{{doc.title}}</h5>
@@ -11,6 +10,13 @@
 </a>
 </div></div>
 {% endfor %}
-
 </div>
+<div class="row"><div class="span12">
+<h2>Data Stories</h2>
+<ul>
+{% for doc in indexes.story %}
+<li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
+{% endfor %}
+</ul>
+</div></div>
 {% endblock %}
