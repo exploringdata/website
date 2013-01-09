@@ -1,3 +1,4 @@
+{% set version = '?v=1' %}
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
   <head>
@@ -15,9 +16,9 @@
     <link href="/vendor/zocial/zocial.css" rel="stylesheet">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/vendor/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css{{version}}" rel="stylesheet">
     {% for style in styles %}
-        <link href="{{style}}" rel="stylesheet">
+        <link href="{{style}}{{version}}" rel="stylesheet">
     {% endfor %}
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,12 +66,12 @@
       </div></div>
     </div>
     {% include 'ga.html' %}
-    <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js{{version}}"></script>
     {% if scripts %}
       {% for script in scripts %}
-          <script src="{{ script }}"></script>
+          <script src="{{script}}{{version}}"></script>
       {% endfor %}
     {% endif %}
   </body>
