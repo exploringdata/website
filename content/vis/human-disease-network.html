@@ -4,7 +4,7 @@ title: Human Disease Network
 description: An interactive network of disorders and disease genes linked by known disorder–gene associations based on the study The Human Disease Network, Goh K-I, Cusick ME, Valle D, Childs B, Vidal M, Barabási A-L (2007), Proc Natl Acad Sci USA 104:8685-8690.
 template: vis/human-disease-network.html
 created: 2012-09-27 16:45:57
-scripts: ['http://sigmajs.org/js/sigma.min.js', /vendor/sigma/sigma.parseGexf.js, /js/human-disease-network/script.js]
+scripts: [/vendor/sigma/sigma.min.js, /vendor/sigma/sigma.parseGexf.js, /js/visgexf.js, /js/human-disease-network/script.js]
 styles: [/css/sigmagraphdark.css]
 imgpreview: /img/preview/human-disease-network.jpg
 tags: [network graph, sigmajs, gephi]
@@ -21,8 +21,8 @@ tags: [network graph, sigmajs, gephi]
   <div class="modal-body">
     <h4>Graph Navigation</h4>
     <p>You can zoom in and out the graph with the mouse wheel. You can move the graph by clicking and holding the left mouse button and moving the mouse. When you zoom into the graph more disease names will be shown.</p>
-    <h4>Disease Highlighting</h4>
-    <p>Move the mouse over a node to highlight the connections of the disease and zoom into the graph for more detail.</p>
+    <h4>Disease Search</h4>
+    <p>Search for disease names from the top menu to highlight the connections of the disease and zoom into the graph for more detail.</p>
   </div>
   <div class="modal-footer">
     <a href="#" class="close" data-dismiss="modal" class="btn">Close</a>

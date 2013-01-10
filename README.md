@@ -8,6 +8,7 @@
 
 TODOs
 
+* Single help button with generic info for all sigma graphs
 * Deceptive Visualizations Visualization
 * search sigma graphs and as a result zoom in on the corresponding node
 * add visual legends that explain gaphs, size, color etc

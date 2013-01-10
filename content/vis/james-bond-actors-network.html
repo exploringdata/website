@@ -4,14 +4,14 @@ title: James Bond Actors Network
 description: An interactive network graph showing the connections of actors that appeared together in 23 James Bond movies including the latest in the series called Skyfall.
 template: vis/james-bond-actors-network.html
 created: 2012-10-16 14:45:20
-scripts: ['http://sigmajs.org/js/sigma.min.js', /vendor/sigma/sigma.parseGexf.js, /js/visgexf.js, /js/james-bond-actors-network/script.js]
+scripts: [/vendor/sigma/sigma.min.js, /vendor/sigma/sigma.parseGexf.js, /js/visgexf.js, /js/james-bond-actors-network/script.js]
 styles: [/css/sigmagraphdark.css]
 imgpreview: /img/preview/james-bond-actors-network.jpg
 tags: [network graph, film, sigmajs, gephi]
 ---
 <p>An interactive network graph showing the connections of actors that appeared together in 23 James Bond movies excluding the 2 Casino Royal films from 1954 and 1967 and Never Say Never Again from 1983. The latest not yet released James Bond film called Skyfall is included.</p>
 <p>The graph consists of 300 nodes and 3319 edges. The size of a node in the graph is determined by the number of James Bond films an actor appeared in, the more appearances the bigger the circle. Two nodes are connected by an edge, if the 2 actors appeared together in at least 1 James Bond film.</p>
-<p>You can restrict the displayed network graph to a specific film by selecting one from the Choose Film menu and you can highlight the connections of a single actor by moving the mouse over its node. For more details click on the help link in the top menu.</p>
+<p>You can restrict the displayed network graph to a specific film by selecting one from the Choose Film menu and you can highlight the connections of a single actor by searching for the name in the top menu. For more details click on the help link in the top menu.</p>
 <p>This network graph visualization was created with data from the <a href="http://www.freebase.com/view/en/james_bond_film_series/-/film/film_series/films_in_series">James Bond Film Series collection</a>. The Freebase data is far from being complete regarding the actors that apeared in James Bond movies. There are more comprehensive data sources, but those I found either don't offer an API or employ too restrictive content policies.</p>
 <p>The graph is rendered with the <a href="http://sigmajs.org/">JavaScript library sigma.js</a>. The Fruchterman-Reingold layout was preprocessed using the <a href="https://gephi.org/">Gephi visualization platform</a>.</p>
 <p>You find the Python code to retrieve the data from Freebase and generate the gexf file in this <a href="https://github.com/exploringdata/james-bond-actors">GitHub repository</a>. The data was last updated October 16 2012. Feel free to leave feedback in the comments and share this visualization with your friends.</p>
@@ -33,8 +33,8 @@ tags: [network graph, film, sigmajs, gephi]
     <p>You can zoom in and out the graph with the mouse wheel. You can move the graph by clicking and holding the left mouse button and moving the mouse.</p>
     <h4>Actor Information</h4>
     <p>When you click on an actor node in the graph a modal window with information about the actor will be displayed.</p>
-    <h4>Actor Highlighting</h4>
-    <p>Move the mouse over an actor node to highlight its connections.</p>
+    <h4>Actor Search</h4>
+    <p>Search for actors from the top menu to highlight their connections.</p>
     <h4>Film Highlighting</h4>
     <p>Choose and click on a film from the <strong>Choose Film</strong> menu to only show actors that appeared in that film.</p>
   </div>
