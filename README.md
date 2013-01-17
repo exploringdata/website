@@ -8,6 +8,7 @@
 
 TODOs
 
+* Add URL hash for sigma graph search, so it can be bookmarked
 * Single help button with generic info for all sigma graphs
 * Deceptive Visualizations Visualization
 * search sigma graphs and as a result zoom in on the corresponding node
