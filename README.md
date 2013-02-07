@@ -6,6 +6,7 @@
 
 TODOs
 
+* Upgrade earthquakes to d3.v3, with different colors for countries and sea
 * Add URL hash for sigma graph search, so it can be bookmarked
 * Single help button with generic info for all sigma graphs
 * Deceptive Visualizations Visualization

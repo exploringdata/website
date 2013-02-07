@@ -5,9 +5,9 @@
   <li class="active"><a href="" id="norelate" class="relate">Total Amounts</a></li>
   <li><a href="" id="SP.POP.TOTL" class="relate" title="Population, total">By Population</a></li>
   <li><a href="" id="NY.GDP.MKTP.CD" class="relate" title="GDP (current US$)">By GDP</a></li>
-  <li class="expand"><a href="" id="expand" class="menubutton menulimit" title="Expand bar charts and show more countries in scatterplot"><button class="btn btn-small"><i class="icon-plus"></i></button></a></li>
-  <li class="reduce"><a href="" id="reduce" class="menubutton menulimit" title="Reduce bar charts and show fewer countries in scatterplot"><button class="btn btn-small"><i class="icon-minus"></i></button></a></li>
 </ul>
+<a id="expand" class="btn menulimit" title="Expand bar charts and show more countries in scatterplot"><i class="icon-plus"></i></a>
+<a id="reduce" class="btn menulimit disabled" title="Reduce bar charts and show fewer countries in scatterplot"><i class="icon-minus"></i></a>
 {% endblock %}
 
 {% block vis %}
@@ -33,7 +33,7 @@
 <div id="aidcharts" class="row">
   <div class="span7">
     <div class="bar">
-      <h4>How aid received compares to 
+      <h4>How aid received compares to
         <select id="indicators" class="headingselect"></select>
       </h4>
       <div class="scatterplot" id="aidrelations"></div>

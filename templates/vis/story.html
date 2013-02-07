@@ -1,22 +1,5 @@
-{% extends "base.html" %}
+{% extends "vis/blank.html" %}
 
 {% block header %}
 <div class="row"><header class="span12"><h1>{{title}}</h1></header></div>
-{% endblock %}
-
-{% block vis %}
-<div class="row"><div class="span12" id="vis"></div></div>
-{% endblock %}
-
-{% block content %}
-<div id="info">
-<div class="row"><div class="span12"><hr></div></div>
-<div class="row">
-  <div class="span9">{{body}}</div>
-  <div class="span3">
-    {% include 'right.html' %}
-  </div>
-</div>
-</div>
-{% include 'comment.html' %}
 {% endblock %}
