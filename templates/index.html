@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "page.html" %}
 
 {% set title = title|replace('-', ' ')|replace('Tags', 'Tags:') %}
 
@@ -10,10 +10,17 @@
 {% endif %}
 
 {% block content %}
-<h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
-<ul class="unstyled index_list flatlist">
-{% for doc in index %}
-<li class="index_item"><h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>{% if doc.description %}<p>{{ doc.description }}</p>{% endif %}</li>
-{% endfor %}
-</ul>
+<div id="info"><div class="row">
+  <div class="span9">
+    <h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
+    <ul class="unstyled index_list flatlist">
+    {% for doc in index %}
+      <li class="index_item"><h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>{% if doc.description %}<p>{{ doc.description }}</p>{% endif %}</li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="span3">
+    {% include 'right.html' %}
+  </div>
+</div></div>
 {% endblock %}
