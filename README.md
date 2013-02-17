@@ -2,7 +2,6 @@
 
 TODOs
 
-* robots.txt
 * World Aid Transparency: label font sizes in firefox
 * Upgrade earthquakes to d3.v3, with different colors for countries and sea
 * Add URL hash for sigma graph search, so it can be bookmarked

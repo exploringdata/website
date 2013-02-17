@@ -18,7 +18,7 @@
     <link href="/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/style.css{{version}}" rel="stylesheet">
     {% for style in styles %}
-      <link href="{{style}}{{version}}" rel="stylesheet">
+      <link href="{{style}}{% if not style.startswith('http') %}{{version}}{% endif %}" rel="stylesheet">
     {% endfor %}
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -68,7 +68,7 @@
     <script src="/js/script.js{{version}}"></script>
     {% if scripts %}
       {% for script in scripts %}
-          <script src="{{script}}{{version}}"></script>
+          <script src="{{script}}{% if not script.startswith('http') %}{{version}}{% endif %}"></script>
       {% endfor %}
     {% endif %}
   </body>
