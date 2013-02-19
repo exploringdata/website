@@ -1,19 +1,15 @@
 {% extends "base.html" %}
 
 {% block vis %}
+<div class="container">
 <div class="row"><div class="span12" id="vis"></div></div>
+</div>
 {% endblock %}
 
 {% block content %}
-<div id="info">
-<div class="row"><div class="span12"><hr></div></div>
-<div class="row">
-  <div class="span9"><h1>{{title}}</h1>{{body}}</div>
-  <div class="span3">
-    {% include 'postinfo.html' %}
-    {% include 'right.html' %}
-  </div>
-</div>
-</div>
+{% include 'info.html' %}
+{% endblock %}
+
+{% block comments %}
 {% include 'comment.html' %}
 {% endblock %}

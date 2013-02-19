@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 
 {% block content %}
-<div class="row">
+<div class="container"><div class="row">
 {% for doc in indexes.vis[:9] %}
 <div class="span4"><div class="well">
 <a href="{{doc.url}}" title="{{doc.description}}">
@@ -10,5 +10,5 @@
 </a>
 </div></div>
 {% endfor %}
-</div>
+</div></div>
 {% endblock %}

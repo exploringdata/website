@@ -1,4 +1,4 @@
-{% set version = '?v=1' %}
+{% set version = '?v=2' %}
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
   <head>
@@ -30,8 +30,9 @@
       {% endblock %}
     {% endif %}
   </head>
-  <body>
-    <div class="navbar navbar-fixed-top">
+  <body class="{% block bodyclass %}{% endblock %}">
+    {% block navbar %}
+    <div id="navbar" class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a id="site-name" class="brand" href="/">Exploring Data</a>
@@ -50,20 +51,24 @@
         </div>
       </div>
     </div>
-
-    <div id="wrapper" class="container">
-      {% block header %}{% endblock %}
-      {% block vis %}{% endblock %}
-      {% block content %}{% endblock %}
-      <div id="footer" class="row"><div class="span12">
-        <hr>
+    {% endblock %}
+    {% block header %}{% endblock %}
+    {% block vis %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block comments %}{% endblock %}
+    {% block footer %}
+    <div id="footer" class="container">
+      <div class="row"><div class="span12">
         <footer>
           <p class="centered">Exploring Data is a site about data mining and visualization <a href="/about/">learn more</a>.<br>Except where otherwise noted, the works on this site are licensed under a<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br><a href="http://flattr.com/thing/952509/Exploring-Data"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" /></a></p>
         </footer>
       </div></div>
     </div>
+    {% endblock %}
+    {% block modals %}{% endblock %}
+
     {% include 'ga.html' %}
-    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/script.js{{version}}"></script>
     {% if scripts %}
@@ -71,5 +76,7 @@
           <script src="{{script}}{% if not script.startswith('http') %}{{version}}{% endif %}"></script>
       {% endfor %}
     {% endif %}
+
+    {% block inlinejs %}{% endblock %}
   </body>
 </html>

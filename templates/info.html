@@ -1,0 +1,11 @@
+<div id="info" class="container">
+<div class="row">
+  <div class="span9"><h1>{{title}}</h1>{{body}}</div>
+  <div class="span3">
+    {% if tags %}
+      {% include 'postinfo.html' %}
+    {% endif %}
+    {% include 'right.html' %}
+  </div>
+</div>
+</div>
