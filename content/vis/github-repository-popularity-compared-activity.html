@@ -2,19 +2,19 @@
 noindex: 1
 title: Github Repository Popularity Compared to Activity
 url: /vis/github-repository-popularity-compared-activity/
-description: 
+description:
 template: page.html
-created: 
+created:
 scripts: []
 styles: []
-imgpreview:
+image:
 tags: [github]
 ---
 
 
 
 SELECT repository_url, repository_forks, repository_watchers , COUNT(payload_commit_id) as cnt
-FROM [publicdata:samples.github_timeline] 
+FROM [publicdata:samples.github_timeline]
 WHERE payload_commit_id != ''
 GROUP BY repository_url, repository_forks, repository_watchers
 ORDER BY cnt DESC

@@ -1,0 +1,2 @@
+cachecore
+python-amazon-simple-product-api
