@@ -154,7 +154,6 @@ var visgexf = {
         visgexf.resetSearch();
     });
     if (document.location.hash) {
-      console.log(document.location.hash.replace(/^#/, ''));
       visgexf.nodeSearch(document.location.hash.replace(/^#/, ''));
     }
   },
