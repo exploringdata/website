@@ -1,7 +1,7 @@
 var nodeinfo = function(dataid, data) {
   var sl = $('#shownode');
   sl.find('h3').text(hnode.label);
-  var desc = '<div><img src="/img/programmers/' + dataid + '.jpg" class="img-polaroid pull-right" alt="photo">';
+  var desc = '<div><img src="/img/programmers/' + dataid + '.jpg" class="img-polaroid pull-right" alt="Photo of ' + hnode.label + '">';
   desc += data.abstract + ' <a href="' + data.wikipedia_url + '">Wikipedia</a><div>';
   if (data.twitter_url)
     desc += '<a class="btn" href="' + data.twitter_url + '"><i class="icon-twitter"></i></a> ';

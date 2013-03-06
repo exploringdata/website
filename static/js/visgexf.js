@@ -173,6 +173,8 @@ var visgexf = {
   nodeSearch: function(query) {
     visgexf.resetFilter();
     if (visgexf.queryHasResult(query)) {
+      document.location.hash = query;
+      visgexf.searchInput.val(query);
       node = visgexf.sig.getNodes(visgexf.nodemap[query])
       visgexf.highlightNode(node);
       return query;
