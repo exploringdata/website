@@ -1,4 +1,4 @@
-{% extends "vis/blank.html" %}
+{% extends "base.html" %}
 
 {% block inlinejs %}
 <script>
@@ -24,8 +24,8 @@ $(function(){
     <div class="nav-collapse">
       {% block nav %}{% endblock %}
       <div class="pull-right modalmenu">
-        <a href="#info" class="btn"><i class="icon-info-sign"></i> </a>
-        <a href="#comments" class="btn"><i class="icon-comment"></i> </a>
+        <a href="{{ related }}" class="btn"><i class="icon-info-sign"></i> </a>
+        <a href="{{ related }}#comments" class="btn"><i class="icon-comment"></i> </a>
       </div>
     </div>
   </div>
@@ -34,45 +34,4 @@ $(function(){
 
 {% block vis %}
 <div id="vis"></div>
-{% endblock %}
-
-{% block content %}
-<div id="info" class="modal hide fade modal-large">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>{{ title }}</h3>
-  </div>
-  <div class="modal-body">
-    <div class="row">
-      <div class="span7">
-        {{body}}
-        <hr>
-        <p><i class="icon-calendar"></i> {{ created.strftime('%B %d, %Y') }} by <a href="http://ramiro.org/">Ramiro Gómez</a>.</p>
-{% include 'tags.html' %}
-        {% include 'sharebuttons.html' %}
-      </div>
-      <div class="span3">
-        {% include 'right.html' %}
-      </div>
-    </div>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Close</a>
-  </div>
-</div>
-{% endblock %}
-
-{% block comments %}
-<div id="comments" class="modal hide fade modal-large">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>Comments</h3>
-  </div>
-  <div class="modal-body">
-    {% include 'disqus.html' %}
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Close</a>
-  </div>
-</div>
 {% endblock %}

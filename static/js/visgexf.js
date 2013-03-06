@@ -156,10 +156,13 @@ var visgexf = {
     });
     if (document.location.hash)
       visgexf.nodeSearch(document.location.hash.replace(/^#/, ''));
-
+    // search on hash change, unless it should trigger info or comments view
     $(window).bind('hashchange', function(event) {
-      $('.modal').modal('hide');
-      visgexf.nodeSearch(document.location.hash.replace(/^#/, ''));
+      var h = document.location.hash.replace(/^#/, '');
+      if ('comments' != h && 'info' != h) {
+        $('.modal').modal('hide');
+        visgexf.nodeSearch(h);
+      }
     });
     $('#search-reset').on('click', function(event) {
       visgexf.resetSearch();

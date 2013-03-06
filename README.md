@@ -2,6 +2,7 @@
 
 TODOs
 
+* use wikipedia url as id for knowledgegraph data
 * Some nodes appear more than once in typeahead, e.g. A Sharp in http://exploringdata.github.com/vis/programming-languages-influence-network/#A Sharp
 * World Aid Transparency: label font sizes in firefox
 * Upgrade earthquakes to d3.v3, with different colors for countries and sea

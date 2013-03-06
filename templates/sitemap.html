@@ -10,6 +10,12 @@
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
+    <h2>About Visualizations</h2>
+    <ul class="unstyled">
+    {% for doc in indexes.info %}
+    <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
+    {% endfor %}
+    </ul>
     <h2>Data Stories</h2>
     <ul class="unstyled">
     {% for doc in indexes.story %}
