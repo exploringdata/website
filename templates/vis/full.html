@@ -1,20 +1,5 @@
 {% extends "base.html" %}
 
-{% block inlinejs %}
-<script>
-$(function(){
-    var h = $(window).height() - $('#navbar').height();
-    $('#vis').height(h);
-    if (canvas = $('#vis canvas')) {
-        canvas.height(h-20);
-    }
-    $('.modalmenu a').click(function(){
-        $($(this).attr('href')).modal();
-    });
-});
-</script>
-{% endblock %}
-
 {% block bodyclass %}full{% endblock %}
 
 {% block navbar %}
