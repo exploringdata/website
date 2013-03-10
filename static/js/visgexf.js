@@ -38,10 +38,10 @@ var visgexf = {
         });
         visgexf.nodelabels.sort();
       }
+      visgexf.initSearch();
       // call callback after json is parsed
       if (callback) callback();
     });
-    visgexf.initSearch();
     visgexf.sig.bind('upnodes', function(event){
       hnode = visgexf.sig.getNodes(event.content)[0];
       visgexf.highlightNode(hnode, false);
