@@ -1,4 +1,4 @@
-{% set version = '?v=7' %}
+{% set version = '?v=8' %}
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
   <head>
@@ -38,15 +38,7 @@
           <a id="site-name" class="brand" href="/">Exploring Data</a>
           <div class="nav-collapse">
             {% block nav %}{% endblock %}
-            <ul class="nav pull-right">
-              {% include 'sharemenu.html' %}
-            </ul>
-            <div class="pull-right">
-              {% if tags %}
-                <a href="#info" class="btn"><i class="icon-info-sign"></i> </a>
-                <a href="#comments" class="btn"><i class="icon-comment"></i> </a>
-              {% endif %}
-            </div>
+            {% include 'sharemenu.html' %}
           </div>
         </div>
       </div>

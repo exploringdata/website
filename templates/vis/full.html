@@ -8,9 +8,9 @@
     <a id="site-name" class="brand" href="/">Exploring Data</a>
     <div class="nav-collapse">
       {% block nav %}{% endblock %}
-      <div class="pull-right modalmenu">
-        <a href="{{ related }}" class="btn"><i class="icon-info-sign"></i> </a>
-        <a href="{{ related }}#comments" class="btn"><i class="icon-comment"></i> </a>
+      {% include 'sharemenu.html' %}
+      <div class="pull-right">
+        <a href="{{ related }}" class="btn btn-info"><i class="icon-info-sign"></i> </a>
       </div>
     </div>
   </div>
