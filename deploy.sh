@@ -1,7 +1,7 @@
 #!/bin/sh
 logyadev gen
-#git clone git@github.com:exploringdata/exploringdata.github.com.git
-git clone https://github.com/exploringdata/exploringdata.github.com.git
+git clone git@github.com:exploringdata/exploringdata.github.com.git
+#git clone https://github.com/exploringdata/exploringdata.github.com.git
 mv exploringdata.github.com/.git deploy/
 cd deploy/
 git add .
