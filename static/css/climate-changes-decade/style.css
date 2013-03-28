@@ -1,0 +1,11 @@
+.history svg {
+min-height:400px;
+height:40%;
+}
+.bar svg {
+min-height:400px;
+height:40%;
+}
+.nvd3 .nv-axis line {
+stroke:#bbb;
+}
