@@ -1,15 +1,21 @@
 var colors = d3.scale.category20();
 var keyColor = function(d, i) {return colors(d.key)};
 
+var defaultGuardianParams = {
+    from:'2013-03-01',
+    to:'2013-03-31',
+    q:'"climate change"'
+};
+
 function getPrevDay(date) {
-    return new Date((new Date(date).getTime() / 1000 - 86400) * 1000)
+    return new Date(date - 86400)
 }
 
 // FIXME format query outside this function for more flexibility, also add optional section arg
 function getGuardianArticles(query, from, to) {
     var url = "http://content.guardianapis.com/search?callback=?";
     $.getJSON(url, {
-        'q': '"' + query + '"',
+        'q': query,
         'from-date': from,
         'to-date': to,
         'page-size':15,
@@ -91,11 +97,22 @@ function barValues(freqdata) {
     });
 }
 
+function getQueryDate(date) {
+    // when JS sucks
+    return date.getFullYear()
+        + '-' + ('0' + (date.getMonth() + 1)).slice(-2)
+        + '-' + ('0' + date.getDate()).slice(-2);
+}
+
 function historyClick(hist, json) {
     hist.selectAll('rect').on('click', function(d, i) {
         var label = json[d.series].key;
+//FIXME series index does not count disabled labels
+console.log(d, label, keyColor(d))
+
         // milliseconds need to be converted back to seconds
         var file = label.replace(' ', '-') + '/' + d.x / 1000 + '.json';
+        var date = new Date(d.x);
         d3.json('/json/climate-changes-decade/' + file, function(freqdata) {
             barChart('#words', [{
                 key: label,
@@ -106,6 +123,11 @@ function historyClick(hist, json) {
                 values: barValues(freqdata.sections)
             }]);
         });
+        from = getQueryDate(date);
+        date.setMonth(date.getMonth() + 1);
+        to = getQueryDate(getPrevDay(date));
+        // enclose phrases in quotes
+        getGuardianArticles('"' + label + '"', from, to);
     });
 }
 
@@ -127,7 +149,12 @@ function historyMultiBar(selector, json,  init) {
         hist.datum(data)
             .transition().duration(500).call(chart);
 
+        // add click handler for default and after series filters
         historyClick(hist, json);
+        // adding event with d3 overrides nvd3 handler, thus use jquery
+        $('.nv-legend .nv-series').click(function(){
+            historyClick(hist, json);
+        })
 
         if ('undefined' !== typeof init && init) {
             // Initialize bars with latest date for "climate change" by
@@ -151,5 +178,4 @@ function historyMultiBar(selector, json,  init) {
 
 d3.json('/json/climate-changes-decade/articles.json', function(json) {
     historyMultiBar('#history', json, true);
-    getGuardianArticles('climate change', '2013-03-01', '2013-03-31');
 });
