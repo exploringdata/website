@@ -38,7 +38,10 @@ function getGuardianArticles(query, from, to) {
 function getHistoryData(json) {
     return json.map(function(query){
         values = query.values.map(function(val){
-            return {x:val[0], y:val[1]}
+            // Add q to know correct series in click handler.
+            // Main data index differs from series index, when one or more
+            // series are disabled.
+            return {x:val[0], y:val[1], q: query['key']}
         });
         return {'key': query['key'], 'values': values};
     });
@@ -106,10 +109,7 @@ function getQueryDate(date) {
 
 function historyClick(hist, json) {
     hist.selectAll('rect').on('click', function(d, i) {
-        var label = json[d.series].key;
-//FIXME series index does not count disabled labels
-console.log(d, label, keyColor(d))
-
+        var label = d.q;
         // milliseconds need to be converted back to seconds
         var file = label.replace(' ', '-') + '/' + d.x / 1000 + '.json';
         var date = new Date(d.x);
@@ -137,7 +137,6 @@ function historyMultiBar(selector, json,  init) {
         var chart = nv.models.multiBarChart()
             .stacked(true)
             .color(keyColor);
-
         chart.xAxis
             .showMaxMin(false)
             .tickFormat(function(d) { return d3.time.format('%Y-%m')(new Date(d)) });
