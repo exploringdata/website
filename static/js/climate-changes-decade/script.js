@@ -13,7 +13,8 @@ function getPrevDay(date) {
     return new Date(date - 86400)
 }
 
-// FIXME format query outside this function for more flexibility, also add optional section arg
+// FIXME move date formatting here, also add optional section arg and page
+// use d3.format if possible
 function getGuardianArticles(query, from, to) {
     var url = "http://content.guardianapis.com/search?callback=?";
     $.getJSON(url, {
@@ -29,7 +30,7 @@ function getGuardianArticles(query, from, to) {
         var html = '';
         for (i in data.response.results) {
             var r = data.response.results[i];
-            var src = 'undefined' !== typeof r.fields.thumbnail ? r.fields.thumbnail : 'http://placehold.it/70x42';
+            var src = 'undefined' !== typeof r.fields.thumbnail ? r.fields.thumbnail : '/img/no-image.70x42.png';
             html += '<div class="article row"><div class="image span1"><a href="' + r.webUrl + '"><img src="' + src + '"></a></div><div class="span5"><div title="' + r.webTitle + '"><a href="' + r.webUrl + '">' + r.fields.headline + '</a></div><span class="meta"><i class="icon-calendar"></i> ' + new Date(r.webPublicationDate).toGMTString() + ' in ' + r.sectionName + '</span></div></div><hr>';
         }
         html += '<ul class="pager"><li><a href="#">Previous</a></li><li><a href="#">Next</a></li></ul>';
