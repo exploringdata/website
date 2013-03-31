@@ -8,11 +8,8 @@
 * add visual legends that explain gaphs, size, color etc
 
 ## Guardian
-* pagination
-* detail bars click
-* article
+
 * update on april 1
-* change placeholder image
 
 ## Sigma
 

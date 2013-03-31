@@ -1,42 +1,111 @@
 var histselector = '#history',
     histselection = d3.select(histselector),
+    wordselection = d3.select('#words'),
+    sectionmap = null,
     colors = d3.scale.category20(),
     keyColor = function(d, i) {return colors(d.key)},
     getQueryDate = d3.time.format("%Y-%m-%d"),
-    defaultGuardianParams = {
-        from:'2013-03-01',
-        to:'2013-03-31',
-        q:'"climate change"'
-    };
+    guParams = {
+        'page-size':15,
+        'page': 1,
+        'order-by':'relevance',
+        'format':'json',
+        'show-fields': 'headline,thumbnail'
+    },
+    currSeries = null;
 
 function getPrevDay(date) {
     return new Date(date - 86400)
 }
 
-// FIXME move date formatting here, also add optional section arg and page
-// use d3.format if possible
-function getGuardianArticles(query, from, to) {
-    var url = "http://content.guardianapis.com/search?callback=?";
-    $.getJSON(url, {
-        'q': query,
-        'from-date': from,
-        'to-date': to,
-        'page-size':15,
-        'order-by':'relevance',
-        'format':'json',
-        'show-fields': 'headline,thumbnail'
-    })
-    .done(function(data) {
-        var html = '';
-        for (i in data.response.results) {
-            var r = data.response.results[i];
-            var src = 'undefined' !== typeof r.fields.thumbnail ? r.fields.thumbnail : '/img/no-image.70x42.png';
-            html += '<div class="article row"><div class="image span1"><a href="' + r.webUrl + '"><img src="' + src + '"></a></div><div class="span5"><div title="' + r.webTitle + '"><a href="' + r.webUrl + '">' + r.fields.headline + '</a></div><span class="meta"><i class="icon-calendar"></i> ' + new Date(r.webPublicationDate).toGMTString() + ' in ' + r.sectionName + '</span></div></div><hr>';
-        }
-        html += '<ul class="pager"><li><a href="#">Previous</a></li><li><a href="#">Next</a></li></ul>';
-        d3.select('#articles').html(html);
-        d3.select('#queryinfo').html(query + ' ' + d3.time.format('%Y-%m')(new Date(from)));
+function pagerClick() {
+    $('.pager a').click(function(e) {
+        e.preventDefault();
+        guParams['page'] = $(this).attr('href').replace('#', '');
+        getGuardianArticles();
     });
+}
+
+function historyClickHandler(currSeries, timestamp) {
+    guParams['page'] = 1; // reset Guardian page parameter
+    var date = new Date(timestamp);
+    // milliseconds need to be converted back to seconds
+    var file = currSeries.replace(' ', '-') + '/' + timestamp / 1000 + '.json';
+    d3.json('/json/climate-changes-decade/' + file, function(freqdata) {
+        barChart('#words', [{
+            key: currSeries,
+            values: barValues(freqdata.words)
+        }]);
+        barChart('#sections', [{
+            key: currSeries,
+            values: barValues(freqdata.sections)
+        }]);
+    });
+    // enclose phrases in quotes
+    getGuardianArticles('"' + currSeries + '"', date);
+}
+
+function historyClick() {
+    histselection.selectAll('rect').on('click', function(d, i) {
+        currSeries = d.q;
+        document.location.hash = currSeries+ '|' + d.x;
+    });
+}
+
+function getArticlePager(response) {
+    var html = '',
+        prevCls = '',
+        nextCls = '',
+        prevHref = '',
+        nextHref = '',
+        currPage = 1,
+        page = guParams['page'];
+    if (response.response.pages > 1) {
+        currPage = response.response.currentPage;
+        if (currPage == 1) {
+            prevCls = ' class="disabled"';
+        } else {
+            prevHref = currPage - 1;
+        }
+        if (currPage == response.response.pages) {
+            nextCls = ' class="disabled"';
+        } else {
+            nextHref = currPage + 1;
+        }
+
+        var prevCls = currPage == 1 ? ' class="disabled"' : '';
+        var nextCls =  currPage == response.response.pages ? ' class="disabled"' : '';
+        html = '<ul class="pager"><li' + prevCls + '><a href="#' + prevHref+ '">Previous</a></li><li' + nextCls + '><a href="#' + nextHref + '">Next</a></li></ul>';
+    }
+    return html;
+}
+
+function getGuardianArticles(query, date) {
+    if ('undefined' !== typeof query) {
+        guParams['q'] = query;
+    }
+    if ('undefined' !== typeof date) {
+        // determine from and to date from given date
+        from = getQueryDate(date);
+        date.setMonth(date.getMonth() + 1);
+        to = getQueryDate(getPrevDay(date));
+        guParams['from-date'] = from;
+        guParams['to-date'] = to;
+    }
+    $.getJSON('http://content.guardianapis.com/search?callback=?', guParams)
+        .done(function(data) {
+            var html = '';
+            for (i in data.response.results) {
+                var r = data.response.results[i];
+                var src = 'undefined' !== typeof r.fields.thumbnail ? r.fields.thumbnail : '/img/no-image.70x42.png';
+                html += '<div class="article row"><div class="image span1"><a href="' + r.webUrl + '"><img src="' + src + '"></a></div><div class="span5"><div title="' + r.webTitle + '"><a href="' + r.webUrl + '">' + r.fields.headline + '</a></div><span class="meta"><i class="icon-calendar"></i> ' + new Date(r.webPublicationDate).toGMTString() + ' in ' + r.sectionName + '</span></div></div><hr>';
+            }
+            html += getArticlePager(data);
+            d3.select('#articles').html(html);
+            d3.select('#queryinfo').html(query + ' ' + d3.time.format('%Y-%m')(new Date(from)));
+            pagerClick();
+        }
+    );
 }
 
 function getHistoryData(json) {
@@ -63,7 +132,7 @@ function acronymizeBars(labels) {
     });
 }
 
-// FIXME add click handler to search for specific articles, also add to update handler
+// Guardian API doesn't allow to search for words in titles, thus no further filtering.
 function barChart(selector, data) {
     nv.addGraph(function() {
         var chart = nv.models.multiBarHorizontalChart()
@@ -104,31 +173,7 @@ function barValues(freqdata) {
     });
 }
 
-function historyClick() {
-    histselection.selectAll('rect').on('click', function(d, i) {
-        var label = d.q;
-        // milliseconds need to be converted back to seconds
-        var file = label.replace(' ', '-') + '/' + d.x / 1000 + '.json';
-        var date = new Date(d.x);
-        d3.json('/json/climate-changes-decade/' + file, function(freqdata) {
-            barChart('#words', [{
-                key: label,
-                values: barValues(freqdata.words)
-            }]);
-            barChart('#sections', [{
-                key: label,
-                values: barValues(freqdata.sections)
-            }]);
-        });
-        from = getQueryDate(date);
-        date.setMonth(date.getMonth() + 1);
-        to = getQueryDate(getPrevDay(date));
-        // enclose phrases in quotes
-        getGuardianArticles('"' + label + '"', from, to);
-    });
-}
-
-function historyMultiBar(json, init) {
+function historyMultiBar(json) {
     nv.addGraph(function() {
         var data = getHistoryData(json);
         var chart = nv.models.multiBarChart()
@@ -153,23 +198,26 @@ function historyMultiBar(json, init) {
             chart.update;
             historyClick();
         });
-
-        if ('undefined' !== typeof init && init) {
-            // Initialize bars with latest date for "climate change" by
-            // triggering click event on corresponding DOM element.
-            // Since bars for keys are created consecutively and "climate change"
-            // is the first key divide by 6, the number of different queries.
-            var rects = hist.selectAll('rect')[0];
-            var last_cl = rects[(rects.length-1)/6];
-            var evt = document.createEvent('MouseEvents');
-            evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-            last_cl.dispatchEvent(evt);
-        }
-
         return chart;
     });
 }
 
+function redirect() {
+    var h = document.location.hash.replace('#', '').split('|');
+    historyClickHandler(h[0], parseInt(h[1]));
+}
+
 d3.json('/json/climate-changes-decade/articles.json', function(json) {
-    historyMultiBar(json, true);
+    historyMultiBar(json.history);
+    sectionmap = json.sectionmap;
+    if (document.location.hash) {
+        redirect();
+    } else {
+        var cl = json.history[0];
+        historyClickHandler(cl.key, cl.values[cl.values.length-1][0]);
+    }
+});
+
+$(window).bind('hashchange', function(event) {
+    redirect();
 });
