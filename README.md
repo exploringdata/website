@@ -12,6 +12,7 @@
 * detail bars click
 * article
 * update on april 1
+* change placeholder image
 
 ## Sigma
 

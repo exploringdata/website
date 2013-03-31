@@ -1,11 +1,13 @@
-var colors = d3.scale.category20();
-var keyColor = function(d, i) {return colors(d.key)};
-
-var defaultGuardianParams = {
-    from:'2013-03-01',
-    to:'2013-03-31',
-    q:'"climate change"'
-};
+var histselector = '#history',
+    histselection = d3.select(histselector),
+    colors = d3.scale.category20(),
+    keyColor = function(d, i) {return colors(d.key)},
+    getQueryDate = d3.time.format("%Y-%m-%d"),
+    defaultGuardianParams = {
+        from:'2013-03-01',
+        to:'2013-03-31',
+        q:'"climate change"'
+    };
 
 function getPrevDay(date) {
     return new Date(date - 86400)
@@ -28,10 +30,11 @@ function getGuardianArticles(query, from, to) {
         for (i in data.response.results) {
             var r = data.response.results[i];
             var src = 'undefined' !== typeof r.fields.thumbnail ? r.fields.thumbnail : 'http://placehold.it/70x42';
-            html += '<div class="article row"><a href="' + r.webUrl + '"><div class="image span1"><img src="' + src + '"></div><div class="span5"><h3 title="' + r.webTitle + '">' + r.fields.headline + '</h3></div></a></div><hr>';
+            html += '<div class="article row"><div class="image span1"><a href="' + r.webUrl + '"><img src="' + src + '"></a></div><div class="span5"><div title="' + r.webTitle + '"><a href="' + r.webUrl + '">' + r.fields.headline + '</a></div><span class="meta"><i class="icon-calendar"></i> ' + new Date(r.webPublicationDate).toGMTString() + ' in ' + r.sectionName + '</span></div></div><hr>';
         }
         html += '<ul class="pager"><li><a href="#">Previous</a></li><li><a href="#">Next</a></li></ul>';
         d3.select('#articles').html(html);
+        d3.select('#queryinfo').html(query + ' ' + d3.time.format('%Y-%m')(new Date(from)));
     });
 }
 
@@ -100,15 +103,8 @@ function barValues(freqdata) {
     });
 }
 
-function getQueryDate(date) {
-    // when JS sucks
-    return date.getFullYear()
-        + '-' + ('0' + (date.getMonth() + 1)).slice(-2)
-        + '-' + ('0' + date.getDate()).slice(-2);
-}
-
-function historyClick(hist, json) {
-    hist.selectAll('rect').on('click', function(d, i) {
+function historyClick() {
+    histselection.selectAll('rect').on('click', function(d, i) {
         var label = d.q;
         // milliseconds need to be converted back to seconds
         var file = label.replace(' ', '-') + '/' + d.x / 1000 + '.json';
@@ -131,7 +127,7 @@ function historyClick(hist, json) {
     });
 }
 
-function historyMultiBar(selector, json,  init) {
+function historyMultiBar(json, init) {
     nv.addGraph(function() {
         var data = getHistoryData(json);
         var chart = nv.models.multiBarChart()
@@ -144,16 +140,18 @@ function historyMultiBar(selector, json,  init) {
         chart.yAxis
             .tickFormat(d3.format(',d'));
 
-        var hist = d3.select(selector).append('div').attr('class', 'history').append('svg');
+        var hist = histselection.append('div').attr('class', 'history').append('svg');
         hist.datum(data)
             .transition().duration(500).call(chart);
 
-        // add click handler for default and after series filters
-        historyClick(hist, json);
+        // bind click events before and after chart updates
+        historyClick();
         // adding event with d3 overrides nvd3 handler, thus use jquery
-        $('.nv-legend .nv-series').click(function(){
-            historyClick(hist, json);
-        })
+        $(histselector + ' .nv-legend .nv-series').click(historyClick);
+        nv.utils.windowResize(function(){
+            chart.update;
+            historyClick();
+        });
 
         if ('undefined' !== typeof init && init) {
             // Initialize bars with latest date for "climate change" by
@@ -167,14 +165,10 @@ function historyMultiBar(selector, json,  init) {
             last_cl.dispatchEvent(evt);
         }
 
-        nv.utils.windowResize(function(){
-            chart.update;
-            historyClick(hist, json);
-        });
         return chart;
     });
 }
 
 d3.json('/json/climate-changes-decade/articles.json', function(json) {
-    historyMultiBar('#history', json, true);
+    historyMultiBar(json, true);
 });
