@@ -1,6 +1,7 @@
 var histselector = '#history',
     histselection = d3.select(histselector),
     wordselection = d3.select('#words'),
+    selectiondetails = document.getElementById('selectiondetails'),
     sectionmap = null,
     colors = d3.scale.category20(),
     keyColor = function(d, i) {return colors(d.key)},
@@ -12,7 +13,8 @@ var histselector = '#history',
         'format':'json',
         'show-fields': 'headline,thumbnail'
     },
-    currSeries = null;
+    currSeries = null,
+    scrollOffset = selectiondetails.offsetTop - ($('#navbar').height + 10);
 
 function getPrevDay(date) {
     return new Date(date - 86400)
@@ -43,6 +45,7 @@ function historyClickHandler(currSeries, timestamp) {
     });
     // enclose phrases in quotes
     getGuardianArticles('"' + currSeries + '"', date);
+    window.scrollTo(0, selectiondetails.offsetTop - 50);
 }
 
 function historyClick() {
