@@ -13,6 +13,7 @@
 
 ## Sigma
 
+* Zoom with buttons instead of mousewheel, closable div with details instead of modal see http://retts.net/viz/elmcip_events_all_pres_connected/
 * Restict nodes to set filter when highlighting nodes
 * Show node labels for faded sigma graph nodes on mouseover
 * Some nodes appear more than once in typeahead, e.g. A Sharp in http://exploringdata.github.com/vis/programming-languages-influence-network/#A Sharp
