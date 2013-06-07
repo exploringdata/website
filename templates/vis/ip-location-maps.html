@@ -1,0 +1,54 @@
+{% extends "vis/blank.html" %}
+
+{% block inlinecss %}
+<style>
+.thumbnails img {height:300px;}
+</style>
+{% endblock %}
+
+{% block vis %}
+<div class="container">
+    <div class="row"><div class="span12">
+
+        <ul class="thumbnails">
+          <li class="span4">
+            <a href="/img/ip-location-maps/world0.01.png" class="thumbnail">
+              <img src="/img/preview/ip-location-maps/world0.01.png" alt="World Map">
+              <h3>World Map</h3>
+            </a>
+          </li>
+          <li class="span4">
+            <a href="/img/ip-location-maps/AF.png" class="thumbnail">
+              <img src="/img/preview/ip-location-maps/AF.png" alt="Africa">
+              <h3>Africa</h3>
+            </a>
+          </li>
+          <li class="span4">
+            <a href="/img/ip-location-maps/AS.png" class="thumbnail">
+              <img src="/img/preview/ip-location-maps/AS.png" alt="Asia">
+              <h3>Asia</h3>
+            </a>
+          </li>
+          <li class="span4">
+            <a href="/img/ip-location-maps/EU.png" class="thumbnail">
+              <img src="/img/preview/ip-location-maps/EU.png" alt="Europe">
+              <h3>Europe</h3>
+            </a>
+          </li>
+          <li class="span4">
+            <a href="/img/ip-location-maps/NA.png" class="thumbnail">
+              <img src="/img/preview/ip-location-maps/NA.png" alt="North America">
+              <h3>North America</h3>
+            </a>
+          </li>
+          <li class="span4">
+            <a href="/img/ip-location-maps/SA.png" class="thumbnail">
+              <img src="/img/preview/ip-location-maps/SA.png" alt="South America">
+              <h3>South America</h3>
+            </a>
+          </li>
+        </ul>
+
+    </div></div>
+</div>
+{% endblock %}
