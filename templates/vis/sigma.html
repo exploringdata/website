@@ -3,14 +3,19 @@
 {% block nav %}
 <ul class="nav">
   <li><input class="typeahead" type="text" data-provide="typeahead" placeholder="Highlight node"><i id="search-reset" class="icon-remove"></i></li>
-  {% if poster %}
-    <li><a class="showposter" href="{{ poster.url }}">Poster</a></li>
-  {% endif %}
 </ul>
 {% endblock %}
 
+{% block nav_right %}
+  {% if poster %}
+  <ul class="nav pull-right">
+    <li><div class="btn-group"><a class="btn btn-primary showposter" href="{{ poster.url }}">Get the Poster</a></div></li>
+  </ul>
+  {% endif %}
+{% endblock %}
+
 {% block vis %}
-<div id="vis" class="sigma-parent"><div id="sig" class="sigma-expand"></div></div>
+<div id="vis" class="sigma-parent"><div id="loading">Loading the data may take a while, please be patient...</div><div id="sig" class="sigma-expand"></div></div>
 {% endblock %}
 
 {% block modals %}

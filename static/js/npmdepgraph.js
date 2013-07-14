@@ -1,4 +1,4 @@
-var gexf = '/gexf/npm-dependencies.json';
+var gexf = '/gexf/npmdepgraph.json';
 
 $(function(){
   var props = {
@@ -13,13 +13,14 @@ $(function(){
     graph: {
       minNodeSize: .5,
       maxNodeSize: 25,
-      minEdgeSize: 1,
-      maxEdgeSize: 1
+      minEdgeSize: .15,
+      maxEdgeSize: .15
     },
     forceLabel: 1,
     type: 'directed'
   }
 
   visgexf.init('sig', gexf, props, function() {
-//  $('.showposter').click(function(e){e.preventDefault();$('#showposter').modal();});
+    $('.showposter').click(function(e){e.preventDefault();$('#showposter').modal();});
+  });
 });
