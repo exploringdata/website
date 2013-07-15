@@ -1,0 +1,20 @@
+---
+url: /info/npm-packages-dependencies/
+relateditems:
+    - url: /vis/npm-top-packages-dependencies/
+      image: /img/preview/npm-packages-dependencies.min10.jpg
+    - url: /vis/npm-packages-dependencies/
+      image: /img/preview/npm-packages-dependencies.jpg
+title: How npm Packages are Linked by Dependencies
+description: 2 Interactive graph visualizations that show how npm packages are linked by dependency relations, the smaller one is limited to packages with at least 10 dependent packages. Graphs were pre-processed with Gephi and are rendered with sigma.js.
+template: post.html
+created: 2013-07-15 16:03:34
+tags: [network graph, programming, sigmajs, gephi, nodejs]
+---
+<p>I created 2 graph visualizations based on data from the <a href="https://npmjs.org/">npm registry</a> for Node Packaged Modules. A graph with <a href="http://exploringdata.github.io/vis/npm-packages-dependencies/">all retrievable packages</a> (WARNING: slow and may crash your browser) and <a href="http://exploringdata.github.io/vis/npm-top-packages-dependencies/">one with packages</a>, that have at least 10 dependent packages. Data for both graphs was collected on July 12, 2013.</p>
+<p>Packages that can be installed via npm often rely on other packages, that need to be installed as well. Information about the registered packages and their dependencies can be queried using the <a href="https://npmjs.org/package/npm">npm package</a>. <a href="https://github.com/yaph/npmdepgraph">See the code</a> I used to gather the data.</p>
+<p>Nodes are sized by their in-degree, i.e. the number of packages dependent on them. A small number of libraries clearly stand out, most prominently <a href="http://exploringdata.github.io/vis/npm-top-packages-dependencies/#underscore">underscore</a> with 3,283 dependent packages followed by the <a href="http://exploringdata.github.io/vis/npm-top-packages-dependencies/#async">async</a> (2,401) and <a href="http://exploringdata.github.io/vis/npm-top-packages-dependencies/#request">request</a> (2,106) packages.</p>
+<p>The <a href="http://exploringdata.github.io/vis/npm-packages-dependencies/">full graph</a> contains 35,000 nodes and 66,551 edges and the graph showing <a href="http://exploringdata.github.io/vis/npm-top-packages-dependencies/">the top packages</a> 717 nodes and 942 edges.</p>
+<p>Unfortunately, navigating the large graph doesn't really work and other browsers than Chrome are pretty likely to freeze when trying to zoom or highlight individual nodes, which is why I created the version with the limited set of nodes as well.</p>
+<p>Both graphs are rendered with the <a href="http://sigmajs.org/">JavaScript library sigma.js</a> and were pre-processed with the <a href="https://gephi.org/">Gephi visualization platform</a>.</p>
+<p>Feel free to post feedback and questions in the comments below.</p>

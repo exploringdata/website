@@ -11,6 +11,12 @@
       <h3>Visualization</h3>
       <a href="{{ related }}"><img src="{{ image }}" alt="visualization preview"></a>
     {% endif %}
+    {% if relateditems %}
+        <h3>Visualizations</h3>
+        {% for r in relateditems %}
+          <a href="{{ r.url }}"><img class="vis-preview" src="{{ r.image }}" alt="visualization preview"></a>
+        {% endfor %}
+    {% endif %}
     {% include 'right.html' %}
   </div>
 </div>
