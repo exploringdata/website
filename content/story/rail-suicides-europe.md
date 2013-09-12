@@ -1,6 +1,6 @@
 ---
 url: /story/rail-suicides-europe/
-title: 'Rail Suicides in Europe: Absolute vs Relative'
+title: 'Rail Suicides in Europe: Absolute vs. Relative'
 description: A look at rail suicides data for Europe from 2008 to 2011 highlighting the importance of relating numbers.
 created: 2013-09-12 11:39:40
 template: post.html
@@ -47,3 +47,12 @@ As mentioned before the railway density would be another factor to consider.
 The main point, however, is to show how important it is to provide context,
 especially when doing comparisons. Absolute and relative numbers often tell
 very different stories.
+
+## References and Data Sources
+
+* [UK rail suicides: a decade of data](http://www.theguardian.com/news/datablog/2013/sep/11/uk-rail-suicides-decade-data)
+  the article published by the Guardian
+* [Population, total](http://data.worldbank.org/indicator/SP.POP.TOTL)
+  a datset provided by the World Bank
+* [Data munging code](https://github.com/exploringdata/rail-suicides)
+  the source code to calculate the suicide ratios for each year and country
