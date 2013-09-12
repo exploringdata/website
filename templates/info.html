@@ -17,6 +17,11 @@
           <a href="{{ r.url }}"><img class="vis-preview" src="{{ r.image }}" alt="visualization preview"></a>
         {% endfor %}
     {% endif %}
+    {% if repo %}
+      <h3>Source Code</h3>
+      <p>Check out the source code used to process the data and create the visualizations.</p>
+      <a class="btn btn-primary" href="{{ repo }}">Code Repository</a>
+    {% endif %}
     {% include 'right.html' %}
   </div>
 </div>

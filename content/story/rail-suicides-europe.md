@@ -5,6 +5,8 @@ description: A look at rail suicides data for Europe from 2008 to 2011 highlight
 created: 2013-09-12 11:39:40
 template: post.html
 tags: [data story, datawrapper, guardian, europe]
+repo: https://github.com/exploringdata/rail-suicides
+image: /img/preview/rail-suicides.jpg
 ---
 Yesterday the Guardian published an article about
 [rail suicides](http://www.theguardian.com/news/datablog/2013/sep/11/uk-rail-suicides-decade-data)
@@ -27,7 +29,7 @@ So does it make sense to look at the absolute numbers alone? I think it doesn't
 in this case and created the new chart below, which takes the population of the
 countries into account.
 
-<iframe src="http://cf.datawrapper.de/vTXHj/1/" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="700" height="418"></iframe>
+<iframe src="http://cf.datawrapper.de/vTXHj/2/" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="700" height="418"></iframe>
 
 The new chart tells a different story showing the number of suicides by 100,000
 inhabitants for each country. It turns out that the Czech Republic is the country
