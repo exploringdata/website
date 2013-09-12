@@ -1,7 +1,7 @@
 ---
 url: /story/rail-suicides-europe/
 title: Rail Suicides in Europe 2008 - 2011
-description:
+description: A look at rail suicides data for Europe from 2008 to 2011 highlighting the importance of relating numbers.
 created: 2013-09-12 11:39:40
 template: post.html
 tags: [data story, datawrapper, guardian, europe]
