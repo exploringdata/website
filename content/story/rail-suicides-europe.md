@@ -44,6 +44,6 @@ offers. This way it becomes more clear that rail suicides are an increasing
 problem in Europe.
 
 As mentioned before the railway density would be another factor to consider.
-The main point is to show how important it is to provide context,
+The main point, however, is to show how important it is to provide context,
 especially when doing comparisons. Absolute and relative numbers often tell
 very different stories.
