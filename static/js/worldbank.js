@@ -1,47 +1,56 @@
-var map = {
-    year: {
-        default: 2010,
-        min: 1995,
-        max: 2012
-    },
-    legend: {
-        title: 'Intentional Homicides by 100,000 People',
-        width: 400,
-        height: 75
-    },
-    source: {
-        url: 'http://data.worldbank.org/indicator/VC.IHR.PSRC.P5',
-        title: 'World Bank Intentional Homicides'
-    },
-    data: {
-        geo: null,
-        wb: null
-    }
-};
-
-queue()
-    .defer(d3.json, '/json/topo/countries.topo.json')
-    .defer(d3.csv, '/csv/homicides.csv')
-    .await(init);
-
-
-function init(error, geo_data, wb_data) {
+function initMap(error, geo_data, wb_data) {
     if (error) {
         alert('An error occurred when loading the data.')
         return;
     }
 
-    // make data available to other functions
-    map.data.geo = geo_data;
-    geo_data.wb = wb_data;
+    var year = map.year.default;
+    renderMap('#map', geo_data, getYearSeries(wb_data, year), year);
 
+    // create year choices
+    year_range = d3.range(map.year.min, map.year.max + 1);
+    d3.select('#year-select').selectAll('li')
+        .data(year_range).enter()
+    .append('li')
+        .attr('class', function(d) {
+            return (d === map.year.selected) ? 'active': '';
+        })
+    .append('a')
+        .text(function(d) { return d })
+        .on('click', function() {
+            var year = this.textContent;
+            renderMap('#map', geo_data, getYearSeries(wb_data, year), year);
+            d3.select('#year-select').selectAll('li').attr('class', '');
+            d3.select(this.parentNode).attr('class', 'active');
+        });
+
+    // play animation
+    var int_ani = null;
+    var loop_years = function() {
+        if (map.year.selected > map.year.max) {
+            clearInterval(int_ani);
+            return;
+        }
+        renderMap('#map', geo_data, getYearSeries(wb_data, map.year.selected), map.year.selected);
+        map.year.selected++;
+    };
+
+    d3.select('#animate').on('click', function() {
+        map.year.selected = map.year.min;
+        int_ani = setInterval(loop_years, 1000);
+        d3.select('#year-select').selectAll('li').attr('class', '');
+    });
+}
+
+
+function getYearSeries(wb_data, year) {
     var series = [];
     for (i in wb_data) {
         var country_data = wb_data[i];
-        var val = parseFloat(country_data[map.year.default]);
+        var val = parseFloat(country_data[year]);
         series.push({key: country_data['Country Code'], value: val})
     }
-    renderMap('#map', geo_data, series, map.year.default);
+    return series;
 }
 
 
@@ -53,6 +62,8 @@ function getCountryVal(iso3, wb_data) {
 
 
 function renderMap(selector, geo_data, wb_data, year) {
+    d3.select(selector).selectAll('svg').remove();
+
     var svg,
         width = containerDim(selector, 'width'),
         height = width * .52,

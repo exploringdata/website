@@ -6,6 +6,7 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Choose Year <b class="caret"></b></a>
         <ul class="dropdown-menu" id="year-select"></ul>
   </li>
+  <li><a id="animate" href="#">Play Animation</a></li>
 </ul>
 {% endblock %}
 
@@ -19,4 +20,30 @@
 <script src="/vendor/d3/d3.geo.projection.v0.min.js"></script>
 <script src="/vendor/d3/topojson.v1.min.js"></script>
 <script src="/js/colors.js"></script>
+{% endblock %}
+
+{% block inlinejs %}
+<script>
+var map = {
+    year: {
+        default: {{ map.year.default }},
+        min: {{ map.year.min }},
+        max: {{ map.year.max }},
+        selected: {{ map.year.selected }}
+    },
+    legend: {
+        title: '{{ map.legend.title }}',
+        width: {{ map.legend.width }},
+        height: {{ map.legend.height }}
+    },
+    source: {
+        url: '{{ map.source.url }}',
+        title: '{{ map.source.title }}'
+    }
+};
+queue()
+    .defer(d3.json, '/json/topo/countries.topo.json')
+    .defer(d3.csv, '{{ map.source.data }}')
+    .await(initMap);
+</script>
 {% endblock %}

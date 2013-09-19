@@ -1,13 +1,27 @@
 ---
-url: /vis/homicides-world/
+url: /map/world/intentional-homicides/
 title: World Map of Intentional Homicides
 description: A geographic map showing the number of intentional homicides per 100k people of the world countries rendered with the D3 JavaScript library.
 template: map/worldbank.html
 created: 2013-09-19 23:37:53
-scripts: [/js/homicides-world/map.js]
+scripts: [/js/worldbank.js]
 styles: [/css/worldbank.css]
 image: /img/preview/earthquakes.jpg
 tags: [map, d3, homicides, world, worldbank]
+map:
+    year:
+        default: 2008
+        min: 1995
+        max: 2011
+        selected: 2008
+    legend:
+        title: 'Intentional Homicides by 100,000 People'
+        width: 400
+        height: 75
+    source:
+        url: 'http://data.worldbank.org/indicator/VC.IHR.PSRC.P5'
+        title: 'World Bank Intentional Homicides'
+        data: '/csv/homicides.csv'
 ---
 
 ## Resources
