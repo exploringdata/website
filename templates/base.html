@@ -66,6 +66,9 @@
     {% include 'ga.html' %}
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    {% block body_scripts %}{% endblock %}
+
     <script src="/js/script.js{{version}}"></script>
     {% if scripts %}
       {% for script in scripts %}

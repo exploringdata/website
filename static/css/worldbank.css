@@ -1,0 +1,33 @@
+body {
+background-color:#fafafa;
+color:#fff;
+}
+
+text {
+fill:#444;
+font-size:13px;
+}
+
+.country {
+fill: #ddd;
+}
+.boundary {
+fill: none;
+stroke: #fff;
+stroke-width: 1px;
+}
+
+.legend-box {
+fill: #fff;
+opacity:.7;
+}
+.legend-title {
+font-size:16px;
+font-weight:690;
+text-anchor: start;
+}
+.source {
+font-size:12px;
+fill:#00f;
+cursor:pointer;
+}
