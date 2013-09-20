@@ -1,14 +1,13 @@
 {% extends "page.html" %}
 
 {% block content %}
-<div class="container"><div class="row">
-{% for doc in indexes.vis[:12] %}
-<div class="span4"><div class="well">
-<a href="{{doc.url}}" title="{{doc.description}}">
-  <h5>{{doc.title}}</h5>
-  <img src="{{doc.image}}" alt="{{doc.title}}">
-</a>
-</div></div>
-{% endfor %}
-</div></div>
+<div class="container">
+  {% set tag_title = 'Created with D3.js' %}
+  {% set tag_path = 'tags/d3' %}
+  {% include "tag_gallery.html" %}
+
+  {% set tag_title = 'Created with Sigma.js' %}
+  {% set tag_path = 'tags/sigmajs' %}
+  {% include "tag_gallery.html" %}
+</div>
 {% endblock %}

@@ -11,7 +11,7 @@
 
 {% block content %}
 <div id="info" class="container"><div class="row">
-  <div class="span9">
+  <div class="span8">
     <h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
     <ul class="unstyled index_list flatlist">
     {% for doc in index %}
@@ -19,7 +19,7 @@
     {% endfor %}
     </ul>
   </div>
-  <div class="span3">
+  <div class="span4">
     {% include 'right.html' %}
   </div>
 </div></div>

@@ -66,7 +66,7 @@ function renderMap(selector, geo_data, wb_data, year) {
 
     var svg,
         width = containerDim(selector, 'width'),
-        height = width * .52,
+        height = width * .46,
         f = d3.format('.2f');
 
     var max_val = d3.max(wb_data, function(d) { return d.value })
@@ -77,9 +77,9 @@ function renderMap(selector, geo_data, wb_data, year) {
         .range(d3.range(colors.length).map(function(i) { return colors[i] }));
 
     var projection = d3.geo.naturalEarth()
-        .scale(width/5.2)
+        .scale(width/5.6)
         // hide most of Antarctica and move a little to the left
-        .translate([(width / 2.12), (height / 1.8)])
+        .translate([(width / 2.2), (height / 1.8)])
         .precision(.1);
 
     var path = d3.geo.path()
