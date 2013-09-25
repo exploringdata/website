@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="span-12">
+      <h2><a href="{{ tag_path }}">{{ tag_title }}</a></h2>
+    </div>
+  </div>
+  <div class="row">
+    {% for doc in indexes[tag_path][:3] %}
+      <div class="span4"><div class="well">
+        <a href="{{doc.url}}" title="{{doc.description}}">
+          <h5>{{doc.title}}</h5>
+          <img src="{{doc.image}}" alt="{{doc.title}}">
+        </a>
+      </div></div>
+    {% endfor %}
+</div>

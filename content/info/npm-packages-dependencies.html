@@ -10,7 +10,7 @@ title: How npm Packages are Linked by Dependencies
 description: 2 Interactive graph visualizations that show how npm packages are linked by dependency relations, the smaller one is limited to packages with at least 10 dependent packages. Graphs were pre-processed with Gephi and are rendered with sigma.js.
 template: post.html
 created: 2013-07-15 16:03:34
-tags: [network graph, programming, sigmajs, gephi, nodejs]
+tags: [network graph, programming, sigmajs, gephi, nodejs, interactive]
 ---
 <p>I created 2 graph visualizations based on data from the <a href="https://npmjs.org/">npm registry</a> for Node Packaged Modules. A graph with <a href="http://exploringdata.github.io/vis/npm-packages-dependencies/">all retrievable packages</a> (WARNING: slow and may crash your browser) and <a href="http://exploringdata.github.io/vis/npm-top-packages-dependencies/">one with packages</a>, that have at least 10 dependent packages. Data for both graphs was collected on July 12, 2013.</p>
 <p>Packages that can be installed via npm often rely on other packages, that need to be installed as well. Information about the registered packages and their dependencies can be queried using the <a href="https://npmjs.org/package/npm">npm package</a>. <a href="https://github.com/yaph/npmdepgraph">See the code</a> I used to gather the data.</p>
