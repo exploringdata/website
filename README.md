@@ -1,5 +1,9 @@
 [Exploring Data](http://exploringdata.github.com/)
 
+* GH Archive: Pull requests to different repos by users/language.
+
+* How are World Leaders Connected by Google Searches
+
 # TODOs
 
 * World Aid Transparency: label font sizes in firefox
