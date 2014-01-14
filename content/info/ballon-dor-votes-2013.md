@@ -10,13 +10,33 @@ tags: [network graph, football, sigmajs, gephi, networkx, interactive]
 ---
 For the 2nd time in his career a visibly moved Cristiano Ronaldo won the FIFA Ballon d'Or. Although many people expected him to win in 2013, the final vote tally reveals a tighter finish than [in the past year](/info/ballon-dor-votes-2012/):
 
-- [Cristiano Ronaldo](/vis/ballon-dor-male-players-votes-2013/#Cristiano Ronaldo): 27.99%
-- [Lionel Messi](/vis/ballon-dor-male-players-votes-2013/#Messi Lionel): 24.72%
-- [Franck Ribéry](/vis/ballon-dor-male-players-votes-2013/#Ribéry Franck): 23.36%
+- [Cristiano Ronaldo](/vis/ballon-dor-male-players-votes-2013/#Cristiano Ronaldo): 28.03%
+- [Lionel Messi](/vis/ballon-dor-male-players-votes-2013/#Messi Lionel): 24.74%
+- [Franck Ribéry](/vis/ballon-dor-male-players-votes-2013/#Ribéry Franck): 23.14%
 
 Ronaldo scored 66 goals in 56 matches in 2013 (Messi 91 goals in 2012) but didn't win important titles, Ribéry won 5 in 2013. Still Ronaldo, who certainly benefited from the extension of the voting period, has had a tremendous year and many regard him as the best player in his current form.
 
-Some tidbits from the voting behaviour of the team captains.
+## Voting Breakdown
+
+Let's see which players scored best with the individual groups of voters.
+
+### Captains Votes
+
+![Imgur](http://i.imgur.com/QwiuyIH.png)
+
+### Coaches Votes
+
+![Imgur](http://i.imgur.com/VHsclQH.png)
+
+### Media Votes
+
+![Imgur](http://i.imgur.com/xnaU15V.png)
+
+So Ribéry won media pretty clearly and Ronaldo won coaches and captains.
+
+### How Messi, Ronaldo and Ibrahimovic voted
+
+Some tidbits from the voting behaviour of these 3 team captains, who all played on a top level in 2013.
 
 #### Cristiano Ronaldo voted
 
