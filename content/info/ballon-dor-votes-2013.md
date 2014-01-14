@@ -22,15 +22,15 @@ Let's see which players scored best with the individual groups of voters.
 
 ### Captains Votes
 
-![Imgur](http://i.imgur.com/QwiuyIH.png)
+![Captains Votes](http://i.imgur.com/QwiuyIH.png)
 
 ### Coaches Votes
 
-![Imgur](http://i.imgur.com/VHsclQH.png)
+![Coaches Votes](http://i.imgur.com/VHsclQH.png)
 
 ### Media Votes
 
-![Imgur](http://i.imgur.com/xnaU15V.png)
+![Media Votes](http://i.imgur.com/xnaU15V.png)
 
 So Ribéry won media pretty clearly and Ronaldo won coaches and captains.
 
@@ -59,6 +59,8 @@ Some tidbits from the voting behaviour of these 3 team captains, who all played 
 Unsurprisingly, neither Ronaldo nor Messi wanted to help their main competitors. Both prefer their team mates with the exception of Ronaldo's number 1 [Radamel Falcao](/vis/ballon-dor-male-players-votes-2013/#Falcao Radamel). I was a bit surprised to see [Zlatan Ibrahimovic](/vis/ballon-dor-male-players-votes-2013/#Ibrahimovic Zlatan) not voting for himself 3 times, if someone was capable of doing so, it was certainly him ;-)
 
 Be it as it is congratulations to Cristiano Ronaldo for winning the Ballon d'Or and to Lionel Messi for being the best dressed person at the ceremony!
+
+![Nominee reaction](http://i.imgur.com/1FguU6p.jpg)
 
 ## About the Visualization
 
