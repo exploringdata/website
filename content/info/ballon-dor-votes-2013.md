@@ -58,7 +58,7 @@ Some tidbits from the voting behaviour of these 3 team captains, who all played 
 
 Unsurprisingly, neither Ronaldo nor Messi wanted to help their main competitors. Both prefer their team mates with the exception of Ronaldo's number 1 [Radamel Falcao](/vis/ballon-dor-male-players-votes-2013/#Falcao Radamel). I was a bit surprised to see [Zlatan Ibrahimovic](/vis/ballon-dor-male-players-votes-2013/#Ibrahimovic Zlatan) not voting for himself 3 times, if someone was capable of doing so, it was certainly him ;-)
 
-Be it as it is congratulations to Cristiano Ronaldo for winning the Ballon d'Or and to Lionel Messi for being the best dressed person at the ceremony!
+Be it as it is congratulations to Cristiano Ronaldo for winning the Ballon d'Or, to Lionel Messi for being the best dressed person at the ceremony and to Franck Ribéry for taking it like a champ!
 
 ![Nominee reaction](http://i.imgur.com/1FguU6p.jpg)
 
