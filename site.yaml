@@ -1,0 +1,14 @@
+site:
+  base_url: http://exploringdata.github.io
+  author: Ramiro Gómez
+  feed_title: Exploring Data News Feed
+
+indexes:
+- path: tags
+  var: tags
+
+templates:
+- content_type: index
+  template: index.html
+- content_type: doc
+  template: post.html

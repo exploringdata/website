@@ -1,4 +1,4 @@
-{% set version = '?v=10' %}
+{% set version = '#v=11' %}
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
   <head>
@@ -11,6 +11,7 @@
     {% if image %}
       <meta property="og:image" content="{{base_url}}{{image}}">
     {% endif %}
+    {% include 'snippets/twitter.html' %}
     <meta name="author" content="Ramiro Gómez">
     <link rel="canonical" href="{{canonical}}">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
