@@ -1,5 +1,10 @@
 {% extends "vis/full.html" %}
 
+{% block styles %}
+    {{ super() }}
+    <link href="/css/sigmagraphdark.css{{version}}" rel="stylesheet">
+{% endblock %}
+
 {% block nav %}
 <ul class="nav navbar-nav">
   <li>{% include 'snippets/typeahead.html' %}</li>

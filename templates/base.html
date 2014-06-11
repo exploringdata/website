@@ -17,9 +17,11 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/style.css{{version}}" rel="stylesheet">
-    {% for style in styles %}
-        <link href="{{style}}{% if not style.startswith('http') %}{{version}}{% endif %}" rel="stylesheet">
-    {% endfor %}
+    {% block styles %}
+        {% for style in styles %}
+            <link href="{{style}}{% if not style.startswith('http') %}{{version}}{% endif %}" rel="stylesheet">
+        {% endfor %}
+    {% endblock %}
     {% block inlinecss %}{% endblock %}
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
