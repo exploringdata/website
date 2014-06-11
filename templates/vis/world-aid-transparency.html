@@ -1,23 +1,23 @@
 {% extends "vis/blank.html" %}
 
 {% block nav %}
-<ul class="nav">
+<ul class="nav navbar-nav">
   <li class="active"><a href="" id="norelate" class="relate">Total Amounts</a></li>
   <li><a href="" id="SP.POP.TOTL" class="relate" title="Population, total">By Population</a></li>
   <li><a href="" id="NY.GDP.MKTP.CD" class="relate" title="GDP (current US$)">By GDP</a></li>
 </ul>
-<a id="expand" class="btn menulimit" title="Expand bar charts and show more countries in scatterplot"><i class="icon-plus"></i></a>
-<a id="reduce" class="btn menulimit disabled" title="Reduce bar charts and show fewer countries in scatterplot"><i class="icon-minus"></i></a>
+<a id="expand" class="btn navbar-btn menulimit" title="Expand bar charts and show more countries in scatterplot"><i class="glyphicon glyphicon-plus"></i></a>
+<a id="reduce" class="btn navbar-btn menulimit disabled" title="Reduce bar charts and show fewer countries in scatterplot"><i class="glyphicon glyphicon-minus"></i></a>
 {% endblock %}
 
 {% block vis %}
 <div class="container">
 <div class="row">
-  <div class="span7">
+  <div class="col-md-7">
     <h4>World aid flow</h4>
     <div id="map" class="RdBu"></div>
   </div>
-  <div class="span5 sidebar">
+  <div class="col-md-5 sidebar">
     <div class="bar donors">
       <h4>Donors by aid sums</h4>
       <div id="aiddonors"></div>
@@ -32,7 +32,7 @@
 </div>
 
 <div id="aidcharts" class="row">
-  <div class="span7">
+  <div class="col-md-7">
     <div class="bar">
       <h4>How aid received compares to
         <select id="indicators" class="headingselect"></select>
@@ -41,7 +41,7 @@
       <div class="legend">Aid donations compared to selected world development indicators.</div>
     </div>
   </div>
-  <div class="span5 sidebar">
+  <div class="col-md-5 sidebar">
     <div class="bar recipients">
       <h4>Recipients by aid sums</h4>
       <div id="aidrecipients"></div>

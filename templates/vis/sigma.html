@@ -1,15 +1,15 @@
 {% extends "vis/full.html" %}
 
 {% block nav %}
-<ul class="nav">
-  <li><input class="typeahead" type="text" data-provide="typeahead" placeholder="Highlight node"><i id="search-reset" class="icon-remove"></i></li>
+<ul class="nav navbar-nav">
+  <li><input class="typeahead" type="text" data-provide="typeahead" placeholder="Highlight node"><i id="search-reset" class="glyphicon glyphicon-remove"></i></li>
 </ul>
 {% endblock %}
 
 {% block nav_right %}
   {% if poster %}
-  <ul class="nav pull-right">
-    <li><div class="btn-group"><a class="btn btn-primary showposter" href="{{ poster.url }}">Get the Poster</a></div></li>
+  <ul class="nav navbar-nav pull-right">
+    <li><div class="btn-group"><a class="roffset btn navbar-btn btn-primary showposter" href="{{ poster.url }}">Get the Poster</a></div></li>
   </ul>
   {% endif %}
 {% endblock %}
