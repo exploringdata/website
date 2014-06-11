@@ -2,11 +2,10 @@ var mapselect = '#map',
   width = containerwidth(mapselect),
   height = width * .6,
   legendh = 30,
-  proj = d3.geo.mercator().scale(1).translate([0, 0]),
   arc = d3.geo.greatArc().precision(1),
   format = d3.format(',r'),
   formatpercentage = d3.format(".1%"),
-  projection = d3.geo.mercator().scale(width).translate([0, 0]),
+  projection = d3.geo.naturalEarth().scale(width*1.3).translate([0, -width/4]),
   path = d3.geo.path().projection(projection);
 
 var tf = function() {
