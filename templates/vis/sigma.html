@@ -6,6 +6,13 @@
     <link href="/css/sigmagraphdark.css{{version}}" rel="stylesheet">
 {% endblock %}
 
+{% block body_scripts %}
+<script src="/vendor/sigma/sigma.min.js"></script>
+<script src="/vendor/sigma/sigma.parseJson.js"></script>
+<script src="/vendor/twitter/typeahead.bundle.min.js"></script>
+<script src="/js/visgexf.js"></script>
+{% endblock %}
+
 {% block nav %}
 <ul class="nav navbar-nav">
   <li>{% include 'snippets/typeahead.html' %}</li>
