@@ -5,7 +5,12 @@ title: npm Top Packages Dependencies Graph
 description: An interactive network graph showing the dependencies between npm packages, with at least 10 dependent packages, as of July 12, 2013 rendered with sigma.js and preprocessed with Gephi.
 template: vis/sigma.html
 created: 2013-07-15 13:58:31
-scripts: [/vendor/sigma/sigma.min.js, /vendor/sigma/sigma.parseJson.js, /js/visgexf.js, /js/npmdepgraph.min10.js]
+scripts:
+- /vendor/sigma/sigma.min.js
+- /vendor/sigma/sigma.parseJson.js
+- /vendor/twitter/typeahead.bundle.min.js
+- /js/visgexf.js
+- /js/npmdepgraph.min10.js
 styles: [/css/sigmagraphdark.css]
 image: /img/preview/npm-packages-dependencies.min10.jpg
 poster:

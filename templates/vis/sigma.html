@@ -2,7 +2,7 @@
 
 {% block nav %}
 <ul class="nav navbar-nav">
-  <li><input class="typeahead" type="text" data-provide="typeahead" placeholder="Highlight node"><i id="search-reset" class="glyphicon glyphicon-remove"></i></li>
+  <li>{% include 'snippets/typeahead.html' %}</li>
 </ul>
 {% endblock %}
 
