@@ -62,8 +62,12 @@ width:90%;
 height: 1.4em;
 overflow: hidden;
 }
+.gallery h5 {
+height: 30px;
+overflow:hidden;
+}
 .gallery img {
-height: 260px;
+height: 200px;
 }
 /* info pages */
 .vis-preview {

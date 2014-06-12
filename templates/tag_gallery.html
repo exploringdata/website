@@ -1,14 +1,14 @@
 <div class="row">
-    <div class="span-12">
+    <div class="col-md-12">
       <h2><a href="{{ tag_path }}">{{ tag_title }}</a></h2>
     </div>
   </div>
   <div class="row">
-    {% for doc in indexes[tag_path][:3] %}
-      <div class="col-md-4"><div class="well">
+    {% for doc in indexes[tag_path][:6] %}
+      <div class="col-md-2"><div class="well">
         <a href="{{doc.url}}" title="{{doc.description}}">
           <h5>{{doc.title}}</h5>
-          <img src="{{doc.image}}" alt="{{doc.title}}">
+          <img src="{{doc.image}}" alt="{{doc.title}}" class="img-responsive">
         </a>
       </div></div>
     {% endfor %}
