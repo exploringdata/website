@@ -11,13 +11,13 @@
 {% endblock %}
 
 {% block vis %}
-<div class="container">
+<div class="container-fluid">
 <div class="row">
-  <div class="col-md-7">
+  <div class="col-md-6">
     <h4>World aid flow</h4>
     <div id="map" class="RdBu"></div>
   </div>
-  <div class="col-md-5 sidebar">
+  <div class="col-md-6 sidebar">
     <div class="bar donors">
       <h4>Donors by aid sums</h4>
       <div id="aiddonors"></div>
@@ -32,7 +32,7 @@
 </div>
 
 <div id="aidcharts" class="row">
-  <div class="col-md-7">
+  <div class="col-md-6">
     <div class="bar">
       <h4>How aid received compares to
         <select id="indicators" class="headingselect"></select>
@@ -41,7 +41,7 @@
       <div class="legend">Aid donations compared to selected world development indicators.</div>
     </div>
   </div>
-  <div class="col-md-5 sidebar">
+  <div class="col-md-6 sidebar">
     <div class="bar recipients">
       <h4>Recipients by aid sums</h4>
       <div id="aidrecipients"></div>

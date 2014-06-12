@@ -1,6 +1,10 @@
 var mapselect = '#map',
-  width = containerwidth(mapselect),
-  height = width * .6,
+  width = containerwidth(mapselect);
+
+// map shouldn exceed certain width so it works on different screen sizes
+if (width > 600) width = 600;
+
+var height = width / 1.6,
   legendh = 30,
   arc = d3.geo.greatArc().precision(1),
   format = d3.format(',r'),
@@ -9,7 +13,7 @@ var mapselect = '#map',
   path = d3.geo.path().projection(projection);
 
 var tf = function() {
-  return 'translate(' + width / 2 + ',' + height / 1.8 + ')scale(' + 100 / width + ')'
+  return 'translate(' + width / 2 + ',' + height / 1.7 + ')scale(' + 100 / width + ')'
 };
 
 var rescale = function() {
