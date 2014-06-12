@@ -1,12 +1,12 @@
 {% extends "vis/blank-with-nav.html" %}
 
 {% block vis %}
-<div class="container">
+<div class="container-fluid">
 <div class="row" class="vis">
-  <div class="span7">
+  <div class="col-md-8">
     <div id="vis"></div>
   </div>
-  <div class="span5" class="sidebar">
+  <div class="col-md-4" class="sidebar">
     <div id="expsummary">
       <h3>About this Visualization</h3>
       <div class="well">
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="nodeinfo">
-      <button id="overview" class="btn pull-right" title="Show top exploited platforms"><i class="icon-remove"></i></button>
+      <button id="overview" class="btn pull-right" title="Show top exploited platforms"><i class="fa fa-remove"></i></button>
       <h3>Platform: <span id="platform"></span></h3>
       <div class="well">
         <h4>Exploit type counts</h4>

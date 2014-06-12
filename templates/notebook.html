@@ -3,13 +3,13 @@
 {% block content %}
 <div id="info" class="container">
 <div class="row">
-  <div class="span9">
+  <div class="col-md-9">
     {{ body }}
     {% if tags %}
       {% include 'postinfo.html' %}
     {% endif %}
   </div>
-  <div class="span3">
+  <div class="col-md-3">
     {% if image and related %}
       <h3>Visualization</h3>
       <a href="{{ related }}"><img src="{{ image }}" alt="visualization preview"></a>

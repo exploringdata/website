@@ -1,9 +1,9 @@
 {% extends "vis/blank-with-nav.html" %}
 
 {% block vis %}
-<div id="vis" class="container">
+<div id="vis" class="container-fluid">
     <div class="row">
-      <div class="span12">
+      <div class="col-md-12">
         <h2>Guardian Article Counts for the Past Decade <i class="icon-info-sign" title="Bars show the counts of articles that contain the corresponding word or phrase in the full article text for the given month. Click on a bar to see details for the corresponding search phrase and date."></i></h2>
         <div id="history"></div>
       </div>
@@ -11,18 +11,18 @@
 
     <div id="selectiondetails"></div>
 
-    <div class="row"><div class="span12">
+    <div class="row"><div class="col-md-12">
       Counts and Articles for: <span id="queryinfo" class="label label-inverse"></span>
     </div></div>
 
     <div class="row">
-      <div class="span6">
+      <div class="col-md-6">
         <h2>Most Frequent Words in Headlines</h2>
         <div id="words"></div>
         <h2>Most Frequent Article Sections</h2>
         <div id="sections"></div>
       </div>
-      <div class="span6">
+      <div class="col-md-6">
         <h2>Browse Articles</h2>
         <div id="articles"></div>
       </div>

@@ -1,36 +1,36 @@
 {% extends "page.html" %}
 
 {% block content %}
-<div id="info" class="container"><div class="row">
-  <div class="span8"><h1>{{title}}</h1>
-    <div class="row"><div class="span9">
+<div id="info" class="container-fluid"><div class="row">
+  <div class="col-md-9"><h1>{{title}}</h1>
+    <div class="row"><div class="col-md-9">
     <h2>Data Visualizations</h2>
-    <ul class="unstyled">
+    <ul class="list-unstyled">
     {% for doc in indexes.vis %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
     <h2>Maps</h2>
-    <ul class="unstyled">
+    <ul class="list-unstyled">
     {% for doc in indexes.map %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
     <h2>About Visualizations</h2>
-    <ul class="unstyled">
+    <ul class="list-unstyled">
     {% for doc in indexes.info %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
     <h2>Data Stories</h2>
-    <ul class="unstyled">
+    <ul class="list-unstyled">
     {% for doc in indexes.story %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
     </div></div>
   </div>
-  <div class="span4">
+  <div class="col-md-3">
     {% include 'right.html' %}
   </div>
 </div></div>

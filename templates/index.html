@@ -10,16 +10,16 @@
 {% endif %}
 
 {% block content %}
-<div id="info" class="container"><div class="row">
-  <div class="span8">
+<div id="info" class="container-fluid"><div class="row">
+  <div class="col-md-9">
     <h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
-    <ul class="unstyled index_list flatlist">
+    <ul class="list-unstyled index_list flatlist">
     {% for doc in index %}
       <li class="index_item"><h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>{% if doc.description %}<p>{{ doc.description }}</p>{% endif %}</li>
     {% endfor %}
     </ul>
   </div>
-  <div class="span4">
+  <div class="col-md-3">
     {% include 'right.html' %}
   </div>
 </div></div>

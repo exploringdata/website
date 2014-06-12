@@ -3,19 +3,28 @@
 {% block bodyclass %}full{% endblock %}
 
 {% block navbar %}
-<div id="navbar" class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <a id="site-name" class="brand" href="/">Exploring Data</a>
-    <div class="nav-collapse">
-      {% block nav %}{% endblock %}
-      {% include 'sharemenu.html' %}
-      <div class="pull-right">
-        <a href="{{ related }}" class="btn btn-info"><i class="icon-info-sign"></i> </a>
-      </div>
-      {% block nav_right %}{% endblock %}
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="site-name" class="navbar-brand" href="/">Exploring Data</a>
     </div>
-  </div>
-</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-navbar">
+        {% block nav %}{% endblock %}
+        <div class="pull-right">
+          <a href="{{ related }}" class="btn navbar-btn btn-info"><i class="fa fa-info"></i> </a>
+        </div>
+        {% block nav_right %}{% endblock %}
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 {% endblock %}
 
 {% block vis %}

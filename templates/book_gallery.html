@@ -1,12 +1,12 @@
 {% extends "page.html" %}
 
 {% block content %}
-<div id="info" class="container">
+<div id="info" class="container-fluid">
 <div class="row">
-  <div class="span9"><h1>{{title}}</h1>{{body}}</div>
-  <div class="span3">
+  <div class="col-md-9"><h1>{{title}}</h1>{{body}}</div>
+  <div class="col-md-3">
     <h3>Book Categories</h3>
-    <ul class="unstyled">
+    <ul class="list-unstyled">
       <li><a href="/data-visualization-books/general/">Data Visualization</a></li>
       <li><a href="/data-visualization-books/maps/">Maps &amp; Cartography</a></li>
       <li><a href="/data-visualization-books/analysis/">Data Mining &amp; Analysis</a></li>
@@ -16,6 +16,6 @@
     {% include 'right.html' %}
   </div>
 </div>
-<div class="row"><div class="span12">{{ description }}</div></div>
+<div class="row"><div class="col-md-12">{{ description }}</div></div>
 </div>
 {% endblock %}
