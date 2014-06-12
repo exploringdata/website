@@ -1,7 +1,20 @@
 {% extends "page.html" %}
 
+{% block styles %}
+    <link href="/vendor/ipython/ipython.min.css" rel="stylesheet">
+    {{ super() }}
+{% endblock %}
+
+{% block nav_right %}
+{% if notebook %}
+<div class="nav navbar-nav pull-right roffset">
+    <a href="https://raw.githubusercontent.com/yaph/ipython-notebooks/master/{{ notebook }}" class="btn btn-default navbar-btn" download="{{ download }}"><i class="fa fa-download"></i></a>
+</div>
+{% endif %}
+{% endblock %}
+
 {% block content %}
-<div id="info" class="container">
+<div id="info" class="container-fluid">
 <div class="row">
   <div class="col-md-9">
     {{ body }}
