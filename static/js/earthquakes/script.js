@@ -41,12 +41,11 @@ var eqgroup = svg.append('g')
 function set_eqs(url, title) {
   current_feed = url;
   if (title) d3.select('#eqtitle').text(title);
-
-  d3.selectAll('.eqsrc').remove(); // cleanup existing scripts
-  var script = document.createElement('script');
-  script.src = url;
-  script.className = 'eqsrc';
-  document.getElementsByTagName('head')[0].appendChild(script);
+  $.ajax({
+    url: url,
+    jsonp: 'eqfeed_callback',
+    dataType: 'jsonp'
+  });
 }
 
 function eqfeed_callback(data) {
@@ -63,8 +62,8 @@ function eqfeed_callback(data) {
 function select_eq(element) {
   d3.selectAll('#eqranges li').classed('active', false);
   var t = d3.select(element);
-  d3.select(t[0][0].parentNode).classed('active', true);
-  set_eqs(t.attr('href'), t.text());
+  d3.select(t.node().parentNode).classed('active', true);
+  set_eqs(t.attr('url'), t.text());
 }
 
 // set refresh intervall
@@ -91,7 +90,7 @@ function ready(countries) {
 /***** events *****/
 // range menu selection
 d3.selectAll('#eqranges a').on('click', function() {
-  window.event.preventDefault();
+  d3.event.preventDefault();
   select_eq(this);
 });
 
