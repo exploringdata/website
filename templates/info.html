@@ -19,6 +19,11 @@
           <a href="{{ r.url }}" class="btn btn-primary voffset">View Visualization</a>
         {% endfor %}
     {% endif %}
+    {% if poster %}
+      <h3>Visualization Poster</h3>
+      <a href="{{ poster.url }}"><img class="img-thumbnail" src="{{ poster.image }}" alt="{{ poster.title }}"></a><br>
+      <a href="{{ poster.url }}" class="btn btn-primary voffset">Get the Poster</a>
+    {% endif %}
     {% if repo %}
       <h3>Source Code</h3>
       <p>Check out the source code used to process the data and create the visualizations.</p>
