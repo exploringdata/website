@@ -9,12 +9,14 @@
   <div class="col-md-3">
     {% if image and related %}
       <h3>Visualization</h3>
-      <a href="{{ related }}"><img src="{{ image }}" alt="visualization preview"></a>
+      <a href="{{ related }}"><img src="{{ image }}" alt="visualization preview" class="img-responsive"></a>
+      <a href="{{ related }}" class="btn btn-primary voffset">View Visualization</a>
     {% endif %}
     {% if relateditems %}
         <h3>Visualizations</h3>
         {% for r in relateditems %}
-          <a href="{{ r.url }}"><img class="vis-preview" src="{{ r.image }}" alt="visualization preview"></a>
+          <a href="{{ r.url }}"><img class="vis-preview" src="{{ r.image }}" alt="visualization preview"></a><br>
+          <a href="{{ r.url }}" class="btn btn-primary voffset">View Visualization</a>
         {% endfor %}
     {% endif %}
     {% if repo %}
