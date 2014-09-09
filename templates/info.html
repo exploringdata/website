@@ -9,32 +9,29 @@
   <div class="col-md-3">
     {% if image and related %}
       <h3>Visualization</h3>
-      <a href="{{ related }}"><img src="{{ image }}" alt="visualization preview" class="img-responsive"></a>
+      <a href="{{ related }}"><img class="vis-preview img-responsive" src="{{ image }}" alt="visualization preview"></a>
       <a href="{{ related }}" class="btn btn-primary voffset">View Visualization</a>
+      <hr>
     {% endif %}
     {% if relateditems %}
         <h3>Visualizations</h3>
         {% for r in relateditems %}
-          <a href="{{ r.url }}"><img class="vis-preview" src="{{ r.image }}" alt="visualization preview"></a><br>
+          <a href="{{ r.url }}"><img class="vis-preview img-responsive" src="{{ r.image }}" alt="visualization preview"></a>
           <a href="{{ r.url }}" class="btn btn-primary voffset">View Visualization</a>
+          <hr>
         {% endfor %}
     {% endif %}
     {% if poster %}
       <h3>Visualization Poster</h3>
-      <a href="{{ poster.url }}"><img class="img-thumbnail" src="{{ poster.image }}" alt="{{ poster.title }}"></a><br>
+      <a href="{{ poster.url }}"><img class="img-thumbnail img-responsive" src="{{ poster.image }}" alt="{{ poster.title }}"></a>
       <a href="{{ poster.url }}" class="btn btn-primary voffset">Get the Poster</a>
-    {% endif %}
-    {% if posters %}
-      <h3>Visualization Posters</h3>
-      {% for p in posters %}
-        <a href="{{ p.url }}"><img class="img-thumbnail" src="{{ p.image }}" alt="{{ p.title }}"></a><br>
-        <a href="{{ p.url }}" class="btn btn-primary voffset">Get the Poster</a>
-      {% endfor %}
+      <hr>
     {% endif %}
     {% if repo %}
       <h3>Source Code</h3>
       <p>Check out the source code used to process the data and create the visualizations.</p>
       <a class="btn btn-primary" href="{{ repo }}">Code Repository</a>
+      <hr>
     {% endif %}
     {% include 'right.html' %}
   </div>
