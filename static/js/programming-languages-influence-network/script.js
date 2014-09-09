@@ -1,12 +1,12 @@
 //var gexf = '/gexf/plin_forceatlas2.json';
 var gexf = '/gexf/plin-forceatlas-2014.json';
 
-var influenced = [],
-  influencedby = [];
-
 // langinfo must be accessible from the external freebase text service script
 var langinfo = function(data) {
-  var sl = $('#shownode');
+  var sl = $('#shownode'),
+    influenced = [],
+    influencedby = [];
+
   sl.find('h3').text(hlang.label);
 
   if ('undefined' !== typeof hlang.attr.attributes.influenced) {
@@ -26,9 +26,9 @@ var langinfo = function(data) {
     desc = '<blockquote class="twitter-tweet"><p>NowBrowsing: Programming Languages Influence Network <a href="http://t.co/kzdSlrpt" title="http://exploringdata.github.com/vis/programming-languages-influence-network/">exploringdata.github.com/vis/programmin…</a></p>&mdash; Yukihiro Matsumoto (@yukihiro_matz) <a href="https://twitter.com/yukihiro_matz/status/251612155470823425" data-datetime="2012-09-28T09:19:47+00:00">September 28, 2012</a></blockquote><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>' + desc;
   }
 
-  if (influenced)
+  if (influenced.length)
     desc += '<h4>Languages Influenced</h4><p>' + influenced.join(', ') + '</p>';
-  if (influencedby)
+  if (influencedby.length)
     desc += '<h4>Influenced by</h4><p>' + influencedby.join(', ') + '</p>';
 
   desc += '<hr><h4>Search for ' + hlang.label + ' books on</h4>';
