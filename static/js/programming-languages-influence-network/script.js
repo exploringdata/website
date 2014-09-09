@@ -1,6 +1,3 @@
-//var gexf = '/gexf/plin_forceatlas2.json';
-var gexf = '/gexf/plin-forceatlas-2014.json';
-
 // langinfo must be accessible from the external freebase text service script
 var langinfo = function(data) {
   var sl = $('#shownode'),

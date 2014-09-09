@@ -1,5 +1,12 @@
 {% extends "vis/sigma.html" %}
 
+{% block body_scripts %}
+<script>
+var gexf = '{{ graphfile }}';
+</script>
+{{ super() }}
+{% endblock %}
+
 {% block nav %}
 <ul class="nav navbar-nav">
   <li>{% include 'snippets/typeahead.html' %}</li>
