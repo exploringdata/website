@@ -1,11 +1,24 @@
-var gexf = '/gexf/plin_forceatlas2.json';
+//var gexf = '/gexf/plin_forceatlas2.json';
+var gexf = '/gexf/plin-forceatlas-2014.json';
+
+var influenced = [],
+  influencedby = [];
 
 // langinfo must be accessible from the external freebase text service script
 var langinfo = function(data) {
   var sl = $('#shownode');
   sl.find('h3').text(hlang.label);
-  var influenced = 'undefined' !== typeof hlang.attr.attributes.influenced ? hlang.attr.attributes.influenced.split('|').sort().join(', ') : false;
-  var influencedby = 'undefined' !== typeof hlang.attr.attributes.influencedby ? hlang.attr.attributes.influencedby.split('|').sort().join(', ') : false;
+
+  if ('undefined' !== typeof hlang.attr.attributes.influenced) {
+    hlang.attr.attributes.influenced.split('|').forEach(function(i){
+      influenced.push('<a href="#' + i + '">' + i + '</a>');
+    });
+  }
+  if ('undefined' !== typeof hlang.attr.attributes.influencedby) {
+    hlang.attr.attributes.influencedby.split('|').forEach(function(i){
+      influencedby.push('<a href="#' + i + '">' + i + '</a>');
+    });
+  }
   var desc = data.result + '... <a href="http://www.freebase.com/view' + hlang.id + '">view on Freebase</a>';
 
   // in case of Ruby include Matz tweet
@@ -14,9 +27,9 @@ var langinfo = function(data) {
   }
 
   if (influenced)
-    desc += '<h4>Languages Influenced</h4><p>' + influenced + '</p>';
+    desc += '<h4>Languages Influenced</h4><p>' + influenced.join(', ') + '</p>';
   if (influencedby)
-    desc += '<h4>Influenced by</h4><p>' + influencedby + '</p>';
+    desc += '<h4>Influenced by</h4><p>' + influencedby.join(', ') + '</p>';
 
   desc += '<hr><h4>Search for ' + hlang.label + ' books on</h4>';
 

@@ -1,4 +1,5 @@
 cache/
 deploy/
 *.log
+*.gexf
 node_modules
