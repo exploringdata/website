@@ -6,7 +6,7 @@ relateditems:
   image: /img/preview/programming-languages-influence-network.jpg
 - url: /vis/programming-languages-influence-network-2014/
   image: /img/preview/npm-packages-dependencies.jpg
-title: How Programming Languages Influenced Each Other
+title: Visualizing Influence Relations of Programming Languages
 description: The programming languages influence network is an interactive graph visualization where languages are connected by influence relations based on data from Freebase.
 template: post.html
 created: 2012-09-07 18:57:46
@@ -23,7 +23,7 @@ posters:
 ---
 <p>The first programming languages were created before modern computers existed. Between 1842-1843 <a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a> specified a method for calculating Bernoulli numbers with the Analytical Engine, recognized by some historians as the world's first computer program. The first programming languages designed to communicate with a computer were written in the 1950s, since then hundreds of programming languages were created.</p>
 <p>Naturally some languages had a larger impact, Lisp and C for example were developed in the late 1950s and 1960s respectively and are still widely used, many newer programming languages are implemented in C. The impact of a language is not limited to its usage but is also manifested in its influence on other languages. To visualize these influence relations I created different network graphs described hereafter.</p>
-<p>The data on programming languages, their influence relations and the programming paradigms they are classified into comes from the <a href="http://www.freebase.com/view/computer/programming_language">Freebase Programming Language collection</a>, which is largly based on information from <a href="http://www.wikipedia.org/">Wikipedia</a>. Please be aware that data from Freebase is not necessarily correct nor comprehensive. If you spot an error, please let me know in the comments and, if you can, correct the information on Freebase.</p>
+<p>The data on programming languages, their influence relations and the programming paradigms they are classified into comes from the <a href="http://www.freebase.com/view/computer/programming_language">Freebase Programming Language collection</a>, which is largly based on information from <a href="http://www.wikipedia.org/">Wikipedia</a>. Freebase data is not necessarily correct or complete. If you spot an error, please let me know in the comments and, if you can, correct the information on Freebase.</p>
 <p>All of the following visualizations have several features in common:</p>
 <ul>
 <li>Programming languages are displayed as nodes in the form of circles.</li>
@@ -31,9 +31,11 @@ posters:
 <li>Node sizes reflect the number of languages a language has influenced, i. e. outdegree.</li>
 <li>A programming language can pertain to different programming paradigms.</li>
 </ul>
-<h2>Programming Languages Influence Visualization</h2>
+
+<h2>Programming Languages Influence Visualizations</h2>
 <p>My first attempt in October 2011 to visualize programming language infleunce resulted in <a href="http://geeksta.net/visualizations/programming-language-influence-by-paradigm-gallery/">these static graphics</a> created with the <a href="https://networkx.github.io/">NetworkX</a> and <a href="http://matplotlib.org/">matplotlib</a> Python libraries. Each graphic shows the influence relations of programming languages that pertain to a specific programming paradigm, e. g. object-oriented programming, procedural programming or functional programming to name a few. The languages are arranged in circular layouts.</p>
 <p>In August/September 2012 I gave another go at this topic resulting in this <a href="/vis/programming-languages-influence-network-d3/">browser based visualization</a> created using <a href="http://d3js.org/">D3.js</a>. This graph consists of 1170 nodes and 908 edges with a force layout applied. There is not much more to say about it except that I wasn't really satisfied and looked for alternative tools, which I found in the <a href="http://sigmajs.org/">JavaScript library sigma.js</a> and the <a href="https://gephi.org/">Gephi visualization platform</a>. Both these tools were fundamental for creating the interactive visualizations described in a bit more detail below.</p>
+
 <h3>Interactive Visualizations Created with Sigma.js and Gephi</h3>
 <p>I retrieved the data for these visualizations with a Python script you find in <a href="https://github.com/exploringdata/programming-languages-influence">this repository</a>. This script also creates a <a href="http://gexf.net/format/">gexf file</a>, which I then manually edited using Gephi.</p>
 <p>To render the edited gexf files in a Web browser I used Sigma.js and developed the following ways of interacting with the displayed information from the top menu bar and using the mouse:</p>
@@ -47,7 +49,7 @@ posters:
 <p>Let's now look at the details for the different interactive versions.</p>
 
 <h4><a href="/vis/programming-languages-influence-network/">Programming Languages Influence 2013</a></h4>
-<p>The data for this 2013 version was downloaded on July 11, 2013 and contains information on 1183 programming languages, the nodes in the network. These languages are connected by 972 influence relations shown as edges. The 10 most influential languages are listed below:</p>
+<p>The data for the 2013 version was downloaded on July 11, 2013 and contains information on 1183 programming languages, the nodes in the network. These languages are connected by 972 influence relations shown as edges. The 10 most influential languages are listed below:</p>
 <p>
 <ol>
 <li><a href="/vis/programming-languages-influence-network/#Lisp">Lisp</a> 56</li>
@@ -61,19 +63,10 @@ posters:
 <li><a href="/vis/programming-languages-influence-network/#Scheme">Scheme</a> 26</li>
 <li><a href="/vis/programming-languages-influence-network/#ALGOL">ALGOL</a> 23</li>
 </ol>
-
-
-
-
-
-
-
-<p>The ######### Force Atlas 2 layout algorithm was applied to this graph in Gephi as well as 
-
-<p>Colored by the group of paradigms a language belongs to.</p>
+<p>I created the graph layout using ForceAtlas2 and an algorithm to prevent label overlap and also manually moved nodes. The nodes are colored based on the group of programming paradigms they belong to. A static graphic of the whole network can be ordered as a <a href="http://www.zazzle.com/programming_languages_influence_network_poster-228176637617418204?rf=238355915198956003">printed poster</a>.</p>
 
 <h4><a href="/vis/programming-languages-influence-network-2014/">Programming Languages Influence 2014</a></h4>
-
+<p>The data for the 2014 version was downloaded on September 8, 2014 and contains information on 1220 programming languages connected by 1137 edges. The 10 most influential languages are as follows:</p>
 <ol>
 <li><a href="/vis/programming-languages-influence-network-2014/#Lisp">Lisp</a> 60</li>
 <li><a href="/vis/programming-languages-influence-network-2014/#C">C</a> 54</li>
@@ -86,12 +79,9 @@ posters:
 <li><a href="/vis/programming-languages-influence-network-2014/#Scheme">Scheme</a> 29</li>
 <li><a href="/vis/programming-languages-influence-network-2014/#ML">ML</a> 25</li>
 </ol>
-<p>The ranking stayed except that ALGOL was surpassed by ML and the numbers of influenced languages increased.</p>
-
-
-<p>The <a href="/vis/programming-languages-influence-network-2014/">programming languages influence visualization</a> shows an interactive network graph of programming language influences. The graph consists of XXX programming language nodes and XXX edges that signify an influence relation.</p>
-<p>Language nodes are colored by their <em>Modularity Classes</em> , which were calculated in Gephi using an algorithm devised by Vincent D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, Etienne Lefebvre in the paper <a href="http://arxiv.org/abs/0803.0476">Fast unfolding of communities in large networks</a>.</p>
-<p>The 2014 poster only includes languages that have influenced at least one other language for a less noisy graphic.</p>
+<p>The ranking hardly changed only ALGOL was surpassed by ML and the numbers of influenced languages increased as did the overall number of languages in the network. For this graph I applied a ForceAtlas layout with the attractive force distributed along outbound links so hubs are pushed outside and authorities to the center. Additionaly, I ran algorithms to prevent label and node overlap in Gephi without manual placement.</p>
+<p>In contrast to the previous version language nodes are colored based on their <em>Modularity Classes</em> , which were calculated using an algorithm devised by Vincent D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, Etienne Lefebvre in the paper <a href="http://arxiv.org/abs/0803.0476">Fast unfolding of communities in large networks</a>. Thus coloring reflects properties of the network rather than properties of the languages.</p>
+<p>There is <a href="http://www.zazzle.com/programming_languages_influence_network_2014_poster-228756590438836612?rf=238355915198956003">a poster</a> for the 2014 graph too, but it only includes languages that have influenced at least one other language to have a less noisy graphic.</p>
 <h2>tl;dr</h2>
 <p>I created visualizations to show influence relations across hundreds of programming languages. There are two browser versions you can interact with: <a href="/vis/programming-languages-influence-network/">one with data from 2013</a> and a newer <a href="/vis/programming-languages-influence-network-2014/">one with data from 2014</a>.</p>
 <p>Feel free to leave feedback in the comments and share this visualization with your friends.</p>
