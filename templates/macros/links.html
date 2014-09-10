@@ -1,0 +1,12 @@
+{% macro index(name) -%}
+{% for url, anchor in name %}<a href="{{url|e}}">{{anchor|e}}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+{%- endmacro %}
+
+{% macro breadcrumb(path, anchor, title) -%}
+<hr>
+<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/" itemprop="url"><span itemprop="title">Linux Netbook Home</span></a> ›
+    <a href="{{ path }}" itemprop="url"><span itemprop="title">{{ anchor }}</span></a> ›
+    {{ title }}
+</div>
+{%- endmacro %}
