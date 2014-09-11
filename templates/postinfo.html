@@ -2,7 +2,9 @@
 {% if created %}
 <div class="postinfo">
 <hr class="clearfix">
-<p>This post was published on {{ created.strftime('%B %d, %Y') }} {% if updated %}(updated on {{ updated.strftime('%B %d, %Y') }}) {% endif %}by <a href="http://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>) and is tagged with: {{ links.index(tags_links) }}. To be informed of new posts, subscribe to the <a href="/rss.xml">RSS feed</a>.</p>
+<p>Published on {{ created.strftime('%B %d, %Y') }} {% if updated %}(updated on {{ updated.strftime('%B %d, %Y') }}) {% endif %}by <a href="http://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>).<br>
+Tags: {{ links.index(tags_links) }}.<br>
+To be informed of new posts, subscribe to the <a href="/rss.xml">RSS feed</a>.</p>
 {% include 'tags.html' %}
 </div>
 {% endif %}
