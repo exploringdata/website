@@ -16,29 +16,11 @@
 {% block content %}
 <div id="info" class="container">
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-12">
     {{ body }}
     {% if tags %}
       {% include 'postinfo.html' %}
     {% endif %}
-  </div>
-  <div class="col-md-3">
-    {% if image and related %}
-      <h3>Visualization</h3>
-      <a href="{{ related }}"><img src="{{ image }}" alt="visualization preview"></a>
-    {% endif %}
-    {% if relateditems %}
-        <h3>Visualizations</h3>
-        {% for r in relateditems %}
-          <a href="{{ r.url }}"><img class="vis-preview" src="{{ r.image }}" alt="visualization preview"></a>
-        {% endfor %}
-    {% endif %}
-    {% if repo %}
-      <h3>Source Code</h3>
-      <p>Check out the source code used to process the data and create the visualizations.</p>
-      <a class="btn btn-primary" href="{{ repo }}">Code Repository</a>
-    {% endif %}
-    {% include 'right.html' %}
   </div>
 </div>
 </div>
