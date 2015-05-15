@@ -5,6 +5,9 @@
   {% if tags %}
     {% include 'postinfo.html' %}
   {% endif %}
+  {% block comments %}
+  {% include 'disqus.html' %}
+  {% endblock %}
   </div>
   <div class="col-md-3">
     {% if image and related %}

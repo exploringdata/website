@@ -21,11 +21,10 @@
     {% if tags %}
       {% include 'postinfo.html' %}
     {% endif %}
+    {% block comments %}
+    {% include 'disqus.html' %}
+    {% endblock %}
   </div>
 </div>
 </div>
-{% endblock %}
-
-{% block comments %}
-{% include 'comment.html' %}
 {% endblock %}
