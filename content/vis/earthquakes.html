@@ -1,19 +1,17 @@
 ---
+noindex: 1
 url: /vis/earthquakes/
 title: Real-Time World Map of Earthquakes
 description: A geographic map of the world showing real-time data for recent earthquakes rendered with the D3 JavaScript library.
-template: vis/earthquakes.html
+template: redirect.html
+redirect: http://maps.ramiro.org/map/earthquakes/
 created: 2012-12-05 23:37:53
-scripts:
-- /vendor/d3-geomap/d3.geomap.dependencies.min.js
-- /vendor/d3-geomap/d3.geomap.min.js
-- /js/earthquakes/script.js
-styles:
-- /vendor/d3-geomap/d3.geomap.css
-- /css/earthquakes.css
 image: /img/large/earthquakes.png
 tags: [map, d3, earthquakes, interactive]
 ---
+<h2>UPDATE: Map Moved</h2>
+<p>Exploring Data is served via https and the earthquake data was loaded via http, which does not work in browsers, that block loading mixed content. So I moved the <a href="http://maps.ramiro.org/map/earthquakes/">earthquake map here</a>. You should get redirected automatically.</p>
+<hr>
 <p>This map of the world displays recent earthquakes as red circles. The circle sizes correspond to the magnitudes of the earthquakes taking into account that the <a href="https://en.wikipedia.org/wiki/Richter_magnitude_scale">Richter magnitude scale</a> is a logarithmic scale, where an earthquake that measures 5.0 has a shaking amplitude 10 times larger than one that measures 4.0.</p>
 <p>Earthquake data is retrieved via <a href="http://earthquake.usgs.gov/earthquakes/feed/">real-time feeds</a> from the U.S. Geological Survey (USGS). By default data is loaded once. When Auto update data in the top menu is checked, data will be refreshed every minute. Moreover, you can choose different time and earthquake magnitude ranges from the select list in the top menu.</p>
 <p>You can zoom in and out the map with the mouse wheel and drag it around with the mouse button clicked. When you move the mouse over a circle a tooltip with magnitude and location information is displayed, when you click on a circle you are sent to the earthquake's corresponding detail page on the USGS Web site.</p>
