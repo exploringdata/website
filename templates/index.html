@@ -14,7 +14,7 @@
   <div class="col-md-9">
     <h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
     <ul class="list-unstyled index_list flatlist">
-    {% for doc in index %}
+    {% for doc in docs %}
       <li class="index_item"><h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>{% if doc.description %}<p>{{ doc.description }}</p>{% endif %}</li>
     {% endfor %}
     </ul>
