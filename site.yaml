@@ -2,15 +2,22 @@ site:
   base_url: http://exploringdata.github.io
   author: Ramiro Gómez
   feed_title: Exploring Data News Feed
+  disqus_shortname: exploringdata
 
-indexes:
-- path: tags
-  var: tags
+# Settings that affect collections in the document index. Top-level keys of
+# collections can be used as document attributes for grouping it in the
+# corresponding collecion.
+collections:
+    tags:
+        path: tags
+        template: index.html
 
-templates:
-- content_type: index
-  template: index.html
-- content_type: doc
-  template: post.html
-- content_type: rss
-  template: rss2.xml
+
+# Content specific settings, at the moment only templates are specified.
+content:
+    index:
+        template: index.html # default template used for collections
+    doc:
+        template: page.html
+    rss:
+        template: rss2.xml

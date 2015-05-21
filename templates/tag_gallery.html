@@ -4,7 +4,7 @@
     </div>
   </div>
   <div class="row">
-    {% for doc in indexes[tag_path][:6] %}
+    {% for doc in index[tag_path].docs[:6] %}
       <div class="col-md-4 col-lg-2"><div class="well">
         <a href="{{doc.url}}" title="{{doc.description}}">
           <h5>{{doc.title}}</h5>

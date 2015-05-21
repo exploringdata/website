@@ -5,7 +5,7 @@
 
 <h3>Recent Visualizations</h3>
 <ul class="list-unstyled">
-{% for doc in indexes['vis'][:5] %}
+{% for doc in index['vis'].docs[:5] %}
 <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
 {% endfor %}
 </ul>
