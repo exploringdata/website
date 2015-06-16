@@ -1,4 +1,6 @@
 #!/bin/sh
+set -euo pipefail
+
 logya gen
 git clone git@github.com:exploringdata/exploringdata.github.com.git
 mv exploringdata.github.com/.git deploy/
