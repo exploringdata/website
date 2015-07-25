@@ -9,7 +9,7 @@ image: /img/preview/ballon-dor-male-players-2013.jpg
 tags: [network graph, football, sigmajs, gephi, networkx, interactive]
 poster:
     url: http://www.zazzle.com/network_of_ballon_dor_male_player_votes_2013-228455213938688762?rf=238355915198956003&tc=xpdt
-    image: http://rlv.zcache.com/network_of_ballon_dor_male_player_votes_2013-r3413174277e848dcbc46d82fabba9097_b02_8byvr_325.jpg
+    image: https://www.zazzle.com/rlv/network_of_ballon_dor_male_player_votes_2013-r3413174277e848dcbc46d82fabba9097_b02_8byvr_325.jpg
     title: Ballon d'Or Male Player Votes 2013
 ---
 For the 2nd time in his career a visibly moved Cristiano Ronaldo won the FIFA Ballon d'Or. Although many people expected him to win in 2013, the final vote tally reveals a tighter finish than [in the past year](/info/ballon-dor-votes-2012/):
