@@ -1,7 +1,8 @@
-{% if description %}
-<meta name="twitter:card" content="summary">
+{% if description and image %}
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@yaph">
+<meta name="twitter:site" content="@yaph">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ description }}">
-<meta name="twitter:image:src" content="{{base_url}}{{image}}">
+<meta name="twitter:image:src" content="{{ base_url }}{{ image }}">
 {% endif %}
