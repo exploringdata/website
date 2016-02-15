@@ -1,8 +1,6 @@
 <h3>Keep Exploring</h3>
 <a href="/rss.xml" class="btn btn-lg btn-warning"><i class="fa fa-rss"></i> Subscribe to News feed</a>
 
-{% include 'newsletter/datavisweekly.html' %}
-
 <h3>Recent Visualizations</h3>
 <ul class="list-unstyled">
 {% for doc in index['vis'].docs[:5] %}
