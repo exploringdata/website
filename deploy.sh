@@ -1,12 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
+deploy_repo=~/repos/deploy/exploringdata.github.com.git
+
 logya gen
-git clone git@github.com:exploringdata/exploringdata.github.com.git
-mv exploringdata.github.com/.git deploy/
-cd deploy/
+
+rsync -aruvz --exclude=.git --exclude=.gitignore --delete deploy/ "$deploy_repo"
+
+cd "$deploy_repo"
 git add .
-git commit -am 'new deployment'
+git commit -am'new deployment'
 git push
-cd ..
-rm -rf deploy/.git exploringdata.github.com/
