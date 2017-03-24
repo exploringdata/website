@@ -3,7 +3,7 @@ set -euo pipefail
 
 deploy_repo=~/repos/deploy/exploringdata.github.com.git
 
-logya gen
+logya gen --keep
 
 rsync -aruvz --exclude=.git --exclude=.gitignore --delete deploy/ "$deploy_repo"
 
