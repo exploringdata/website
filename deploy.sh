@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-deploy_repo=~/repos/deploy/exploringdata.github.com.git
+deploy_repo=~/repos/deploy/exploringdata.github.com
 
 logya gen --keep
 
