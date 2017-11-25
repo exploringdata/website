@@ -10,7 +10,7 @@ Exploring Data is about mining and visualizing public data with open source tool
 programming, software, social networks and football.
 
 To stay informed about new publications and updates you can
-[subscribe to the RSS feed](http://exploringdata.github.io/rss.xml)
+[subscribe to the RSS feed](http://exploring-data.com/rss.xml)
 or follow me on [Twitter](https://twitter.com/yaph). Also see what [other people have said](/what-others-say/) about Exploring Data.
 
 ## Disclaimer

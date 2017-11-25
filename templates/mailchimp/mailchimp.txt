@@ -1,8 +1,8 @@
 Your weekly dose of data visualization. A newsletter service from Exploring Data
-http://exploringdata.github.io/
+http://exploring-data.com/
 ------------------------------------------------------------
 *|ARCHIVE|*
-Datavis Weekly News (http://exploringdata.github.io/)
+Datavis Weekly News (http://exploring-data.com/)
 *|RSS:POSTS_TEXT|*
 ============================================================
 *|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|* *|END:IF|*
