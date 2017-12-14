@@ -1,4 +1,3 @@
-{% set version = '#v=14' %}
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
 <head>
@@ -18,10 +17,10 @@
     <link rel="canonical" href="{{canonical}}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/css/style.css{{version}}" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     {% block styles %}
         {% for style in styles %}
-            <link href="{{style}}{% if not style.startswith('http') %}{{version}}{% endif %}" rel="stylesheet">
+            <link href="{{style}}{% if not style.startswith('http') %}{% endif %}" rel="stylesheet">
         {% endfor %}
     {% endblock %}
     {% block inlinecss %}{% endblock %}
@@ -81,10 +80,10 @@
 
     {% block body_scripts %}{% endblock %}
 
-    <script src="/js/script.js{{version}}"></script>
+    <script src="/js/script.js"></script>
     {% if scripts %}
       {% for script in scripts %}
-          <script src="{{script}}{% if not script.startswith('http') %}{{version}}{% endif %}"></script>
+          <script src="{{script}}{% if not script.startswith('http') %}{% endif %}"></script>
       {% endfor %}
     {% endif %}
 
