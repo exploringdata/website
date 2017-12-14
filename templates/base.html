@@ -16,8 +16,8 @@
     {% block meta %}{% endblock %}
     <meta name="flattr:id" content="4pzdyq">
     <link rel="canonical" href="{{canonical}}">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/style.css{{version}}" rel="stylesheet">
     {% block styles %}
         {% for style in styles %}
@@ -25,9 +25,6 @@
         {% endfor %}
     {% endblock %}
     {% block inlinecss %}{% endblock %}
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <link rel="shortcut icon" href="/favicon.ico">
     {% if base_url %}
         {% block rsslink %}
@@ -71,7 +68,7 @@
         <footer>
             <hr>
             <p>Exploring Data is a showcase of interactive data visualizations created with open data and open source tools, <a href="/about/">learn more</a>.<br>
-            © 2016 <a href="http://ramiro.org/">Ramiro Gómez</a>.</p>
+            © <script>document.write(new Date().getFullYear())</script> <a href="http://ramiro.org/">Ramiro Gómez</a>.</p>
         </footer>
       </div></div>
     </div>
@@ -79,8 +76,8 @@
     {% block modals %}{% endblock %}
 
     {% include 'ga.html' %}
-    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     {% block body_scripts %}{% endblock %}
 
