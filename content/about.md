@@ -50,7 +50,6 @@ libraries for:
 ### Site Building
 
 * [Bootstrap](http://getbootstrap.com/)
-* [Font Awesome](http://fortawesome.github.com/Font-Awesome/)
 * [jQuery](http://jquery.com/)
 * [Logya](http://pythonhosted.org/logya/)
 
