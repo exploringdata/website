@@ -6,7 +6,7 @@ created: 2012-09-07 18:39:09
 template: page.html
 noindex: 1
 ---
-Exploring Data is about mining and visualizing public data with open source tools created by Ramiro Gómez. The topics covered in the [visualizations](/vis/) and [maps](/tags/map/) include human development, climate change,
+Exploring Data is about mining and visualizing public data with open source tools created by Ramiro Gómez. The topics covered in the [visualizations](/vis/), [maps](/tags/map/) and [stories](/tags/data-story/) include human development, climate change,
 programming, software, social networks and football.
 
 To stay informed about new publications and updates you can
