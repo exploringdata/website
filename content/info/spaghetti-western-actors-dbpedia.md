@@ -4,7 +4,7 @@ title: Which Actors Appeared together in Spaghetti Western Films
 description: This is an undirected graph of co-occurrences of actors who appeared in one or more Spaghetti Western films based on data from DBpedia retrieved on August 4, 2015.
 template: post.html
 created: 2015-08-06 14:14:54
-image: /img/preview/spaghetti-western-actors-dbpedia-graph.png
+image: spaghetti-western-actors-dbpedia-graph.png
 tags: [network graph, film, sigmajs, gephi, networkx, interactive]
 poster:
     url: http://www.zazzle.com/spaghetti_western_actors_dbpedia_network_poster-228454665382167754?rf=238355915198956003&tc=xpdt

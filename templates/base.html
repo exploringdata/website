@@ -1,3 +1,4 @@
+{% import 'macros.html' as m %}
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
 <head>
@@ -8,7 +9,7 @@
         <meta name="description" content="{{description}}">
     {% endif %}
     {% if image %}
-        <meta property="og:image" content="{{base_url}}{{image}}">
+        <meta property="og:image" content="{{ m.image_src(image, base_url, size='large') }}">
     {% endif %}
     {% include 'snippets/twitter.html' %}
     <meta name="author" content="Ramiro Gómez">

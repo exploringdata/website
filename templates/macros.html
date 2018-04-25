@@ -1,0 +1,24 @@
+{% macro image_src(image, base_url, size='large') %}
+{% if image.startswith('http') %}{{ image }}
+{% elif image.startswith('/img/') %}
+    {% if size == 'preview' %}{{ image|replace('/large/', '/preview/') }}{% else %}{{ image }}{% endif %}
+{% else %}{{ base_url }}/img/{{ size }}/{{ image }}
+{% endif %}
+{% endmacro %}
+
+{% macro index(name) -%}
+{% for url, anchor in name %}<a href="{{url|e}}">{{anchor|e}}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+{%- endmacro %}
+
+{% macro index(name) -%}
+{% for url, anchor in name %}<a href="{{url|e}}">{{anchor|e}}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+{%- endmacro %}
+
+{% macro breadcrumb(path, anchor, title) -%}
+<hr>
+<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/" itemprop="url"><span itemprop="title">Exploring Data Home</span></a> ›
+    <a href="{{ path }}" itemprop="url"><span itemprop="title">{{ anchor }}</span></a> ›
+    {{ title }}
+</div>
+{%- endmacro %}
