@@ -8,7 +8,7 @@ created: 2014-01-13 21:50:20
 image: /img/preview/ballon-dor-male-players-2013.jpg
 tags: [network graph, football, sigmajs, gephi, networkx, interactive]
 poster:
-    url: http://www.zazzle.com/network_of_ballon_dor_male_player_votes_2013-228455213938688762?rf=238355915198956003&tc=xpdt
+    url: https://www.zazzle.com/network_of_ballon_dor_male_player_votes_2013-228455213938688762?rf=238355915198956003&tc=xpdt
     image: https://www.zazzle.com/rlv/network_of_ballon_dor_male_player_votes_2013-r3413174277e848dcbc46d82fabba9097_b02_8byvr_325.jpg
     title: Ballon d'Or Male Player Votes 2013
 ---

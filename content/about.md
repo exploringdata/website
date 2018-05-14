@@ -10,7 +10,7 @@ Exploring Data is about mining and visualizing public data with open source tool
 programming, software, social networks and football.
 
 To stay informed about new publications and updates you can
-[subscribe to the RSS feed](http://exploring-data.com/rss.xml)
+[subscribe to the RSS feed](https://exploring-data.com/rss.xml)
 or follow me on [Twitter](https://twitter.com/yaph). Also see what [other people have said](/what-others-say/) about Exploring Data.
 
 ## Disclaimer
@@ -40,18 +40,18 @@ libraries for:
 
 ### Visualizations
 
-* [D3.js](http://d3js.org/)
-* [Gephi](http://gephi.org/)
-* [matplotlib](http://matplotlib.org/)
-* [NetworkX](http://networkx.github.io/)
-* [pandas](http://pandas.pydata.org/)
-* [sigma.js](http://sigmajs.org/)
+* [D3.js](https://d3js.org/)
+* [Gephi](https://gephi.org/)
+* [matplotlib](https://matplotlib.org/)
+* [NetworkX](https://networkx.github.io/)
+* [pandas](https://pandas.pydata.org/)
+* [sigma.js](https://sigmajs.org/)
 
 ### Site Building
 
-* [Bootstrap](http://getbootstrap.com/)
-* [jQuery](http://jquery.com/)
-* [Logya](http://pythonhosted.org/logya/)
+* [Bootstrap](https://getbootstrap.com/)
+* [jQuery](https://jquery.com/)
+* [Logya](https://pythonhosted.org/logya/)
 
 ## Imprint
 

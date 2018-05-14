@@ -7,7 +7,7 @@ created: 2015-08-06 14:14:54
 image: spaghetti-western-actors-dbpedia-graph.png
 tags: [network graph, film, sigmajs, gephi, networkx, interactive]
 poster:
-    url: http://www.zazzle.com/spaghetti_western_actors_dbpedia_network_poster-228454665382167754?rf=238355915198956003&tc=xpdt
+    url: https://www.zazzle.com/spaghetti_western_actors_dbpedia_network_poster-228454665382167754?rf=238355915198956003&tc=xpdt
     image: http://rlv.zcache.com/spaghetti_western_actors_dbpedia_network_poster-r22250723c0d64938a128aa691c6890f9_wvu_8byvr_325.jpg
     title: Spaghetti Western Actors Poster
 ---
