@@ -1,8 +1,8 @@
 Your weekly dose of data visualization. A newsletter service from Exploring Data
-http://exploring-data.com/
+https://exploring-data.com/
 ------------------------------------------------------------
 *|ARCHIVE|*
-Datavis Weekly News (http://exploring-data.com/)
+Datavis Weekly News (https://exploring-data.com/)
 *|RSS:POSTS_TEXT|*
 ============================================================
 *|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|* *|END:IF|*

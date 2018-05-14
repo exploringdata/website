@@ -43,4 +43,4 @@ The following list shows the 20 most connected cities within the network. The ci
 
 The data underlying this graph was queried from [Wikidata's Query Service](https://query.wikidata.org/) in April 2018 using [this SPARQL query](https://github.com/yaph/queries/blob/master/wikidata/big-sister-cities.sparql) and transformed to a graph structure in Python, you can find the code [in this repository]({{ repo }}).
 
-I rendered the graph in [Gephi](https://gephi.org/) using the Force Atlas layout. The node colors represent the population values, the darker the larger the city. The size of the nodes represent the degree, i. e. the number of sister cities within this set of cities. The browser version is rendered with the JavaScript library [sigma.js](http://sigmajs.org/).
+I rendered the graph in [Gephi](https://gephi.org/) using the Force Atlas layout. The node colors represent the population values, the darker the larger the city. The size of the nodes represent the degree, i. e. the number of sister cities within this set of cities. The browser version is rendered with the JavaScript library [sigma.js](https://sigmajs.org/).

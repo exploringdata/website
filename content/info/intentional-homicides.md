@@ -21,5 +21,5 @@ can be played as an animation by clicking on `Play Animation`.
 
 The visualization was created using map data from
 [Natural Earth](http://www.naturalearthdata.com/downloads/),
-the [JavaScript library D3.js](http://d3js.org/) and the
+the [JavaScript library D3.js](https://d3js.org/) and the
 [Chroma.js Color Scale Helper](https://vis4.net/labs/multihue/).
