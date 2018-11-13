@@ -3,3 +3,5 @@ deploy/
 *.log
 *.gexf
 node_modules
+static/compiled
+package-lock.json

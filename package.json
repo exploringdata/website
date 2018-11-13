@@ -1,0 +1,25 @@
+{
+  "name": "exploring-data.com",
+  "version": "1.0.0",
+  "scripts": {
+    "build:scripts": "babel src/js --out-dir static/compiled --minified --no-comments",
+    "watch:scripts": "nodemon -e js -w src/js -x 'npm run build:scripts'",
+    "copy:vendor": "copyfiles --flat node_modules/tablesort/dist/tablesort.min.js static/vendor",
+    "build": "npm run build:scripts",
+    "watch": "npm run watch:scripts",
+    "copy": "npm run copy:vendor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:exploringdata/website.git"
+  },
+  "author": "Ramiro Gómez",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "tablesort": "^5.1.0"
+  }
+}
