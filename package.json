@@ -19,7 +19,5 @@
     "babel-cli": "^6.26.0",
     "nodemon": "^1.17.5"
   },
-  "dependencies": {
-    "tablesort": "^5.1.0"
-  }
+  "dependencies": {}
 }

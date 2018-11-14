@@ -1,7 +1,13 @@
-cache/
-deploy/
+# file types
 *.log
 *.gexf
-node_modules
+
+# directories
+cache/
+deploy/
 static/compiled
+static/vendor
+
+# node.js
+node_modules
 package-lock.json
