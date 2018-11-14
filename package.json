@@ -4,10 +4,11 @@
   "scripts": {
     "build:scripts": "babel src/js --out-dir static/compiled --minified --no-comments",
     "watch:scripts": "nodemon -e js -w src/js -x 'npm run build:scripts'",
-    "copy:vendor": "copyfiles --flat node_modules/tablesort/dist/tablesort.min.js static/vendor",
+    "copy:vendor": "copyfiles --flat node_modules/datatables.net/js/jquery.dataTables.min.js static/vendor/npm",
     "build": "npm run build:scripts",
     "watch": "npm run watch:scripts",
-    "copy": "npm run copy:vendor"
+    "copy": "npm run copy:vendor",
+    "update": "npm install -U --save && npm run copy:vendor"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,10 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "copyfiles": "^2.1.0",
     "nodemon": "^1.17.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "datatables.net-bs": "^1.10.19"
+  }
 }
