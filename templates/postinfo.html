@@ -7,6 +7,7 @@
 Tags: {{ m.index(tags_links) }}.<br>
 To be informed of new posts, subscribe to the <a href="/rss.xml">RSS feed</a>.</p>
 {% include 'tags.html' %}
+{% if disclaimer %}{{ m.disclaimer() }}{% endif %}
 </div>
 </div>
 {% endif %}
