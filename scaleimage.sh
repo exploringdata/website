@@ -4,7 +4,7 @@ basename=`basename "$orig"`
 name=`echo ${basename%.*} | sed -e 's/\-\+/-/g'`
 
 newimg=static/img/large/"$name".png
-convert -resize 1024x768 "$orig" "$newimg"
+convert -resize 1200x900 "$orig" "$newimg"
 pngquant -f --ext .png "$newimg"
 echo Created $newimg
 
