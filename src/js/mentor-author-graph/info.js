@@ -12,16 +12,7 @@ jQuery.getJSON('/gexf/mentor-author-graph.json', data => {
                 }
             }
             let mentor_links = mentors.map(d => `<a href="/vis/mentor-author-graph/#${d}">${d}</a>`);
-
-            let book_links = [];
-            if (node.attributes.hasOwnProperty('asin')) {
-                book_links.push(`<a href="${node.attributes.url}">Amazon.com</a>`);
-                book_links.push(`<a href="https://openlibrary.org/search?isbn=${node.attributes.asin}&mode=everything">Open Library</a>`);
-            } else {
-                book_links.push(`<a href="https://www.amazon.com/gp/search?ie=UTF8&tag=xpdt-20&index=books&keywords=${encodeURIComponent(node.attributes.title)}">Amazon.com</a>`);
-                book_links.push(`<a href="https://openlibrary.org/search?q=${encodeURIComponent(node.attributes.title)}&mode=everything">Open Library</a>`);
-            }
-            book_links.push(`<a href="https://www.overdrive.com/search?q=${encodeURIComponent(node.attributes.title)}">Overdrive</a>`);
+            let book_links = bookLinks(node.attributes);
 
             table.append(`<tr>
                 <td data-order="${author}"><a href="/vis/mentor-author-graph/#${author}">${author}</a></td>
