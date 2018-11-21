@@ -5,6 +5,7 @@
 # directories
 cache/
 deploy/
+src/img/
 static/compiled
 static/vendor
 

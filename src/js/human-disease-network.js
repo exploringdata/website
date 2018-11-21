@@ -18,5 +18,5 @@ $(function(){
     type: 'directed'
   }
   visgexf
-    .init('sig', '/gexf/diseasome.json', props);
+    .init('sig', '/gexf/human-disease-network.json', props);
 });
