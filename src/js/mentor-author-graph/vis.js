@@ -17,13 +17,13 @@ $(() => {
         forceLabel: 1,
         type: 'directed'
     };
-    visgexf.init('sig', '/gexf/mentor-author-graph.json', props, () => nodeClick(visgexf));
+    visgexf.init('sig', '/gexf/mentor-author-graph.json', props, nodeClick);
 });
 
 
-function nodeClick(Graph) {
-    Graph.sig.bind('upnodes', event => {
-        let node = Graph.sig.getNodes(event.content)[0];
+function nodeClick() {
+    visgexf.sig.bind('upnodes', event => {
+        let node = visgexf.sig.getNodes(event.content)[0];
         let attr = node.attr.attributes;
         if (attr.hasOwnProperty('book')) {
             let author = '';
@@ -31,7 +31,7 @@ function nodeClick(Graph) {
             let label = 'Book info';
             let mentors = [];
 
-            Graph.sig.iterEdges(e => {
+            visgexf.sig.iterEdges(e => {
                 if (e.source == node.id) {
                     author = e.target;
                 } else if (e.target == node.id) {
