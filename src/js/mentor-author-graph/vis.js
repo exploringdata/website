@@ -47,6 +47,7 @@ function nodeClick() {
 
             body += `<p>Author: ${author}<br>Book recommended by: ${mentor_links.join(' - ')}`
             body += `<h3 class="clearfix">Book links</h3>${book_links.join(' - ')}`;
+            body += '<hr><span class="small">Disclosure: As an Amazon Associate I earn commissions from qualifying purchases made via links on this page.</span>';
             nodeinfo(label, body);
         }
     });
