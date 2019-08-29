@@ -2,7 +2,6 @@ site:
   base_url: https://exploring-data.com
   author: Ramiro Gómez
   feed_title: Exploring Data News Feed
-  disqus_shortname: exploringdata
 
 # Settings that affect collections in the document index. Top-level keys of
 # collections can be used as document attributes for grouping it in the
