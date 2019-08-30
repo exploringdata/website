@@ -21,9 +21,9 @@
 
 {% block nav_right %}
   {% if poster %}
-  <ul class="nav pull-right">
-      <li><a href="{{ poster.url }}" class="roffset btn navbar-btn btn-warning">🛒 <strong>Buy Print</strong></a></li>
-  </ul>
+  <div class="pull-right">
+      <a href="{{ poster.url }}" class="roffset btn navbar-btn btn-warning">🛒 <strong>Buy Print</strong></a>
+  </div>
   {% endif %}
 {% endblock %}
 
