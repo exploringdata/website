@@ -23,7 +23,7 @@
             <link href="{{style}}{% if not style.startswith('http') %}{% endif %}" rel="stylesheet">
         {% endfor %}
     {% endblock %}
-    {% block inlinecss %}{% endblock %}
+    {% block css %}{% endblock %}
     <link rel="shortcut icon" href="/favicon.ico">
     {% if base_url %}
         {% block rsslink %}

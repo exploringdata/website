@@ -6,7 +6,7 @@ title: Network Graph of Book Recommendations from Tribe of Mentors
 description: The Graph of Mentors, Books and Authors visualizes book recommendations from the book Tribe Of Mentors by Tim Ferriss and his interviewees.
 template: page-wide.html
 image: mentor-author-graph.png
-tags: [network graph, books, authors, sigmajs, gephi, networkx, interactive]
+tags: [network graph, books, authors, sigmajs, gephi, networkx]
 scripts:
 - /vendor/npm/jquery.dataTables.min.js
 - /compiled/mentor-author-graph/common.js

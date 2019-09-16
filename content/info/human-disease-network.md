@@ -6,7 +6,7 @@ description: The human disease network graph is a visualization based on a study
 template: page.html
 created: 2012-09-27 16:45:57
 image: human-disease-network.png
-tags: [network graph, sigmajs, gephi, interactive]
+tags: [network graph, sigmajs, gephi]
 ---
 A [network of disorders and disease genes](/vis/human-disease-network/) linked by known disorder-gene associations from the study [The Human Disease Network](https://www.barabasilab.com/publications/the-human-disease-network), Goh K-I, Cusick ME, Valle D, Childs B, Vidal M, Barabási A-L (2007), Proc Natl Acad Sci USA 104:8685-8690. Disorders and genes are nodes in the graph. A disorder's size corresponds to the number of genes known to be associated with it.
 

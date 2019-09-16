@@ -18,9 +18,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
         {% block nav %}{% endblock %}
+        {% if related %}
         <div class="pull-right">
           <a href="{{ related }}" class="btn navbar-btn btn-info">ℹ Info</a>
         </div>
+        {% endif %}
         {% block nav_right %}{% endblock %}
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

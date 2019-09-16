@@ -5,7 +5,7 @@ repo: https://github.com/yaph/big-sister-cities
 title: "Big Sister Cities: How They Are Related"
 description: Big Sister Cities is an interactive network graph showing 279 cities with more than 1 million inhabitants and how they are connected to their sister cities within this set.
 template: page.html
-tags: [network graph, cities, diplomacy, sigmajs, gephi, networkx, interactive]
+tags: [network graph, cities, diplomacy, sigmajs, gephi, networkx]
 image: big-sister-cities.png
 poster:
   url: https://www.redbubble.com/people/ramiro/works/31442371

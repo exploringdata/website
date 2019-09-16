@@ -5,7 +5,7 @@ description: This is an undirected graph of co-occurrences of actors who appeare
 template: page.html
 created: 2015-08-06 14:14:54
 image: spaghetti-western-actors-dbpedia-graph.png
-tags: [network graph, film, sigmajs, gephi, networkx, interactive]
+tags: [network graph, film, sigmajs, gephi, networkx]
 ---
 This [interactive network visualization](/vis/spaghetti-western-actors-dbpedia/) shows an undirected graph of co-occurrences of actors who appeared in one or more Spaghetti Western films based on data from [DBpedia](http://wiki.dbpedia.org/) retrieved on August 4, 2015.
 

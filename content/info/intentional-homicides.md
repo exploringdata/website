@@ -6,7 +6,7 @@ description: A series of maps of the world showing where in the world the least 
 template: page.html
 created: 2013-09-20 00:03:53
 image: /img/preview/homicides-map.png
-tags: [map, d3, homicides, world, worldbank, interactive]
+tags: [map, d3, homicides, world, worldbank]
 ---
 
 > Intentional homicides are estimates of unlawful homicides purposely inflicted as a result of domestic disputes, interpersonal violence, violent conflicts over land resources, intergang violence over turf or control, and predatory violence and killing by armed groups. Intentional homicide does not include all intentional killing; the difference is usually in the organization of the killing. Individuals or small groups usually commit homicide, whereas killing in armed conflict is usually committed by fairly cohesive groups of up to several hundred members and is thus usually excluded.
