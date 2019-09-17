@@ -1,12 +1,12 @@
 let animation = null;
-let colors = ['#ffffe0', '#e3eac5', '#c7d5ab', '#acc192', '#91ad79', '#779960', '#5d8549', '#437232', '#275f1a', '#004d00'];
+let colors = ['#fffff2', '#f8fcda', '#ecf4c1', '#dae8a6', '#c3d88c', '#a7c370', '#87ab55', '#628f39', '#3a6f1d', '#004d00'];
 let columns = ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2015', '2016'];
+let interval_length = 300;
 let selected_col = '1990';
 let source = 'https://data.worldbank.org/indicator/AG.LND.FRST.ZS';
 
 let map = d3.choropleth()
     .geofile('/d3-geomap/topojson/world/countries.json')
-    //.colors(d3.schemeRdYlGn[10])
     .colors(colors)
     .column(selected_col)
     .domain([0, 100])
@@ -15,7 +15,7 @@ let map = d3.choropleth()
     .height(830)
     .unitId('iso3')
     .postUpdate(() => {
-        annotate(75, 150, `Forest Area Percentage of Country Area in the Year ${selected_col}`);
+        annotate(90, 150, `Forest Area Percentage of Country Area in the Year ${selected_col}`);
     });
 
 d3.csv('/csv/worldbank-forest-area-1990-2016.csv').then(data => {
@@ -33,7 +33,7 @@ d3.select('#animate').on('click', () => {
         } else {
             clearInterval(animation);
         }
-    }, 500);
+    }, interval_length);
 });
 
 d3.select('#year-select').selectAll('li').data(columns).enter()
@@ -48,7 +48,7 @@ d3.select('#year-select').selectAll('li').data(columns).enter()
 
 function annotate(rect_height=75, x_offset=160, title='') {
     let footer_width = map.width() - x_offset,
-        map_source = document.location.href;
+        map_source = 'https://exploring-data.com' + document.location.pathname;
 
     d3.select('g.footer').remove();
 
@@ -93,7 +93,6 @@ function annotate(rect_height=75, x_offset=160, title='') {
 
     g.append('svg:a')
         .attr('xlink:href', map_source)
-        .attr('class', 'map_source')
         .append('svg:text')
             .text(map_source.replace('https://', ''))
             .attr('class', 'link')
@@ -103,5 +102,13 @@ function annotate(rect_height=75, x_offset=160, title='') {
     g.append('text')
         .attr('x', x_offset)
         .attr('y', 68)
-        .text('Author: Ramiro Gómez - ramiro.org');
+        .text('Author: ');
+
+    g.append('svg:a')
+        .attr('xlink:href', 'https://ramiro.org/')
+        .append('svg:text')
+            .text('Ramiro Gómez - ramiro.org')
+            .attr('class', 'link')
+            .attr('x', x_offset + 42)
+            .attr('y', 68);
 }

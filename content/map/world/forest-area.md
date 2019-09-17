@@ -1,12 +1,12 @@
 ---
 noindex: 1
-title: Forest Area
-description: "Choropleth maps showing for the world's countries based on data from."
+title: Forest Area Percentage of Country Area
+description: "A choropleth map showing the forest are percentage for the world's countries based on data from the worldbank."
 created: 2019-09-16 00:29:54
 scripts: [/compiled/map/forest-area.js]
 tags: [map, d3, forest, world, worldbank]
 template: map/world/choropleth.html
-image: /img/preview/homicides-map.png
+image: /img/preview/foreast-area-map.png
 ---
 This series of maps shows overall unemployment rates for most of the world's countries from 1991 to 2019, values for 2014 and above are projected. By default the map for 2013 is displayed, you can choose a different year from the `Choose Dataset` dropdown.
 
