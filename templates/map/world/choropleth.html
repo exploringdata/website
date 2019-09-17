@@ -1,0 +1,27 @@
+{% extends "vis/full.html" %}
+
+{% block styles %}
+{{ super() }}
+<link href="/d3-geomap/d3-geomap.min.css" rel="stylesheet">
+<link href="/css/choropleth.css" rel="stylesheet">
+{% endblock %}
+
+{% block nav %}
+<ul class="nav navbar-nav">
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">📅 Choose Year <b class="caret"></b></a>
+        <ul class="dropdown-menu" id="year-select"></ul>
+  </li>
+  <li><a id="animate" href="#">⏵ Play Animation</a></li>
+</ul>
+{% endblock %}
+
+{% block vis %}
+<div class="d3-geomap" id="map"></div>
+{% endblock %}
+
+{% block body_scripts %}
+<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
+<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="/d3-geomap/d3-geomap.min.js"></script>
+{% endblock %}
