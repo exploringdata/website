@@ -1,9 +1,11 @@
 let animation = null;
 let colors = ['#fffff2', '#f8fcda', '#ecf4c1', '#dae8a6', '#c3d88c', '#a7c370', '#87ab55', '#628f39', '#3a6f1d', '#004d00'];
 let columns = ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2015', '2016'];
+let data_source = 'https://data.worldbank.org/indicator/AG.LND.FRST.ZS';
 let interval_length = 300;
+let map_source = 'https://exploring-data.com' + document.location.pathname;
 let selected_col = '1990';
-let source = 'https://data.worldbank.org/indicator/AG.LND.FRST.ZS';
+
 
 let map = d3.choropleth()
     .geofile('/d3-geomap/topojson/world/countries.json')
@@ -18,10 +20,12 @@ let map = d3.choropleth()
         annotate(90, 150, `Forest Area Percentage of Country Area in the Year ${selected_col}`);
     });
 
+
 d3.csv('/csv/worldbank-forest-area-1990-2016.csv').then(data => {
     let selection = d3.select('#map').datum(data);
     map.draw(selection);
 });
+
 
 d3.select('#animate').on('click', () => {
     clearInterval(animation);
@@ -36,6 +40,7 @@ d3.select('#animate').on('click', () => {
     }, interval_length);
 });
 
+
 d3.select('#year-select').selectAll('li').data(columns).enter()
     .append('li').append('a')
         .text(d => d)
@@ -47,8 +52,7 @@ d3.select('#year-select').selectAll('li').data(columns).enter()
 
 
 function annotate(rect_height=75, x_offset=160, title='') {
-    let footer_width = map.width() - x_offset,
-        map_source = 'https://exploring-data.com' + document.location.pathname;
+    let footer_width = map.width() - x_offset;
 
     d3.select('g.footer').remove();
 
@@ -78,9 +82,9 @@ function annotate(rect_height=75, x_offset=160, title='') {
         .text('Data: ');
 
     g.append('svg:a')
-        .attr('xlink:href', source)
+        .attr('xlink:href', data_source)
         .append('svg:text')
-            .text(source.replace(/https?:\/\//, ''))
+            .text(data_source.replace(/https?:\/\//, ''))
             .attr('class', 'link')
             .attr('x', x_offset + 32)
             .attr('y', 36);
