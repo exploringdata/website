@@ -17,7 +17,7 @@ let map = d3.choropleth()
     .height(830)
     .unitId('iso3')
     .postUpdate(() => {
-        annotate(80, 150, `Forest Area Percentage of Country Area in the Year ${selected_col}`);
+        annotate(80, 150, `Forest Area Percentage of Land Area in ${selected_col}`);
     });
 
 
