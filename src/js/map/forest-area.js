@@ -20,15 +20,11 @@ let map = d3.choropleth()
         let legend = map.svg.select('g.legend');
         let [x, y] = legend.attr('transform').match(/(\d+)/g);
         legend.attr('transform', `translate(${x + map.width() / 24}, ${y})`);
-        // let texts = legend.selectAll('text');
-        // texts.text(d => {
-        //     console.log(d, parseInt(d));
-        //     return d;
-        // });
-        //debugger;
+
         // Indicate in legend that it starts with values > 0
         let text = legend.select('text[class="text-9"]');
         text.text(`> ${text.text()}`);
+
         // Make zero values white
         map.data.forEach(d => {
             let val = d[map.column()];
@@ -37,11 +33,6 @@ let map = d3.choropleth()
                 unit.style('fill', '#ffffff');
             }
         });
-
-        map.svg.selectAll('text').each(d => console.log(d));
-        //let debug = $('g.legend text').html(s => s);
-        //console.log(debug);
-
     });
 
 
