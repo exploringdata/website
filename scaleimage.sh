@@ -9,6 +9,6 @@ pngquant -f --ext .png "$newimg"
 echo Created $newimg
 
 newimg=static/img/preview/"$name".png
-convert -resize 400x300 "$orig" "$newimg"
+convert -resize x300\> "$orig" "$newimg"
 pngquant -f --ext .png "$newimg"
 echo Created $newimg

@@ -5,5 +5,5 @@ created: 2019-09-19 14:14:10
 related: /info/forest-area/
 scripts: [/compiled/map/forest-area.js]
 template: map/world/choropleth.html
-image: /img/preview/forest-area-map.png
+image: /img/preview/forest-area-2016.png
 ---
