@@ -13,11 +13,35 @@ let map = d3.choropleth()
     .column(selected_col)
     .domain([0, 100])
     .legend(true)
-    .scale(300)
-    .height(830)
     .unitId('iso3')
     .postUpdate(() => {
-        annotate(80, 150, `Forest area percentage of land area in ${selected_col}`);
+        annotate(85, 170, `Forest area percentage of land area in ${selected_col}`);
+        // Hack to move legend to the right
+        let legend = map.svg.select('g.legend');
+        let [x, y] = legend.attr('transform').match(/(\d+)/g);
+        legend.attr('transform', `translate(${x + map.width() / 24}, ${y})`);
+        // let texts = legend.selectAll('text');
+        // texts.text(d => {
+        //     console.log(d, parseInt(d));
+        //     return d;
+        // });
+        //debugger;
+        // Indicate in legend that it starts with values > 0
+        let text = legend.select('text[class="text-9"]');
+        text.text(`> ${text.text()}`);
+        // Make zero values white
+        map.data.forEach(d => {
+            let val = d[map.column()];
+            let unit = d3.select(`.unit-${d[map.unitId()]}`);
+            if (val && 0 >= Math.round(val, 2)) {
+                unit.style('fill', '#ffffff');
+            }
+        });
+
+        map.svg.selectAll('text').each(d => console.log(d));
+        //let debug = $('g.legend text').html(s => s);
+        //console.log(debug);
+
     });
 
 

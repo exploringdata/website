@@ -17,6 +17,6 @@ rect.footer {
 fill-opacity: .8;
 fill: #fff;
 }
-#year-select a {
+nav a {
 cursor: pointer;
 }
