@@ -9,10 +9,10 @@
 {% block nav %}
 <ul class="nav navbar-nav">
   <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown">📅 Choose Year <b class="caret"></b></a>
-        <ul class="dropdown-menu" id="year-select"></ul>
+    <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-table"></i> Choose Column <b class="caret"></b></a>
+        <ul class="dropdown-menu" id="col-select"></ul>
   </li>
-  <li><a id="animate">⏵ Play Animation</a></li>
+  <li><a id="animate"><i class="fa fa-play"></i> Play Animation</a></li>
 </ul>
 {% endblock %}
 
@@ -24,4 +24,5 @@
 <script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
 <script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
 <script src="/d3-geomap/d3-geomap.min.js"></script>
+<script src="/compiled/map/choropleth.js"></script>
 {% endblock %}

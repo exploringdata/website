@@ -36,7 +36,7 @@ let map = d3.choropleth()
     });
 
 
-d3.csv('/csv/worldbank-forest-area-1990-2016.csv').then(data => {
+d3.csv('/csv/forest-area.csv').then(data => {
     let selection = d3.select('#map').datum(data);
     map.draw(selection);
 });
@@ -56,7 +56,7 @@ d3.select('#animate').on('click', () => {
 });
 
 
-d3.select('#year-select').selectAll('li').data(columns).enter()
+d3.select('#col-select').selectAll('li').data(columns).enter()
     .append('li').append('a')
         .text(d => d)
         .on('click', () => {
