@@ -35,9 +35,9 @@ function annotate(map, rect_height=75, x_offset=160, title='', data_source='') {
     let map_source = 'https://exploring-data.com' + document.location.pathname;
 
     // Hack to move legend to the right
-    let legend = map.svg.select('g.legend');
-    let [x, y] = legend.attr('transform').match(/(\d+)/g);
-    legend.attr('transform', `translate(${x + map.width() / 24}, ${y})`);
+    // let legend = map.svg.select('g.legend');
+    // let [x, y] = legend.attr('transform').match(/(\d+)/g);
+    // legend.attr('transform', `translate(${x + map.width() / 24}, ${y})`);
 
     d3.select('g.footer').remove();
 
