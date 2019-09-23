@@ -3,16 +3,15 @@ let columns = ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '
 let data_source = 'https://data.worldbank.org/indicator/AG.LND.FRST.ZS';
 let selected_col = '1990';
 
-
 let map = d3.choropleth()
     .geofile('/d3-geomap/topojson/world/countries.json')
     .colors(colors)
     .column(selected_col)
     .domain([0, 100])
-    .legend(true)
+    .legend({width: 120, height: 295})
     .unitId('iso3')
     .postUpdate(() => {
-        annotate(map, 85, 170, `Forest area percentage of land area in ${selected_col}`, data_source=data_source);
+        annotate(map, 95, 120, `Forest area percentage of land area in ${selected_col}`, data_source=data_source);
 
         // Indicate in legend that it starts with values > 0
         let legend = map.svg.select('g.legend');
