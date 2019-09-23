@@ -8,10 +8,12 @@ let map = d3.choropleth()
     .colors(colors)
     .column(selected_col)
     .domain([0, colors.length])
-    .legend({width: 120, height: 400})
+    //.legend({width: 120, height: 400})
     .unitId('iso3')
     .postUpdate(() => {
-        annotate(map, 115, 120, `CO2 emissions (metric tons per capita) in ${selected_col}`, data_source=data_source);
+        //annotate(map, 115, 120, `CO2 emissions (metric tons per capita) in ${selected_col}`, data_source=data_source);
+        annotate(map, 115, 0, `CO2 emissions (metric tons per capita) in ${selected_col}`, data_source=data_source);
+        legend(map);
     });
 
 d3.csv('/csv/co2-emissions.csv').then(data => {

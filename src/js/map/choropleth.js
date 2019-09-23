@@ -1,3 +1,7 @@
+// Hack to move legend to the right
+// let legend = map.svg.select('g.legend');
+// let [x, y] = legend.attr('transform').match(/(\d+)/g);
+// legend.attr('transform', `translate(${x + map.width() / 24}, ${y})`);
 let animation = null;
 
 
@@ -17,27 +21,9 @@ function animate(map, columns, interval_length=300, selector='#animate') {
 }
 
 
-function colSelect(map, columns, selector='#col-select') {
-    let selection = d3.select(selector);
-    selection.selectAll('li').data(columns).enter()
-        .append('li').append('a')
-            .text(d => d)
-            .on('click', () => {
-                clearInterval(animation);
-                selected_col = d3.event.target.text;
-                map.column(selected_col).update();
-            });
-}
-
-
 function annotate(map, rect_height=75, x_offset=160, title='', data_source='') {
     let footer_width = map.width() - x_offset;
     let map_source = 'https://exploring-data.com' + document.location.pathname;
-
-    // Hack to move legend to the right
-    // let legend = map.svg.select('g.legend');
-    // let [x, y] = legend.attr('transform').match(/(\d+)/g);
-    // legend.attr('transform', `translate(${x + map.width() / 24}, ${y})`);
 
     d3.select('.unit-ATA').remove();
 
@@ -102,4 +88,32 @@ function annotate(map, rect_height=75, x_offset=160, title='', data_source='') {
             .attr('class', 'link')
             .attr('x', x_offset + 42)
             .attr('y', 68);
+}
+
+
+function colSelect(map, columns, selector='#col-select') {
+    let selection = d3.select(selector);
+    selection.selectAll('li').data(columns).enter()
+        .append('li').append('a')
+            .text(d => d)
+            .on('click', () => {
+                clearInterval(animation);
+                selected_col = d3.event.target.text;
+                map.column(selected_col).update();
+            });
+}
+
+
+function legend(map, delimiter='-', height=80, format='d', orient='horizontal', shape_width=40, x=450) {
+    let g_legend = map.svg.append('g')
+        .attr('transform', `translate(${x}, ${map.height() - height})`);
+
+    var legend = d3.legendColor()
+        .labelFormat(d3.format(format))
+        .labelDelimiter(delimiter)
+        .shapeWidth(shape_width)
+        .orient(orient)
+        .scale(map.colorScale);
+
+    g_legend.call(legend);
 }
