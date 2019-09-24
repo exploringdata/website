@@ -1,11 +1,10 @@
 ---
-created: 2019-09-20 22:13:55.777215
-description: These choropleth maps show .
+created: 2019-09-24 20:30:21
+description: These choropleth maps show CO2 emissions in metric tons per capita from 1960 to 2014 based on data from the Carbon Dioxide Information Analysis Center and Oak Ridge National Laboratory.
 image: /img/preview/co2-emissions.png
 related: /info/co2-emissions/
 scripts:
-- https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js
 - /compiled/map/co2-emissions.js
 template: map/world/choropleth.html
-title: 'World Map of Countries by '
+title: 'World Map of Countries by CO2 Emissions per Capita from 1960 to 2014'
 ---

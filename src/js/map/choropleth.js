@@ -109,6 +109,7 @@ function legend(map, delimiter='-', height=80, format='d', orient='horizontal', 
         .attr('transform', `translate(${x}, ${map.height() - height})`);
 
     var legend = d3.legendColor()
+        .ascending(true)
         .labelFormat(d3.format(format))
         .labelDelimiter(delimiter)
         .shapeWidth(shape_width)
