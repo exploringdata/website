@@ -1,7 +1,7 @@
 ---
 created: 2019-09-24 21:14:15
 description: Information on choropleth maps showing the Carbon dioxide emissions in metric tons per capita for the world's countries from 1960 to 2014.
-image: /img/preview/co2-emissions.png
+image: /img/preview/co2-emissions-2014.png
 related: /map/world/co2-emissions/
 tags: [climate change, d3, environment, global warming, map, world, worldbank]
 template: page.html
