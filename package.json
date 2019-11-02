@@ -18,10 +18,10 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "copyfiles": "^2.1.0",
-    "nodemon": "^1.17.5"
+    "copyfiles": "^2.1.1",
+    "nodemon": "^1.19.4"
   },
   "dependencies": {
-    "datatables.net-bs": "^1.10.19"
+    "datatables.net-bs": "^1.10.20"
   }
 }
