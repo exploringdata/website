@@ -3,9 +3,8 @@
 <div class="postinfo">
 <hr class="clearfix">
 <div class="well">
-<p>Published on {{ created.strftime('%B %d, %Y') }}{% if updated and updated.strftime('%Y%m%d') != created.strftime('%Y%m%d') %} (updated on {{ updated.strftime('%B %d, %Y') }}){% endif %} by <a href="https://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>). To be informed of new posts, subscribe to the <a href="/rss.xml">RSS feed</a>.<br>
-Tags: {{ m.index(tags_links) }}.</p>
-{% include 'tags.html' %}
+<p>Published on {{ created.strftime('%B %d, %Y') }}{% if updated and updated.strftime('%Y%m%d') != created.strftime('%Y%m%d') %} (updated on {{ updated.strftime('%B %d, %Y') }}){% endif %} by <a href="https://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>). To be informed of new posts, subscribe to the <a href="/rss.xml">RSS feed</a>.
+{% if tags %}<br>Tags: {{ m.index(tags_links) }}.{% endif %}</p>
 {% if disclaimer %}{{ m.disclaimer() }}{% endif %}
 </div>
 </div>

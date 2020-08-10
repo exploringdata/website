@@ -1,0 +1,36 @@
+{% extends "page.html" %}
+{% import 'macros.html' as m %}
+{% set disclaimer = True %}
+{% set related = index[shirt_collections_links[0][0][1:-1]] %}
+
+{% block content %}
+<div id="info" class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="/img/print/large/{{ image }}" alt="design print">
+        </div>
+        <div class="col-md-7">
+            <h1>{{title}}</h1>
+            {{body}}
+            <h3>Products available from</h3>
+            <p>
+            {% for product in products|selectattr('url') %}
+                {% if not product.url.startswith('https://') %}{% continue %}{% endif %}
+                <a class="btn btn-lg btn-primary" href="
+                    {% if 'amazon.com' in product.url %}{{ product.url }}?tag={{ amazon_tag.us }}
+                    {% elif 'amazon.co.uk' in product.url %}{{ product.url }}?tag={{ amazon_tag.uk }}
+                    {% elif 'amazon.de' in product.url %}{{ product.url }}?tag={{ amazon_tag.de }}
+                    {% elif 'redbubble.com' in product.url %}{{ product.url }}{% if '?' in product.url %}&{% else %}?{% endif %}asc=u
+                    {% elif 'zazzle.com' in product.url %}{{ product.url }}?rf=238355915198956003&tc=xpdt
+                    {% else %}{{ product.url }}
+                    {% endif %}">
+                    {{ product.name|replace(' URL', '') }}
+                </a>
+            {% endfor %}
+            </p>
+            <p>Please see the respective shop pages for details about available colors, product types and prices.</p>
+        </div>
+    </div>
+    {% include 'postinfo.html' %}
+</div>
+{% endblock %}

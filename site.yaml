@@ -1,16 +1,22 @@
 site:
-  base_url: https://exploring-data.com
-  author: Ramiro Gómez
-  feed_title: Exploring Data News Feed
+    base_url: https://exploring-data.com
+    author: Ramiro Gómez
+    feed_title: Exploring Data News Feed
+    amazon_tag:
+        us: xpdt-20
+        uk: xpdt-21
+        de: xpdt0b-21
 
 # Settings that affect collections in the document index. Top-level keys of
 # collections can be used as document attributes for grouping it in the
-# corresponding collecion.
+# corresponding collection.
 collections:
     tags:
         path: tags
         template: index.html
-
+    shirt_collections:
+        path: prints
+        template: collections/prints.html
 
 # Content specific settings, at the moment only templates are specified.
 content:

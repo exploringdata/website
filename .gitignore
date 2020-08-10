@@ -5,9 +5,13 @@
 # directories
 cache/
 deploy/
+content/print/
+content/prints/
 src/img/
+src/img/print/
 static/compiled
 static/d3-geomap
+static/img/print/
 static/vendor
 
 # node.js
