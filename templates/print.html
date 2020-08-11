@@ -4,7 +4,7 @@
 {% set related = index[shirt_collections_links[0][0][1:-1]] %}
 
 {% block content %}
-<div id="info" class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-5">
             <img class="img-responsive" src="/img/print/large/{{ image }}" alt="design print">
@@ -28,7 +28,18 @@
                 </a>
             {% endfor %}
             </p>
-            <p>Please see the respective shop pages for details about available colors, product types and prices.</p>
+            <p>Please see the respective shop pages for details about available product types, options and prices.</p>
+            <h2>You may also like</h2>
+            {% set docs = related.docs|rejectattr('url', 'equalto', url)|list %}
+            {% if docs %}
+                <div class="row">
+                    {% for doc in docs[:4] %}
+                    <div class="col-sm-6 col-md-3">
+                        {{ m.gallery_item(doc) }}
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
     {% include 'postinfo.html' %}

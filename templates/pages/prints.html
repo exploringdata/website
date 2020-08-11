@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 {% import 'macros.html' as m %}
-{% set collection_limit=4 %}
+{% set limit = 4 %}
 
 {% block content %}
-
+<div class="container-fluid">
+    {% for coll, docs in design_collections %}
+        <a href="/prints/{{ coll|replace(' ', '-') }}/"><h2>{{ coll|title }} Collection</h2></a>
+        <div class="row">
+            {% for doc in docs[:limit] %}
+            <div class="col-sm-6 col-md-3">
+                {{ m.gallery_item(doc) }}
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
