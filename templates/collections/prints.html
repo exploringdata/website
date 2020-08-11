@@ -2,5 +2,16 @@
 {% import 'macros.html' as m %}
 
 {% block content %}
-
+<div class="container-fluid">
+<div class="row">
+    {% for doc in docs %}
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="{{ doc.url }}"><img src="/img/print/preview/{{ doc.image }}" alt="{{ doc.title }}"></a>
+            <div class="caption"><h3><a href="{{ doc.url }}">{{ doc.title }}</a></h3></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
 {% endblock %}
