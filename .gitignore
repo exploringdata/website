@@ -13,6 +13,7 @@ static/compiled
 static/d3-geomap
 static/img/print/
 static/vendor
+test/
 
 # node.js
 node_modules
