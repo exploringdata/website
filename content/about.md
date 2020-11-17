@@ -51,14 +51,14 @@ libraries for:
 
 * [Bootstrap](https://getbootstrap.com/)
 * [jQuery](https://jquery.com/)
-* [Logya](https://pythonhosted.org/logya/)
+* [Logya](https://ramiro.org/logya/)
 
 ## Imprint
 
-Ramiro Gómez  
-Schererstr. 12a  
-D-13347 Berlin  
-Germany  
+Ramiro Gómez
+Schererstr. 12a
+D-13347 Berlin
+Germany
 
-Fon: &#x2b;49&#x2d;30&#x2d;46065288  
+Fon: &#x2b;49&#x2d;30&#x2d;46065288
 E-Mail: www&#x40;ramiro&#x2e;org

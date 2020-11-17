@@ -1,0 +1,12 @@
+---
+noindex: 1
+title: Data Visualization Books
+description: A collection of books about data visualization and related topics.
+created: 2015-05-21 12:30:46
+template: page.html
+pre_render: [body]
+---
+{% for doc in get_docs('/data-visualization-books/')|rejectattr('noindex') %}
+<h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>
+<p>{{ doc.description }}</p>
+{% endfor %}

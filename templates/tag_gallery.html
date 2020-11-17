@@ -3,14 +3,14 @@
     <div class="col-md-12">
       <h2><a href="{{ tag_path }}">{{ tag_title }}</a></h2>
     </div>
-  </div>
-  <div class="row">
+</div>
+<div class="row">
     {% for doc in get_docs(tag_path)[:6] %}
-      <div class="col-md-4 col-lg-2"><div class="well">
-        <a href="{{doc.url}}" title="{{doc.description}}">
-          <h5>{{doc.title}}</h5>
-          <img src="{{ m.image_src(doc.image, base_url, size='preview') }}" alt="{{ doc.title }}" class="img-responsive">
-        </a>
-      </div></div>
+    <div class="col-md-4 col-lg-2"><div class="well">
+      <a href="{{doc.url}}" title="{{doc.description}}">
+        <h5>{{doc.title}}</h5>
+        <img src="{{ m.image_src(doc.image, base_url, size='preview') }}" alt="{{ doc.title }}" class="img-responsive">
+      </a>
+    </div></div>
     {% endfor %}
 </div>
