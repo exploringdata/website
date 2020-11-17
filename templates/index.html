@@ -1,26 +1,18 @@
 {% extends "page.html" %}
-
 {% set title = title|replace('-', ' ')|replace('Tags', 'Tags:') %}
-
-{% if base_url %}
-  {% block rsslink %}
-    <link rel="alternate" type="application/rss+xml" title="Exploring Data main RSS feed" href="/rss.xml" />
-    <link rel="alternate" type="application/rss+xml" title="Exploring Data {{directory}} RSS feed" href="{{base_url}}/{{directory}}/rss.xml" />
-  {% endblock %}
-{% endif %}
 
 {% block content %}
 <div id="info" class="container"><div class="row">
-  <div class="col-md-9">
-    <h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
-    <ul class="list-unstyled index_list flatlist">
-    {% for doc in docs %}
-      <li class="index_item"><h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>{% if doc.description %}<p>{{ doc.description }}</p>{% endif %}</li>
-    {% endfor %}
-    </ul>
-  </div>
-  <div class="col-md-3">
-    {% include 'right.html' %}
-  </div>
+    <div class="col-md-9">
+        <h1 class="index_title">{{ title|replace('-', ' ')}}</h1>
+        <ul class="list-unstyled index_list flatlist">
+        {% for doc in docs %}
+          <li class="index_item"><h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>{% if doc.description %}<p>{{ doc.description }}</p>{% endif %}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-3">
+        {% include 'right.html' %}
+    </div>
 </div></div>
 {% endblock %}

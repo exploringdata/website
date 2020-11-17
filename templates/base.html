@@ -24,11 +24,7 @@
         {% endfor %}
     {% endblock %}
     <link rel="shortcut icon" href="/favicon.ico">
-    {% if base_url %}
-        {% block rsslink %}
-            <link rel="alternate" type="application/rss+xml" title="Exploring Data main RSS feed" href="{{base_url}}/rss.xml">
-        {% endblock %}
-    {% endif %}
+    <link rel="alternate" type="application/rss+xml" title="Exploring Data RSS feed" href="{{ base_url }}/rss.xml">
 </head>
 
 <body class="{% block bodyclass %}{% endblock %}">
