@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block bodyclass %}full{% endblock %}
+
+{% block navbar %}
+<nav id="navbar" class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="site-name" class="navbar-brand" href="/">Exploring Data</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-navbar">
+        {% block nav %}{% endblock %}
+        {% if related %}
+        <div class="pull-right">
+          <a href="{{ related }}" class="btn navbar-btn btn-info">ℹ Info</a>
+        </div>
+        {% endif %}
+        {% block nav_right %}{% endblock %}
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% endblock %}
+
+{% block vis %}
+<div id="vis"></div>
+{% endblock %}
