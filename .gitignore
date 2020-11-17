@@ -5,6 +5,7 @@
 # directories
 cache/
 deploy/
+public/
 content/print/
 content/prints/
 src/img/

@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 {% import 'macros.html' as m %}
 {% set disclaimer = True %}
-{% set related = index[shirt_collections_links[0][0][1:-1]] %}
+{% set related = get_docs(shirt_collections_links[0][0][1:-1]) %}
 
 {% block content %}
 <div class="container-fluid">
@@ -30,7 +30,7 @@
             </p>
             <p>Please see the respective shop pages for details about available product types, options and prices.</p>
             <h2>You may also like</h2>
-            {% set docs = related.docs|rejectattr('url', 'equalto', url)|list %}
+            {% set docs = related|rejectattr('url', 'equalto', url)|list %}
             {% if docs %}
                 <div class="row">
                     {% for doc in docs[:4] %}

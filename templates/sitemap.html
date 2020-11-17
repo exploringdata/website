@@ -6,25 +6,25 @@
     <div class="row"><div class="col-md-9">
     <h2>Data Visualizations</h2>
     <ul class="list-unstyled">
-    {% for doc in index.vis.docs %}
+    {% for doc in get_docs('/vis/') %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
     <h2>Maps</h2>
     <ul class="list-unstyled">
-    {% for doc in index.map.docs %}
+    {% for doc in get_docs('/map/') %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
     <h2>About Visualizations</h2>
     <ul class="list-unstyled">
-    {% for doc in index.info.docs %}
+    {% for doc in get_docs('/info/') %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>
     <h2>Data Stories</h2>
     <ul class="list-unstyled">
-    {% for doc in index.story.docs %}
+    {% for doc in get_docs('/story/') %}
     <li><a href="{{doc.url}}" title="{{doc.description}}">{{doc.title}}</a></li>
     {% endfor %}
     </ul>

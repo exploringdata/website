@@ -18,11 +18,6 @@ collections:
         path: prints
         template: collections/prints.html
 
-# Content specific settings, at the moment only templates are specified.
-content:
-    index:
-        template: index.html # default template used for collections
-    doc:
-        template: page.html
-    rss:
-        template: rss2.xml
+extensions:
+    jinja:  # https://jinja.palletsprojects.com/extensions/
+        - 'jinja2.ext.loopcontrols'
