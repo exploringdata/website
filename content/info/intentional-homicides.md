@@ -1,5 +1,4 @@
 ---
-url: /info/intentional-homicides/
 related: /map/world/intentional-homicides/
 title: Where in the World Happen Most Murders
 description: A series of maps of the world showing where in the world the least and the most murders happen for the years 1995 to 2011.

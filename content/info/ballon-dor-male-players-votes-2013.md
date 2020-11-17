@@ -1,5 +1,4 @@
 ---
-url: /info/ballon-dor-male-players-votes-2013/
 related: /vis/ballon-dor-male-players-votes-2013/
 title: Falcao and Iniesta the top players in 2013 according to Ronaldo and Messi
 description: The Ballon d'Or 2013 visualization shows an interactive network graph of voters and voted football players related based on votes cast for the male FIFA Ballon d'Or award in 2013.
@@ -7,10 +6,6 @@ template: page.html
 created: 2014-01-13 21:50:20
 image: /img/preview/ballon-dor-male-players-2013.jpg
 tags: [network graph, football, sigmajs, gephi, networkx]
-poster:
-    url: https://www.zazzle.com/network_of_ballon_dor_male_player_votes_2013-228455213938688762?rf=238355915198956003&tc=xpdt
-    image: https://www.zazzle.com/rlv/network_of_ballon_dor_male_player_votes_2013-r3413174277e848dcbc46d82fabba9097_b02_8byvr_325.jpg
-    title: Ballon d'Or Male Player Votes 2013
 ---
 For the 2nd time in his career a visibly moved Cristiano Ronaldo won the FIFA Ballon d'Or. Although many people expected him to win in 2013, the final vote tally reveals a tighter finish than [in the past year](/info/ballon-dor-votes-2012/):
 

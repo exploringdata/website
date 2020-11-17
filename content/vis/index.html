@@ -1,0 +1,12 @@
+---
+noindex: 1
+title: Data Visualizations
+description: A list of data visualizations on this website.
+created: 2012-09-07 14:51:41
+template: page.html
+pre_render: [body]
+---
+{% for doc in get_docs('/vis/')|rejectattr('noindex') %}
+<h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>
+<p>{{ doc.description }}</p>
+{% endfor %}

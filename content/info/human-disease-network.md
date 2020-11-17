@@ -1,5 +1,4 @@
 ---
-url: /info/human-disease-network/
 related: /vis/human-disease-network/
 title: A Network Graph of Human Diseases
 description: The human disease network graph is a visualization based on a study that explored relations of human disorders and disease-genes by Goh K-I, Cusick ME, Valle D, Childs B, Vidal M, Barabási A-L (2007).
