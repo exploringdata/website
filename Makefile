@@ -45,5 +45,9 @@ test_image_resizing:
 	convert $(TEST_IMG_SRC) -resize x300\> -background white -gravity center test/product_preview.jpg
 
 
+update_merch: import_designs images
+	./deploy.sh
+
+
 update_vendor:
 	npm update
