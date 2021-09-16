@@ -18,8 +18,6 @@
                 {% if not product.url.startswith('https://') %}{% continue %}{% endif %}
                 <a class="btn btn-lg btn-primary" href="
                     {% if 'amazon.com' in product.url %}{{ product.url }}?tag={{ amazon_tag.us }}
-                    {% elif 'amazon.co.uk' in product.url %}{{ product.url }}?tag={{ amazon_tag.uk }}
-                    {% elif 'amazon.de' in product.url %}{{ product.url }}?tag={{ amazon_tag.de }}
                     {% elif 'redbubble.com' in product.url %}{{ product.url }}{% if '?' in product.url %}&{% else %}?{% endif %}asc=u
                     {% elif 'zazzle.com' in product.url %}{{ product.url }}?rf=238355915198956003&tc=xpdt
                     {% else %}{{ product.url }}

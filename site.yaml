@@ -4,8 +4,6 @@ site:
     feed_title: Exploring Data News Feed
     amazon_tag:
         us: xpdt-20
-        uk: xpdt-21
-        de: xpdt0b-21
 
 # Settings that affect collections in the document index. Top-level keys of
 # collections can be used as document attributes for grouping it in the
