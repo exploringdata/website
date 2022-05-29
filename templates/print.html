@@ -19,6 +19,7 @@
                 <a class="btn btn-lg btn-primary" href="
                     {% if 'amazon.com' in product.url %}{{ product.url }}?tag={{ amazon_tag.us }}
                     {% elif 'redbubble.com' in product.url %}{{ product.url }}{% if '?' in product.url %}&{% else %}?{% endif %}asc=u
+                    {% elif 'teepublic.com' in product.url %}{{ product.url }}?store_id=240773
                     {% elif 'zazzle.com' in product.url %}{{ product.url }}?rf=238355915198956003&tc=xpdt
                     {% else %}{{ product.url }}
                     {% endif %}">
