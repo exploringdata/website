@@ -1,13 +1,17 @@
 ---
 title: Earth Volcanoes
 description: An
-template: vis/blank.html
+template: empty-wide.html
 created: 2022-02-08 22:54:07
 scripts:
-- https://unpkg.com/d3@7.3.0/dist/d3.min.js
-- https://unpkg.com/globe.gl@2.24.2/dist/globe.gl.min.js
+- https://unpkg.com/d3@7.5.0/dist/d3.min.js
+- https://unpkg.com/globe.gl@2.26.2/dist/globe.gl.min.js
 - /compiled/earth-volcanoes.js
 ---
+<div id="vis">></div>
+
+---
+
 Source:
 
 * https://volcano.oregonstate.edu/volcano_table
