@@ -46,8 +46,8 @@ test_image_resizing:
 
 
 update_merch:
-	$(Make) import_designs
-	$(Make) images
+	$(MAKE) import_designs
+	$(MAKE) images
 	./deploy.sh
 
 
