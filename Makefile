@@ -2,7 +2,7 @@ MERCH=$(wildcard src/img/print/*.*)
 MERCH_LARGE=$(subst src/img/print/,static/img/print/large/,$(MERCH))
 MERCH_PREVIEW=$(subst src/img/print/,static/img/print/preview/,$(MERCH))
 MERCHMANAGER=~/repos/priv/merchmanager
-MERCHMANAGER_PYTHON=~/anaconda3/envs/dm/bin/python
+MERCHMANAGER_PYTHON=~/.virtualenvs/merchmanager/bin/python
 PRODUCT_MAPPING=exploringdata-product-mapping.csv
 TEST_IMG_SRC=src/img/print/programming-languages-influence-network-2019.jpg
 WATERMARK=src/img/watermark.png
@@ -45,7 +45,9 @@ test_image_resizing:
 	convert $(TEST_IMG_SRC) -resize x300\> -background white -gravity center test/product_preview.jpg
 
 
-update_merch: import_designs images
+update_merch:
+	$(Make) import_designs
+	$(Make) images
 	./deploy.sh
 
 
