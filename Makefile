@@ -28,7 +28,7 @@ images: $(MERCH_LARGE) $(MERCH_PREVIEW)
 
 
 import_designs:
-	$(MERCHMANAGER_PYTHON) $(MERCHMANAGER)/export_logya.py $(MERCHMANAGER)/data/$(PRODUCT_MAPPING) . --design_alias 'print' --index 'prints' --index_title 'Prints for Data Geeks & Nerds' --image_dir 'src/img/print' --image_product 'Poster'
+	$(MERCHMANAGER_PYTHON) $(MERCHMANAGER)/export_logya.py $(MERCHMANAGER)/data/$(PRODUCT_MAPPING) . --design_alias 'print' --index 'prints' --index_title 'Prints for Data Geeks & Nerds' --image_dir 'src/img/print' --main_product 'Poster'
 
 
 static/img/print/large/%: src/img/print/%
