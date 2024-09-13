@@ -9,7 +9,7 @@ title: CO2 emissions (metric tons per capita)
 ---
 Carbon dioxide (CO2) is a colorless gas that occurs naturally in Earth's atmosphere as a trace gas. Natural sources include volcanoes, hot springs and geysers. It is also a byproduct of fossil fuel combustion, biomass burning, land use changes and other industrial processes. The Burning of carbon-based fuels has rapidly increased concentrations of atmospheric CO2, increasing the rate of global warming and causing anthropogenic climate change.
 
-This [interactive map]({{ related }}) shows the CO2 emissions in metric tons per capita from 1960 to 2014. The data only include carbon dioxide emissions from the burning of fossil fuels and cement manufacture, but not emissions from land use. See the video below for an animation showing the changes through the years and check out the interactive version to explore the data in more detail.
+This [interactive map](/map/world/co2-emissions/) shows the CO2 emissions in metric tons per capita from 1960 to 2014. The data only include carbon dioxide emissions from the burning of fossil fuels and cement manufacture, but not emissions from land use. See the video below for an animation showing the changes through the years and check out the interactive version to explore the data in more detail.
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/y7mDE3rNbsM?rel=0" frameborder="0" allowfullscreen></iframe>
