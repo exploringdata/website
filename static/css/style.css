@@ -30,13 +30,6 @@ font-size:1.1em;7
 .tags a {
 color:#fff;
 }
-#site-name {
-background: url('../img/exploring-data.png') no-repeat center left;
-padding-left:40px;
-font-size:1.6em;
-color:#8ce;
-margin-left:0;
-}
 .share a {
 font-size: 20px;
 }
