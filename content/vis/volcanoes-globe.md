@@ -1,8 +1,8 @@
 ---
-title: Earth Volcanoes
-description: An
+title: Volcanoes of Planet Earth
+description: A 3D globe showing a selection of volcanoes on planet earth.
 template: empty-wide.html
-created: 2024-09-14 00:45:30
+created: 2024-09-16 01:18:15
 scripts:
 - https://unpkg.com/d3@7
 - https://unpkg.com/globe.gl@2
