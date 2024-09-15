@@ -8,6 +8,17 @@ TEST_IMG_SRC=src/img/print/programming-languages-influence-network-2019.jpg
 WATERMARK=src/img/watermark.png
 
 
+define dl_optimize_image
+	$(eval FILENAME := $(notdir $(1)))
+	$(eval OUTPUT := static/img/public/$(FILENAME))
+	@echo "Downloading and optimizing image from $(1)..."
+	@curl --location --silent --show-error --fail $(1) | \
+		pngquant --speed 1 --quality 65-80 - | \
+		tee $(OUTPUT) > /dev/null
+	@echo "Image processed and saved to $(OUTPUT)"
+endef
+
+
 clean_all: clean_compiled clean_design clean_images
 
 
@@ -22,6 +33,11 @@ clean_design:
 clean_images:
 	rm -f static/img/print/large/*
 	rm -f static/img/print/preview/*
+
+
+dl_images:
+	$(call dl_optimize_image,https://unpkg.com/three-globe/example/img/earth-topology.png)
+	$(call dl_optimize_image,https://unpkg.com/three-globe/example/img/night-sky.png)
 
 
 images: $(MERCH_LARGE) $(MERCH_PREVIEW)
