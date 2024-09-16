@@ -1,13 +1,11 @@
-h1 {
-font-size: 2.6em;
+.card-img-top {
+    height: 300px;
 }
-footer {
-margin-top:1em;
+.card-title {
+    font-size: 1.2rem;
 }
-cite {font-style:italic;}
 
-.nav > li > a.navbar-btn {padding: 6px 12px;}
-.nav > li > a.navbar-btn:hover {background-color: #ec971f;}
+cite {font-style:italic;}
 
 .spacer5 {clear:both;height:5px;}
 .centered {text-align:center;}
@@ -25,7 +23,7 @@ font-size:.85em;
 .tags span {
 padding:.4em;
 margin-bottom:.5em;
-font-size:1.1em;7
+font-size:1.1em;
 }
 .tags a {
 color:#fff;
@@ -42,23 +40,4 @@ body.full #footer {display:none;}
 .modal-large {
 width:76%;
 margin-left:-38%;
-}
-/* front gallery */
-.col-md-4 h5 {
-height: 1.4em;
-overflow: hidden;
-}
-.gallery h5 {
-height: 30px;
-overflow:hidden;
-}
-.gallery img {
-height: 200px;
-}
-.gallery-lg img {
-height: 400px;
-}
-/* info pages */
-.vis-preview {
-margin-bottom:1em;
 }

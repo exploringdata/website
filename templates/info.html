@@ -10,21 +10,21 @@
   <div class="col-md-3">
     {% if image and related %}
       <h3>Visualization</h3>
-      <a href="{{ related }}"><img src="{{ m.image_src(image, base_url, size='preview') }}" alt="visualization preview" class="vis-preview img-responsive">
+      <a href="{{ related }}"><img src="{{ m.image_src(image, base_url, size='preview') }}" alt="visualization preview" class="img-fluid">
       <a href="{{ related }}" class="btn btn-primary voffset">View Visualization</a>
       <hr>
     {% endif %}
     {% if relateditems %}
         <h3>Visualizations</h3>
         {% for r in relateditems %}
-          <a href="{{ r.url }}"><img src="{{ m.image_src(r.image, base_url, size='preview') }}" alt="visualization preview" class="vis-preview img-responsive">
+          <a href="{{ r.url }}"><img src="{{ m.image_src(r.image, base_url, size='preview') }}" alt="visualization preview" class="img-fluid">
           <a href="{{ r.url }}" class="btn btn-primary voffset">View Visualization</a>
           <hr>
         {% endfor %}
     {% endif %}
     {% if poster %}
       <h3>Visualization Poster</h3>
-      <a href="{{ poster.url }}"><img class="img-thumbnail img-responsive" src="{{ poster.image }}" alt="{{ poster.title }}"></a>
+      <a href="{{ poster.url }}"><img class="img-thumbnail img-fluid" src="{{ poster.image }}" alt="{{ poster.title }}"></a>
       <a href="{{ poster.url }}" class="btn btn-primary voffset">Buy Print</a>
       <hr>
     {% endif %}
@@ -32,7 +32,7 @@
       <h3>Visualization Posters</h3>
       <div class="row">
       {% for poster in posters %}
-        <div class="col-md-6"><a href="{{ poster.url }}" title="{{ poster.title }}"><img class="img-responsive" src="{{ poster.image }}" alt="{{ poster.title }}"></a></div>
+        <div class="col-md-6"><a href="{{ poster.url }}" title="{{ poster.title }}"><img class="img-fluid" src="{{ poster.image }}" alt="{{ poster.title }}"></a></div>
       {% endfor %}
       </div>
       <hr>
