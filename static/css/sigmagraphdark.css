@@ -15,7 +15,7 @@ margin:-.5em 0 0 0;
 #search-reset{
 margin-left: -1.3em;
 position: absolute;
-top: 1.3em;
+top: 1rem;
 cursor:pointer;
 opacity:.8;
 }
