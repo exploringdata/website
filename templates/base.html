@@ -20,7 +20,7 @@
     <link href="/css/style.css" rel="stylesheet">
     {% block styles %}
         {% for style in styles %}
-            <link href="{{style}}{% if not style.startswith('http') %}{% endif %}" rel="stylesheet">
+            <link rel="stylesheet" href="{{style}}{% if not style.startswith('http') %}{% endif %}">
         {% endfor %}
     {% endblock %}
     <link rel="shortcut icon" href="/favicon.ico">
@@ -49,16 +49,13 @@
     {% block header %}{% endblock %}
     {% block vis %}{% endblock %}
     {% block content %}{% endblock %}
-    {% block comments %}{% endblock %}
     {% block footer %}
-    <div id="footer" class="container">
-      <div class="row"><div class="col-md-12">
+    <div id="footer" class="container-fluid">
         <footer>
             <hr>
             <p>Exploring Data is a showcase of interactive data visualizations created with open data and open source tools, <a href="/about/">learn more</a>.<br>
             © <script>document.write(new Date().getFullYear())</script> <a href="https://ramiro.org/">Ramiro Gómez</a>.</p>
         </footer>
-      </div></div>
     </div>
     {% endblock %}
     {% block modals %}{% endblock %}

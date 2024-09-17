@@ -5,8 +5,6 @@
     font-size: 1.2rem;
 }
 
-.huge {font-size: 2em;}
-
 .caret {
 opacity:.8;
 }
@@ -25,12 +23,4 @@ color:#fff;
 font-size: 20px;
 }
 /* wrappers */
-#comments {
-padding-top:10px;
-}
 body.full #footer {display:none;}
-
-.modal-large {
-width:76%;
-margin-left:-38%;
-}

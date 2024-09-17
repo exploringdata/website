@@ -4,10 +4,13 @@
 {% block content %}
 <div id="info" class="container-fluid">
 <div class="row">
-  <div class="col-md-9 col-lg-10"><h1>{{title}}</h1>{{body}}</div>
+  <div class="col-md-9 col-lg-10">
+    <h1>{{ title }}</h1>
+    {{ body }}
+  </div>
   <div class="col-md-3 col-lg-2">
     <h3>Book Categories</h3>
-    <ul class="list-unstyled categories">
+    <ul>
       <li><a href="/data-visualization-books/general/">Data Visualization</a></li>
       <li><a href="/data-visualization-books/maps/">Maps &amp; Cartography</a></li>
       <li><a href="/data-visualization-books/analysis/">Data Mining &amp; Analysis</a></li>
@@ -17,11 +20,9 @@
     {% include 'right.html' %}
   </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        {{ description }}
-        {{ m.disclaimer() }}
-    </div>
+<div class="container-fluid">
+{{ description }}
+{{ m.disclaimer() }}
 </div>
 </div>
 {% endblock %}

@@ -218,7 +218,7 @@ var visgexf = {
     if (document.location.hash) {
       visgexf.redirectHash();
     }
-    // search on hash change, unless it should trigger info or comments view
+    // search on hash change, unless it should trigger info view
     $(window).bind('hashchange', function(event) {
       visgexf.redirectHash();
     });
