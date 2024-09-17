@@ -11,8 +11,8 @@ Carbon dioxide (CO2) is a colorless gas that occurs naturally in Earth's atmosph
 
 This [interactive map](/map/world/co2-emissions/) shows the CO2 emissions in metric tons per capita from 1960 to 2014. The data only include carbon dioxide emissions from the burning of fossil fuels and cement manufacture, but not emissions from land use. See the video below for an animation showing the changes through the years and check out the interactive version to explore the data in more detail.
 
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/y7mDE3rNbsM?rel=0" frameborder="0" allowfullscreen></iframe>
+<div class="ratio ratio-16x9 mb-2">
+  <iframe src="https://www.youtube-nocookie.com/embed/y7mDE3rNbsM?rel=0" allowfullscreen></iframe>
 </div>
 
 The data comes from the Carbon Dioxide Information Analysis Center and Oak Ridge National Laboratory and is available from the [World Bank website](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC), where it is described as:

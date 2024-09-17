@@ -8,7 +8,7 @@ image: big-sister-cities.png
 scripts:
 - /js/big-sister-cities/script.js
 poster:
-  url: https://www.redbubble.com/people/ramiro/works/31442371
+  url: /print/big-sister-cities/
   image: https://ih1.redbubble.net/image.553611499.2371/poster,220x200,ffffff-pad,220x200,ffffff.u13.jpg
   title: Graph of Sister Cities With +1 Million Inhabitants - Poster White Canvas
 ---

@@ -8,9 +8,10 @@ template: page.html
 tags: [network graph, cities, diplomacy, sigmajs, gephi, networkx]
 image: big-sister-cities.png
 poster:
-  url: https://www.redbubble.com/people/ramiro/works/31442371
+  url: /print/big-sister-cities/
   image: https://ih1.redbubble.net/image.553611499.2371/poster,220x200,ffffff-pad,220x200,ffffff.u13.jpg
   title: Graph of Sister Cities With +1 Million Inhabitants - Poster White Canvas
+pre_render: [body]
 ---
 [Big Sister Cities]({{ related }}) is an interactive network graph showing 279 cities with more than 1 million inhabitants and how they are connected to their sister cities within this set. The cities are the nodes which are sized by degree and colored by population and the 852 edges show the sister relations. The data for creating this graph was retrieved from [Wikidata](https://www.wikidata.org/) in April 2018.
 

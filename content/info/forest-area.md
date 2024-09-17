@@ -6,13 +6,14 @@ related: /map/world/forest-area/
 tags: [climate change, d3, deforestation, environment, forest, global warming, map, world, worldbank]
 template: page.html
 image: /img/preview/forest-area-2016.png
+pre_render: [body]
 ---
 Deforestation takes place in many forms including wildfires, agricultural clearcutting and logging for timber. Based on [estimates by the WWF](https://www.worldwildlife.org/threats/deforestation-and-forest-degradation) forests cover 31% of the land area on Earth and annually 75,700 square kilometers (18.7 million acres) of forest is lost. Deforestation is a major source of carbon dioxide to the atmosphere and one of the main contributors to climate change.
 
 This [interactive map]({{ related }}) shows the forest area percentage of land area for most of the world's countries from 1990 to 2016. See the video below for an animation showing the changes through the years and check out the interactive version to explore the data in more detail.
 
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-gqzJ6yhh8E?rel=0" frameborder="0" allowfullscreen></iframe>
+<div class="ratio ratio-16x9 mb-2">
+  <iframe src="https://www.youtube-nocookie.com/embed/-gqzJ6yhh8E?rel=0" allowfullscreen></iframe>
 </div>
 
 The data comes from the Food and Agriculture Organization and is available from the [World Bank website](https://data.worldbank.org/indicator/AG.LND.FRST.ZS), where it is described as:

@@ -10,22 +10,22 @@
   <div class="col-md-3">
     {% if image and related %}
       <h3>Visualization</h3>
-      <a href="{{ related }}"><img src="{{ m.image_src(image, base_url, size='preview') }}" alt="visualization preview" class="img-fluid">
-      <a href="{{ related }}" class="btn btn-primary voffset">View Visualization</a>
+      <a href="{{ related }}"><img class="img-thumbnail img-fluid" src="{{ m.image_src(image, base_url, size='preview') }}" alt="visualization preview">
+      <a href="{{ related }}" class="btn btn-primary mt-2">View Visualization</a>
       <hr>
     {% endif %}
     {% if relateditems %}
         <h3>Visualizations</h3>
         {% for r in relateditems %}
-          <a href="{{ r.url }}"><img src="{{ m.image_src(r.image, base_url, size='preview') }}" alt="visualization preview" class="img-fluid">
-          <a href="{{ r.url }}" class="btn btn-primary voffset">View Visualization</a>
+          <a href="{{ r.url }}"><img class="img-thumbnail img-fluid" src="{{ m.image_src(r.image, base_url, size='preview') }}" alt="visualization preview">
+          <a href="{{ r.url }}" class="btn btn-primary mt-2">View Visualization</a>
           <hr>
         {% endfor %}
     {% endif %}
     {% if poster %}
       <h3>Visualization Poster</h3>
       <a href="{{ poster.url }}"><img class="img-thumbnail img-fluid" src="{{ poster.image }}" alt="{{ poster.title }}"></a>
-      <a href="{{ poster.url }}" class="btn btn-primary voffset">Buy Print</a>
+      <a href="{{ poster.url }}" class="btn btn-primary mt-2">Buy Print</a>
       <hr>
     {% endif %}
     {% if posters %}
