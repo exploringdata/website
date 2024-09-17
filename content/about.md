@@ -55,10 +55,10 @@ libraries for:
 
 ## Imprint
 
-Ramiro Gómez
-Schererstr. 12a
-D-13347 Berlin
+Ramiro Gómez<br>
+Schererstr. 12a<br>
+D-13347 Berlin<br>
 Germany
 
-Fon: &#x2b;49&#x2d;30&#x2d;46065288
+Fon: &#x2b;49&#x2d;30&#x2d;46065288<br>
 E-Mail: www&#x40;ramiro&#x2e;org
