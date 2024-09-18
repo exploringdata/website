@@ -14,9 +14,13 @@
 
 
 {% macro gallery_item(doc) %}
-<div class="thumbnail">
-    <a href="{{ doc.url }}"><img src="/img/print/preview/{{ doc.image }}" alt="{{ doc.title }}"></a>
-    <div class="caption"><h3><a href="{{ doc.url }}">{{ doc.title }}</a></h3></div>
+<div class="card mt-2">
+    <a href="{{ doc.url }}" title="Read more">
+        <img class="card-img-top object-fit-scale" src="/img/print/preview/{{ doc.image }}" alt="{{ doc.title }}">
+    </a>
+    <div class="card-body">
+    <h5 class="card-title">{{ doc.title }}</h5>
+    </div>
 </div>
 {% endmacro %}
 
