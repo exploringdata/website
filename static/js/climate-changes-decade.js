@@ -15,7 +15,7 @@ var histselector = '#history',
         'api-key': 'ead2a827-732b-4c59-82fd-b202d6f81f86'
     },
     currSeries = null,
-    scrollOffset = selectiondetails.offsetTop - ($('#navbar').height + 10);
+    scrollOffset = selectiondetails.offsetTop - ($('nav.navbar').first().height + 10);
 
 function getPrevDay(date) {
     return new Date(date - 86400)
