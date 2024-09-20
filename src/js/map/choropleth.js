@@ -95,6 +95,7 @@ function colSelect(map, columns, selector='#col-select') {
     let selection = d3.select(selector);
     selection.selectAll('li').data(columns).enter()
         .append('li').append('a')
+            .attr('class', 'dropdown-item')
             .text(d => d)
             .on('click', () => {
                 clearInterval(animation);

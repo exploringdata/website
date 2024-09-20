@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block nav %}
-<ul class="nav navbar-nav">
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-table"></i> Choose Column <b class="caret"></b></a>
-        <ul class="dropdown-menu" id="col-select"></ul>
-  </li>
-  <li><a id="animate"><i class="fa fa-play"></i> Play Animation</a></li>
-</ul>
+<div class="navbar-nav dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Choose Column
+  </a>
+  <ul class="dropdown-menu" id="col-select"></ul>
+</div>
+<a id="animate"><i class="fa-solid fa-play"></i> Play Animation</a>
 {% endblock %}
 
 {% block vis %}
