@@ -17,3 +17,5 @@ http://localhost:8080/vis/exploit-database-platforms-spiral/
 http://localhost:8080/map/world/co2-emissions/
 http://localhost:8080/map/world/forest-area/
 http://localhost:8080/map/world/intentional-homicides/
+
+Lots of data in static/json/
