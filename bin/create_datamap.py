@@ -23,18 +23,18 @@ years = [str(year) for year in range(1960, now.year + 1) if str(year) in df]
 columns = ['iso3'] + years
 df_final = df[columns]
 
-# Determine absolute min and max values for use in JS
-abs_min = df.min(numeric_only=True).min()
-if abs_min > 0 and abs_min < 1:
-    abs_min = 0
-
-abs_max = df.max(numeric_only=True).max()
-if abs_max > 90 and abs_max < 100:
-    abs_max = 100
-
 # Create CSV
 output_csv = paths('.').static.joinpath('csv', argv.output_name + '.csv')
 df_final.to_csv(output_csv, index=False)
+
+# Determine absolute min and max values for use in JS
+abs_min = df_final.min(numeric_only=True).min()
+if abs_min > 0 and abs_min < 1:
+    abs_min = 0
+
+abs_max = df_final.max(numeric_only=True).max()
+if abs_max > 90 and abs_max < 100:
+    abs_max = 100
 
 p_content = paths('.').content
 
