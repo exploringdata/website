@@ -9,6 +9,8 @@ Source repository for the data visualization showcase [Exploring Data](https://e
 
 ## Fix
 
+### Pages
+
 http://localhost:8080/vis/ip-location-maps/
 http://localhost:8080/vis/programming-languages-influence-network-2014/#Lisp
 http://localhost:8080/vis/climate-changes-decade/
@@ -16,4 +18,15 @@ http://localhost:8080/vis/world-aid-transparency/
 http://localhost:8080/vis/exploit-database-platforms-spiral/
 http://localhost:8080/map/world/intentional-homicides/
 
-Lots of data in static/json/
+### Are these resources still used?
+
+/json/topo/countries.topo.json
+/vendor/d3/d3.v3.min.js
+/vendor/d3/queue.v1.min.js
+/vendor/d3/d3.geo.projection.v0.min.js
+/vendor/d3/topojson.v1.min.js
+/js/colors.js
+
+### Clean up
+
+* Lots of data in static/json/
