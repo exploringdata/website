@@ -80,7 +80,7 @@ let map = d3.choropleth()
     .legend(true)
     .unitId('iso3')
     .postUpdate(() => {{
-        annotate(map, 85, 170, `TITLE ${{selected_col}}`);
+        annotate(map, 85, 170, `TITLE ${{selected_col}}`, data_source=data_source);
     }});
 
 
