@@ -296,6 +296,24 @@ function nodeinfo(heading, body) {
     dialog.show();
 }
 
+// Filter dropdown click
+menuClick = function(menu, event) {
+  event.preventDefault();
+  menu.find('li').removeClass('active');
+
+  const name = event.target.nodeName.toLowerCase();
+  let a = null;
+
+  if ('a' == name) {
+    a = $(event.target);
+  } else if ('li' == name) {
+    a = $(event.target).children('a:first-child');
+  }
+  a.parent().addClass('active');
+
+  return a;
+};
+
 dialog.find('button').click(function() {
     dialog.hide();
 });

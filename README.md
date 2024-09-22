@@ -15,11 +15,6 @@ Source repository for the data visualization showcase [Exploring Data](https://e
 
 ### Pages
 
-http://localhost:8080/vis/james-bond-actors-network/
-http://localhost:8080/vis/programming-languages-influence-network/
-http://localhost:8080/vis/programming-languages-influence-network-2014/
-
-http://localhost:8080/vis/ip-location-maps/
 http://localhost:8080/vis/climate-changes-decade/
 http://localhost:8080/vis/world-aid-transparency/
 http://localhost:8080/vis/exploit-database-platforms-spiral/

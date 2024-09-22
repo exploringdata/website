@@ -8,20 +8,26 @@
 {%- endmacro %}
 
 
+{% macro card(url, title, image, text='') %}
+<div class="card mt-2">
+    <a href="{{ url }}" title="Read more">
+        <img class="card-img-top object-fit-scale" src="{{ image }}" alt="{{ title }}">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title">{{ title }}</h5>
+        {{ text }}
+    </div>
+</div>
+{%- endmacro %}
+
+
 {% macro disclaimer() %}
 <p>Disclosure: As an Amazon Associate I earn commissions from qualifying purchases made via links on this page. Please see the <a href="/about/">about page</a> for more information.</p>
 {%- endmacro %}
 
 
 {% macro gallery_item(doc) %}
-<div class="card mt-2">
-    <a href="{{ doc.url }}" title="Read more">
-        <img class="card-img-top object-fit-scale" src="/img/print/preview/{{ doc.image }}" alt="{{ doc.title }}">
-    </a>
-    <div class="card-body">
-    <h5 class="card-title">{{ doc.title }}</h5>
-    </div>
-</div>
+{{ card(doc.url, doc.title, '/img/print/preview/' + doc.image) }}
 {% endmacro %}
 
 

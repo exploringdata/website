@@ -27,15 +27,6 @@ var langinfo = function(hlang) {
   nodeinfo(hlang.label, desc);
 };
 
-var menuclick = function(menu, event) {
-  event.preventDefault();
-  menu.find('li').removeClass('active');
-  const name = event.target.nodeName.toLowerCase();
-  const t = $(event.target);
-  t.parent().addClass('active');
-  return t;
-};
-
 var nodeClick = function(Graph) {
   Graph.sig.bind('upnodes', function(event){
     hlang = Graph.sig.getNodes(event.content)[0];
@@ -74,7 +65,7 @@ $(function(){
       pmenu.append(`<li class="dropdown-item"><a id="${item[0]}">${item[0]} (${item[1]})</a></li>`);
     });
     pmenu.click(function(event){
-      if (t = menuclick(pmenu, event))
+      if (t = menuClick(pmenu, event))
         visgexf.setFilter(filterid, t.attr('id'));
     });
   });
