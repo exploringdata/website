@@ -3,7 +3,7 @@ related: /map/world/intentional-homicides/
 title: Where in the World Happen Most Murders
 description: A series of maps of the world showing where in the world the least and the most murders happen for the years 1990 to 2021.
 template: page.html
-created: 2024-09-21 01:46:45.704542
+created: 2024-09-22 19:34:01
 image: /img/preview/intentional-homicides.png
 tags: [map, d3, homicides, world, worldbank]
 ---
