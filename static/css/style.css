@@ -1,3 +1,11 @@
+nav a {
+    cursor: pointer;
+}
+.navbar-nav .dropdown-menu {
+    max-height: 60vh;
+    overflow: scroll;
+}
+
 .card-img-top {
     height: 300px;
 }
@@ -5,9 +13,13 @@
     font-size: 1.2rem;
 }
 
-.caret {
-opacity:.8;
+#search-reset {
+    margin-left: -1.3em;
+    top: 1rem;
+    cursor:pointer;
+    opacity:.8;
 }
+
 .small {
 font-size:.85em;
 }
@@ -22,5 +34,6 @@ color:#fff;
 .share a {
 font-size: 20px;
 }
+
 /* wrappers */
 body.full #footer {display:none;}
