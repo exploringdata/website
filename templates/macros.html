@@ -15,7 +15,9 @@
     </a>
     <div class="card-body">
         <h5 class="card-title">{{ title }}</h5>
-        {{ text }}
+        {% if text %}
+            <p class="card-text">{{ text }}</p>
+        {% endif %}
     </div>
 </div>
 {%- endmacro %}

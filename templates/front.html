@@ -1,19 +1,12 @@
 {% extends "page.html" %}
+{% import 'macros.html' as m %}
 
 {% block content %}
 <div class="container-fluid">
   <div class="row">
     {% for doc in get_docs('/info/')[:12] %}
     <div class="col-md-6 col-lg-3">
-      <div class="card mt-2">
-        <a href="{{doc.url}}" title="Read more">
-          <img src="{{ m.image_src(doc.image, base_url, size='preview') }}" alt="{{ doc.title }}" class="card-img-top object-fit-scale">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">{{ doc.title }}</h5>
-          <p class="card-text">{{ doc.description }}</p>
-        </div>
-      </div>
+      {{ m.card(doc.url, doc.title, m.image_src(doc.image, base_url, size='preview'), doc.description) }}
     </div>
     {% endfor %}
   </div>
