@@ -16,7 +16,6 @@ Source repository for the data visualization showcase [Exploring Data](https://e
 ### Pages
 
 http://localhost:8080/vis/climate-changes-decade/
-http://localhost:8080/vis/world-aid-transparency/
 http://localhost:8080/vis/exploit-database-platforms-spiral/
 
 http://localhost:8080/info/intentional-homicides/

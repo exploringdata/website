@@ -272,8 +272,8 @@ iselect.change(function(e) {
 // calculate relations and redraw graphs
 $('.relate').click(function(e){
   e.preventDefault();
-  $('.relate').parent('li').removeClass('active');
-  $(this).parent('li').attr('class', 'active');
+  $('.relate').removeClass('active');
+  $(this).addClass('active');
   relation = this.id;
   setRelations(donors, recipients);
   showGraphs(this.innerHTML);
