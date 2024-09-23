@@ -1,7 +1,8 @@
 #/bin/bash
 set -eou pipefail
 
-svg=${1}
+img=${1}
 
-convert -resize '400x300>' $svg output.png
+convert -resize '400x300>' "$img" output.png
 pngquant --speed 1 --quality 65-80 output.png
+rm output.png
