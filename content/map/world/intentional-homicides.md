@@ -1,5 +1,5 @@
 ---
-created: 2024-09-21 01:46:45.704542
+created: 2013-09-19 23:37:53
 description: These choropleth maps show .
 image: /img/preview/intentional-homicides.png
 related: /info/intentional-homicides/
