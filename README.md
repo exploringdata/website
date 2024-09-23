@@ -15,19 +15,9 @@ Source repository for the data visualization showcase [Exploring Data](https://e
 
 ### Pages
 
-http://localhost:8080/vis/climate-changes-decade/
 http://localhost:8080/vis/exploit-database-platforms-spiral/
 
 http://localhost:8080/info/intentional-homicides/
-
-### Are these resources still used?
-
-/json/topo/countries.topo.json
-/vendor/d3/d3.v3.min.js
-/vendor/d3/queue.v1.min.js
-/vendor/d3/d3.geo.projection.v0.min.js
-/vendor/d3/topojson.v1.min.js
-/js/colors.js
 
 ### Clean up
 
