@@ -2,10 +2,6 @@
 
 Source repository for the data visualization showcase [Exploring Data](https://exploring-data.com/), a web site built with the [static site generator Logya](https://ramiro.org/logya/).
 
-## Try
-
-* https://pandas-datareader.readthedocs.io/en/latest/remote_data.html#world-bank
-
 ## Remove/Replace
 
 * {% block nav_right %}
@@ -16,7 +12,3 @@ Source repository for the data visualization showcase [Exploring Data](https://e
 ### Pages
 
 http://localhost:8080/info/intentional-homicides/
-
-### Clean up
-
-* Lots of data in static/json/
