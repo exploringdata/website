@@ -1,10 +1,11 @@
 {% extends "page.html" %}
 {% import 'macros.html' as m %}
+{% set docs = get_docs()|selectattr('image')|rejectattr('template', 'in', ['print.html', 'page.html'])|list %}
 
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    {% for doc in get_docs('/info/')[:12] %}
+    {% for doc in docs[:12] %}
     <div class="col-md-6 col-lg-3">
       {{ m.card(doc.url, doc.title, m.image_src(doc.image, base_url, size='preview'), doc.description) }}
     </div>
