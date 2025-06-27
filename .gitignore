@@ -8,14 +8,18 @@ deploy/
 public/
 content/print/
 content/prints/
-src/img/
+src/img/players/
 src/img/print/
-static/compiled
-static/d3-geomap
+src/img/screenshots/
+src/img/watermark.png
+static/compiled/
+static/d3-geomap/
+static/img/icons/
 static/img/print/
-static/vendor
+static/torlaune/
+static/vendor/
 test/
 
 # node.js
-node_modules
+node_modules/
 package-lock.json

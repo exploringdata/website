@@ -1,0 +1,63 @@
+---
+title: World Cup 2014 Player Migrations
+description: An interactive data visualization that shows the migration paths from players participating in the FIFA world cup 2014, who were born in another country than the one they are playing for.
+template: sankey.html
+created: 2014-06-19 17:24:39
+image: /img/torlaune/world-cup-2014-player-migrations-large.png
+scripts:
+- /compiled/bar.js
+- /compiled/wc2014-player-migrations.js
+styles:
+- /css/bar.css
+- /css/wc2014-player-migrations.css
+config:
+    csv: /csv/world-cup-2014-migrated-players.csv
+    from:
+        key: birthCountry
+        name: Born in
+    to:
+        key: nationality
+        name: Plays for
+    aggregate:
+        value: 1
+---
+<div class="row">
+    <div class="col-md-8">
+        <h2>World Cup 2014 Player Migrations</h2>
+        <div class="sankey-legend">
+            <h5 class="left">Born in country</h5>
+            <h5 class="right">Plays for country</h5>
+        </div>
+        <div id="vis"></div>
+        <p>The flow diagram above shows the migration paths from players participating in the FIFA world cup 2014, who were born in another country than the one they are playing for. The more players migrated from one country to another the thicker the line that connects them. You can click on the countries and paths for detailed information of the players who migrated.</p>
+        <p>The use of the word migration in this context doesn't imply that the concerned players live in the countries they play for. In many cases they were actually raised in the countries they were born in and play for a club there. Often the migration is their best chance to take part in tournaments like the world cup, so it is a perfectly comprehensible move, even more so since they usually have ancestry from the country they play for.</p>
+        <p>Here are a few tidbits I learned through this visualization and the feedback I got:</p>
+        <ul>
+            <li>With 47 players France is the top birth country in this world cup, enough to equip 2 teams.</li>
+            <li>16 of Algeria's players were born in France.</li>
+            <li><a href="http://news.bbc.co.uk/sport2/hi/football/africa/3742472.stm">Rio Mavuba</a>, who plays for France, was born at sea off the coast of Angola.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Peter_Odemwingie">Peter Odemwingie</a>, who plays for Nigeria, is the only world cup player born in Uzbekistan.</li>
+
+        </ul>
+        <p>This visualization was created by <a href="https://ramiro.org/">Ramiro Gómez</a> with data last obtained on June 23, 2014 from <del>kimonolabs.com</del>.</p>
+    </div>
+    <div class="col-md-4" id="sidebar">
+        <div id="rankings">
+            <h2>Top Migration Paths</h2>
+            <svg id="top-paths" class="bar"></svg>
+            <p>Most common migration paths between countries.</p>
+            <hr>
+            <h2>Most Emigrations</h2>
+            <svg id="most-emigrations" class="bar"></svg>
+            <p>Countries with most players born there, who play for a different country now.</p>
+            <hr>
+            <h2>Most Immigrations</h2>
+            <svg id="most-immigrations" class="bar"></svg>
+            <p>Countries with most players who were born in another country.</p>
+        </div>
+        <div id="overlay">
+            <button id="close-overlay" class="btn btn-default btn-sm pull-right"><i class="fa fa-times"></i></button>
+            <div id="detail-info"></div>
+        </div>
+    </div>
+</div>
