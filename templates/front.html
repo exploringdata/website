@@ -1,6 +1,6 @@
 {% extends "page.html" %}
 {% import 'macros.html' as m %}
-{% set docs = get_docs()|selectattr('image')|rejectattr('template', 'in', ['print.html', 'page.html'])|list %}
+{% set docs = get_docs('/vis/')|selectattr('image')|list %}
 
 {% block content %}
 <div class="container-fluid">

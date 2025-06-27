@@ -11,7 +11,7 @@
 {% macro card(url, title, image, text='') %}
 <div class="card mt-2">
     <a href="{{ url }}" title="Read more">
-        <img class="card-img-top object-fit-scale" src="{{ image }}" alt="{{ title }}">
+        <img class="card-img-top object-fit-scale" loading="lazy" src="{{ image }}" alt="{{ title }}">
     </a>
     <div class="card-body">
         <h5 class="card-title">{{ title }}</h5>
