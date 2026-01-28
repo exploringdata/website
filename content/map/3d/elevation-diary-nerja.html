@@ -9,10 +9,38 @@ scripts:
 styles: [/css/elevation-diary-nerja.css]
 template: empty-wide.html
 ---
-<div id="container">
-    <canvas id="deck"></canvas>
-    <div id="loading">Loading deck.gl...</div>
+<canvas id="deck"></canvas>
+<div id="loading">Loading journey...</div>
+<div id="controls">
+    <div id="info-panel">
+        <div class="info-row">
+            <span class="info-label">Photo</span>
+            <span class="info-value">
+                <span id="current-photo">1</span> / <span id="total-photos">483</span>
+            </span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Time</span>
+            <span class="info-value" id="timestamp">-</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Altitude</span>
+            <span class="info-value"><span id="altitude">0</span> m</span>
+        </div>
+        <div class="info-row">
+            <img id="photo-preview" src="" width="400px" alt="Photo Preview">
+        </div>
+    </div>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <div id="button-container">
+        <button id="prev-btn">◀ Previous</button>
+        <button id="play-btn">▶ Play</button>
+        <button id="next-btn">Next ▶</button>
+    </div>
 </div>
+---
 
 ## Prompt
 

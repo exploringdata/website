@@ -1,51 +1,17 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-#container {
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+#deck {
   width: 100vw;
   height: 100vh;
-  position: relative;
-}
-
-#deck-canvas {
-  width: 100%;
-  height: 100%;
-}
-
-.controls {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  z-index: 1;
-  max-width: 250px;
-}
-
-.controls label {
-  display: block;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.controls input[type="checkbox"] {
-  margin-right: 8px;
-}
-
-.controls select {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-.controls h3 {
-  margin: 0 0 10px 0;
-  font-size: 14px;
 }
 
 #loading {
@@ -53,8 +19,107 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 30px 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  z-index: 1000;
+}
+
+#controls {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 400px;
+  max-width: 450px;
+  z-index: 100;
+}
+
+#info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-label {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.info-value {
+  color: white;
+  font-weight: 600;
+}
+
+#progress-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #FF8C00, #FFA500);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+#button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 12px 24px;
   border-radius: 8px;
-  z-index: 2;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#play-btn {
+  background: linear-gradient(135deg, #FF8C00, #FFA500);
+  border-color: #FF8C00;
+  min-width: 120px;
+}
+
+#play-btn:hover {
+  background: linear-gradient(135deg, #FFA500, #FFB520);
+}
+
+#filename {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #ccc;
 }
