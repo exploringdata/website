@@ -21,4 +21,4 @@ print(f'Writing {len(rows)} rows to {csvfile}')
 with open(csvfile, 'w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=columns)
     writer.writeheader()
-    writer.writerows(rows)
+    writer.writerows(sorted(rows, key=lambda x: x['timestamp']))

@@ -4,6 +4,7 @@ created: 2026-01-28 02:10:49
 description: description
 scripts:
 - https://unpkg.com/deck.gl@9.0.16/dist.min.js
+- https://unpkg.com/@loaders.gl/csv@latest/dist/dist.min.js
 - /compiled/map/elevation-diary-nerja.js
 styles: [/css/elevation-diary-nerja.css]
 template: empty-wide.html
@@ -15,9 +16,7 @@ template: empty-wide.html
 
 ## Prompt
 
-I have 483 photos with geo location and altitude information from my recent travel to Nerja in Spain. Come up with interesting ways to visualize the data from the photos. Create a short list of ideas. Keep the small size of the dataset in mind.
-
-Below is a sample from the dataset:
+I have 483 photos with geo location and altitude information from my recent travel to Nerja in Spain Below is a sample from the dataset:
 
 filename,latitude,longitude,altitude,timestamp
 IMG_20260106_132810881,36.78705,-3.883663888888889,197.6,2026:01:06 13:28:12
@@ -25,11 +24,10 @@ IMG_20260113_162920940,36.757866666666665,-3.8864527777777775,135.9,2026:01:13 1
 IMG_20260108_140227340,36.77321666666666,-3.868297222222222,450.5,2026:01:08 14:02:29
 IMG_20260113_161241102,36.75533611111111,-3.8927638888888887,100.0,2026:01:13 16:12:43
 IMG_20260110_132318945,36.76155,-3.8540305555555556,170.7,2026:01:10 13:23:20
-IMG_20260113_133230431,36.78195,-3.8938555555555556,221.4,2026:01:13 13:32:32
-IMG_20260113_160339088,36.75836944444445,-3.891913888888889,132.6,2026:01:13 16:03:42
-IMG_20260106_121008276,36.763125,-3.8771166666666668,107.4,2026:01:06 12:10:10
-IMG_20260105_125532101,36.74216944444444,-3.887102777777778,54.4,2026:01:05 12:55:33
-IMG_20260110_142217936,36.769866666666665,-3.853711111111111,258.0,2026:01:10 14:22:20
+
+I want to create an interactive 3D Elevation Diary. Starting point is attached script. It is a view of the area showing the terrain and a layer of points, one for each photo. I want to go through the photo set one at a time in the order I took them (timestamp). Give me a suggestion on how to implement that, without writing any code.
+
+Come up with interesting ways to visualize the data from the photos. Create a short list of ideas. Keep the small size of the dataset in mind.
 
 ## Ideas
 
