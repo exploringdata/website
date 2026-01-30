@@ -42,10 +42,15 @@ const terrain = new TerrainLayer({
 const BTN_PLAY = document.getElementById('play-btn');
 const BTN_PREV = document.getElementById('prev-btn');
 const BTN_NEXT = document.getElementById('next-btn');
+const BTN_FIRST = document.getElementById('first-btn');
+const BTN_LAST = document.getElementById('last-btn');
+const BTN_INFO = document.getElementById('info-btn');
+const MODAL = document.getElementById('info-modal');
+const MODAL_CLOSE = document.querySelector('.modal-close');
 
 // Journey state
 let allPhotos = [];
-let currentPhotoIndex = 398;
+let currentPhotoIndex = 0;
 let isPlaying = false;
 let playInterval = null;
 
@@ -115,8 +120,17 @@ function updateDisplay() {
 
     // Update UI
     document.getElementById('current-photo').textContent = currentPhotoIndex + 1;
-    document.getElementById('timestamp').textContent = currentPhoto.timestamp;
-    document.getElementById('altitude').textContent = Math.round(currentPhoto.altitude);
+
+    // Format timestamp as "Mon DD HH:MM" (e.g., "Jan 6 13:28")
+    const timestamp = currentPhoto.timestamp;
+    const datePart = timestamp.substring(0, 10).replace(/:/g, '-'); // YYYY-MM-DD
+    const timePart = timestamp.substring(11, 16); // HH:MM
+
+    const date = new Date(datePart);
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    document.getElementById('timestamp').textContent = `${month} ${day} ${timePart}`;
 
     const photoElement = document.getElementById('photo');
     photoElement.setAttribute('src', `/img/nerja-dataset/${currentPhoto.filename}.wim.jpg`);
@@ -178,18 +192,35 @@ function previousPhoto() {
     }
 }
 
+function firstPhoto() {
+    if (currentPhotoIndex !== 0) {
+        currentPhotoIndex = 0;
+        updateDisplay();
+    }
+}
+
+function lastPhoto() {
+    if (currentPhotoIndex !== allPhotos.length - 1) {
+        currentPhotoIndex = allPhotos.length - 1;
+        updateDisplay();
+    }
+}
+
 function play() {
+    document.body.style.cursor = 'none';
     if (currentPhotoIndex >= allPhotos.length - 1) {
         currentPhotoIndex = 0;
+        updateDisplay();
     }
     isPlaying = true;
-    BTN_PLAY.textContent = '⏸ Pause';
+    BTN_PLAY.textContent = '⏸';
     playInterval = setInterval(nextPhoto, 3000); // 3 seconds per photo
 }
 
 function pause() {
+    document.body.style.cursor = 'default';
     isPlaying = false;
-    BTN_PLAY.textContent = '▶ Play';
+    BTN_PLAY.textContent = '▶';
     if (playInterval) {
         clearInterval(playInterval);
         playInterval = null;
@@ -218,9 +249,50 @@ let deckInstance = new Deck({
 });
 
 // Set up event listeners
-BTN_PLAY.addEventListener('click', togglePlay);
+BTN_FIRST.addEventListener('click', firstPhoto);
 BTN_PREV.addEventListener('click', previousPhoto);
+BTN_PLAY.addEventListener('click', togglePlay);
 BTN_NEXT.addEventListener('click', nextPhoto);
+BTN_LAST.addEventListener('click', lastPhoto);
+
+// Info modal
+BTN_INFO.addEventListener('click', () => {
+    MODAL.style.display = 'block';
+});
+
+MODAL_CLOSE.addEventListener('click', () => {
+    MODAL.style.display = 'none';
+});
+
+// Close modal when clicking outside content
+window.addEventListener('click', (e) => {
+    if (e.target === MODAL) {
+        MODAL.style.display = 'none';
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    switch(e.key) {
+        case 'ArrowLeft':
+            previousPhoto();
+            break;
+        case 'ArrowRight':
+            nextPhoto();
+            break;
+        case 'Home':
+            firstPhoto();
+            break;
+        case 'End':
+            lastPhoto();
+            break;
+        case ' ':
+        case 'Spacebar':
+            e.preventDefault(); // Prevent page scroll
+            togglePlay();
+            break;
+    }
+});
 
 // Load photos and start
 loadPhotos().then(() => {
