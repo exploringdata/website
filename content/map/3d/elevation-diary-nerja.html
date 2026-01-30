@@ -28,7 +28,7 @@ template: empty-wide.html
             <span class="info-value"><span id="altitude">0</span> m</span>
         </div>
         <div class="info-row">
-            <img id="photo-preview" src="" width="400px" alt="Photo Preview">
+            <img id="photo" src="" alt="Photo">
         </div>
     </div>
     <div id="progress-container">
@@ -40,7 +40,11 @@ template: empty-wide.html
         <button id="next-btn">Next ▶</button>
     </div>
 </div>
----
+<div id="info">
+
+## Commands
+
+    wim ~/data/photos/nerja-dataset/*.jpg --outdir ~/repos/pub/exploringdata/website/static/img/nerja-dataset --output-label '' --scale 600 900
 
 ## Prompt
 
@@ -151,3 +155,5 @@ The **3D terrain visualization** would create an immersive view of your Nerja tr
 
 **Why It Works for Your Dataset**
 With 483 points spread across elevations from sea level to 450m, you'd see clear patterns - likely clusters along the coast, scattered points on hillside walks, and perhaps a concentration at popular viewpoints. The 3D perspective makes altitude differences immediately intuitive in a way flat maps can't.
+
+</div>

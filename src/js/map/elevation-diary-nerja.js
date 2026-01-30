@@ -12,8 +12,8 @@ const INITIAL_VIEW_STATE = {
     longitude: -3.88,
     zoom: 13.5,
     bearing: 180,
-    pitch: 60,
-    maxPitch: 89
+    pitch: 40,
+    maxPitch: 80
 };
 
 // Terrarium Terrain Tiles (AWS/Mapzen)
@@ -39,9 +39,13 @@ const terrain = new TerrainLayer({
     color: [255, 255, 255]
 });
 
+const BTN_PLAY = document.getElementById('play-btn');
+const BTN_PREV = document.getElementById('prev-btn');
+const BTN_NEXT = document.getElementById('next-btn');
+
 // Journey state
 let allPhotos = [];
-let currentPhotoIndex = 0;
+let currentPhotoIndex = 398;
 let isPlaying = false;
 let playInterval = null;
 
@@ -50,7 +54,6 @@ async function loadPhotos() {
     const response = await fetch('/csv/nerja-dataset-gps.csv');
     const csvText = await response.text();
     const lines = csvText.trim().split('\n');
-    const headers = lines[0].split(',');
 
     allPhotos = lines.slice(1).map(line => {
         const values = line.split(',');
@@ -97,8 +100,7 @@ function createPhotoLayers() {
             getPosition: d => [d.longitude, d.latitude, d.altitude],
             getFillColor: [255, 140, 0, 255],
             getRadius: CURRENT_PHOTO_RADIUS,
-            pickable: true,
-            onClick: info => console.log(info.object)
+            pickable: true
         }));
     }
 
@@ -115,7 +117,9 @@ function updateDisplay() {
     document.getElementById('current-photo').textContent = currentPhotoIndex + 1;
     document.getElementById('timestamp').textContent = currentPhoto.timestamp;
     document.getElementById('altitude').textContent = Math.round(currentPhoto.altitude);
-    document.getElementById('photo-preview').setAttribute('src', `/img/nerja-dataset/${currentPhoto.filename}.wim.jpg`);
+
+    const photoElement = document.getElementById('photo');
+    photoElement.setAttribute('src', `/img/nerja-dataset/${currentPhoto.filename}.wim.jpg`);
 
     // Update progress bar
     const progress = ((currentPhotoIndex + 1) / allPhotos.length) * 100;
@@ -131,14 +135,31 @@ function updateDisplay() {
         initialViewState: {
             longitude: currentPhoto.longitude,
             latitude: currentPhoto.latitude,
-            zoom: 16,
+            zoom: 15,
             bearing: 180,
-            pitch: 60,
+            pitch: 40,
             transitionDuration: 2000,
             transitionInterpolator: new deck.FlyToInterpolator()
         }
     });
 }
+
+function highlightAll() {
+    deckInstance.setProps({
+        layers: [
+            terrain,
+            new ScatterplotLayer({
+                id: 'all-photos-highlighted',
+                data: allPhotos,
+                getPosition: d => [d.longitude, d.latitude, d.altitude],
+                getFillColor: [255, 140, 0, 255],
+                getRadius: RADIUS,
+                pickable: true
+            })
+        ]
+    });
+}
+
 
 // Navigation functions
 function nextPhoto() {
@@ -146,7 +167,7 @@ function nextPhoto() {
         currentPhotoIndex++;
         updateDisplay();
     } else {
-        pause();
+        end();
     }
 }
 
@@ -162,13 +183,13 @@ function play() {
         currentPhotoIndex = 0;
     }
     isPlaying = true;
-    document.getElementById('play-btn').textContent = '⏸ Pause';
+    BTN_PLAY.textContent = '⏸ Pause';
     playInterval = setInterval(nextPhoto, 3000); // 3 seconds per photo
 }
 
 function pause() {
     isPlaying = false;
-    document.getElementById('play-btn').textContent = '▶ Play';
+    BTN_PLAY.textContent = '▶ Play';
     if (playInterval) {
         clearInterval(playInterval);
         playInterval = null;
@@ -183,6 +204,11 @@ function togglePlay() {
     }
 }
 
+function end() {
+    pause();
+    highlightAll();
+}
+
 // Initialize deck
 let deckInstance = new Deck({
     canvas: document.getElementById('deck'),
@@ -192,9 +218,9 @@ let deckInstance = new Deck({
 });
 
 // Set up event listeners
-document.getElementById('play-btn').addEventListener('click', togglePlay);
-document.getElementById('prev-btn').addEventListener('click', previousPhoto);
-document.getElementById('next-btn').addEventListener('click', nextPhoto);
+BTN_PLAY.addEventListener('click', togglePlay);
+BTN_PREV.addEventListener('click', previousPhoto);
+BTN_NEXT.addEventListener('click', nextPhoto);
 
 // Load photos and start
 loadPhotos().then(() => {

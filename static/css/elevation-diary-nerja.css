@@ -29,16 +29,14 @@ body {
 
 #controls {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 1em;
+  left: 1em;
   background: rgba(0, 0, 0, 0.85);
-  padding: 20px 30px;
-  border-radius: 12px;
+  padding: 1em 1.5em;
+  border-radius: 10px;
   display: none;
   flex-direction: column;
   gap: 15px;
-  min-width: 400px;
-  max-width: 450px;
   z-index: 100;
 }
 
@@ -64,6 +62,23 @@ body {
 .info-value {
   color: white;
   font-weight: 600;
+}
+
+#photo {
+  max-width: 80vw;
+  max-height: 40vh;
+}
+
+@media (min-height: 600px) {
+  #photo {
+    max-height: 60vh;
+  }
+}
+
+@media (min-height: 900px) {
+  #photo {
+    max-height: 70vh;
+  }
 }
 
 #progress-container {
