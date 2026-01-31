@@ -2,15 +2,20 @@
 *.log
 *.gexf
 
+# images
+static/img/icons/
+static/img/players/
+src/img/print/
+src/img/screenshots/
+src/img/watermark.png
+
 # directories
+bak/
 cache/
 deploy/
 public/
 content/print/
 content/prints/
-src/img/print/
-src/img/screenshots/
-src/img/watermark.png
 static/compiled/
 static/d3-geomap/
 static/img/icons/
