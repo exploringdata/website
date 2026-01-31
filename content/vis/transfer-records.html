@@ -1,0 +1,70 @@
+---
+title: "Most Expensive Football Transfers: How the Money Flows"
+description: World Cup 2014 Migrated Players
+template: sankey.html
+created: 2014-06-16 14:23:39
+scripts: [/compiled/transfer-records.js]
+config:
+    csv: /csv/transfer-records.csv
+    from:
+        key: From Team Name
+        name: From team
+    to:
+        key: To Team Name
+        name: To team
+    link:
+        key: Player Name
+    aggregate:
+        key: Transfer Fee
+---
+<div class="row">
+    <div class="col-md-12"><h1>Most Expensive Football Transfers: How the Money Flows</h1></div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="sankey-legend">
+            <h5 class="left">From team</h5>
+            <h5 class="right">To team</h5>
+        </div>
+        <div id="vis"></div>
+        <p>This Sankey diagram was created by <a href="https://ramiro.org/">Ramiro Gómez</a> with data obtained from <del>https://www.transfermarkt.de/en/statistiken/transferrekorde/transfers.html</del> on December 1, 2013.</p>
+    </div>
+    <div class="col-md-4">
+        <p>This visualization shows the money flow between teams for the 50 most expensive transfers in football history.</p>
+        <p>The size of the team rectangles corresponds to the total amount of money for transfers from (left) or to the team (right) and the thickness of the lines between teams to the sum of transfers from one team to the other.</p>
+        <p>Click on a rectangle or line to see a breakdown of the corresponding transfers.</p>
+        <h3>Key Figures</h3>
+        <div>
+            <p>Total amount of money spent in all transfers:<br>
+            <button id="summary-total" type="button" class="btn btn-default disabled"></button>
+            </p>
+            <p>Team that spent the most money: <span class="text-success" id="summary-team-spent"></span><br>
+            <button id="summary-team-spent-total" type="button" class="btn btn-default disabled"></button>
+            </p>
+            <p>Team that earned the most money: <span class="text-success" id="summary-team-earned"></span><br>
+            <button id="summary-team-earned-total" type="button" class="btn btn-default disabled"></button>
+            </p>
+            <p>Highest valued player across all transfers: <span class="text-success" id="summary-player"></span><br>
+            <button id="summary-player-total" type="button" class="btn btn-default disabled"></button>
+            </p>
+        </div>
+        <h3>Money Flow between Teams</h3>
+        <table class="table table-striped small" id="team-money-flow">
+            <thead>
+                <tr><th>Seller</th><th>Buyer</th><th>Sum</th></tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="transfer-modal">
+    <button type="button" class="close">&times;</button>
+    <h3>Transfer Breakdown: <span id="transfer-table-suffix"></span></h3>
+    <table id="transfer-table" class="table table-striped">
+        <thead>
+            <tr><th>#</th><th>Player</th><th>From team</th><th>To team</th><th>Season</th><th>Transfer fee</th></tr>
+        <thead>
+        <tbody></tbody>
+    </table>
+</div>

@@ -1,62 +1,36 @@
 {% extends "vis/blank-with-nav.html" %}
 
+{% import 'macros.html' as m %}
+
 {% block vis %}
 <div class="container-fluid">
-    <div class="row gallery-lg">
-
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/world0.1.png">
-                <h3>World Map Dense</h3>
-                <img src="/img/preview/ip-location-maps/world0.1.png" alt="World Map Dense" class="img-thumbnail">
-            </a>
+    <div class="row">
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/world0.1.png', 'World Map Dense', '/img/preview/ip-location-maps/world0.1.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/world0.01.png">
-                <h3>World Map Medium</h3>
-                <img src="/img/preview/ip-location-maps/world0.01.png" alt="World Map Medium" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/world0.01.png', 'World Map Medium', '/img/preview/ip-location-maps/world0.01.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/world0.005.png">
-                <h3>World Map Sparse</h3>
-                <img src="/img/preview/ip-location-maps/world0.005.png" alt="World Map Sparse" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/world0.005.png', 'World Map Sparse', '/img/preview/ip-location-maps/world0.005.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/AF.png">
-                <h3>Africa</h3>
-                <img src="/img/preview/ip-location-maps/AF.png" alt="Africa" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/AF.png', 'Africa', '/img/preview/ip-location-maps/AF.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/AS.png">
-                <h3>Asia</h3>
-                <img src="/img/preview/ip-location-maps/AS.png" alt="Asia" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/AS.png', 'Asia', '/img/preview/ip-location-maps/AS.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/OC.png">
-                <h3>Australia</h3>
-                <img src="/img/preview/ip-location-maps/OC.png" alt="Australia" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/OC.png', 'Australia', '/img/preview/ip-location-maps/OC.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/EU.png">
-                <h3>Europe</h3>
-                <img src="/img/preview/ip-location-maps/EU.png" alt="Europe" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/EU.png', 'Europe', '/img/preview/ip-location-maps/EU.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/NA.png">
-                <h3>North America</h3>
-                <img src="/img/preview/ip-location-maps/NA.png" alt="North America" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/NA.png', 'North America', '/img/preview/ip-location-maps/NA.png') }}
         </div>
-        <div class="col-md-4">
-            <a href="/img/ip-location-maps/SA.png">
-                <h3>South America</h3>
-                <img src="/img/preview/ip-location-maps/SA.png" alt="South America" class="img-thumbnail">
-            </a>
+        <div class="col-md-6 col-lg-4">
+            {{ m.card('/img/ip-location-maps/SA.png', 'South America', '/img/preview/ip-location-maps/SA.png') }}
         </div>
     </div>
     <hr>

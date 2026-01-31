@@ -14,17 +14,17 @@
 {% endblock %}
 
 {% block nav %}
-<ul class="nav navbar-nav">
+<ul class="navbar-nav">
   <li>{% include 'snippets/typeahead.html' %}</li>
 </ul>
-{% endblock %}
 
-{% block nav_right %}
-  {% if poster %}
-  <div class="pull-right">
-      <a href="{{ poster.url }}" class="roffset btn navbar-btn btn-warning">🛒 <strong>Buy Print</strong></a>
-  </div>
-  {% endif %}
+{% if poster %}
+<div class="ms-3">
+  <a href="{{ poster.url }}" class="mr-2 btn btn-warning">🛒 <strong>Buy Print</strong></a>
+</div>
+{% endif %}
+
+{{ super() }}
 {% endblock %}
 
 {% block vis %}

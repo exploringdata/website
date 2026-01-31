@@ -1,87 +1,80 @@
 {% import 'macros.html' as m %}
 <!DOCTYPE html>
-<html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{{ title }}{% endblock %} | Exploring Data</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if description %}
-        <meta name="description" content="{{description}}">
-    {% endif %}
-    {% if image %}
-        <meta property="og:image" content="{{ m.image_src(image, base_url, size='large') }}">
-    {% endif %}
-    {% include 'snippets/twitter.html' %}
-    <meta name="author" content="Ramiro Gómez">
-    {% block meta %}{% endblock %}
-    <link rel="canonical" href="{{ base_url + url }}">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="/css/style.css" rel="stylesheet">
-    {% block styles %}
-        {% for style in styles %}
-            <link href="{{style}}{% if not style.startswith('http') %}{% endif %}" rel="stylesheet">
-        {% endfor %}
-    {% endblock %}
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="alternate" type="application/rss+xml" title="Exploring Data RSS feed" href="{{ base_url }}/rss.xml">
+  <meta charset="utf-8">
+  <title>{% block title %}{{ title }}{% endblock %} | Exploring Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if description %}
+      <meta name="description" content="{{description}}">
+  {% endif %}
+  {% if image %}
+      <meta property="og:image" content="{{ m.image_src(image, base_url, size='large') }}">
+  {% endif %}
+  {% include 'snippets/twitter.html' %}
+  <meta name="author" content="Ramiro Gómez">
+  {% block meta %}{% endblock %}
+  <link rel="canonical" href="{{ base_url + url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/solid.min.css" integrity="sha512-EHa6vH03/Ty92WahM0/tet1Qicl76zihDCkBnFhN3kFGQkC+mc86d7V+6y2ypiLbk3h0beZAGdUpzfMcb06cMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/css/style.css" rel="stylesheet">
+  {% block styles %}
+      {% for style in styles %}
+          <link rel="stylesheet" href="{{style}}{% if not style.startswith('http') %}{% endif %}">
+      {% endfor %}
+  {% endblock %}
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Exploring Data RSS feed" href="{{ base_url }}/rss.xml">
 </head>
 
 <body class="{% block bodyclass %}{% endblock %}">
-
-    {% block navbar %}
-    <nav id="navbar" class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a id="site-name" class="navbar-brand" href="/">Exploring Data</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="main-navbar">
-            {% block nav %}{% endblock %}
-            {% include 'sharemenu.html' %}
-            {% block nav_right %}{% endblock %}
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    {% endblock %}
-
-    {% block header %}{% endblock %}
-    {% block vis %}{% endblock %}
-    {% block content %}{% endblock %}
-    {% block comments %}{% endblock %}
-    {% block footer %}
-    <div id="footer" class="container">
-      <div class="row"><div class="col-md-12">
-        <footer>
-            <hr>
-            <p>Exploring Data is a showcase of interactive data visualizations created with open data and open source tools, <a href="/about/">learn more</a>.<br>
-            © <script>document.write(new Date().getFullYear())</script> <a href="https://ramiro.org/">Ramiro Gómez</a>.</p>
-        </footer>
-      </div></div>
+{% block navbar %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/img/exploring-data.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      Exploring Data
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      {% block nav %}{% include 'nav.html' %}{% endblock %}
     </div>
-    {% endblock %}
-    {% block modals %}{% endblock %}
+  </div>
+</nav>
+{% endblock %}
 
-    {% include 'ga.html' %}
-    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% block header %}{% endblock %}
+{% block vis %}{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}
+<div id="footer" class="container-fluid">
+    <footer>
+        <hr>
+        <p>Exploring Data is a showcase of interactive data visualizations created with open data and open source tools, <a href="/about/">learn more</a>.<br>
+        © <script>document.write(new Date().getFullYear())</script> <a href="https://ramiro.org/">Ramiro Gómez</a>.</p>
+    </footer>
+</div>
+{% endblock %}
+{% block modals %}{% endblock %}
 
-    {% block body_scripts %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js" integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/fontawesome.min.js" integrity="sha512-obFNtQ1JKCrxPBPLmYDUevlriATl5EhvwU3CFtdW/HKOkeAe0bbsyZfHO44/f1QyndrZJ464TQvrRP9ZjyXSSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/solid.min.js" integrity="sha512-JqavQXK1jFoFcjU3kIvom9jdj3R76Ar8+ZcWezTLONsfi5Y3yibIqq0FyqP4R//K/G3ow84fIH0wBXKWpJf2EQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="/js/script.js"></script>
-    {% if scripts %}
-      {% for script in scripts %}
-          <script src="{{script}}{% if not script.startswith('http') %}{% endif %}"></script>
-      {% endfor %}
-    {% endif %}
+{% block body_scripts %}{% endblock %}
 
-    {% block inlinejs %}{% endblock %}
-  </body>
+<script src="/js/script.js"></script>
+{% if scripts %}
+  {% for script in scripts %}
+      <script src="{{script}}{% if not script.startswith('http') %}{% endif %}"></script>
+  {% endfor %}
+{% endif %}
+
+{% block inlinejs %}{% endblock %}
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
 </html>

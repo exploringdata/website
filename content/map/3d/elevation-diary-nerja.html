@@ -1,0 +1,63 @@
+---
+title: 'Elevation Diary: Nerja'
+created: 2026-01-28 02:10:49
+description: description
+scripts:
+- https://unpkg.com/deck.gl@9.0.16/dist.min.js
+- https://unpkg.com/@loaders.gl/csv@latest/dist/dist.min.js
+- /compiled/map/elevation-diary-nerja.js
+styles: [/css/elevation-diary-nerja.css]
+template: empty-wide.html
+---
+<div id="app-container">
+    <div id="map-container">
+        <div id="loading">Loading journey...</div>
+        <canvas id="deck"></canvas>
+    </div>
+    <div id="info-container">
+        <div id="controls">
+            <div id="info-panel">
+                📷 <span id="current-photo">1</span>/<span id="total-photos">483</span>
+                • 🕐 <span id="timestamp">-</span>
+                <button id="info-btn" class="info-icon">ℹ️</button>
+            </div>
+            <img id="photo" src="" alt="Photo">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="button-container">
+                <button id="first-btn">«</button>
+                <button id="prev-btn">‹</button>
+                <button id="play-btn">▶</button>
+                <button id="next-btn">›</button>
+                <button id="last-btn">»</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="info-modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>About This Project</h2>
+        <p>Interactive 3D elevation diary showing photos from a 2-week vacation in Nerja, Spain, displayed alongside their geographic locations on a terrain map.</p>
+        <p><strong>Keyboard Navigation:</strong>
+          <ul>
+            <li><kbd>Arrow Left</kbd> – previous photo</li>
+            <li><kbd>Arrow Right</kbd> – next photo</li>
+            <li><kbd>Home</kbd> – first photo</li>
+            <li><kbd>End</kbd> – last photo</li>
+            <li><kbd>Space</kbd> – play/pause slideshow</li>
+          </ul>
+        </p>
+
+        <h3>Technical Details</h3>
+        <p><strong>GPS Accuracy:</strong> Location data may be inaccurate, particularly elevation measurements near sea level.</p>
+
+        <h3>Attributions</h3>
+        <p><strong>Terrain Data:</strong> Terrarium elevation tiles (AWS/Mapzen)</p>
+        <p><strong>Satellite Imagery:</strong> Esri World Imagery</p>
+        <p><strong>Visualization:</strong> deck.gl</p>
+        <p><strong>Author:</strong> R G</p>
+    </div>
+</div>

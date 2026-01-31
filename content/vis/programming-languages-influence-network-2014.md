@@ -1,4 +1,5 @@
 ---
+help: snippets/help-plin.html
 related: /info/programming-languages-influence-network/
 title: Programming Languages Influence Network 2014
 description: An interactive network graph showing the connections of programming languages based on their influences with language and language paradigm highlighting rendered with sigma.js and preprocessed with Gephi.
