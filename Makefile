@@ -47,6 +47,11 @@ import_designs:
 	$(MERCHMANAGER_PYTHON) $(MERCHMANAGER)/export_logya.py $(MERCHMANAGER)/data/$(PRODUCT_MAPPING) . --design_alias 'print' --index 'prints' --index_title 'Prints for Data Geeks & Nerds' --image_dir 'src/img/print' --main_product 'Poster'
 
 
+logo:
+	convert -background transparent -resize ^20x20 src/img/ed.svg src/img/ed-20.png
+	convert -background transparent -resize ^42x42 src/img/ed.svg static/img/exploring-data.png
+
+
 static/img/print/large/%: src/img/print/%
 	composite -dissolve 50% -gravity center $(WATERMARK) $< $@
 
