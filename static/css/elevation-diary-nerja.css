@@ -157,22 +157,35 @@ body {
 
 .modal-content h3 {
   color: #FF8C00;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
   font-size: 1.1em;
 }
 
 .modal-content p {
+  margin-bottom: 0.8em;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
 }
 
+.modal-content a {
+  color: #FFA500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.modal-content a:hover {
+  color: #FFB520;
+  text-decoration: underline;
+}
+
 .modal-close {
   color: rgba(255, 255, 255, 0.6);
-  right: 1em;
+  float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
   line-height: 20px;
-  position: absolute;
   transition: color 0.2s;
 }
 

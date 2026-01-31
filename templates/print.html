@@ -23,7 +23,7 @@
                     {% elif 'zazzle.com' in product.url %}{{ product.url }}?rf=238355915198956003&tc=xpdt
                     {% else %}{{ product.url }}
                     {% endif %}">
-                    {{ product.name|replace(' URL', '') }}
+                    {{ product.name|replace('.com URL', '')|title }}
                 </a>
             {% endfor %}
             </p>

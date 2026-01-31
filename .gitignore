@@ -4,13 +4,13 @@
 
 # images
 static/img/icons/
+static/img/nerja-dataset/
 static/img/players/
 src/img/print/
 src/img/screenshots/
 src/img/watermark.png
 
 # directories
-bak/
 cache/
 deploy/
 public/
