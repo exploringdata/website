@@ -1,9 +1,0 @@
-{% import 'macros.html' as m %}
-{% if description and image %}
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@yaph">
-<meta name="twitter:site" content="@yaph">
-<meta name="twitter:title" content="{{ title }}">
-<meta name="twitter:description" content="{{ description }}">
-<meta name="twitter:image:src" content="{{ m.image_src(image, base_url, size='large') }}">
-{% endif %}
