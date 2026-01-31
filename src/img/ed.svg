@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 999.99998 1000"
+   id="svg2"
+   version="1.1"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="ed.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs4">
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Color Shift"
+       id="filter2541"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         type="hueRotate"
+         values="0"
+         result="color1"
+         id="feColorMatrix2537" />
+      <feColorMatrix
+         type="saturate"
+         values="1"
+         result="color2"
+         id="feColorMatrix2539" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Color Shift"
+       id="filter2547"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         type="hueRotate"
+         values="0"
+         result="color1"
+         id="feColorMatrix2543" />
+      <feColorMatrix
+         type="saturate"
+         values="1"
+         result="color2"
+         id="feColorMatrix2545" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.50466666"
+     inkscape:cx="480.5152"
+     inkscape:cy="583.55351"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showborder="false"
+     borderlayer="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Ramiro Gómez</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>© Ramiro Gómez 2024 - ramiro.org</dc:title>
+          </cc:Agent>
+        </dc:rights>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2410.2678,-288.53357)">
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+       id="path3212"
+       cx="2910.2678"
+       cy="788.53357"
+       r="450" />
+    <g
+       id="g12418"
+       transform="matrix(0.94664638,0,0,0.94664638,156.23367,42.071082)"
+       style="stroke-width:1.05636">
+      <path
+         d="M 800.02028,788.18596 H 1203.9707 V 754.52344 H 800.02028 Z m 0,-336.62533 H 1203.9707 V 417.89811 H 800.02028 Z m 67.32507,-67.32508 H 1203.9707 V 350.57304 H 867.34535 Z m 0,471.27552 H 1203.9707 V 821.84856 H 867.34535 Z M 800.02028,586.21073 H 1069.3206 V 552.54826 H 800.02028 Z m 0,67.32512 H 1069.3206 V 619.87333 H 800.02028 Z m 0,-134.65015 H 934.67042 V 485.22318 H 800.02028 Z m 0,201.97522 H 934.67042 V 687.19841 H 800.02028 Z"
+         style="font-size:176.229px;line-height:1.25;font-family:'Edit Undo Line BRK';-inkscape-font-specification:'Edit Undo Line BRK';font-variant-ligatures:none;letter-spacing:0px;opacity:0.9;fill:#c6ebad;fill-opacity:1;stroke-width:0.932192;filter:url(#filter2547)"
+         id="path490"
+         transform="matrix(1.1331981,0,0,1.1331981,1678.3694,105.1675)" />
+      <path
+         d="m 1069.3206,788.18596 h 336.6253 v -33.66252 h -336.6253 z m 0,-336.62533 h 336.6253 v -33.66252 h -336.6253 z m 0,-67.32508 h 269.3003 v -33.66251 h -269.3003 z m 0,471.27552 h 269.3003 v -33.66251 h -269.3003 z m 201.9752,-134.65015 h 201.9752 v -33.66251 h -201.9752 z m 0,-201.97522 h 201.9752 v -33.66252 h -201.9752 z m -201.9752,67.32503 h 134.6501 v -33.66247 h -134.6501 z m 269.3003,67.32512 h 134.6501 v -33.66252 h -134.6501 z m -269.3003,0 h 134.6501 v -33.66252 h -134.6501 z m 269.3003,-67.32512 h 134.6501 v -33.66247 h -134.6501 z m -269.3003,134.65019 h 134.6501 v -33.66251 h -134.6501 z m 0,-201.97522 h 134.6501 v -33.66252 h -134.6501 z"
+         style="font-size:176.229px;line-height:1.25;font-family:'Edit Undo Line BRK';-inkscape-font-specification:'Edit Undo Line BRK';font-variant-ligatures:none;letter-spacing:0px;opacity:0.8;fill:#99c3ff;fill-opacity:1;stroke-width:0.932192;filter:url(#filter2541)"
+         id="path492"
+         transform="matrix(1.1331981,0,0,1.1331981,1602.0768,105.1675)" />
+    </g>
+  </g>
+</svg>
