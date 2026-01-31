@@ -151,19 +151,15 @@ body {
 
 .modal-content h2 {
   color: #FFA500;
-  margin-bottom: 1em;
   font-size: 1.5em;
 }
 
 .modal-content h3 {
   color: #FF8C00;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
   font-size: 1.1em;
 }
 
 .modal-content p {
-  margin-bottom: 0.8em;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
 }
@@ -181,11 +177,12 @@ body {
 
 .modal-close {
   color: rgba(255, 255, 255, 0.6);
-  float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
   line-height: 20px;
+  position: absolute;
+  right: 1em;
   transition: color 0.2s;
 }
 

@@ -63,7 +63,7 @@ async function loadPhotos() {
     allPhotos = lines.slice(1).map(line => {
         const values = line.split(',');
         return {
-            filename: values[0],
+            filestem: values[0],
             latitude: parseFloat(values[1]),
             longitude: parseFloat(values[2]),
             altitude: parseFloat(values[3]),
@@ -133,7 +133,7 @@ function updateDisplay() {
     document.getElementById('timestamp').textContent = `${month} ${day} ${timePart}`;
 
     const photoElement = document.getElementById('photo');
-    photoElement.setAttribute('src', `/img/nerja-dataset/${currentPhoto.filename}.wim.jpg`);
+    photoElement.setAttribute('src', `/img/nerja-dataset/${currentPhoto.filestem}.webp`);
 
     // Update progress bar
     const progress = ((currentPhotoIndex + 1) / allPhotos.length) * 100;
@@ -207,7 +207,6 @@ function lastPhoto() {
 }
 
 function play() {
-    document.body.style.cursor = 'none';
     if (currentPhotoIndex >= allPhotos.length - 1) {
         currentPhotoIndex = 0;
         updateDisplay();
@@ -218,7 +217,6 @@ function play() {
 }
 
 function pause() {
-    document.body.style.cursor = 'default';
     isPlaying = false;
     BTN_PLAY.textContent = '▶';
     if (playInterval) {
