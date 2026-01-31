@@ -8,7 +8,8 @@ static/img/nerja-dataset/
 static/img/players/
 src/img/print/
 src/img/screenshots/
-src/img/watermark.png
+src/img/*.jpg
+src/img/*.png
 
 # directories
 cache/
