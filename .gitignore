@@ -19,6 +19,7 @@ public/
 content/print/
 content/prints/
 static/compiled/
+static/css/
 static/d3-geomap/
 static/img/icons/
 static/img/players/

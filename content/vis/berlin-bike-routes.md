@@ -7,8 +7,8 @@ created: 2013-02-19 02:02:03
 scripts:
 - http://www.openlayers.org/api/OpenLayers.js
 - https://www.openstreetmap.org/openlayers/OpenStreetMap.js
-- /js/berlin-bike-routes/index.js
+- /js/berlin-bike-routes.js
 styles:
-- /css/berlin-bike-routes/index.css
+- /css/berlin-bike-routes.css
 image: /img/preview/berlin-bike-routes.jpg
 ---

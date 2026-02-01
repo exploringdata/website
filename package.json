@@ -4,9 +4,11 @@
   "scripts": {
     "build:scripts": "babel src/js --out-dir static/compiled --minified --no-comments",
     "watch:scripts": "nodemon -e js -w src/js -x 'npm run build:scripts'",
+    "build:styles": "sass --no-source-map src/css:static/css --style=compressed",
+    "watch:styles": "nodemon -e css -w src/css -x 'npm run build:styles'",
     "copy:vendor": "copyfiles --flat node_modules/datatables.net/js/jquery.dataTables.min.js static/vendor/npm",
-    "build": "npm run build:scripts",
-    "watch": "npm run watch:scripts",
+    "build": "run-p build:*",
+    "watch": "run-p watch:*",
     "copy": "npm run copy:vendor",
     "serve": "logya serve",
     "start": "run-p serve watch",
@@ -22,7 +24,8 @@
     "babel-cli": "^6.26.0",
     "copyfiles": "^2.1.1",
     "nodemon": "^1.19.4",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.97.3"
   },
   "dependencies": {
     "datatables.net-bs": "^1.10.20"
