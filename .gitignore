@@ -12,6 +12,7 @@ src/img/*.jpg
 src/img/*.png
 
 # directories
+.cache/
 cache/
 deploy/
 public/

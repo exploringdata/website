@@ -40,6 +40,11 @@ dl_images:
 	$(call dl_optimize_image,https://unpkg.com/three-globe/example/img/night-sky.png)
 
 
+favicon:
+	convert src/img/ed.png -resize 256x256 \
+		-define icon:auto-resize=16,32,48,64,128,256 static/favicon.ico
+
+
 images: $(MERCH_LARGE) $(MERCH_PREVIEW)
 
 
