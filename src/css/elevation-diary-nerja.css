@@ -122,8 +122,6 @@
   top: 0;
   max-width: 90%;
   max-height: 90%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
 }
 
 .modal-content {
