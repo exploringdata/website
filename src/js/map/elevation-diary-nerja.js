@@ -255,7 +255,7 @@ BTN_LAST.addEventListener('click', lastPhoto);
 
 // Info modal
 BTN_INFO.addEventListener('click', () => {
-    MODAL.style.display = 'block';
+    MODAL.style.display = 'flex';
 });
 
 MODAL_CLOSE.addEventListener('click', () => {
@@ -265,6 +265,13 @@ MODAL_CLOSE.addEventListener('click', () => {
 // Close modal when clicking outside content
 window.addEventListener('click', (e) => {
     if (e.target === MODAL) {
+        MODAL.style.display = 'none';
+    }
+});
+
+// Close modal when pressing ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
         MODAL.style.display = 'none';
     }
 });
