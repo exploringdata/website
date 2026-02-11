@@ -57,6 +57,11 @@ logo:
 	convert -background transparent -resize ^42x42 src/img/ed.svg static/img/exploring-data.png
 
 
+screenshots:
+#	rm -f static/img/preview/*.wim.png
+	wim src/img/screenshots/*.png --outdir static/img/preview/ --quantize 256 --scale 600 400 --output-label ''
+
+
 static/img/print/large/%: src/img/print/%
 	composite -dissolve 50% -gravity center $(WATERMARK) $< $@
 
