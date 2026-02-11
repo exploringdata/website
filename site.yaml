@@ -19,3 +19,9 @@ collections:
 extensions:
     jinja:  # https://jinja.palletsprojects.com/extensions/
         - 'jinja2.ext.loopcontrols'
+    markdown:  # https://python-markdown.github.io/extensions/
+        - 'attr_list'
+        - 'def_list'
+        - 'fenced_code'
+        - 'toc'
+        - 'tables'
