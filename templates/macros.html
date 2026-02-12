@@ -23,6 +23,17 @@
 {%- endmacro %}
 
 
+{% macro content_gallery(docs) %}
+{% for doc in docs[:12] %}
+<div class="col-md-6 col-lg-3">
+  {% if doc.image %}
+  {{ card(doc.url, doc.title, image_src(doc.image, base_url, size='preview'), doc.description) }}
+  {% endif %}
+</div>
+{% endfor %}
+{% endmacro %}
+
+
 {% macro disclaimer() %}
 <p>Disclosure: As an Amazon Associate I earn commissions from qualifying purchases made via links on this page. Please see the <a href="/about/">about page</a> for more information.</p>
 {%- endmacro %}

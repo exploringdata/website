@@ -3,10 +3,8 @@ noindex: 1
 title: Maps
 description: A list of maps on this website.
 created: 2026-02-11 21:39:28
-template: page.html
+template: page-wide.html
 pre_render: [body]
 ---
-{% for doc in get_docs('/map/')|rejectattr('noindex') %}
-<h2><a href="{{ doc.url }}">{{ doc.title }}</a></h2>
-<p>{{ doc.description }}</p>
-{% endfor %}
+{% import 'macros.html' as m %}
+<div class="row">{{ m.content_gallery(get_docs('/map/')|rejectattr('noindex')|list) }}</div>
