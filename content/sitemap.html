@@ -1,7 +1,31 @@
 ---
-url: /sitemap/
 title: Exploring Data Sitemap
 created: 2013-02-07 20:14:38
-template: sitemap.html
+template: two-column.html
 noindex: 1
+pre_render: [body]
 ---
+<h2>Data Visualizations</h2>
+<ul class="list-unstyled">
+{% for doc in get_docs('/vis/')|rejectattr('noindex') %}
+    <li><a href="{{ doc.url }}" title="{{ doc.description|e }}">{{ doc.title }}</a></li>
+{% endfor %}
+</ul>
+<h2>Maps</h2>
+<ul class="list-unstyled">
+{% for doc in get_docs('/map/')|rejectattr('noindex') %}
+    <li><a href="{{ doc.url }}" title="{{ doc.description|e }}">{{ doc.title }}</a></li>
+{% endfor %}
+</ul>
+<h2>About Visualizations</h2>
+<ul class="list-unstyled">
+{% for doc in get_docs('/info/')|rejectattr('noindex') %}
+    <li><a href="{{ doc.url }}" title="{{ doc.description|e }}">{{ doc.title }}</a></li>
+{% endfor %}
+</ul>
+<h2>Data Stories</h2>
+<ul class="list-unstyled">
+{% for doc in get_docs('/story/')|rejectattr('noindex') %}
+    <li><a href="{{ doc.url }}" title="{{ doc.description|e }}">{{ doc.title }}</a></li>
+{% endfor %}
+</ul>

@@ -74,7 +74,7 @@
 <script src="/js/script.js"></script>
 {% if scripts %}
   {% for script in scripts %}
-      <script src="{{script}}{% if not script.startswith('http') %}{% endif %}"></script>
+    <script src="{{ script }}"></script>
   {% endfor %}
 {% endif %}
 

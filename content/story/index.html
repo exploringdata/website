@@ -1,0 +1,10 @@
+---
+noindex: 1
+title: Data Stories
+description: A list of data stories on this website.
+created: 2026-02-12 22:20:48
+template: page-wide.html
+pre_render: [body]
+---
+{% import 'macros.html' as m %}
+<div class="row">{{ m.content_gallery(get_docs('/story/')|rejectattr('noindex')|list) }}</div>

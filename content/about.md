@@ -1,9 +1,8 @@
 ---
-url: /about/
 title: About Exploring Data
 description: Exploring Data is about mining and visualizing public data with open source tools.
 created: 2012-09-07 18:39:09
-template: page.html
+template: two-column.html
 noindex: 1
 ---
 Exploring Data is about mining and visualizing public data with open source tools created by Ramiro Gómez. The topics covered in the [visualizations](/vis/), [maps](/tags/map/) and [stories](/tags/data-story/) include human development, climate change,

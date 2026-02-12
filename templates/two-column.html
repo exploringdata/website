@@ -1,0 +1,13 @@
+{% extends "base2.html" %}
+
+{% block content %}
+<div class="two-column">
+    <main class="main-content">
+        <h1>{{ title }}</h1>
+        {{ body }}
+    </main>
+    <aside class="sidebar">
+        {% include 'right.html' %}
+    </aside>
+</div>
+{% endblock %}

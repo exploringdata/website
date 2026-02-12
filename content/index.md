@@ -1,5 +1,4 @@
 ---
-url: /
 title: Data Mining and Data Visualization
 description: Exploring Data is a showcase of interactive data visualizations comprising topics like world aid flow, climate change, programming languages, football, knowledge graph relations, and networks.
 created: 2012-09-07 18:35:00
