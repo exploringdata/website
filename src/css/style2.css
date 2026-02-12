@@ -1,18 +1,18 @@
 /* Base Variables */
-
 :root {
+  /* Colors */
   --text: #1f2937;
   --muted: #6b7280;
   --border: #e5e7eb;
-  --code-bg: #f8fafc;
-  --stripe: #f9fafb;
+  --light-bg: #f8fafc; /* Replaces --code-bg and --stripe */
   --nav-bg: #111827;
   --nav-link: #f9fafb;
+
+  /* Sizing */
   --max-width: 1500px;
 }
 
-/* Base Layout */
-
+/* Reset and Base */
 html {
   font-size: 1.1rem;
 }
@@ -25,7 +25,10 @@ body {
   background: #fff;
 }
 
-.single-column {
+/* Layout */
+.single-column,
+.two-column,
+.flex-columns {
   max-width: var(--max-width);
   margin: 2rem auto;
   padding: 0 2rem;
@@ -33,143 +36,33 @@ body {
 
 .two-column {
   display: flex;
-  gap: 2rem;              /* space between main and sidebar */
-  max-width: var(--max-width);
-  margin: 2rem auto;
-  padding: 0 2rem;
+  gap: 2rem;
 }
 
-/* Main content takes 2/3 width, sidebar 1/3 */
-
-.main-content {
+.two-column .main-content {
   flex: 2;
 }
 
-.sidebar {
+.two-column .sidebar {
   flex: 1;
-  padding: 1rem;
-  border-radius: 8px;      /* optional */
-}
-
-/* Responsive: stack columns on small screens */
-
-@media (max-width: 768px) {
-  .two-column {
-    flex-direction: column;
-  }
-
-  .main-content,
-  .sidebar {
-    flex: unset;           /* reset flex sizing */
-    width: 100%;
-  }
-
-  .sidebar {
-    margin-top: 2rem;
-  }
-}
-
-.flex-columns {
-  display: flex;
-  flex-wrap: wrap;       /* allows columns to wrap to next row */
-  gap: 2rem;             /* space between columns */
-  margin: 0 auto;
-  max-width: var(--max-width);     /* optional container width */
-  padding: 0 2rem;       /* horizontal padding */
-}
-
-.flex-columns .column {
-  flex: 1 1 250px;       /* flexible width, min 250px */
-  background: #f5f5f5;   /* optional visual */
   padding: 1rem;
   border-radius: 8px;
 }
 
-/* Stack columns fully on small screens */
-
-@media (max-width: 768px) {
-  .flex-columns .column {
-    flex: 1 1 100%;       /* full width */
-  }
-}
-
-/* Navbar */
-
-.navbar {
-  background: var(--nav-bg);
-}
-
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0 2rem;
+.flex-columns {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  max-width: var(--max-width);
-}
-
-.navbar a {
-  text-decoration: none;
-  color: var(--nav-link);
-  font-weight: 500;
-  display: block;
-  padding: 0.4rem;
-}
-
-.navbar a:hover {
-  opacity: 0.8;
-}
-
-.navbar .logo {
-  padding-top: .5rem;
-}
-
-/* Hamburger button */
-
-.hamburger button {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--nav-link);
-  cursor: pointer;
-  display: none; /* hidden on large screens */
-}
-
-/* Links wrapper */
-
-.nav-links {
-  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
-/* Responsive: small screens */
-
-@media (max-width: 768px) {
-  .navbar ul {
-    justify-content: space-between; /* space between logo and hamburger */
-  }
-
-  .nav-links {
-    display: none;       /* hide links initially */
-    flex-direction: column;
-    gap: 0;
-    position: absolute;
-    top: 60px;
-    right: 2rem;
-    background: var(--nav-bg);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-
-  .hamburger button {
-    display: block;      /* show hamburger on small screens */
-  }
+.flex-columns .column {
+  flex: 1 1 250px;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 /* Typography */
-
 h1, h2, h3, h4 {
   margin: 2.5rem 0 1rem;
   line-height: 1.25;
@@ -188,7 +81,7 @@ h3 {
   font-size: 1.3rem;
 }
 
-p {
+p, small {
   margin: 1rem 0;
 }
 
@@ -196,10 +89,44 @@ small {
   color: var(--muted);
 }
 
-/* Code */
+/* Navbar */
+.navbar {
+  background: var(--nav-bg);
+}
 
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: var(--max-width);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--nav-link);
+  font-weight: 500;
+  padding: 0.4rem;
+  transition: opacity 0.3s;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+.navbar .logo {
+  padding-top: .5rem;
+}
+
+.hamburger button {
+  display: none;
+}
+
+/* Code */
 pre {
-  background: var(--code-bg);
+  background: var(--light-bg); /* Updated variable */
   padding: 1.2rem;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -207,19 +134,17 @@ pre {
   margin: 1.5rem 0;
 }
 
-code {
+code,
+p code,
+li code {
   font-family: ui-monospace, "Liberation Mono", monospace;
   font-size: 0.95rem;
-}
-
-p code, li code {
-  background: var(--code-bg);
+  background: var(--light-bg);
   padding: 0.15em 0.4em;
   border-radius: 4px;
 }
 
 /* Tables */
-
 table {
   display: block;
   width: 100%;
@@ -246,11 +171,10 @@ td:first-child {
 }
 
 tbody tr:nth-child(even) {
-  background: var(--stripe);
+  background: var(--light-bg); /* Updated variable */
 }
 
 /* Footer */
-
 footer {
   margin-top: 4rem;
   padding: 2rem;
@@ -263,20 +187,55 @@ footer {
 footer a {
   color: inherit;
   text-decoration: none;
+  transition: text-decoration 0.3s;
 }
 
 footer a:hover {
   text-decoration: underline;
 }
 
-/* Notebooks */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .two-column {
+    flex-direction: column;
+  }
+  .main-content, .sidebar {
+    flex: unset;
+    width: 100%;
+  }
+  .sidebar {
+    margin-top: 2rem;
+  }
 
-.dataframe {
-  font-variant-numeric: tabular-nums;
+  .flex-columns .column {
+    flex: 1 1 100%;
+  }
+
+  .navbar ul {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 60px;
+    right: 2rem;
+    background: var(--nav-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .hamburger button {
+    display: block;
+  }
 }
 
-/* Charts and Media */
+/* Additional Components */
 
+/* Charts, Visualizations, Images, and Notebooks */
 .vega-embed,
 [id^="altair-viz"],
 .notebook img {
@@ -289,4 +248,14 @@ footer a:hover {
 
 .vega-embed svg {
   max-width: 100%;
+}
+
+.dataframe {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card */
+.card img {
+  max-width: 300px;
+  max-height: 300px;
 }
