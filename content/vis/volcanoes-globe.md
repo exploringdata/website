@@ -1,7 +1,7 @@
 ---
 title: Volcanoes of Planet Earth
 description: A 3D globe showing a selection of volcanoes on planet earth.
-template: empty-wide.html
+template: empty.html
 created: 2024-09-24 01:32:02
 image: /img/preview/volcanoes-globe.png
 scripts:

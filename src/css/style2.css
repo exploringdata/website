@@ -9,6 +9,7 @@
   --nav-link: #f9fafb;
 
   /* Sizing */
+  --max-col-width: 1200px;
   --max-width: 1500px;
 }
 
@@ -29,12 +30,16 @@ body {
 .single-column,
 .two-column,
 .flex-columns {
-  max-width: var(--max-width);
   margin: 2rem auto;
   padding: 0 2rem;
 }
 
+.single-column {
+  max-width: var(--max-col-width);
+}
+
 .two-column {
+  max-width: var(--max-width);
   display: flex;
   gap: 2rem;
 }
@@ -54,6 +59,7 @@ body {
 }
 
 .flex-columns {
+  max-width: var(--max-width);
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -105,14 +111,13 @@ small {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  max-width: var(--max-width);
 }
 
 .navbar a {
   text-decoration: none;
   color: var(--nav-link);
   font-weight: 500;
-  padding: 0.4rem;
+  padding: 0.4rem 2rem;
   transition: opacity 0.3s;
 }
 
@@ -272,6 +277,7 @@ footer a:hover {
 }
 
 .card img {
-  max-width: 300px;
+  object-fit: cover;
+  width: 100%;
   max-height: 200px;
 }

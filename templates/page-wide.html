@@ -1,9 +1,0 @@
-{% extends "page.html" %}
-
-{% block content %}
-<div id="info" class="container-fluid">
-    <h1>{{title}}</h1>
-    {{body}}
-    {% if disclaimer %}{% include 'postinfo.html' %}{% endif %}
-</div>
-{% endblock %}
