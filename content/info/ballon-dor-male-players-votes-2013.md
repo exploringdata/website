@@ -2,7 +2,7 @@
 related: /vis/ballon-dor-male-players-votes-2013/
 title: Falcao and Iniesta the top players in 2013 according to Ronaldo and Messi
 description: The Ballon d'Or 2013 visualization shows an interactive network graph of voters and voted football players related based on votes cast for the male FIFA Ballon d'Or award in 2013.
-template: page.html
+template: two-column.html
 created: 2014-01-13 21:50:20
 image: /img/preview/ballon-dor-male-players-2013.jpg
 tags: [network graph, football, sigmajs, gephi, networkx]

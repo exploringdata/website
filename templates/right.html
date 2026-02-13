@@ -1,5 +1,47 @@
 {% set recent = get_docs('/vis/')|rejectattr('noindex')|list %}
 
+{% if image and related %}
+<h3>Visualization</h3>
+<a href="{{ related }}"><img src="{{ m.image_src(image, base_url, size='preview') }}" alt="visualization preview">
+<a href="{{ related }}">View Visualization</a>
+<hr>
+{% endif %}
+
+{% if relateditems %}
+<h3>Visualizations</h3>
+{% for r in relateditems %}
+    <a href="{{ r.url }}"><img src="{{ m.image_src(r.image, base_url, size='preview') }}" alt="visualization preview">
+    <a href="{{ r.url }}">View Visualization</a>
+    <hr>
+{% endfor %}
+{% endif %}
+
+{% if poster %}
+<h3>Visualization Poster</h3>
+<a href="{{ poster.url }}"><img src="{{ poster.image }}" alt="{{ poster.title }}"></a>
+<a href="{{ poster.url }}">Buy Print</a>
+<hr>
+{% endif %}
+
+{% if posters %}
+<h3>Visualization Posters</h3>
+<div class="flex-columns">
+{% for poster in posters %}
+    <div class="column">
+        <a href="{{ poster.url }}" title="{{ poster.title }}"><img src="{{ poster.image }}" alt="{{ poster.title }}"></a>
+    </div>
+{% endfor %}
+</div>
+<hr>
+{% endif %}
+
+{% if repo %}
+<h3>Source Code</h3>
+<p>Check out the source code used to process the data and create the visualizations.</p>
+<a class="btn btn-primary" href="{{ repo }}">Code Repository</a>
+<hr>
+{% endif %}
+
 <h3>Keep Exploring</h3>
 <a href="/rss.xml" class="btn btn-lg btn-warning m-1 mb-2">Subscribe to News feed</a>
 

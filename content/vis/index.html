@@ -3,8 +3,8 @@ noindex: 1
 title: Data Visualizations
 description: A list of data visualizations on this website.
 created: 2012-09-07 14:51:41
-template: page-wide.html
+template: base2.html
 pre_render: [body]
 ---
 {% import 'macros.html' as m %}
-<div class="row">{{ m.content_gallery(get_docs('/vis/')|rejectattr('noindex')|list) }}</div>
+{{ m.content_gallery(get_docs('/vis/')|selectattr('image')|rejectattr('noindex')|list) }}

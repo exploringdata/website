@@ -1,7 +1,7 @@
 {% if tag_links %}
 <div class="tags">
 {% for url, anchor in tag_links %}
-<span class="label label-info"><a href="{{url|e}}">{{anchor|e}}</a></span>
+<a href="{{url|e}}">{{anchor|e}}</a>
 {% endfor %}
 </div>
 {% endif %}

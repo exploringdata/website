@@ -6,5 +6,5 @@ template: vis/sigma.html
 created: 2015-08-06 14:15:01
 scripts:
 - /js/spaghetti-western-actors-dbpedia.js
-image: spaghetti-western-actors-dbpedia-graph.png
+image: /img/preview/spaghetti-western-actors-dbpedia-graph.png
 ---

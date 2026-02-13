@@ -1,10 +1,12 @@
 {% extends "base2.html" %}
+{% import 'macros.html' as m %}
 
 {% block content %}
 <div class="two-column">
     <main class="main-content">
         <h1>{{ title }}</h1>
         {{ body }}
+        {% if tags %}{% include 'postinfo2.html' %}{% endif %}
     </main>
     <aside class="sidebar">
         {% include 'right.html' %}

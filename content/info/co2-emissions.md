@@ -4,7 +4,7 @@ description: Information on choropleth maps showing the Carbon dioxide emissions
 image: /img/preview/co2-emissions-2014.png
 related: /map/world/co2-emissions/
 tags: [climate change, d3, environment, global warming, map, world, worldbank]
-template: page.html
+template: two-column.html
 title: CO2 emissions (metric tons per capita)
 ---
 Carbon dioxide (CO2) is a colorless gas that occurs naturally in Earth's atmosphere as a trace gas. Natural sources include volcanoes, hot springs and geysers. It is also a byproduct of fossil fuel combustion, biomass burning, land use changes and other industrial processes. The Burning of carbon-based fuels has rapidly increased concentrations of atmospheric CO2, increasing the rate of global warming and causing anthropogenic climate change.

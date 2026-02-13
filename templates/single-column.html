@@ -4,5 +4,6 @@
 <div class="single-column">
     <h1>{{ title }}</h1>
     {{ body }}
+    {% if tags %}{% include 'postinfo2.html' %}{% endif %}
 </div>
 {% endblock %}

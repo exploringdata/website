@@ -8,41 +8,6 @@
   {% endif %}
   </div>
   <div class="col-md-3">
-    {% if image and related %}
-      <h3>Visualization</h3>
-      <a href="{{ related }}"><img class="img-thumbnail img-fluid" src="{{ m.image_src(image, base_url, size='preview') }}" alt="visualization preview">
-      <a href="{{ related }}" class="btn btn-primary mt-2">View Visualization</a>
-      <hr>
-    {% endif %}
-    {% if relateditems %}
-        <h3>Visualizations</h3>
-        {% for r in relateditems %}
-          <a href="{{ r.url }}"><img class="img-thumbnail img-fluid" src="{{ m.image_src(r.image, base_url, size='preview') }}" alt="visualization preview">
-          <a href="{{ r.url }}" class="btn btn-primary mt-2">View Visualization</a>
-          <hr>
-        {% endfor %}
-    {% endif %}
-    {% if poster %}
-      <h3>Visualization Poster</h3>
-      <a href="{{ poster.url }}"><img class="img-thumbnail img-fluid" src="{{ poster.image }}" alt="{{ poster.title }}"></a>
-      <a href="{{ poster.url }}" class="btn btn-primary mt-2">Buy Print</a>
-      <hr>
-    {% endif %}
-    {% if posters %}
-      <h3>Visualization Posters</h3>
-      <div class="row">
-      {% for poster in posters %}
-        <div class="col-md-6"><a href="{{ poster.url }}" title="{{ poster.title }}"><img class="img-fluid" src="{{ poster.image }}" alt="{{ poster.title }}"></a></div>
-      {% endfor %}
-      </div>
-      <hr>
-    {% endif %}
-    {% if repo %}
-      <h3>Source Code</h3>
-      <p>Check out the source code used to process the data and create the visualizations.</p>
-      <a class="btn btn-primary" href="{{ repo }}">Code Repository</a>
-      <hr>
-    {% endif %}
     {% include 'right.html' %}
   </div>
 </div>

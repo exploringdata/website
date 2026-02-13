@@ -23,14 +23,20 @@
 {%- endmacro %}
 
 
-{% macro content_gallery(docs) %}
-{% for doc in docs[:12] %}
-<div class="col-md-6 col-lg-3">
-  {% if doc.image %}
-  {{ card(doc.url, doc.title, image_src(doc.image, base_url, size='preview'), doc.description) }}
-  {% endif %}
+{% macro content_gallery(docs, limit=30) %}
+<div class="flex-columns">
+    {% for doc in docs[:limit] %}
+        <div class="column">
+            <div class="card">
+                <a href="{{ doc.url }}" title="Read more">
+                    <img loading="lazy" src="{{ image_src(doc.image, base_url, size='preview') }}" alt="{{ doc.title }}">
+                    <h3>{{ doc.title|truncate(60) }}</h3>
+                </a>
+                {% if doc.description %}<p>{{ doc.description|truncate(100) }}</p>{% endif %}
+            </div>
+        </div>
+    {% endfor %}
 </div>
-{% endfor %}
 {% endmacro %}
 
 
