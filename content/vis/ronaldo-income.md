@@ -19,13 +19,13 @@ With his $80 million Ronaldo is the highest paid footballer during the 12 months
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage) the average gross wage in Spain was €2019 per month by the end of 2012. Ronaldo's pre-tax income being approx. €65 million converted to Euro he could pay <span class="answer-avg-wage"></span> Spanish workers for a year or the lifetime gross incomes of <span class="workers-lives"></span> workers in Spain assuming 50 years of work on average.
 
-<div id="avg-wage" class="icons clearfix"></div>
+<div id="avg-wage" class="icons"></div>
 
 ## How many Ronaldos could Amancio Ortega pay? <span class="text-info answer-ortega"></span>
 
 Ronaldo earns a lot compared to the average person in Spain, but Spain's richest citizen earns a lot more than Ronaldo. Forbes currently estimates [Amancio Ortega's](http://www.forbes.com/profile/amancio-ortega/) net worth at $58.9 billion and states that his fortune grew by $7 billion (approx. €5.6 billion) in the past year. For those $7 billion Ortega could pay Ronaldo's pre-tax income <span class="answer-ortega"></span> times or the average yearly gross wage in Spain <span class="ortega-avg-wage"></span> times.
 
-<div id="ortega" class="icons clearfix"></div>
+<div id="ortega" class="icons"></div>
 
 ## Summary
 

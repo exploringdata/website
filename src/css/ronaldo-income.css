@@ -1,15 +1,18 @@
-.icons i {
-  font-size: 1.4em;
-  padding: 0.2em; }
+.icons {
+  overflow: hidden; /* contain floated .icon elements */
+}
 
 .icons .icon {
   float: left;
   width: 40px;
   height: 40px;
-  background-size: 40px 40px; }
+  background-size: 40px 40px;
+}
 
 .ronaldo {
-  background: url("/img/icons/cristiano-ronaldo-by-hazeljane.svg"); }
+  background: url('/img/icons/cristiano-ronaldo-by-hazeljane.svg');
+}
 
 .worker {
-  background: url("/img/icons/worker.svg"); }
+  background: url('/img/icons/worker.svg');
+}
