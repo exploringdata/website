@@ -2,7 +2,7 @@
 title: 'Rail Suicides in Europe: Absolute vs. Relative'
 description: A look at rail suicides data for Europe from 2008 to 2011 highlighting the importance of relating numbers.
 created: 2013-09-12 11:39:40
-template: single-column.html
+template: page2.html
 tags: [data story, datawrapper, guardian, europe, pandas, bar chart]
 repo: https://github.com/yaph/rail-suicides
 image: /img/preview/rail-suicides-europe.png

@@ -4,7 +4,7 @@ description: "Information on choropleth maps showing the forest area percentage 
 created: 2019-09-19 14:52:18
 related: /map/world/forest-area/
 tags: [climate change, d3, deforestation, environment, forest, global warming, map, world, worldbank]
-template: two-column.html
+template: page-with-sidebar.html
 image: /img/preview/forest-area-2016.png
 pre_render: [body]
 ---

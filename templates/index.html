@@ -1,7 +1,7 @@
 {% extends "base2.html" %}
 
 {% block content %}
-<div class="flex-columns">
+<div class="container flex-columns">
     {% for doc in docs %}
         <div class="column">
             <h3><a href="{{ doc.url }}">{{ doc.title }}</a></h3>

@@ -1,0 +1,22 @@
+{% extends "base2.html" %}
+
+{% block base_styles %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="container notebook">
+    <h1>{{ title }}</h1>
+    {{ body }}
+    {% include 'postinfo2.html' %}
+</div>
+{% endblock %}
+
+{% block base_scripts %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+{% endblock %}
+
+

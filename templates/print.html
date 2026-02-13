@@ -1,45 +1,47 @@
-{% extends "page.html" %}
+{% extends "base2.html" %}
 {% import 'macros.html' as m %}
 {% set disclaimer = True %}
 {% set related = get_docs('/' + shirt_collections_links[0][0][1:-1] + '/')|rejectattr('url', 'equalto', url)|list %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <img class="img-thumbnail img-fluid" src="/img/print/large/{{ image }}" alt="design print">
+<div class="container flex-columns">
+    <aside class="column">
+        <img src="/img/print/large/{{ image }}" alt="design print">
+    </aside>
+    <main class="column">
+        <h1>{{title}}</h1>
+        {{body}}
+        <h3>Products available from</h3>
+        <p>
+        {% for product in products|selectattr('url') %}
+            {% if not product.url.startswith('https://') %}{% continue %}{% endif %}
+            <a class="button" href="
+                {% if 'amazon.com' in product.url %}{{ product.url }}?tag={{ amazon_tag.us }}
+                {% elif 'redbubble.com' in product.url %}{{ product.url }}{% if '?' in product.url %}&{% else %}?{% endif %}asc=u
+                {% elif 'teepublic.com' in product.url %}{{ product.url }}?store_id=240773
+                {% elif 'zazzle.com' in product.url %}{{ product.url }}?rf=238355915198956003&tc=xpdt
+                {% else %}{{ product.url }}
+                {% endif %}">
+                {{ product.name|replace('.com URL', '')|title }}
+            </a>
+        {% endfor %}
+        </p>
+        <p>Please see the respective shop pages for details about available product types, options and prices.</p>
+    </main>
+</div>
+
+{% if related %}
+<div class="container">
+    <h2>You may also like</h2>
+    <div class="flex-columns">
+        {% for doc in related[:4] %}
+        <div class="column">
+            {{ m.gallery_item(doc) }}
         </div>
-        <div class="col-md-8">
-            <h1>{{title}}</h1>
-            {{body}}
-            <h3>Products available from</h3>
-            <p>
-            {% for product in products|selectattr('url') %}
-                {% if not product.url.startswith('https://') %}{% continue %}{% endif %}
-                <a class="btn btn-lg btn-primary" href="
-                    {% if 'amazon.com' in product.url %}{{ product.url }}?tag={{ amazon_tag.us }}
-                    {% elif 'redbubble.com' in product.url %}{{ product.url }}{% if '?' in product.url %}&{% else %}?{% endif %}asc=u
-                    {% elif 'teepublic.com' in product.url %}{{ product.url }}?store_id=240773
-                    {% elif 'zazzle.com' in product.url %}{{ product.url }}?rf=238355915198956003&tc=xpdt
-                    {% else %}{{ product.url }}
-                    {% endif %}">
-                    {{ product.name|replace('.com URL', '')|title }}
-                </a>
-            {% endfor %}
-            </p>
-            <p>Please see the respective shop pages for details about available product types, options and prices.</p>
-            {% if related %}
-                <h2>You may also like</h2>
-                <div class="row">
-                    {% for doc in related[:4] %}
-                    <div class="col-sm-6 col-md-3">
-                        {{ m.gallery_item(doc) }}
-                    </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
+        {% endfor %}
     </div>
     {% include 'postinfo.html' %}
 </div>
+{% endif %}
+
 {% endblock %}
