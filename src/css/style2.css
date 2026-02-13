@@ -144,8 +144,12 @@ li code {
   font-family: ui-monospace, "Liberation Mono", monospace;
   font-size: 0.95rem;
   background: var(--light-bg);
-  padding: 0.15em 0.4em;
   border-radius: 4px;
+}
+
+p code,
+li code {
+  padding: 0.15em 0.4em;
 }
 
 /* Tables */
