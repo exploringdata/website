@@ -306,6 +306,7 @@ footer a:hover {
   background-color: var(--light-bg);
   padding: 1rem;
   border-radius: 8px;
+  max-width: 80%;
 }
 
 .card a {
