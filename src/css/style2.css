@@ -266,7 +266,7 @@ footer a:hover {
 }
 
 /* Button */
-.button, .btn {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -286,16 +286,16 @@ footer a:hover {
     box-shadow 0.2s ease;
 }
 
-.button:hover, .btn:hover {
+.button:hover {
   background-color: #000;
   border-color: var(--dark-bg);
 }
 
-.button:active, .btn:active {
+.button:active {
   transform: translateY(1px);
 }
 
-.button:focus-visible, .btn:focus-visible {
+.button:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.25);
 }
