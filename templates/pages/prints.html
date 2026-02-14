@@ -1,14 +1,14 @@
-{% extends "base.html" %}
+{% extends 'base2.html' %}
 {% import 'macros.html' as m %}
 {% set limit = 4 %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container">
     {% for coll, docs in design_collections %}
-        <a href="/prints/{{ coll|replace(' ', '-') }}/"><h2>{{ coll|title }} Collection</h2></a>
-        <div class="row">
+        <h2><a href="/prints/{{ coll|replace(' ', '-') }}/">{{ coll|title }} Collection</a></h2>
+        <div class="columns">
             {% for doc in docs[:limit] %}
-            <div class="col-sm-6 col-md-3">
+            <div class="column">
                 {{ m.gallery_item(doc) }}
             </div>
             {% endfor %}

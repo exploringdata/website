@@ -1,12 +1,12 @@
-{% extends 'index.html' %}
+{% extends "base2.html" %}
 {% import 'macros.html' as m %}
 
 {% block content %}
-<div class="container-fluid">
-    <h2>{{ title }} Collection</h2>
-    <div class="row">
+<div class="container">
+    <h2>{{ title|title }} Collection</h2>
+    <div class="columns">
         {% for doc in docs %}
-        <div class="col-sm-4 col-md-3">
+        <div class="column">
             {{ m.gallery_item(doc) }}
         </div>
         {% endfor %}

@@ -1,0 +1,18 @@
+{% extends "base2.html" %}
+{% import 'macros.html' as m %}
+
+{% block content %}
+<div class="container">
+  {{ body }}
+  {{ description }}
+  <h3>Book Categories</h3>
+  <ul>
+    <li><a href="/data-visualization-books/general/">Data Visualization</a></li>
+    <li><a href="/data-visualization-books/maps/">Maps &amp; Cartography</a></li>
+    <li><a href="/data-visualization-books/analysis/">Data Mining &amp; Analysis</a></li>
+    <li><a href="/data-visualization-books/coding/">Creative Coding</a></li>
+    <li><a href="/data-visualization-books/ddj/">Data Driven Journalism</a></li>
+  </ul>
+  {{ m.disclaimer() }}
+</div>
+{% endblock %}
