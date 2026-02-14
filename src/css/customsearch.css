@@ -5,6 +5,15 @@ text-align:center;
 font-size:1.1em;
 margin-right:20px;
 }
+form {
+display: flex;
+}
 #q {
-width:30em;
+height: 2rem;
+flex: 1 1 200px;
+margin: .3em .3em .3em 0;
+}
+.gsc-wrapper,
+.gsc-above-wrapper-area {
+max-width: 100% !important;
 }

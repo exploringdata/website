@@ -266,7 +266,7 @@ footer a:hover {
 }
 
 /* Button */
-.button {
+.button, .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -275,7 +275,7 @@ footer a:hover {
   font-weight: 500;
   border-radius: 6px;
   border: 1px solid var(--border);
-  background-color: var(--text);
+  background-color: var(--dark-bg);
   color: var(--nav-link);
   cursor: pointer;
   text-decoration: none;
@@ -286,16 +286,16 @@ footer a:hover {
     box-shadow 0.2s ease;
 }
 
-.button:hover {
-  background-color: var(--dark-bg);
+.button:hover, .btn:hover {
+  background-color: #000;
   border-color: var(--dark-bg);
 }
 
-.button:active {
+.button:active, .btn:active {
   transform: translateY(1px);
 }
 
-.button:focus-visible {
+.button:focus-visible, .btn:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.25);
 }
