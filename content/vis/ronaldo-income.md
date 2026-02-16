@@ -1,7 +1,7 @@
 ---
 title: How Much Cristiano Ronaldo Earns Viewed from 2 Angles
 description: A look at how much Cristiano Ronaldo earned in 2013/14 compared to the average wage in Spain and the income of its richest citizen Amancio Ortega.
-template: page2.html
+template: page.html
 created: 2014-11-12 13:45:39
 image: /img/preview/ronaldo-income.png
 scripts:

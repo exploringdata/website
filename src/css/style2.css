@@ -38,6 +38,11 @@ img {
   padding: 0 2rem;
 }
 
+.container-full {
+  width: 100%;
+  padding: 0 2rem;
+}
+
 .two-column {
   display: flex;
   gap: 2rem;

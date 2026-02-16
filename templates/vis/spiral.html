@@ -1,27 +1,22 @@
 {% extends "vis/blank-with-nav.html" %}
 
 {% block vis %}
-<div class="container-fluid">
-  <div class="row" class="vis">
-    <div class="col-md-8">
+<div class="container">
+  <div class="columns" class="vis">
+    <main class="main-content">
       <div id="vis"></div>
-    </div>
-    <div class="col-md-4" class="sidebar">
-      <div class="card mt-2" id="expsummary">
-        <div class="card-body">
+    </main>
+    <aside class="sidebar">
+      <div class="card" id="expsummary">
           <h5 class="card-title">About this Visualization</h5>
           <p class="card-text">This visualization displays information on <strong id="platformcount"></strong> software platforms with former or still existing security vulnerabilities that are described in the <a href="https://www.exploit-db.com/">Exploit Database</a>. The <strong id="exploitcount"></strong> listed exploits were collected between March 23, 2003 and September 17, 2014.</p>
-        </div>
       </div>
-      <div class="card mt-2" id="expplatforms">
-        <div class="card-body">
+      <div class="card" id="expplatforms">
           <h5 class="card-title">Top exploited platforms</h5>
           <h6>Platform counts</h6>
           <div id="platforms" class="bar"></div>
-        </div>
       </div>
-      <div class="card mt-2 nodeinfo">
-        <div class="card-body">
+      <div class="card nodeinfo">
           <button id="overview" type="button" class="btn-close float-end" aria-label="Show top exploited platforms"></button>
           <h5>Platform: <span id="platform"></span></h5>
           <div>
@@ -34,7 +29,6 @@
             <div id="expcode" class="bar"></div>
             <p class="small">Exploits are either programs or textual descriptions on how to perform the exploit and are broken down into languages or file types of exploit files.</p>
           </div>
-        </div>
       </div>
       <div id="legend" class="alert alert-info mt-2">
         <button data-bs-dismiss="alert" type="button" class="btn-close float-end" aria-label="Show top exploited platforms"></button>
@@ -45,7 +39,7 @@
             <li>Click and hold while over a node to drag the spiral with the mouse.</li>
         </ul>
       </div>
-    </div>
+    </aside>
   </div>
   <hr>
 </div>

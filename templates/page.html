@@ -1,9 +1,9 @@
-{% extends "base.html" %}
-
-{% block nav %}
-{% include 'nav.html' %}
-{% endblock %}
+{% extends "base2.html" %}
 
 {% block content %}
-{% include 'info.html' %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    {{ body }}
+    {% if tags %}{% include 'postinfo2.html' %}{% endif %}
+</div>
 {% endblock %}
