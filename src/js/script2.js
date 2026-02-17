@@ -12,3 +12,11 @@ function containerDim(selector, dim) {
   const value = getComputedStyle(el)[dim];
   return parseFloat(value);
 }
+
+// Handle click events on elements with the 'close' class to hide their closest close-target.
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.close');
+  if (!btn) return;
+  const target = btn.closest('.close-target');
+  if (target) target.style.display = 'none';
+});

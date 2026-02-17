@@ -77,6 +77,10 @@ img {
   flex: 1 1 300px;
 }
 
+.centered {
+  text-align: center;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   margin: 1rem 0;
@@ -315,7 +319,18 @@ footer a:hover {
   background-color: var(--light-bg);
   padding: 1rem;
   border-radius: 8px;
-  max-width: 80%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header button {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .card a {

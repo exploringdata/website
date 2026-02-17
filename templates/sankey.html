@@ -1,15 +1,14 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 
 {% block styles %}
 <link href="/css/sankey.css" rel="stylesheet">
 {{ super() }}
 {% endblock %}
 
-{% block body_scripts %}
+{% block base_scripts %}
+{{ super() }}
 <script src="/vendor/d3/d3.v3.min.js"></script>
 <script src="/vendor/d3-plugins/sankey.js"></script>
-{# super must be called after dependencies are loaded #}
-{{ super() }}
 <script>
 var config = {{ config }};
 d3.csv(config.csv, function(error, data) {

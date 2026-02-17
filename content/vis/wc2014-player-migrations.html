@@ -21,8 +21,8 @@ config:
     aggregate:
         value: 1
 ---
-<div class="row">
-    <div class="col-md-8">
+<div class="two-column">
+    <div class="main-2">
         <h2>World Cup 2014 Player Migrations</h2>
         <div class="sankey-legend">
             <h5 class="left">Born in country</h5>
@@ -41,7 +41,7 @@ config:
         </ul>
         <p>This visualization was created by <a href="https://ramiro.org/">Ramiro Gómez</a> with data last obtained on June 23, 2014 from <del>kimonolabs.com</del>.</p>
     </div>
-    <div class="col-md-4" id="sidebar">
+    <div class="sidebar" id="sidebar">
         <div id="rankings">
             <h2>Top Migration Paths</h2>
             <svg id="top-paths" class="bar"></svg>
@@ -56,7 +56,7 @@ config:
             <p>Countries with most players who were born in another country.</p>
         </div>
         <div id="overlay">
-            <button id="close-overlay" class="btn btn-default btn-sm pull-right"><i class="fa fa-times"></i></button>
+            <button id="close-overlay">&times;</button>
             <div id="detail-info"></div>
         </div>
     </div>
