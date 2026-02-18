@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Area — World Bank Data Viewer</title>
+
+  <!-- d3 before Plot — Plot's UMD bundle expects d3 on window -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #3fb950;
+      --font-mono: 'JetBrains Mono', 'Fira Mono', monospace;
+    }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 0.55rem 1.2rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .title-block h1 {
+      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .title-block p {
+      font-size: 0.68rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      margin-top: 0.1rem;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      letter-spacing: 0.06em;
+    }
+
+    select {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.25rem 0.55rem;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      outline: none;
+    }
+    select:focus { border-color: var(--accent); }
+
+    #play-btn {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.9rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+    #play-btn:hover:not(:disabled) { background: #1a3d25; }
+    #play-btn:disabled { opacity: 0.35; cursor: default; }
+
+    /* Legend lives in the header, right-aligned */
+    #legend-container {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+    #legend-container svg {
+      color: var(--text);
+      font-family: var(--font-mono) !important;
+      font-size: 11px !important;
+    }
+
+    #status {
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    #status.loading { color: #d29922; animation: blink 1s ease-in-out infinite; }
+    #status.error   { color: #f85149; }
+    @keyframes blink { 50% { opacity: 0.4; } }
+
+    /* ── Map area ── */
+    #map-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    #map-container svg { display: block; }
+
+    .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="title-block">
+    <h1>&#127795; Forest Area</h1>
+    <p>AG.LND.FRST.ZS &middot; % of land area &middot; World Bank WDI</p>
+  </div>
+  <div class="controls">
+    <button id="play-btn" disabled title="Play / pause animation">&#9654;</button>
+    <label for="year-select">YEAR</label>
+    <select id="year-select"></select>
+    <span id="status" class="loading">loading&hellip;</span>
+  </div>
+  <div id="legend-container"></div>
+</header>
+
+<div id="map-container">
+  <div class="placeholder" id="placeholder">Fetching data&hellip;</div>
+</div>
+
+<script type="module">
+  // ── Constants ─────────────────────────────────────────────────────────────
+  const INDICATOR    = 'AG.LND.FRST.ZS';
+  const WB_API       = `https://api.worldbank.org/v2/country/all/indicator/${INDICATOR}`;
+  const WORLD_TOPO   = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+  const FRAME_MS     = 800; // ms per year during animation
+
+  // ── ISO 3166-1 numeric → alpha-3 ─────────────────────────────────────────
+  // Declared at top-of-module so it is initialised before renderMap is called.
+  const NUMERIC_TO_ALPHA3 = {
+    4:'AFG',8:'ALB',12:'DZA',20:'AND',24:'AGO',28:'ATG',31:'AZE',32:'ARG',
+    36:'AUS',40:'AUT',44:'BHS',50:'BGD',52:'BRB',56:'BEL',64:'BTN',68:'BOL',
+    70:'BIH',76:'BRA',84:'BLZ',90:'SLB',96:'BRN',100:'BGR',104:'MMR',
+    112:'BLR',116:'KHM',120:'CMR',124:'CAN',144:'LKA',152:'CHL',156:'CHN',
+    170:'COL',174:'COM',178:'COG',180:'COD',188:'CRI',191:'HRV',192:'CUB',
+    196:'CYP',204:'BEN',208:'DNK',212:'DMA',214:'DOM',218:'ECU',222:'SLV',
+    226:'GNQ',231:'ETH',232:'ERI',233:'EST',242:'FJI',246:'FIN',250:'FRA',
+    262:'DJI',266:'GAB',268:'GEO',276:'DEU',288:'GHA',296:'KIR',300:'GRC',
+    304:'GRL',308:'GRD',320:'GTM',324:'GIN',332:'HTI',336:'VAT',340:'HND',
+    352:'ISL',356:'IND',360:'IDN',364:'IRN',368:'IRQ',372:'IRL',376:'ISR',
+    380:'ITA',384:'CIV',388:'JAM',392:'JPN',398:'KAZ',400:'JOR',404:'KEN',
+    408:'PRK',410:'KOR',414:'KWT',417:'KGZ',418:'LAO',422:'LBN',428:'LVA',
+    430:'LBR',434:'LBY',438:'LIE',440:'LTU',442:'LUX',450:'MDG',454:'MWI',
+    458:'MYS',462:'MDV',466:'MLI',470:'MLT',478:'MRT',480:'MUS',484:'MEX',
+    492:'MCO',496:'MNG',498:'MDA',499:'MNE',504:'MAR',508:'MOZ',516:'NAM',
+    520:'NRU',524:'NPL',528:'NLD',540:'NCL',548:'VUT',554:'NZL',558:'NIC',
+    562:'NER',566:'NGA',578:'NOR',580:'MNP',583:'FSM',584:'MHL',585:'PLW',
+    586:'PAK',591:'PAN',598:'PNG',600:'PRY',604:'PER',608:'PHL',616:'POL',
+    620:'PRT',626:'TLS',630:'PRI',634:'QAT',642:'ROU',643:'RUS',646:'RWA',
+    659:'KNA',662:'LCA',670:'VCT',674:'SMR',682:'SAU',686:'SEN',688:'SRB',
+    694:'SLE',702:'SGP',703:'SVK',704:'VNM',705:'SVN',706:'SOM',710:'ZAF',
+    716:'ZWE',724:'ESP',729:'SDN',752:'SWE',756:'CHE',760:'SYR',762:'TJK',
+    764:'THA',776:'TON',780:'TTO',788:'TUN',792:'TUR',795:'TKM',798:'TUV',
+    800:'UGA',804:'UKR',807:'MKD',818:'EGY',826:'GBR',834:'TZA',840:'USA',
+    850:'VIR',858:'URY',860:'UZB',862:'VEN',882:'WSM',887:'YEM',894:'ZMB',
+  };
+
+  const numericToAlpha3 = num => NUMERIC_TO_ALPHA3[+num] ?? null;
+
+  // ── Data fetching ─────────────────────────────────────────────────────────
+  async function fetchAllIndicatorData() {
+    const url = page =>
+      `${WB_API}?${new URLSearchParams({ format: 'json', per_page: 1000, page })}`;
+
+    const [meta, firstPage] = await fetch(url(1)).then(r => r.json());
+
+    const remaining = await Promise.all(
+      Array.from({ length: meta.pages - 1 }, (_, i) =>
+        fetch(url(i + 2)).then(r => r.json()).then(([, data]) => data)
+      )
+    );
+
+    return [...firstPage, ...remaining.flat()]
+      .filter(d => d.value !== null && d.countryiso3code);
+  }
+
+  // ── DOM refs ──────────────────────────────────────────────────────────────
+  const statusEl        = document.getElementById('status');
+  const yearSelect      = document.getElementById('year-select');
+  const playBtn         = document.getElementById('play-btn');
+  const mapContainer    = document.getElementById('map-container');
+  const legendContainer = document.getElementById('legend-container');
+  const placeholder     = document.getElementById('placeholder');
+
+  // ── Render ────────────────────────────────────────────────────────────────
+  // colorDomain is computed once from ALL data and passed in, so the scale
+  // is stable across every frame of the animation.
+  function renderMap(topoData, dataByYearCountry, year, colorDomain, width, height) {
+    const yearMap   = dataByYearCountry.get(year) ?? new Map();
+    const countries = topojson.feature(topoData, topoData.objects.countries);
+
+    countries.features.forEach(f => {
+      const iso3 = numericToAlpha3(f.id);
+      f.properties.iso3  = iso3;
+      f.properties.value = iso3 ? (yearMap.get(iso3) ?? null) : null;
+    });
+
+    const mapSvg = Plot.plot({
+      width,
+      height,
+      projection: { type: 'equal-earth', domain: { type: 'Sphere' } },
+      color: {
+        type:    'sequential',
+        scheme:  'Greens',
+        domain:  colorDomain,   // fixed global domain — never changes
+        unknown: '#2a2e35',
+      },
+      style: { background: 'transparent', overflow: 'visible' },
+      marks: [
+        Plot.sphere({ fill: '#0d2233' }),
+        Plot.graticule({ stroke: '#1c2333', strokeOpacity: 0.5, strokeWidth: 0.4 }),
+        Plot.geo(countries, {
+          fill:        d => d.properties.value,
+          stroke:      '#0d1117',
+          strokeWidth: 0.4,
+          title: d => {
+            const { value, iso3 } = d.properties;
+            const name = iso3 ?? 'Unknown';
+            return value !== null ? `${name}  ${value.toFixed(1)}%` : `${name}  no data`;
+          },
+          tip: true,
+        }),
+      ],
+    });
+
+    mapContainer.querySelectorAll('svg').forEach(el => el.remove());
+    mapContainer.appendChild(mapSvg);
+  }
+
+  function renderLegend(colorDomain) {
+    const legend = Plot.legend({
+      color: {
+        type:    'sequential',
+        scheme:  'Greens',
+        domain:  colorDomain,
+        label:   '% forest cover',
+        ticks:   5,
+        unknown: '#2a2e35',
+      },
+      style: {
+        background: 'transparent',
+        color:      '#e6edf3',
+        fontFamily: "'JetBrains Mono', monospace",
+        fontSize:   '11px',
+      },
+    });
+    legendContainer.innerHTML = '';
+    legendContainer.appendChild(legend);
+  }
+
+  // ── Bootstrap ─────────────────────────────────────────────────────────────
+  try {
+    const [topoData, indicatorData] = await Promise.all([
+      fetch(WORLD_TOPO).then(r => r.json()),
+      fetchAllIndicatorData(),
+    ]);
+
+    // Index: year → iso3 → value
+    const dataByYearCountry = d3.rollup(
+      indicatorData,
+      rows => rows[0].value,
+      d => d.date,
+      d => d.countryiso3code
+    );
+
+    // Global color domain — fixed across all years and all frames
+    const allValues   = indicatorData.map(d => d.value);
+    const colorDomain = d3.extent(allValues);
+
+    const years = [...dataByYearCountry.keys()].sort((a, b) => b - a);
+
+    years.forEach(yr => {
+      const opt = Object.assign(document.createElement('option'), { value: yr, textContent: yr });
+      yearSelect.appendChild(opt);
+    });
+
+    statusEl.textContent = 'ready';
+    statusEl.className   = '';
+    placeholder.remove();
+    playBtn.disabled     = false;
+
+    // Render the legend once — it never needs to change
+    renderLegend(colorDomain);
+
+    // Helper: render for a given year at current container size
+    const draw = year => {
+      const { clientWidth: w, clientHeight: h } = mapContainer;
+      renderMap(topoData, dataByYearCountry, year, colorDomain, w, h);
+    };
+
+    // Initial render
+    draw(years[0]);
+
+    // Resize: re-render current year at new size
+    const observer = new ResizeObserver(([entry]) => {
+      const { width, height } = entry.contentRect;
+      if (width > 0 && height > 0) draw(yearSelect.value);
+    });
+    observer.observe(mapContainer);
+
+    // Year selector
+    yearSelect.addEventListener('change', () => draw(yearSelect.value));
+
+    // ── Animation ────────────────────────────────────────────────────────────
+    // Iterate oldest → newest, wrapping back to start.
+    const yearsAsc = [...years].reverse(); // years is newest-first; animation goes oldest→newest
+    let animTimer  = null;
+
+    function stepAnimation() {
+      const currentIdx = yearsAsc.indexOf(yearSelect.value);
+      const nextIdx    = (currentIdx + 1) % yearsAsc.length;
+      const nextYear   = yearsAsc[nextIdx];
+      yearSelect.value = nextYear;
+      draw(nextYear);
+    }
+
+    function startAnimation() {
+      playBtn.textContent = '⏸';
+      playBtn.title       = 'Pause animation';
+      animTimer = setInterval(stepAnimation, FRAME_MS);
+    }
+
+    function stopAnimation() {
+      clearInterval(animTimer);
+      animTimer           = null;
+      playBtn.textContent = '▶';
+      playBtn.title       = 'Play animation';
+    }
+
+    playBtn.addEventListener('click', () => {
+      if (animTimer) stopAnimation();
+      else           startAnimation();
+    });
+
+    // Clicking the year select while animating pauses it
+    yearSelect.addEventListener('mousedown', () => {
+      if (animTimer) stopAnimation();
+    });
+
+  } catch (err) {
+    console.error(err);
+    statusEl.textContent    = 'error';
+    statusEl.className      = 'error';
+    placeholder.textContent = 'Failed to load data — see console for details.';
+  }
+</script>
+</body>
+</html>
