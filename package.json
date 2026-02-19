@@ -2,6 +2,8 @@
   "name": "exploring-data.com",
   "version": "1.0.0",
   "scripts": {
+    "build:modules": "esbuild src/modules/worldbank-map.js --bundle --format=esm --minify --outdir=static/compiled",
+    "watch:modules": "esbuild src/modules/worldbank-map.js --bundle --format=esm --watch --outdir=static/compiled",
     "build:scripts": "babel src/js --out-dir static/compiled --minified --no-comments",
     "watch:scripts": "nodemon -e js -w src/js -x 'npm run build:scripts'",
     "build:styles": "sass --no-source-map src/css:static/css --style=compressed",
@@ -23,11 +25,16 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "copyfiles": "^2.1.1",
+    "esbuild": "^0.27.3",
     "nodemon": "^1.19.4",
     "npm-run-all": "^4.1.5",
     "sass": "^1.97.3"
   },
   "dependencies": {
-    "datatables.net-bs": "^1.10.20"
+    "@observablehq/plot": "^0.6.17",
+    "d3": "^7.9.0",
+    "d3-dsv": "^3.0.1",
+    "datatables.net-bs": "^1.10.20",
+    "topojson-client": "^3.1.0"
   }
 }
