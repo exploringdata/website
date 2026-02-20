@@ -1,11 +1,10 @@
 ---
-title: World Map of Countries by Forest Area Percentage of Land Area
-description: "This choropleth map shows the forest area percentage of land area for the world's countries based on data from the World Bank."
 created: 2019-09-19 14:14:10
-related: /info/forest-area/
-scripts: [/compiled/map/forest-area.js]
-template: worldbank-map.html
+description: "These choropleth maps show the forest area percentage of land area for the world's countries based on data from the Food and Agriculture Organization."
 image: /img/preview/forest-area.png
+related: /info/forest-area/
+template: worldbank-map.html
+title: World Map of Countries by Forest Area Percentage of Land Area
 ---
 <script type="module">
   import { createMap } from '/compiled/worldbank-map.js';

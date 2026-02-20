@@ -24,11 +24,19 @@
  * @param {string}  [options.initialYear]       Start on this year instead of the most recent
  * @param {number}  [options.animationInterval] ms per animation frame. Default: 800.
  *                                              Set to 0 to hide the play button entirely.
+ * @param {number[]} [options.colorDomain]     Explicit [min, max] for the color scale.
+ *                                              Overrides automatic domain calculation.
+ * @param {string}  [options.ocean]            Ocean fill color. Overrides the theme default.
+ * @param {number}  [options.clampPercentile]  Percentile (0–50) to clip from each end of
+ *                                              the value distribution when computing the
+ *                                              automatic domain. Default: 1. Ignored when
+ *                                              colorDomain is set.
  */
 export async function createMap(container, options) {
   const config = resolveConfig(options);
 
   applyTheme(container, buildTheme(config.colorScheme));
+  if (config.ocean) container.style.setProperty('--wbm-ocean', config.ocean);
 
   const ui = buildUI(container, config);
 
@@ -47,7 +55,7 @@ export async function createMap(container, options) {
     return;
   }
 
-  const { dataByYearCountry, colorDomain, years } = indexData(indicatorData);
+  const { dataByYearCountry, colorDomain, years } = indexData(indicatorData, config);
 
   populateYearSelect(ui.yearSelect, years, config.initialYear);
 
@@ -77,6 +85,9 @@ function resolveConfig(options) {
     colorReverse:      options.colorReverse      ?? false,
     initialYear:       options.initialYear       ?? null,
     animationInterval: options.animationInterval ?? 800,
+    colorDomain:       options.colorDomain       ?? null,
+    ocean:             options.ocean             ?? null,
+    clampPercentile:   options.clampPercentile   ?? 1,
   };
 }
 
@@ -87,12 +98,12 @@ const BASE_THEME = {
 };
 
 const SCHEME_THEMES = {
-  Greens:  { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#3fb950', accentDim: '#1a3d25', ocean: '#0d2233', graticule: '#1c2333', unknown: '#2a2e35' },
-  Blues:   { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#58a6ff', accentDim: '#1a2d4a', ocean: '#0a1628', graticule: '#1c2333', unknown: '#2a2e35' },
-  Oranges: { bg: '#110c07', surface: '#1c1208', border: '#3d2a14', text: '#f0e6d3', muted: '#a08060', accent: '#f0883e', accentDim: '#3d200a', ocean: '#1a1000', graticule: '#2a1e0e', unknown: '#2e2010' },
-  Purples: { bg: '#0d0a17', surface: '#16122a', border: '#30246d', text: '#e6e0f3', muted: '#8878ae', accent: '#bc8cff', accentDim: '#2d1a4a', ocean: '#110d1e', graticule: '#1e1833', unknown: '#25203a' },
-  Reds:    { bg: '#110808', surface: '#1c1010', border: '#4a2020', text: '#f3e0e0', muted: '#a07070', accent: '#ff7b72', accentDim: '#4a1a1a', ocean: '#1a0a0a', graticule: '#2e1818', unknown: '#2e1a1a' },
-  YlOrRd:  { bg: '#110d00', surface: '#1c1600', border: '#3d2e00', text: '#f3ead0', muted: '#a09060', accent: '#ffa657', accentDim: '#3d2500', ocean: '#1a1200', graticule: '#2a2200', unknown: '#2e2a00' },
+  Greens:  { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#3fb950', accentDim: '#1a3d25', ocean: '#0d2233', graticule: '#1c2333' },
+  Blues:   { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#58a6ff', accentDim: '#1a2d4a', ocean: '#0a1628', graticule: '#1c2333' },
+  Oranges: { bg: '#110c07', surface: '#1c1208', border: '#3d2a14', text: '#f0e6d3', muted: '#a08060', accent: '#f0883e', accentDim: '#3d200a', ocean: '#1a1000', graticule: '#2a1e0e' },
+  Purples: { bg: '#0d0a17', surface: '#16122a', border: '#30246d', text: '#e6e0f3', muted: '#8878ae', accent: '#bc8cff', accentDim: '#2d1a4a', ocean: '#110d1e', graticule: '#1e1833' },
+  Reds:    { bg: '#110808', surface: '#1c1010', border: '#4a2020', text: '#f3e0e0', muted: '#a07070', accent: '#ff7b72', accentDim: '#4a1a1a', ocean: '#1a0a0a', graticule: '#2e1818' },
+  YlOrRd:  { bg: '#110d00', surface: '#1c1600', border: '#3d2e00', text: '#f3ead0', muted: '#a09060', accent: '#ffa657', accentDim: '#3d2500', ocean: '#1a1200', graticule: '#2a2200' },
 };
 
 function buildTheme(scheme) {
@@ -178,7 +189,7 @@ async function fetchIndicator(indicator) {
     .filter(d => d.value !== null && d.countryiso3code);
 }
 
-function indexData(indicatorData) {
+function indexData(indicatorData, config) {
   const dataByYearCountry = d3.rollup(
     indicatorData,
     rows => rows[0].value,
@@ -186,10 +197,21 @@ function indexData(indicatorData) {
     d    => d.countryiso3code
   );
 
-  const colorDomain = d3.extent(indicatorData, d => d.value);
-  const years       = [...dataByYearCountry.keys()].sort((a, b) => b - a);
+  const years = [...dataByYearCountry.keys()].sort((a, b) => b - a);
+
+  // Use explicit domain if provided, otherwise clip percentile tails to
+  // prevent outliers from compressing the rest of the color scale.
+  const colorDomain = config.colorDomain ?? percentileDomain(indicatorData, config.clampPercentile);
 
   return { dataByYearCountry, colorDomain, years };
+}
+
+// Returns [low, high] after clipping p% from each end of the value distribution.
+function percentileDomain(indicatorData, p) {
+  const values = indicatorData.map(d => d.value).sort(d3.ascending);
+  const lo     = d3.quantile(values, p / 100);
+  const hi     = d3.quantile(values, 1 - p / 100);
+  return [lo, hi];
 }
 
 function populateYearSelect(yearSelect, years, initialYear) {
@@ -223,7 +245,7 @@ function createRenderer(topoData, dataByYearCountry, colorDomain, canvas, config
     scheme:  config.colorScheme,
     reverse: config.colorReverse,
     domain:  colorDomain,
-    unknown: token('unknown'),
+    unknown: '#999999',
   };
 
   // D3 zoom — created once, reattached to each new SVG after every draw.
