@@ -9,7 +9,8 @@ pre_render: [body]
 {% import 'macros.html' as m %}
 {% set excluded_templates = [
   'print.html',
+  'page.html',
   'page-with-sidebar.html'
 ] %}
 {% set docs = get_docs('/') | selectattr('image') | rejectattr('template', 'in', excluded_templates) | list %}
-{{ m.content_gallery(docs, limit=8) }}
+{{ m.content_gallery(docs, limit=12) }}
