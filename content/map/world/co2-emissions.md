@@ -11,12 +11,12 @@ title: 'World Map of Countries by CO2 Emissions per Capita'
 
   createMap(document.getElementById('app'), {
     indicator:   'EN.GHG.CO2.PC.CE.AR5',
-    clampPercentile: 2,   // clip the most extreme % from each end
+    clampPercentile: 1.5,   // clip the most extreme % from each end
     topoUrl:     '/topojson/world/countries.json',
     topoObject:  'units',
     title:       'CO2 Emissions',
     emoji:       '👣',
     unit:        'Tonnes per Capita',
-    colorScheme: 'Oranges'
+    colorScheme: 'Blues'
   });
 </script>

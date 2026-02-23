@@ -27,6 +27,8 @@
  * @param {number[]} [options.colorDomain]     Explicit [min, max] for the color scale.
  *                                              Overrides automatic domain calculation.
  * @param {string}  [options.ocean]            Ocean fill color. Overrides the theme default.
+ * @param {string}  [options.sourceUrl]        URL for the data source link in the footer.
+ *                                              Defaults to the World Bank indicator page.
  * @param {number}  [options.clampPercentile]  Percentile (0–50) to clip from each end of
  *                                              the value distribution when computing the
  *                                              automatic domain. Default: 1. Ignored when
@@ -34,6 +36,7 @@
  */
 export async function createMap(container, options) {
   const config = resolveConfig(options);
+  if (!config.sourceUrl) config.sourceUrl = `https://data.worldbank.org/indicator/${config.indicator}`;
 
   applyTheme(container, buildTheme(config.colorScheme));
   if (config.ocean) container.style.setProperty('--wbm-ocean', config.ocean);
@@ -87,6 +90,7 @@ function resolveConfig(options) {
     animationInterval: options.animationInterval ?? 800,
     colorDomain:       options.colorDomain       ?? null,
     ocean:             options.ocean             ?? null,
+    sourceUrl:         options.sourceUrl         ?? null,
     clampPercentile:   options.clampPercentile   ?? 1,
   };
 }
@@ -98,12 +102,12 @@ const BASE_THEME = {
 };
 
 const SCHEME_THEMES = {
-  Greens:  { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#3fb950', accentDim: '#1a3d25', ocean: '#0d2233', graticule: '#1c2333' },
-  Blues:   { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#58a6ff', accentDim: '#1a2d4a', ocean: '#0a1628', graticule: '#1c2333' },
-  Oranges: { bg: '#110c07', surface: '#1c1208', border: '#3d2a14', text: '#f0e6d3', muted: '#a08060', accent: '#f0883e', accentDim: '#3d200a', ocean: '#1a1000', graticule: '#2a1e0e' },
-  Purples: { bg: '#0d0a17', surface: '#16122a', border: '#30246d', text: '#e6e0f3', muted: '#8878ae', accent: '#bc8cff', accentDim: '#2d1a4a', ocean: '#110d1e', graticule: '#1e1833' },
-  Reds:    { bg: '#110808', surface: '#1c1010', border: '#4a2020', text: '#f3e0e0', muted: '#a07070', accent: '#ff7b72', accentDim: '#4a1a1a', ocean: '#1a0a0a', graticule: '#2e1818' },
-  YlOrRd:  { bg: '#110d00', surface: '#1c1600', border: '#3d2e00', text: '#f3ead0', muted: '#a09060', accent: '#ffa657', accentDim: '#3d2500', ocean: '#1a1200', graticule: '#2a2200' },
+  Greens:  { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#3fb950', accentDim: '#1a3d25', ocean: '#0d2233' },
+  Blues:   { bg: '#0d1117', surface: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#8b949e', accent: '#58a6ff', accentDim: '#1a2d4a', ocean: '#0a1628' },
+  Oranges: { bg: '#110c07', surface: '#1c1208', border: '#3d2a14', text: '#f0e6d3', muted: '#a08060', accent: '#f0883e', accentDim: '#3d200a', ocean: '#1a1000' },
+  Purples: { bg: '#0d0a17', surface: '#16122a', border: '#30246d', text: '#e6e0f3', muted: '#8878ae', accent: '#bc8cff', accentDim: '#2d1a4a', ocean: '#110d1e' },
+  Reds:    { bg: '#110808', surface: '#1c1010', border: '#4a2020', text: '#f3e0e0', muted: '#a07070', accent: '#ff7b72', accentDim: '#4a1a1a', ocean: '#1a0a0a' },
+  YlOrRd:  { bg: '#110d00', surface: '#1c1600', border: '#3d2e00', text: '#f3ead0', muted: '#a09060', accent: '#ffa657', accentDim: '#3d2500', ocean: '#1a1200' },
 };
 
 function buildTheme(scheme) {
@@ -137,6 +141,7 @@ function buildUI(container, config) {
 
   const yearSelect = el('select', 'wbm-select');
   const status     = el('span',   'wbm-status', 'loading…');
+  status.dataset.state = 'loading';
 
   const controls = el('div', 'wbm-controls');
   controls.append(
@@ -154,7 +159,13 @@ function buildUI(container, config) {
   const placeholder = el('div', 'wbm-placeholder', 'Fetching data…');
   canvas.appendChild(placeholder);
 
-  container.append(header, canvas);
+  const footer = el('footer', 'wbm-footer');
+  const sourceLink = el('a', 'wbm-source-link', `data.worldbank.org/indicator/${config.indicator}`);
+  sourceLink.href   = config.sourceUrl;
+  sourceLink.target = '_blank';
+  footer.appendChild(sourceLink);
+
+  container.append(header, canvas, footer);
 
   return { playBtn, yearSelect, status, legend, canvas, placeholder };
 }
@@ -214,15 +225,32 @@ function percentileDomain(indicatorData, p) {
   return [lo, hi];
 }
 
+// ── Hash ──────────────────────────────────────────────────────────────────────
+// Reads and writes #year=YYYY without touching the browser history.
+// history.replaceState updates the URL without a navigation event, so the
+// back button is unaffected and Firefox does not re-evaluate page feeds.
+function getHashYear() {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  return params.get('year');
+}
+
+function setHashYear(year) {
+  const hash = '#year=' + year;
+  if (window.location.hash !== hash) history.replaceState(null, '', hash);
+}
+
 function populateYearSelect(yearSelect, years, initialYear) {
   years.forEach(yr => {
     const opt = el('option', null, yr);
     opt.value = yr;
     yearSelect.appendChild(opt);
   });
-  yearSelect.value = (initialYear && years.includes(String(initialYear)))
-    ? String(initialYear)
-    : years[0];
+
+  // Priority: hash → initialYear option → most recent year
+  const hashYear = getHashYear();
+  yearSelect.value = (hashYear    && years.includes(hashYear))           ? hashYear
+                   : (initialYear && years.includes(String(initialYear))) ? String(initialYear)
+                   : years[0];
 }
 
 // ── Renderer ──────────────────────────────────────────────────────────────────
@@ -237,7 +265,6 @@ function createRenderer(topoData, dataByYearCountry, colorDomain, canvas, config
   const style       = getComputedStyle(canvas);
   const token       = name => style.getPropertyValue(`--wbm-${name}`).trim();
   const oceanFill   = token('ocean');
-  const graticule   = token('graticule');
   const strokeColor = token('bg');
 
   const colorScale = {
@@ -285,7 +312,6 @@ function createRenderer(topoData, dataByYearCountry, colorDomain, canvas, config
       style:      { background: 'transparent', overflow: 'visible' },
       marks: [
         Plot.sphere({ fill: oceanFill }),
-        Plot.graticule({ stroke: graticule, strokeOpacity: 0.5, strokeWidth: 0.4 }),
         Plot.geo(countries, {
           fill:        f => getValue(f),
           stroke:      strokeColor,
@@ -300,20 +326,10 @@ function createRenderer(topoData, dataByYearCountry, colorDomain, canvas, config
           },
           tip: true,
         }),
-        Plot.text([config.indicator], {
-          frameAnchor: 'bottom',
-          text:        d => `data.worldbank.org/indicator/${d}`,
-          href:        d => `https://data.worldbank.org/indicator/${d}`,
-          target:      '_blank',
-          fill:        token('muted'),
-          fontSize:    11,
-          fontFamily:  style.getPropertyValue('--wbm-mono').trim(),
-          dy:          -8,
-        }),
       ],
     });
 
-    canvas.querySelectorAll('svg').forEach(s => s.remove());
+    canvas.querySelector('svg')?.remove();
     canvas.appendChild(svg);
     attachZoom(svg);
   }
@@ -366,7 +382,10 @@ function wireEvents(ui, years, draw, resetZoom, config) {
   }
 
   ui.playBtn.addEventListener('click',        () => animTimer ? pause() : play());
-  ui.yearSelect.addEventListener('change',    () => draw(ui.yearSelect.value));
+  ui.yearSelect.addEventListener('change',    () => {
+    setHashYear(ui.yearSelect.value);
+    draw(ui.yearSelect.value);
+  });
   ui.yearSelect.addEventListener('mousedown', () => { if (animTimer) pause(); });
 
   new ResizeObserver(([entry]) => {

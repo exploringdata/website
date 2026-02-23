@@ -1,158 +1,176 @@
 /* ── Font variables ───────────────────────────────────────────────────────────
    Override these in your page CSS to use custom fonts if desired.           */
-:root {
-  --wbm-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --wbm-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
-              'DejaVu Sans Mono', monospace;
-}
+   :root {
+    --wbm-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --wbm-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+                'DejaVu Sans Mono', monospace;
+  }
 
-/* ── Theme properties (values injected by applyTheme() in JS) ────────────────
-   --wbm-bg, --wbm-surface, --wbm-border,
-   --wbm-text, --wbm-muted,
-   --wbm-accent, --wbm-accent-dim,
-   --wbm-loading, --wbm-error                                               */
+  /* ── Theme properties (values injected by applyTheme() in JS) ────────────────
+     --wbm-bg, --wbm-surface, --wbm-border,
+     --wbm-text, --wbm-muted,
+     --wbm-accent, --wbm-accent-dim,
+     --wbm-loading, --wbm-error                                               */
 
-/* ── Root container ──────────────────────────────────────────────────────── */
-.wbm {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: var(--wbm-bg);
-  color: var(--wbm-text);
-  font-family: var(--wbm-sans);
-}
+  /* ── Root container ──────────────────────────────────────────────────────── */
+  .wbm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--wbm-bg);
+    color: var(--wbm-text);
+    font-family: var(--wbm-sans);
+  }
 
-/* ── Header ──────────────────────────────────────────────────────────────── */
-.wbm-header {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 0.55rem 1.2rem;
-  background: var(--wbm-surface);
-  border-bottom: 1px solid var(--wbm-border);
-  flex-shrink: 0;
-  flex-wrap: wrap;
-}
+  /* ── Header ──────────────────────────────────────────────────────────────── */
+  .wbm-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.55rem 1.2rem;
+    background: var(--wbm-surface);
+    border-bottom: 1px solid var(--wbm-border);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
 
-/* color inherited from .wbm */
-.wbm-title {
-  font-size: clamp(0.85rem, 2vw, 1.05rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
+  /* color inherited from .wbm */
+  .wbm-title {
+    font-size: clamp(0.85rem, 2vw, 1.05rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
 
-.wbm-subtitle {
-  font-size: 0.68rem;
-  font-family: var(--wbm-mono);
-  color: var(--wbm-muted);
-  margin-top: 0.1rem;
-}
+  .wbm-subtitle {
+    font-size: 0.68rem;
+    font-family: var(--wbm-mono);
+    color: var(--wbm-muted);
+    margin-top: 0.1rem;
+  }
 
-/* ── Controls ────────────────────────────────────────────────────────────── */
-.wbm-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-}
+  /* ── Controls ────────────────────────────────────────────────────────────── */
+  .wbm-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
 
-.wbm-label {
-  font-size: 0.7rem;
-  font-family: var(--wbm-mono);
-  color: var(--wbm-muted);
-  letter-spacing: 0.06em;
-}
+  .wbm-label {
+    font-size: 0.7rem;
+    font-family: var(--wbm-mono);
+    color: var(--wbm-muted);
+    letter-spacing: 0.06em;
+  }
 
-.wbm-select {
-  background: var(--wbm-bg);
-  color: var(--wbm-text);
-  border: 1px solid var(--wbm-border);
-  border-radius: 4px;
-  padding: 0.25rem 0.55rem;
-  font-size: 0.78rem;
-  font-family: var(--wbm-mono);
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.15s;
-}
-/* Custom focus style replaces the default outline removed above */
-.wbm-select:focus          { border-color: var(--wbm-accent); }
-/* Restore a visible ring for keyboard navigation */
-.wbm-select:focus-visible  { outline: 2px solid var(--wbm-accent); outline-offset: 2px; }
+  .wbm-select {
+    background: var(--wbm-bg);
+    color: var(--wbm-text);
+    border: 1px solid var(--wbm-border);
+    border-radius: 4px;
+    padding: 0.25rem 0.55rem;
+    font-size: 0.78rem;
+    font-family: var(--wbm-mono);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  /* Custom focus style replaces the default outline removed above */
+  .wbm-select:focus          { border-color: var(--wbm-accent); }
+  /* Restore a visible ring for keyboard navigation */
+  .wbm-select:focus-visible  { outline: 2px solid var(--wbm-accent); outline-offset: 2px; }
 
-.wbm-play-btn {
-  background: transparent;
-  color: var(--wbm-accent);
-  border: 1px solid var(--wbm-accent);
-  border-radius: 4px;
-  padding: 0.2rem 0.6rem;
-  font-size: 0.9rem;
-  line-height: 1;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.15s;
-}
-.wbm-play-btn:hover:not(:disabled) { background: var(--wbm-accent-dim); }
-.wbm-play-btn:disabled             { opacity: 0.35; cursor: default; }
-.wbm-play-btn.hidden               { display: none; }
+  .wbm-play-btn {
+    background: transparent;
+    color: var(--wbm-accent);
+    border: 1px solid var(--wbm-accent);
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .wbm-play-btn:hover:not(:disabled) { background: var(--wbm-accent-dim); }
+  .wbm-play-btn:disabled             { opacity: 0.35; cursor: default; }
+  .wbm-play-btn.hidden               { display: none; }
 
-.wbm-status {
-  font-size: 0.7rem;
-  font-family: var(--wbm-mono);
-  white-space: nowrap;
-}
-.wbm-status[data-state='loading'] {
-  color: var(--wbm-loading);
-  animation: wbm-blink 1s ease-in-out infinite;
-}
-.wbm-status[data-state='ready'] { color: var(--wbm-accent); }
-.wbm-status[data-state='error'] { color: var(--wbm-error);  }
+  .wbm-status {
+    font-size: 0.7rem;
+    font-family: var(--wbm-mono);
+    white-space: nowrap;
+  }
+  .wbm-status[data-state='loading'] {
+    color: var(--wbm-loading);
+    animation: wbm-blink 1s ease-in-out infinite;
+  }
+  .wbm-status[data-state='ready'] { color: var(--wbm-accent); }
+  .wbm-status[data-state='error'] { color: var(--wbm-error);  }
 
-@keyframes wbm-blink { 50% { opacity: 0.4; } }
+  @keyframes wbm-blink { 50% { opacity: 0.4; } }
 
-/* ── Legend ──────────────────────────────────────────────────────────────── */
-.wbm-legend {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-/* !important needed to override Plot's own inline font styles */
-.wbm-legend svg {
-  font-family: var(--wbm-mono) !important;
-  font-size: 11px !important;
-}
+  /* ── Legend ──────────────────────────────────────────────────────────────── */
+  .wbm-legend {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  /* !important needed to override Plot's own inline font styles */
+  .wbm-legend svg {
+    font-family: var(--wbm-mono) !important;
+    font-size: 11px !important;
+  }
 
-/* ── Map canvas ──────────────────────────────────────────────────────────── */
-.wbm-canvas {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  background: var(--wbm-bg);
-  cursor: grab;
-}
-.wbm-canvas:active { cursor: grabbing; }
-.wbm-canvas svg { display: block; }
+  /* ── Map canvas ──────────────────────────────────────────────────────────── */
+  .wbm-canvas {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: var(--wbm-bg);
+    cursor: grab;
+  }
+  .wbm-canvas:active { cursor: grabbing; }
+  .wbm-canvas svg { display: block; }
 
-/* ── Placeholder ─────────────────────────────────────────────────────────── */
-.wbm-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--wbm-mono);
-  color: var(--wbm-muted);
-  font-size: 0.9rem;
-}
+  /* ── Placeholder ─────────────────────────────────────────────────────────── */
+  .wbm-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--wbm-mono);
+    color: var(--wbm-muted);
+    font-size: 0.9rem;
+  }
 
-/* ── Plot tooltip fix ────────────────────────────────────────────────────── */
-/* Plot renders tips as <g aria-label="tip"> containing a <rect> and <text>.
-   The rect has a white fill from Plot's own styles — fine for contrast.
-   The text must be dark to read against it.                                */
-.wbm-canvas svg g[aria-label="tip"] text,
-.wbm-canvas svg g[aria-label="tip"] tspan {
-  fill: #111 !important;
-}
+  /* ── Footer ─────────────────────────────────────────────────────────────── */
+  .wbm-footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0.3rem 1rem;
+    background: var(--wbm-surface);
+    border-top: 1px solid var(--wbm-border);
+  }
+
+  .wbm-source-link {
+    font-size: 0.68rem;
+    font-family: var(--wbm-mono);
+    color: var(--wbm-muted);
+    text-decoration: none;
+  }
+  .wbm-source-link:hover        { color: var(--wbm-text); }
+  .wbm-source-link:focus-visible { outline: 2px solid var(--wbm-accent); outline-offset: 2px; }
+
+  /* ── Plot tooltip fix ────────────────────────────────────────────────────── */
+  /* Plot renders tips as <g aria-label="tip"> containing a <rect> and <text>.
+     The rect has a white fill from Plot's own styles — fine for contrast.
+     The text must be dark to read against it.                                */
+  .wbm-canvas svg g[aria-label="tip"] text,
+  .wbm-canvas svg g[aria-label="tip"] tspan {
+    fill: #111 !important;
+  }
