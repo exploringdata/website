@@ -18,11 +18,13 @@ URL_CLEAN="${URL%/}"
 # Extract last path segment as slug
 SLUG="${URL_CLEAN##*/}"
 
-mkdir -p "./$SLUG"
+TARGET_DIR="/media/rg/TREKSTOR/Video/screencasts/exploring-data.com/$SLUG"
+
+mkdir -p "$TARGET_DIR"
 
 # Generate frames (skip existing)
 for (( year=START_YEAR; year<=END_YEAR; year++ )); do
-    OUT="./$SLUG/frame-${year}.png"
+    OUT="$TARGET_DIR/frame-$year.png"
 
     if [ -s "$OUT" ]; then
         echo "Skipping $year (already exists)"
@@ -31,7 +33,7 @@ for (( year=START_YEAR; year<=END_YEAR; year++ )); do
 
     echo "Creating frame for $year..."
     wcap --dimensions 1920x1080 --wait ${WAIT} \
-        "${URL}/#year=${year}" \
+        "$URL/#year=$year" \
         "$OUT"
 done
 
@@ -40,11 +42,11 @@ echo "Creating video..."
 ffmpeg -y \
     -framerate 1.5 \
     -pattern_type glob \
-    -i "./$SLUG/frame-*.png" \
+    -i "$TARGET_DIR/frame-*.png" \
     -c:v libx265 \
     -tag:v hvc1 \
     -pix_fmt yuv420p \
     -crf 28 \
-    "./$SLUG/${SLUG}.mp4"
+    "$TARGET_DIR/$SLUG-$START_YEAR-$END_YEAR.mp4"
 
-echo "Done: ./$SLUG/${SLUG}.mp4"
+echo "Done: $TARGET_DIR/$SLUG.mp4"
