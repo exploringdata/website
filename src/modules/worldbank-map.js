@@ -317,14 +317,13 @@ function createRenderer(topoData, dataByYearCountry, colorDomain, canvas, config
           stroke:      strokeColor,
           strokeWidth: 0.4,
           title: f => {
-            const name     = f.id ?? 'Unknown';
+            const name     = f.properties.name ?? f.id ?? 'Unknown';
             const value    = getValue(f);
             const valueStr = value !== null
               ? `${value.toFixed(1)}${config.unit ? '  ' + config.unit : ''}`
               : 'no data';
             return `${name}  ${valueStr}`;
-          },
-          tip: true,
+          }
         }),
       ],
     });
