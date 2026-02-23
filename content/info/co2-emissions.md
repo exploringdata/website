@@ -11,8 +11,8 @@ Carbon dioxide (CO2) is a colorless gas that occurs naturally in Earth's atmosph
 
 This [interactive map](/map/world/co2-emissions/) shows CO2 emissions per capita (tonnes of CO2 equivalent) from the agriculture, energy, waste, and industrial sectors. The data excludes emissions from Land Use, Land Use Change and Forestry (LULUCF), which carry greater measurement uncertainty. See the video below for an animation showing the changes through the years and check out the interactive version to explore the data in more detail.
 
-<div class="ratio ratio-16x9 mb-2">
-  <iframe src="https://www.youtube-nocookie.com/embed/y7mDE3rNbsM?rel=0" allowfullscreen></iframe>
+<div class="video-wrapper">
+  <iframe src="https://www.youtube-nocookie.com/embed/MjGMqjE2YpI?rel=0" allowfullscreen></iframe>
 </div>
 
 The data comes from the EDGAR (Emissions Database for Global Atmospheric Research) Community GHG Database, published jointly by the Joint Research Centre (JRC) of the European Commission and the International Energy Agency (IEA), and is available from the [World Bank website](https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5), where it is described as:

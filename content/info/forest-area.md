@@ -12,7 +12,7 @@ Deforestation takes place in many forms — wildfires, agricultural clearance, a
 
 This [interactive map]({{ related }}) shows forest area as a percentage of land area for most of the world's countries from 1990 to the most recently available year. The animation below gives an overview of how forest cover has changed over that period — open the interactive version to explore individual countries in more detail.
 
-<div class="ratio ratio-16x9 mb-2">
+<div class="video-wrapper">
   <iframe src="https://www.youtube-nocookie.com/embed/-gqzJ6yhh8E?rel=0" allowfullscreen></iframe>
 </div>
 
