@@ -4,7 +4,7 @@
   "scripts": {
     "build:modules": "esbuild src/modules/worldbank-map.js --bundle --format=esm --minify --outdir=static/compiled",
     "watch:modules": "esbuild src/modules/worldbank-map.js --bundle --format=esm --watch --outdir=static/compiled",
-    "build:scripts": "babel src/js --out-dir static/compiled --minified --no-comments",
+    "build:scripts": "babel src/js --out-dir static/compiled --no-comments",
     "watch:scripts": "nodemon -e js -w src/js -x 'npm run build:scripts'",
     "build:styles": "sass --no-source-map src/css:static/css --style=compressed",
     "watch:styles": "nodemon -e css -w src/css -x 'npm run build:styles'",
