@@ -2,19 +2,20 @@
   "name": "exploring-data.com",
   "version": "1.0.0",
   "scripts": {
-    "build:modules": "esbuild src/modules/worldbank-map.js --bundle --format=esm --minify --outdir=static/compiled",
-    "watch:modules": "esbuild src/modules/worldbank-map.js --bundle --format=esm --watch --outdir=static/compiled",
+    "build:modules": "esbuild src/modules/*.js --bundle --format=esm --minify --outdir=static/compiled",
+    "watch:modules": "esbuild src/modules/*.js --bundle --format=esm --watch --outdir=static/compiled",
     "build:scripts": "babel src/js --out-dir static/compiled --no-comments",
     "watch:scripts": "nodemon -e js -w src/js -x 'npm run build:scripts'",
     "build:styles": "sass --no-source-map src/css:static/css --style=compressed",
     "watch:styles": "nodemon -e css -w src/css -x 'npm run build:styles'",
-    "copy:vendor": "copyfiles --flat node_modules/datatables.net/js/jquery.dataTables.min.js static/vendor/npm",
+    "copy:datatables": "copyfiles --flat node_modules/datatables.net/js/jquery.dataTables.min.js static/vendor/npm",
+    "copy:subject-mapper": "copyfiles --flat node_modules/subject-mapper/dist/subject-mapper.css static/vendor/npm",
     "build": "run-p build:*",
     "watch": "run-p watch:*",
-    "copy": "npm run copy:vendor",
+    "copy": "run-p copy:*",
     "serve": "logya serve",
     "start": "run-p serve watch",
-    "update": "npm install -U --save && npm run copy:vendor"
+    "update": "npm install -U --save && npm run copy"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "d3": "^7.9.0",
     "d3-dsv": "^3.0.1",
     "datatables.net-bs": "^1.10.20",
+    "subject-mapper": "^0.1.0",
     "topojson-client": "^3.1.0"
   }
 }

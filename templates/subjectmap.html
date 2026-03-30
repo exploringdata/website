@@ -1,0 +1,14 @@
+{% extends "empty.html" %}
+
+{% block base_styles %}
+{{ super()}}
+<link rel="stylesheet" href="/vendor/npm/subject-mapper.css">
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<div id="app"></div>
+{{ body|safe}}
+<a id="logo-link" href="/"><img src="/img/exploring-data.png" alt="Exploring Data"></a>
+{% endblock %}
