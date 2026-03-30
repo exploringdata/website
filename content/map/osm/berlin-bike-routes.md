@@ -7,7 +7,7 @@ template: empty.html
 title: Berlin Bike Routes Map
 scripts:
 - https://code.jquery.com/jquery-3.7.1.min.js
-- http://www.openlayers.org/api/OpenLayers.js
+- https://www.openlayers.org/api/OpenLayers.js
 - https://www.openstreetmap.org/openlayers/OpenStreetMap.js
 - /compiled/berlin-bike-routes.js
 styles:
