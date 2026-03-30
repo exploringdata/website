@@ -21,15 +21,15 @@ Let's see which players scored best with the individual groups of voters.
 
 ### Captains Votes
 
-![Captains Votes](http://i.imgur.com/QwiuyIH.png)
+![Captains Votes](https://i.imgur.com/QwiuyIH.png)
 
 ### Coaches Votes
 
-![Coaches Votes](http://i.imgur.com/VHsclQH.png)
+![Coaches Votes](https://i.imgur.com/VHsclQH.png)
 
 ### Media Votes
 
-![Media Votes](http://i.imgur.com/xnaU15V.png)
+![Media Votes](https://i.imgur.com/xnaU15V.png)
 
 So Ribéry won media pretty clearly and Ronaldo won coaches and captains.
 
@@ -59,7 +59,7 @@ Unsurprisingly, neither Ronaldo nor Messi wanted to help their main competitors.
 
 Be it as it is congratulations to Cristiano Ronaldo for winning the Ballon d'Or, to Lionel Messi for being the best dressed person at the ceremony and to Franck Ribéry for taking it like a champ!
 
-![Nominee reaction](http://i.imgur.com/1FguU6p.jpg)
+![Nominee reaction](https://i.imgur.com/1FguU6p.jpg)
 
 ## About the Visualization
 
@@ -67,4 +67,4 @@ The [network graph](/vis/ballon-dor-male-players-votes-2013/) is interactive, yo
 
 Players are colored in red, captains in a darker red brown tone, coaches in dark and media people in light blue. For voters in the graph (captains, coaches, media people) the vote breakdown is shown when the mouse is moved over the corresponding node.
 
-The voting data is retrieved from this [PDF document](http://www.fifa.com/mm/document/ballond%27or/playeroftheyear%28men%29/02/26/02/68/fboaward_menplayer2013_neutral.pdf). The graph file was created with a [Python script](https://github.com/exploringdata/ballon-dor-votes-2013) and preprocessed using the [Gephi visualization platform](https://gephi.org/) to apply a Force Atlas layout as well as node sizing and coloring. The [interactive version](/vis/ballon-dor-male-players-votes-2013/) is rendered with the [JavaScript library sigma.js](https://sigmajs.org/).
+The voting data is retrieved from this [PDF document](https://www.fifa.com/mm/document/ballond%27or/playeroftheyear%28men%29/02/26/02/68/fboaward_menplayer2013_neutral.pdf). The graph file was created with a [Python script](https://github.com/exploringdata/ballon-dor-votes-2013) and preprocessed using the [Gephi visualization platform](https://gephi.org/) to apply a Force Atlas layout as well as node sizing and coloring. The [interactive version](/vis/ballon-dor-male-players-votes-2013/) is rendered with the [JavaScript library sigma.js](https://sigmajs.org/).

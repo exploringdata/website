@@ -8,11 +8,11 @@ repo: https://github.com/yaph/rail-suicides
 image: /img/preview/rail-suicides-europe.png
 ---
 Yesterday the Guardian published an article about
-[rail suicides](http://www.theguardian.com/news/datablog/2013/sep/11/uk-rail-suicides-decade-data)
+[rail suicides](https://www.theguardian.com/news/datablog/2013/sep/11/uk-rail-suicides-decade-data)
 in the UK and Europe. It ends with the chart series below, which shows the total
 number of rail suicides in several European countries from 2008 to 2011.
 
-<iframe src="http://cf.datawrapper.de/XefBI/1/" width="100%" height="500" frameborder="0" allowtransparency="true"></iframe>
+<iframe src="https://cf.datawrapper.de/XefBI/1/" width="100%" height="500" frameborder="0" allowtransparency="true"></iframe>
 
 This got me stuck, because of the huge gap between Germany and the other
 countries. Is it because Germany has a bigger
@@ -28,7 +28,7 @@ So does it make sense to look at the absolute numbers alone? I think it doesn't
 in this case and created the new chart below, which takes the population of the
 countries into account.
 
-<iframe src="http://cf.datawrapper.de/vTXHj/2/" width="100%" height="516" frameborder="0" allowtransparency="true"></iframe>
+<iframe src="https://cf.datawrapper.de/vTXHj/2/" width="100%" height="516" frameborder="0" allowtransparency="true"></iframe>
 
 The new chart tells a different story showing the number of suicides by 100,000
 inhabitants for each country. It turns out that the Czech Republic is the country
