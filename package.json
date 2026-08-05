@@ -5,6 +5,9 @@
     "build:modules": "esbuild src/modules/*.js --bundle --format=esm --minify --outdir=static/compiled",
     "watch:modules": "esbuild src/modules/*.js --bundle --format=esm --watch --outdir=static/compiled",
     "build:scripts": "babel src/js --out-dir static/compiled --no-comments",
+    "via-ferrata:data": "cp ~/repos/priv/via-ferrata/data/all.topojson static/topojson/via-ferrata.topojson",
+    "via-ferrata:script": "sed 's|./data/all.topojson|/topojson/via-ferrata.topojson|' ~/repos/priv/via-ferrata/app.js | babel --out-file static/compiled/map/via-ferrata.js --minified --no-comments",
+    "via-ferrata:styles": "sass --no-source-map ~/repos/priv/via-ferrata/styles.css --style=compressed static/compiled/map/via-ferrata.css",
     "watch:scripts": "nodemon -e js -w src/js -x 'npm run build:scripts'",
     "build:styles": "sass --no-source-map src/css:static/css --style=compressed",
     "watch:styles": "nodemon -e css -w src/css -x 'npm run build:styles'",
@@ -15,7 +18,8 @@
     "copy": "run-p copy:*",
     "serve": "logya serve",
     "start": "run-p serve watch",
-    "update": "npm install -U --save && npm run copy"
+    "update": "npm install -U --save && npm run copy",
+    "via-ferrata": "run-p via-ferrata:*"
   },
   "repository": {
     "type": "git",
